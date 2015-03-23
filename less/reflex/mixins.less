@@ -12,8 +12,6 @@
 
 .calc-reflex-columns(@index, @class, @type) when (@type = width) and (@index > 0) {
   .reflex-col-@{class}-@{index} {
-    // min-width: percentage((@index / @reflex-columns));
-    max-width: percentage((@index / @reflex-columns));
     width: percentage((@index / @reflex-columns));
   }
 }
