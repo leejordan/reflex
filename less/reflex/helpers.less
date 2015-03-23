@@ -1,0 +1,59 @@
+// --------------------------------------------------
+// reflex helpers
+// --------------------------------------------------
+
+// --------------------------------------------------
+// flex-wrap
+// --------------------------------------------------
+
+.reflex-wrap {
+    .flex-wrap();
+}
+
+// --------------------------------------------------
+// align-items (cross axis)
+// --------------------------------------------------
+
+.reflex-align-start {
+    .align-items(flex-start);
+}
+
+.reflex-align-end {
+    .align-items(flex-end);
+
+    // fallback to legacy vertical-align
+    .reflex-item,
+    [class*="reflex-col-"] {
+        vertical-align: bottom;
+    }
+}
+
+.reflex-align-center {
+    .align-items(center);
+
+    // fallback to legacy vertical-align
+    .reflex-item,
+    [class*="reflex-col-"] {
+        vertical-align: middle;
+    }
+}
+
+// --------------------------------------------------
+// justify-content (main axis)
+// --------------------------------------------------
+
+.reflex-justify-end {
+    .justify-content-end();
+}
+
+.reflex-justify-center {
+    .justify-content-center();
+}
+
+.reflex-justify-space-between {
+    .justify-content-space-between();
+}
+
+.reflex-justify-space-around {
+    .justify-content-space-around();
+}

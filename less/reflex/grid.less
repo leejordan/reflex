@@ -1,0 +1,84 @@
+// --------------------------------------------------
+// reflex grid
+// --------------------------------------------------
+
+// --------------------------------------------------
+// default box sizing
+// --------------------------------------------------
+
+.box-sizing(@boxmodel) {
+    -webkit-box-sizing: @boxmodel;
+    -moz-box-sizing: @boxmodel;
+    box-sizing: @boxmodel;
+}
+
+.reflex-container {
+    * {
+      .box-sizing(border-box);
+    }
+    *:before,
+    *:after {
+      .box-sizing(border-box);
+    }
+}
+
+// --------------------------------------------------
+// reflex grid container
+// --------------------------------------------------
+
+.reflex-container {
+    .display-flex();
+
+    // set default white space
+    letter-spacing: -0.31em;
+    *letter-spacing: normal;
+    word-spacing: -0.43em;
+}
+
+// --------------------------------------------------
+// reflex item and col defaults
+// --------------------------------------------------
+
+.reflex-item,
+[class*="reflex-col-"] {
+    // legacy support
+    display: inline-block;
+    zoom: 1; *display: inline;
+    vertical-align: top;
+    position: relative;
+
+    // reset whitespace
+    letter-spacing: normal;
+    word-spacing: normal;
+    white-space: normal;
+}
+
+[class*="reflex-col-"] {
+    // default size and alignment
+    // min-width: 100%;
+    max-width: 100%;
+    width: 100%;
+    text-align: left;
+}
+
+// --------------------------------------------------
+// reflex grid generation
+// --------------------------------------------------
+
+.make-reflex-grid(xxs);
+
+@media (min-width: @reflex-xs) {
+    .make-reflex-grid(xs);
+}
+
+@media (min-width: @reflex-sm) {
+    .make-reflex-grid(sm);
+}
+
+@media (min-width: @reflex-md) {
+    .make-reflex-grid(md);
+}
+
+@media (min-width: @reflex-lg) {
+    .make-reflex-grid(lg);
+}

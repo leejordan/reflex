@@ -1,0 +1,98 @@
+// --------------------------------------------------
+// reflex mixins
+// --------------------------------------------------
+
+// --------------------------------------------------
+// reflex grid generation mixins
+// --------------------------------------------------
+
+.make-reflex-grid(@class) {
+    .loop-reflex-columns(@reflex-columns, @class, width);
+}
+
+.calc-reflex-columns(@index, @class, @type) when (@type = width) and (@index > 0) {
+  .reflex-col-@{class}-@{index} {
+    // min-width: percentage((@index / @reflex-columns));
+    max-width: percentage((@index / @reflex-columns));
+    width: percentage((@index / @reflex-columns));
+  }
+}
+
+.loop-reflex-columns(@index, @class, @type) when (@index >= 0) {
+  .calc-reflex-columns(@index, @class, @type);
+  // next iteration
+  .loop-reflex-columns((@index - 1), @class, @type);
+}
+
+// --------------------------------------------------
+// reflex helper mixins
+// --------------------------------------------------
+
+.display-flex() {
+    // display: -webkit-box; // support for this implementation of flexbox is terrible so don't use it
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+
+.flex-wrap() {
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.flex(@grow:1, @shrink:~'', @basis:~'') {
+    -webkit-flex: @grow @shrink @basis;
+    -ms-flex: @grow @shrink @basis;
+    flex: @grow @shrink @basis;
+}
+
+.flex-direction(@direction: row) {
+    -webkit-flex-direction: @direction;
+    -ms-flex-direction: @direction;
+    flex-direction: @direction;
+}
+
+.align-items(@align: stretch) {
+    -webkit-align-items: @align;
+    -ms-flex-align: @align;
+    align-items: @align;
+}
+
+.align-self(@align: stretch) {
+    -webkit-align-self: @align;
+    -ms-flex-item-align: @align;
+    align-self: @align;
+}
+
+.justify-content-end() {
+    text-align: right;
+    -webkit-justify-content: flex-end;
+    -ms-flex-pack: flex-end;
+    justify-content: flex-end;
+}
+
+.justify-content-center() {
+    text-align: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.justify-content-space-between() {
+    text-align: justify;
+    -moz-text-align-last: justify;
+    text-align-last: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: space-between;
+    justify-content: space-between;
+}
+
+.justify-content-space-around() {
+    text-align: justify;
+    -moz-text-align-last: justify;
+    text-align-last: justify;
+    -webkit-justify-content: space-around;
+    -ms-flex-pack: space-around;
+    justify-content: space-around;
+}
