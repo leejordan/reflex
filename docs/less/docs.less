@@ -1,3 +1,8 @@
+@import "../../less/reflex/variables.less";
+@import "../../less/reflex/mixins.less";
+@import "../../less/reflex/grid.less";
+@import "../../less/reflex/helpers.less";
+
 body {
     margin: 0 auto;
     padding: 4%;
@@ -34,19 +39,69 @@ table {
     }
 }
 
+// Inline code
+code {
+    padding: 2px 4px;
+    color: #333;
+    font-size: 90%;
+    font-family:  Menlo, Monaco, Consolas, "Courier New", monospace;
+    background-color: #e9e9e9;
+    white-space: nowrap;
+}
+
+// Blocks of code
+pre {
+    display: block;
+    padding: 20px;
+    word-break: break-all;
+    word-wrap: break-word;
+    color: #333;
+    font-size: 90%;
+    font-family:  Menlo, Monaco, Consolas, "Courier New", monospace;
+    background-color: #e9e9e9;
+    border: 1px solid #333;
+}
+
+.img-responsive {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.img-circle {
+  border-radius: 50%;
+}
+
 .container {
     margin: 0 auto;
     width: 80%;
 }
 
+.reflex-container {
+    margin-bottom: 2em;
+}
+
 .example-col {
     background-color: #e9e9e9;
     color: #333;
-    padding: 20px;
+    margin: 0;
+    padding: 2em;
     border-right: 1px solid white;
     border-bottom: 1px solid white;
 }
 
-.text-center {
-    text-align: center;
+.example-card {
+    border: 1px solid #9E9E9E;
+    box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.4);
+
+    p {
+        margin: 2em;
+    }
 }
+
+.header-example {
+    a {
+        margin: 0 20px;
+    }
+}
+

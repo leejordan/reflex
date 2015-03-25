@@ -11,6 +11,14 @@
 }
 
 // --------------------------------------------------
+// flex-direction
+// --------------------------------------------------
+
+.reflex-direction-column {
+    .flex-direction(column);
+}
+
+// --------------------------------------------------
 // align-items (cross axis)
 // --------------------------------------------------
 
@@ -56,4 +64,37 @@
 
 .reflex-justify-space-around {
     .justify-content-space-around();
+}
+
+// --------------------------------------------------
+// reflex grid padding
+// --------------------------------------------------
+.reflex-padding-sm {
+    margin: -0.25em 0 0.25em -0.25em;
+
+    .flex-item,
+    [class*="flex-col-"] {
+        // grid padding
+        padding: 0.25em 0 0.25em 0.5em;
+    }
+}
+
+.reflex-padding-md {
+    margin: -0.5em 0 0.5em -0.5em;
+
+    .flex-item,
+    [class*="flex-col-"] {
+        // grid padding
+        padding: 0.5em 0 0.5em 1em;
+    }
+}
+
+.reflex-padding-lg {
+    margin: -1em 0 1em -1em;
+
+    .flex-item,
+    [class*="flex-col-"] {
+        // grid padding
+        padding: 1em 0 1em 2em;
+    }
 }

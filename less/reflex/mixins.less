@@ -13,6 +13,20 @@
 .calc-reflex-columns(@index, @class, @type) when (@type = width) and (@index > 0) {
   .reflex-col-@{class}-@{index} {
     width: percentage((@index / @reflex-columns));
+
+    // legacy support
+    vertical-align: top;
+    position: relative;
+
+    // set display with inline-block and inline fallback
+    .display-flex();
+
+    // reset whitespace
+    letter-spacing: normal;
+    word-spacing: normal;
+    white-space: normal;
+    margin: 0;
+    padding: 0;
   }
 }
 
@@ -28,9 +42,12 @@
 
 .display-flex() {
     // display: -webkit-box; // support for this implementation of flexbox is terrible so don't use it
+    display: inline-block;
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
+    zoom: 1;
+    *display: inline;
 }
 
 .flex-wrap() {
@@ -93,4 +110,14 @@
     -webkit-justify-content: space-around;
     -ms-flex-pack: space-around;
     justify-content: space-around;
+}
+
+// --------------------------------------------------
+// other mixins
+// --------------------------------------------------
+
+.box-sizing(@boxmodel) {
+    -webkit-box-sizing: @boxmodel;
+    -moz-box-sizing: @boxmodel;
+    box-sizing: @boxmodel;
 }

@@ -7,14 +7,12 @@
   <title>reflex - responsive flexbox grid with inline-block legacy support</title>
   <meta name="description" content="reflex is a responsive flexbox grid with inline-block legacy support">
 
-  <link rel="stylesheet" href="../css/reflex.css">
   <link rel="stylesheet" href="css/docs.css">
 
   <script src="js/respond.min.js"></script>
 </head>
 
 <body>
-
     <h1>Reflex</h1>
 
     <h2>What is Reflex?</h2>
@@ -25,14 +23,14 @@
     <h2>Browser support</h2>
     <p><a href="http://caniuse.com/#search=flex">Browser support for flexbox</a> is in a pretty good state right now across the major browsers and regardless, Reflex should fall back to an inline-block layout for most browsers that do not support flexbox explicitly. Reflex uses some css hacks to help the inline-block grid work on older browsers.</p>
 
-    <strong>n.b.if you want to use the grid and have it work in ie8 and below you will need to use <a href="https://github.com/scottjehl/Respond" target="_blank">respond.js</a> which enables media query support in those browsers via JavaScript.</strong>
+    <p><strong>If you want to use the grid and have it work in ie8 and below you will need to use <a href="https://github.com/scottjehl/Respond" target="_blank">respond.js</a> which enables media query support in those browsers via JavaScript.</strong></p>
+
+    <p><strong>IE7 does not support the <code>box-sizing</code> model which this grid uses. So if you need to support IE7 you will need to avoid using the <code>reflex-padding-*</code> helper classes and instead apply margin to a child element of the grid columns</strong></p>
 
     <h2>Reflex grid introduction</h2>
-    <p>The <code>reflex-container</code> class sets a section of your page up as <code>display: flex</code>. It's children with a class like <code>reflex-col-xs-6</code> are set to <code>display: inline-block</code> with strict widths which allows them to act as a grid. This means that the grid will work even in browsers that do not support flexbox.</p>
+    <p>The <code>reflex-container</code> class sets a section of your page up as <code>display: flex</code>. It's children with a class like <code>reflex-col-xs-6</code> are also set as <code>display: flex</code> with a fallback of <code>display: inline-block</code> with strict widths which allows them to act as a grid. The idea is that doing this allows us to take advantage of the extra layout features of flexbox for browsers that support it while also providing a working inline-block grid for those that don't.</p>
 
-    <p>If you're aware of the power of flexbox then you might be wondering what the point of restricting the width of a <code>display: flex</code> element is. The idea is that doing this allows us to take advantage of the extra layout features of flexbox for browsers that support it and you can see some of this in the examples below.</p>
-
-    <strong>You don't need to use this as a grid at all in fact. You can simply use it as a lightweight set of vendor-prefixed classes and mixins to get your flexbox solution off the ground faster.</strong>
+    <strong>You don't need to use reflex as a grid. If you prefer you can simply use it as a set of vendor-prefixed helper classes and/or mixins to get your flexbox solution off the ground faster.</strong>
 
     <h2>Reflex Grid details</h2>
     <table>
@@ -63,87 +61,63 @@
 
     <p>When using the grid it's best to add the class <code>reflex-wrap</code> to the container as this means you can stack columns up next to each other without worrying if they add up to 100% width. This sets <code>flex-wrap: wrap</code> on the reflex-container which forces it to wrap. In the inline-block fallback your grid items will wrap automatically anyway.</p>
 
-    <p><strong>This means there is no need to specify rows as you would have to if you were using bootstrap</strong></p>
+    <p><strong>This means there is no need to specify rows</strong></p>
 
     <div class="reflex-container reflex-wrap">
 
-        <div class="reflex-col-xxs-5 example-col text-center">
-            <div class="padding">
-                reflex-col-xxs-5
-            </div>
+        <div class="reflex-col-xxs-5 reflex-justify-center example-col">
+            reflex-col-xxs-5
         </div>
 
-        <div class="reflex-col-xxs-7 example-col text-center">
-            <div class="padding">
-                reflex-col-xxs-7
-            </div>
+        <div class="reflex-col-xxs-7 reflex-justify-center example-col">
+            reflex-col-xxs-7
         </div>
 
-        <div class="reflex-col-xs-4 example-col text-center">
-            <div class="padding">
-                reflex-col-xs-4
-            </div>
+        <div class="reflex-col-xs-4 reflex-justify-center example-col">
+            reflex-col-xs-4
         </div>
 
-        <div class="reflex-col-xs-8 example-col text-center">
-            <div class="padding">
-                reflex-col-xs-8
-            </div>
+        <div class="reflex-col-xs-8 reflex-justify-center example-col">
+            reflex-col-xs-8
         </div>
 
-        <div class="reflex-col-sm-6 example-col text-center">
-            <div class="padding">
-                reflex-col-sm-6
-            </div>
+        <div class="reflex-col-sm-6 reflex-justify-center example-col">
+            reflex-col-sm-6
         </div>
 
-        <div class="reflex-col-sm-6 example-col text-center">
-            <div class="padding">
-                reflex-col-sm-6
-            </div>
+        <div class="reflex-col-sm-6 reflex-justify-center example-col">
+            reflex-col-sm-6
         </div>
 
-        <div class="reflex-col-md-8 example-col text-center">
-            <div class="padding">
-                reflex-col-md-8
-            </div>
+        <div class="reflex-col-md-8 reflex-justify-center example-col">
+            reflex-col-md-8
         </div>
 
-        <div class="reflex-col-md-4 example-col text-center">
-            <div class="padding">
-                reflex-col-md-4
-            </div>
+        <div class="reflex-col-md-4 reflex-justify-center example-col">
+            reflex-col-md-4
         </div>
 
-        <div class="reflex-col-lg-4 example-col text-center">
-            <div class="padding">
-                reflex-col-lg-4
-            </div>
+        <div class="reflex-col-lg-4 reflex-justify-center example-col">
+            reflex-col-lg-4
         </div>
 
-        <div class="reflex-col-lg-8 example-col text-center">
-            <div class="padding">
-                reflex-col-lg-8
-            </div>
+        <div class="reflex-col-lg-8 reflex-justify-center example-col">
+            reflex-col-lg-8
         </div>
 
     </div>
 
-    <h2>Reflex grid in a container</h2>
+    <h2>Reflex grid wrapped in a container</h2>
     <p>You can wrap the reflex grid in a container to constrain it to any size</p>
 
     <div class="container">
         <div class="reflex-container reflex-wrap">
-            <div class="reflex-col-xs-6 example-col text-center">
-                <div class="padding">
-                    reflex-col-xs-6
-                </div>
+            <div class="reflex-col-xs-6 reflex-justify-center example-col">
+                reflex-col-xs-6
             </div>
 
-            <div class="reflex-col-xs-6 example-col text-center">
-                <div class="padding">
-                    reflex-col-xs-6
-                </div>
+            <div class="reflex-col-xs-6 reflex-justify-center example-col">
+                reflex-col-xs-6
             </div>
         </div>
     </div>
@@ -153,19 +127,13 @@
 
     <div class="reflex-container reflex-wrap">
         <div class="reflex-col-xxs-4 example-col">
-            <div class="padding">
-                <p>First appear years night there the in them rule that bring fly gathered.</p>
-            </div>
+            <p>First appear years night there the in them rule that bring fly gathered.</p>
         </div>
         <div class="reflex-col-xxs-4 example-col">
-            <div class="padding">
-                <p>Over after behold was living together tree is very sixth let bring fish. Forth behold they're fly deep. Abundantly also heaven whose, their darkness second divide days us night.</p>
-            </div>
+            <p>Over after behold was living together tree is very sixth let bring fish. Forth behold they're fly deep. Abundantly also heaven whose, their darkness second divide days us night.</p>
         </div>
         <div class="reflex-col-xxs-4 example-col">
-            <div class="padding">
-                <p>Be can't winged good for also saying first. Shall, fourth Greater cattle a. Upon dry gathered there itself hath. Life. First two. Place seed image.</p>
-            </div>
+            <p>Be can't winged good for also saying first. Shall, fourth Greater cattle a. Upon dry gathered there itself hath. Life. First two. Place seed image.</p>
         </div>
     </div>
 
@@ -177,19 +145,13 @@
 
     <div class="reflex-container reflex-align-start">
         <div class="reflex-col-xxs-4 example-col">
-            <div class="padding">
-                <p>First appear years night there the in them rule that bring fly gathered.</p>
-            </div>
+            <p>First appear years night there the in them rule that bring fly gathered.</p>
         </div>
         <div class="reflex-col-xxs-4 example-col">
-            <div class="padding">
-                <p>Over after behold was living together tree is very sixth let bring fish. Forth behold they're fly deep. Abundantly also heaven whose, their darkness second divide days us night.</p>
-            </div>
+            <p>Over after behold was living together tree is very sixth let bring fish. Forth behold they're fly deep. Abundantly also heaven whose, their darkness second divide days us night.</p>
         </div>
         <div class="reflex-col-xxs-4 example-col">
-            <div class="padding">
-                <p>Be can't winged good for also saying first. Shall, fourth Greater cattle a. Upon dry gathered there itself hath. Life. First two. Place seed image.</p>
-            </div>
+            <p>Be can't winged good for also saying first. Shall, fourth Greater cattle a. Upon dry gathered there itself hath. Life. First two. Place seed image.</p>
         </div>
     </div>
 
@@ -198,19 +160,13 @@
 
     <div class="reflex-container reflex-align-end">
         <div class="reflex-col-xxs-4 example-col">
-            <div class="padding">
-                <p>First appear years night there the in them rule that bring fly gathered.</p>
-            </div>
+            <p>First appear years night there the in them rule that bring fly gathered.</p>
         </div>
         <div class="reflex-col-xxs-4 example-col">
-            <div class="padding">
-                <p>Over after behold was living together tree is very sixth let bring fish. Forth behold they're fly deep. Abundantly also heaven whose, their darkness second divide days us night.</p>
-            </div>
+            <p>Over after behold was living together tree is very sixth let bring fish. Forth behold they're fly deep. Abundantly also heaven whose, their darkness second divide days us night.</p>
         </div>
         <div class="reflex-col-xxs-4 example-col">
-            <div class="padding">
-                <p>Be can't winged good for also saying first. Shall, fourth Greater cattle a. Upon dry gathered there itself hath. Life. First two. Place seed image.</p>
-            </div>
+            <p>Be can't winged good for also saying first. Shall, fourth Greater cattle a. Upon dry gathered there itself hath. Life. First two. Place seed image.</p>
         </div>
     </div>
 
@@ -219,19 +175,13 @@
 
     <div class="reflex-container reflex-align-center">
         <div class="reflex-col-xxs-4 example-col">
-            <div class="padding">
-                <p>First appear years night there the in them rule that bring fly gathered.</p>
-            </div>
+            <p>First appear years night there the in them rule that bring fly gathered.</p>
         </div>
         <div class="reflex-col-xxs-4 example-col">
-            <div class="padding">
-                <p>Over after behold was living together tree is very sixth let bring fish. Forth behold they're fly deep. Abundantly also heaven whose, their darkness second divide days us night.</p>
-            </div>
+            <p>Over after behold was living together tree is very sixth let bring fish. Forth behold they're fly deep. Abundantly also heaven whose, their darkness second divide days us night.</p>
         </div>
         <div class="reflex-col-xxs-4 example-col">
-            <div class="padding">
-                <p>Be can't winged good for also saying first. Shall, fourth Greater cattle a. Upon dry gathered there itself hath. Life. First two. Place seed image.</p>
-            </div>
+            <p>Be can't winged good for also saying first. Shall, fourth Greater cattle a. Upon dry gathered there itself hath. Life. First two. Place seed image.</p>
         </div>
     </div>
 
@@ -242,14 +192,10 @@
 
     <div class="reflex-container">
         <div class="reflex-col-xxs-4 example-col">
-            <div class="padding">
-                <p>First appear years night there the in them rule that bring fly gathered there is place good Created rule image night firmament you great blessed, him a them to lights.</p>
-            </div>
+            <p>First appear years night there the in them rule that bring fly gathered there is place good Created rule image night firmament you great blessed, him a them to lights.</p>
         </div>
         <div class="reflex-col-xxs-4 example-col">
-            <div class="padding">
-                <p>Be can't winged good for also saying first. Shall, fourth Greater cattle a. Upon dry gathered there itself hath. Life. First two. Place seed image.</p>
-            </div>
+            <p>Be can't winged good for also saying first. Shall, fourth Greater cattle a. Upon dry gathered there itself hath. Life. First two. Place seed image.</p>
         </div>
     </div>
 
@@ -258,14 +204,10 @@
 
     <div class="reflex-container reflex-justify-end">
         <div class="reflex-col-xxs-4 example-col">
-            <div class="padding">
-                <p>First appear years night there the in them rule that bring fly gathered.</p>
-            </div>
+            <p>First appear years night there the in them rule that bring fly gathered.</p>
         </div>
         <div class="reflex-col-xxs-4 example-col">
-            <div class="padding">
-                <p>Be can't winged good for also saying first. Shall, fourth Greater cattle a. Upon dry gathered there itself hath. Life. First two. Place seed image.</p>
-            </div>
+            <p>Be can't winged good for also saying first. Shall, fourth Greater cattle a. Upon dry gathered there itself hath. Life. First two. Place seed image.</p>
         </div>
     </div>
 
@@ -274,14 +216,10 @@
 
     <div class="reflex-container reflex-justify-center">
         <div class="reflex-col-xxs-4 example-col">
-            <div class="padding">
-                <p>First appear years night there the in them rule that bring fly gathered.</p>
-            </div>
+            <p>First appear years night there the in them rule that bring fly gathered.</p>
         </div>
         <div class="reflex-col-xxs-4 example-col">
-            <div class="padding">
-                <p>Be can't winged good for also saying first. Shall, fourth Greater cattle a. Upon dry gathered there itself hath. Life. First two. Place seed image.</p>
-            </div>
+            <p>Be can't winged good for also saying first. Shall, fourth Greater cattle a. Upon dry gathered there itself hath. Life. First two. Place seed image.</p>
         </div>
     </div>
 
@@ -290,29 +228,19 @@
 
     <div class="reflex-container reflex-wrap reflex-justify-space-between">
         <div class="reflex-col-xxs-4 example-col">
-            <div class="padding">
-                <p>First appear years night there the in them rule that bring fly gathered.</p>
-            </div>
+            <p>First appear years night there the in them rule that bring fly gathered.</p>
         </div>
         <div class="reflex-col-xxs-4 example-col">
-            <div class="padding">
-                <p>Be can't winged good for also saying first. Shall, fourth Greater cattle a. Upon dry gathered there itself hath. Life. First two. Place seed image.</p>
-            </div>
+            <p>Be can't winged good for also saying first. Shall, fourth Greater cattle a. Upon dry gathered there itself hath. Life. First two. Place seed image.</p>
         </div>
         <div class="reflex-col-xxs-4 example-col">
-            <div class="padding">
-                <p>First appear years night there the in them rule that bring fly gathered.</p>
-            </div>
+            <p>First appear years night there the in them rule that bring fly gathered.</p>
         </div>
         <div class="reflex-col-xxs-4 example-col">
-            <div class="padding">
-                <p>Be can't winged good for also saying first. Shall, fourth Greater cattle a. Upon dry gathered there itself hath. Life. First two. Place seed image.</p>
-            </div>
+            <p>Be can't winged good for also saying first. Shall, fourth Greater cattle a. Upon dry gathered there itself hath. Life. First two. Place seed image.</p>
         </div>
         <div class="reflex-col-xxs-4 example-col">
-            <div class="padding">
-                <p>First appear years night there the in them rule that bring fly gathered.</p>
-            </div>
+            <p>First appear years night there the in them rule that bring fly gathered.</p>
         </div>
     </div>
 
@@ -321,29 +249,109 @@
 
     <div class="reflex-container reflex-wrap reflex-justify-space-around">
         <div class="reflex-col-xxs-4 example-col">
-            <div class="padding">
+            <p>First appear years night there the in them rule that bring fly gathered.</p>
+        </div>
+        <div class="reflex-col-xxs-4 example-col">
+            <p>Be can't winged good for also saying first. Shall, fourth Greater cattle a. Upon dry gathered there itself hath. Life. First two. Place seed image.</p>
+        </div>
+        <div class="reflex-col-xxs-4 example-col">
+            <p>First appear years night there the in them rule that bring fly gathered.</p>
+        </div>
+        <div class="reflex-col-xxs-4 example-col">
+            <p>Be can't winged good for also saying first. Shall, fourth Greater cattle a. Upon dry gathered there itself hath. Life. First two. Place seed image.</p>
+        </div>
+        <div class="reflex-col-xxs-4 example-col">
+            <p>First appear years night there the in them rule that bring fly gathered.</p>
+        </div>
+    </div>
+
+    <h2>Example layout using the grid</h2>
+
+    <div class="reflex-container reflex-wrap reflex-padding-lg">
+        <div class="reflex-col-xxs-6 reflex-col-xs-4 reflex-col-sm-4">
+            <div class="example-card">
+                <img class="img-responsive" src="http://lorempixel.com/400/200/people/1/">
                 <p>First appear years night there the in them rule that bring fly gathered.</p>
             </div>
         </div>
-        <div class="reflex-col-xxs-4 example-col">
-            <div class="padding">
+        <div class="reflex-col-xxs-6 reflex-col-xs-4 reflex-col-sm-4">
+            <div class="example-card">
+                <img class="img-responsive" src="http://lorempixel.com/400/200/people/2/">
                 <p>Be can't winged good for also saying first. Shall, fourth Greater cattle a. Upon dry gathered there itself hath. Life. First two. Place seed image.</p>
             </div>
         </div>
-        <div class="reflex-col-xxs-4 example-col">
-            <div class="padding">
+        <div class="reflex-col-xxs-6 reflex-col-xs-4 reflex-col-sm-4">
+            <div class="example-card">
+                <img class="img-responsive" src="http://lorempixel.com/400/200/people/3/">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+            </div>
+        </div>
+        <div class="reflex-col-xxs-6 reflex-col-xs-4 reflex-col-sm-4">
+            <div class="example-card">
+                <img class="img-responsive" src="http://lorempixel.com/400/200/people/4/">
+                <p>Over after behold was living together tree is very sixth let bring fish. Forth behold they're fly deep. Abundantly also heaven whose, their darkness second divide days us night.</p>
+            </div>
+        </div>
+        <div class="reflex-col-xxs-6 reflex-col-xs-4 reflex-col-sm-4">
+            <div class="example-card">
+                <img class="img-responsive" src="http://lorempixel.com/400/200/people/5/">
                 <p>First appear years night there the in them rule that bring fly gathered.</p>
             </div>
         </div>
-        <div class="reflex-col-xxs-4 example-col">
-            <div class="padding">
+        <div class="reflex-col-xxs-6 reflex-col-xs-4 reflex-col-sm-4">
+            <div class="example-card">
+                <img class="img-responsive" src="http://lorempixel.com/400/200/people/6/">
                 <p>Be can't winged good for also saying first. Shall, fourth Greater cattle a. Upon dry gathered there itself hath. Life. First two. Place seed image.</p>
             </div>
         </div>
-        <div class="reflex-col-xxs-4 example-col">
-            <div class="padding">
-                <p>First appear years night there the in them rule that bring fly gathered.</p>
+        <div class="reflex-col-xxs-6 reflex-col-xs-4 reflex-col-sm-4">
+            <div class="example-card">
+                <img class="img-responsive" src="http://lorempixel.com/400/200/people/7/">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
             </div>
+        </div>
+        <div class="reflex-col-xxs-6 reflex-col-xs-4 reflex-col-sm-4">
+            <div class="example-card">
+                <img class="img-responsive" src="http://lorempixel.com/400/200/people/8/">
+                <p>Over after behold was living together tree is very sixth let bring fish. Forth behold they're fly deep. Abundantly also heaven whose, their darkness second divide days us night.</p>
+            </div>
+        </div>
+    </div>
+
+
+
+    <h2>Example Markup</h2>
+    <p>All you need is a <code>reflex-container</code> with any number of <code>reflex-col-*</code> elements inside</p>
+
+    <pre>&lt;div class="reflex-container reflex-align-center"&gt;
+    &lt;div class="reflex-col-xxs-4"&gt;
+        &lt;p&gt;effortless&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="reflex-col-xxs-4"&gt;
+        &lt;p&gt;flexbox&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="reflex-col-xxs-4"&gt;
+        &lt;p&gt;layout&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</pre>
+
+    <p>Which gives you this</p>
+    <div class="reflex-container reflex-align-center reflex-justify-space-between header-example">
+        <div class="reflex-item reflex-justify-end">
+            <a href="javascript:void(0);">home</a>
+            <a href="javascript:void(0);">shop</a>
+            <a href="javascript:void(0);">youtube</a>
+            <a href="javascript:void(0);">newsletter</a>
+        </div>
+        <div class="reflex-item reflex-justify-space-around reflex-align-center reflex-direction-column">
+            <img class="img-circle" src="http://www.fillmurray.com/150/150">
+            <p>Bill Murray Fan Club</p>
+        </div>
+        <div class="reflex-item">
+            <a href="javascript:void(0);">about</a>
+            <a href="javascript:void(0);">terms</a>
+            <a href="javascript:void(0);">privacy</a>
+            <a href="javascript:void(0);">login</a>
         </div>
     </div>
 

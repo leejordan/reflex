@@ -3,36 +3,31 @@
 // --------------------------------------------------
 
 // --------------------------------------------------
-// default box sizing
-// --------------------------------------------------
-
-.box-sizing(@boxmodel) {
-    -webkit-box-sizing: @boxmodel;
-    -moz-box-sizing: @boxmodel;
-    box-sizing: @boxmodel;
-}
-
-.reflex-container {
-    * {
-      .box-sizing(border-box);
-    }
-    *:before,
-    *:after {
-      .box-sizing(border-box);
-    }
-}
-
-// --------------------------------------------------
 // reflex grid container
 // --------------------------------------------------
 
 .reflex-container {
     .display-flex();
+    margin: 0;
+    padding: 0;
+    position: relative;
+    width: 100%;
 
     // set default white space
     letter-spacing: -0.31em;
     *letter-spacing: normal;
     word-spacing: -0.43em;
+
+    // when using a ul, remove list icon
+    list-style-type: none;
+
+    * {
+        .box-sizing(border-box);
+    }
+    *:before,
+    *:after {
+        .box-sizing(border-box);
+    }
 }
 
 // --------------------------------------------------
@@ -41,21 +36,23 @@
 
 .reflex-item,
 [class*="reflex-col-"] {
+    width: 100%;
+
     // legacy support
-    display: inline-block;
-    zoom: 1; *display: inline;
     vertical-align: top;
     position: relative;
+
+    // set display with inline-block and inline fallback
+    .display-flex();
 
     // reset whitespace
     letter-spacing: normal;
     word-spacing: normal;
     white-space: normal;
-}
+    margin: 0;
+    padding: 0;
 
-[class*="reflex-col-"] {
-    // default size and alignment
-    width: 100%;
+    // default alignment
     text-align: left;
 }
 
