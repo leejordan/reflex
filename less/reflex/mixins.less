@@ -6,35 +6,59 @@
 // reflex grid generation mixins
 // --------------------------------------------------
 
-.make-reflex-grid(@class) {
+.make-reflex-grid(@class: ~'') {
     .loop-reflex-columns(@reflex-columns, @class, width);
 }
 
 .calc-reflex-columns(@index, @class, @type) when (@type = width) and (@index > 0) {
-  .reflex-col-@{class}-@{index} {
-    width: percentage((@index / @reflex-columns));
+    .reflex-col-@{class}@{index} {
+        width: percentage((@index / @reflex-columns));
 
-    // legacy support
-    vertical-align: top;
-    position: relative;
+        // legacy support
+        vertical-align: top;
+        position: relative;
 
-    // set display with inline-block and inline fallback
-    .display-flex();
+        // set display with inline-block and inline fallback
+        .display-flex();
 
-    // reset whitespace
-    letter-spacing: normal;
-    word-spacing: normal;
-    white-space: normal;
-    margin: 0;
-    padding: 0;
-  }
+        // reset whitespace
+        letter-spacing: normal;
+        word-spacing: normal;
+        white-space: normal;
+        margin: 0;
+        padding: 0;
+    }
 }
 
 .loop-reflex-columns(@index, @class, @type) when (@index >= 0) {
-  .calc-reflex-columns(@index, @class, @type);
-  // next iteration
-  .loop-reflex-columns((@index - 1), @class, @type);
+    .calc-reflex-columns(@index, @class, @type);
+    // next iteration
+    .loop-reflex-columns((@index - 1), @class, @type);
 }
+
+// --------------------------------------------------
+// order class generation mixins
+// --------------------------------------------------
+
+.order(@order: 0) {
+    -webkit-order: @order;
+    -ms-flex-order: @order;
+    order: @order;
+}
+
+.make-order-helpers() {
+    .loop-order-helpers(@order-values);
+}
+
+.loop-order-helpers(@index) when (@index >= 0) {
+    .reflex-order-@{index} {
+        .order(@index);
+    }
+    // next iteration
+    .loop-order-helpers((@index - 1));
+}
+
+.make-order-helpers();
 
 // --------------------------------------------------
 // reflex helper mixins
@@ -50,10 +74,10 @@
     *display: inline;
 }
 
-.flex-wrap() {
-    -webkit-flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
+.flex-wrap(@wrap: wrap) {
+    -webkit-flex-wrap: @wrap;
+    -ms-flex-wrap: @wrap;
+    flex-wrap: @wrap;
 }
 
 .flex(@grow:1, @shrink:~'', @basis:~'') {

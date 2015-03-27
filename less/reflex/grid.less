@@ -34,7 +34,6 @@
 // reflex item and col defaults
 // --------------------------------------------------
 
-.reflex-item,
 [class*="reflex-col-"] {
     width: 100%;
 
@@ -60,20 +59,20 @@
 // reflex grid generation
 // --------------------------------------------------
 
-.make-reflex-grid(xxs);
+.make-reflex-grid();
 
 @media (min-width: @reflex-xs) {
-    .make-reflex-grid(xs);
+    .make-reflex-grid(xs-);
 }
 
 @media (min-width: @reflex-sm) {
-    .make-reflex-grid(sm);
+    .make-reflex-grid(sm-);
 }
 
 @media (min-width: @reflex-md) {
-    .make-reflex-grid(md);
+    .make-reflex-grid(md-);
 }
 
 @media (min-width: @reflex-lg) {
-    .make-reflex-grid(lg);
+    .make-reflex-grid(lg-);
 }

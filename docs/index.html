@@ -7,6 +7,9 @@
   <title>reflex - responsive flexbox grid with inline-block legacy support</title>
   <meta name="description" content="reflex is a responsive flexbox grid with inline-block legacy support">
 
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
+
   <link rel="stylesheet" href="css/docs.css">
 
   <script src="js/respond.min.js"></script>
@@ -16,61 +19,243 @@
     <h1>Reflex</h1>
 
     <h2>What is Reflex?</h2>
-    <p>Reflex is a responsive flexbox grid with inline-block legacy support that works on the basis that in the spirit of progressive enhancement it's ok that things look a bit different in older browsers. It gives you the ability to easily take advantage of flexbox for layout with a reasonable feeling of warmth and security that things will still look ok in older browsers.</p>
+    <p>Reflex is a responsive flexbox grid with inline-block legacy support. It gives you the ability to easily take advantage of flexbox for layout with a reasonable feeling of warmth and security that things will still look ok in older browsers. <a href="http://caniuse.com/#search=flex" target="_blank">Browser support for flexbox</a> is in a pretty good state right now and is growing all the time. At the time of writing, full global flexbox support is at 81.74% and if we include partial support it is at 92.11% so I propose that it's acceptable to start taking advantage of flexbox</p>
 
-    <p>The fallback to inline-block grid instead of one that uses floats is because it avoids that horrible situation where floats overlap each other and avoids having to use rows to solve that problem. The downside is worse legacy support.
+    <h2>What is Reflex good for?</h2>
+    <ul>
+        <li>Dynamically generated grids of content e.g. a set of products for sale</li>
+        <li>Easily creating a grid where every item has the same height</li>
+        <li>Creating a grid where items in the grid never push each other out of the way</li>
+        <li>Content layout taking advantage of flexbox where supported</li>
+        <li>A set of vendor-prefixed helper classes and mixins to get your flexbox solution off the ground faster</li>
+    </ul>
 
-    <h2>Browser support</h2>
-    <p><a href="http://caniuse.com/#search=flex">Browser support for flexbox</a> is in a pretty good state right now across the major browsers and regardless, Reflex should fall back to an inline-block layout for most browsers that do not support flexbox explicitly. Reflex uses some css hacks to help the inline-block grid work on older browsers.</p>
-
-    <p><strong>If you want to use the grid and have it work in ie8 and below you will need to use <a href="https://github.com/scottjehl/Respond" target="_blank">respond.js</a> which enables media query support in those browsers via JavaScript.</strong></p>
-
-    <p><strong>IE7 does not support the <code>box-sizing</code> model which this grid uses. So if you need to support IE7 you will need to avoid using the <code>reflex-padding-*</code> helper classes and instead apply margin to a child element of the grid columns</strong></p>
+    <p>It is not intended as a replacement for more fully featured css frameworks such as bootstrap and does not include css for anything else apart from the flexbox/inline-block grid. In fact, It's easy to use this <em>in addition to</em> your existing css framework and only use it when you need some flexbox magic or for easily creating a grid of dynamically generated, same height content such as a list of products.</p>
 
     <h2>Reflex grid introduction</h2>
-    <p>The <code>reflex-container</code> class sets a section of your page up as <code>display: flex</code>. It's children with a class like <code>reflex-col-xs-6</code> are also set as <code>display: flex</code> with a fallback of <code>display: inline-block</code> with strict widths which allows them to act as a grid. The idea is that doing this allows us to take advantage of the extra layout features of flexbox for browsers that support it while also providing a working inline-block grid for those that don't.</p>
+    <p>The <code>reflex-container</code> class sets a section of your page up as <code>display: flex</code>. It's children with a class like <code>reflex-col-6</code> are also set as <code>display: flex</code> with a fallback of <code>display: inline-block</code> with strict widths which allows them to act as a grid. The idea is that doing this allows us to take advantage of the extra layout features of flexbox for browsers that support it while also providing a working inline-block grid for those that don't.</p>
 
-    <strong>You don't need to use reflex as a grid. If you prefer you can simply use it as a set of vendor-prefixed helper classes and/or mixins to get your flexbox solution off the ground faster.</strong>
+    <p>By default Reflex is set up as a 12 column grid but it can be modified to support more of less columns</p>
 
-    <h2>Reflex Grid details</h2>
-    <table>
-        <thead>
-            <tr>
-                <th>Class prefix</th>
-                <td>reflex-col-xxs-</td>
-                <td>reflex-col-xs-</td>
-                <td>reflex-col-sm-</td>
-                <td>reflex-col-md-</td>
-                <td>reflex-col-lg-</td>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <th>Collapses at</th>
-                <td>does not collapse</td>
-                <td>&lt; 480px</td>
-                <td>&lt; 768px</td>
-                <td>&lt; 992px</td>
-                <td>&lt; 1200px</td>
-            </tr>
-        </tbody>
-    </table>
+    <p>As a consequence of the grid container and the grid elements being set to <code>display: flex</code> most of the helper classes can be applied to the grid items themselves which gives you a really flexible grid structure with (for example) column based grids inside row based grids. There are some examples later on to demonstrate some of this.</p>
 
-    <h2>Reflex grid example</h2>
-    <p>Inspired by the twitter bootstrap grid this grid collapses at pre-defined breakpoints</p>
+    <p>Here is an example of the bare minimum markup you need to create a grid:</p>
 
-    <p>When using the grid it's best to add the class <code>reflex-wrap</code> to the container as this means you can stack columns up next to each other without worrying if they add up to 100% width. This sets <code>flex-wrap: wrap</code> on the reflex-container which forces it to wrap. In the inline-block fallback your grid items will wrap automatically anyway.</p>
+    <pre>&lt;div class="reflex-container"&gt;
+    &lt;div class="reflex-col-6"&gt;
+        &lt;content&gt;
+    &lt;/div&gt;
+    &lt;div class="reflex-col-6"&gt;
+        &lt;content&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</pre>
 
-    <p><strong>This means there is no need to specify rows</strong></p>
+    <p>Which gives you this:</p>
+
+    <div class="reflex-container">
+        <div class="reflex-col-6">
+            <p>Over after behold was living together tree is very sixth let bring fish. Forth behold they're fly deep. Abundantly also heaven whose, their darkness second divide days us night.</p>
+        </div>
+        <div class="reflex-col-6">
+            <p>Be can't winged good for also saying first. Shall, fourth Greater cattle a. Upon dry gathered there itself hath. Life.</p>
+        </div>
+    </div>
+
+    <p>You'll probably want to add some css styles to the columns themselves to space things out a bit and perhaps visually distinguish them:</p>
+
+    <pre>&lt;div class="reflex-container"&gt;
+    &lt;div class="reflex-col-6 &lt;classname&gt"&gt;
+        &lt;content&gt;
+    &lt;/div&gt;
+    &lt;div class="reflex-col-6 &lt;classname&gt"&gt;
+        &lt;content&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</pre>
+
+    <p>Where your class is something like this:</p>
+
+    <pre>.classname {
+    background-color: #e9e9e9;
+    margin: 0;
+    padding: 2em;
+    border-right: 1px solid white;
+}</pre>
+
+    <p>Which gives you this:</p>
+
+    <div class="reflex-container">
+        <div class="reflex-col-6 example-col">
+            <p>Over after behold was living together tree is very sixth let bring fish. Forth behold they're fly deep. Abundantly also heaven whose, their darkness second divide days us night.</p>
+        </div>
+        <div class="reflex-col-6 example-col">
+            <p>Be can't winged good for also saying first. Shall, fourth Greater cattle a. Upon dry gathered there itself hath. Life.</p>
+        </div>
+    </div>
+
+    <h2>Browser support</h2>
+    <p><a href="http://caniuse.com/#search=flex" target="_blank">Browser support for flexbox</a> is in a pretty good state right now and regardless, Reflex should fall back to an inline-block layout for most browsers that do not support flexbox explicitly. Reflex uses some css hacks to help the inline-block grid work on older browsers.</p>
+
+    <p class="alert"><strong>If you want to use the grid with breakpoints in ie8 and below you will need to use <a href="https://github.com/scottjehl/Respond" target="_blank">respond.js</a> which enables media query support in those browsers via JavaScript.</strong></p>
+
+    <p class="alert"><strong>IE7 does not support the <code>box-sizing</code> model which this grid uses. So if you need to support IE7 you will need to avoid using the <code>reflex-padding-*</code> helper classes and instead apply margin to a child element of the grid columns</strong></p>
+
+    <h2>Semantic markup</h2>
+    <p>You don't have to use <code>div</code> for your grid and ideally you should use the most semantically appropriate markup for your use case with no visible difference.</p>
+
+    <h3>Using divs</h3>
+
+    <pre>&lt;div class="reflex-container"&gt;
+    &lt;div class="reflex-col-6"&gt;
+        &lt;content&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</pre>
+
+    <div class="reflex-container">
+        <div class="reflex-col-6 example-col">
+            <p>Be can't winged good for also saying first. Shall, fourth Greater cattle a. Upon dry gathered there itself hath. Life.</p>
+        </div>
+        <div class="reflex-col-6 example-col">
+            <p>First appear years night there the in them rule that bring fly gathered.</p>
+        </div>
+    </div>
+
+    <h3>Using an unordered list</h3>
+
+    <pre>&lt;ul class="reflex-container"&gt;
+    &lt;li class="reflex-col-6"&gt;
+        &lt;content&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;</pre>
+
+    <ul class="reflex-container">
+        <li class="reflex-col-6 example-col">
+            <p>Be can't winged good for also saying first. Shall, fourth Greater cattle a. Upon dry gathered there itself hath. Life.</p>
+        </li>
+        <li class="reflex-col-6 example-col">
+            <p>First appear years night there the in them rule that bring fly gathered.</p>
+        </li>
+    </ul>
+
+    <h3>Using html5 elements</h3>
+
+    <pre>&lt;section class="reflex-container"&gt;
+    &lt;article class="reflex-col-6"&gt;
+        &lt;content&gt;
+    &lt;/article&gt;
+&lt;/section&gt;</pre>
+
+    <section class="reflex-container">
+        <article class="reflex-col-6 example-col">
+            <p>Be can't winged good for also saying first. Shall, fourth Greater cattle a. Upon dry gathered there itself hath. Life.</p>
+        </article>
+        <article class="reflex-col-6 example-col">
+            <p>First appear years night there the in them rule that bring fly gathered.</p>
+        </article>
+    </section>
+
+    <h2>Making the grid wrap</h2>
+    <p>You can add the class <code>reflex-wrap</code> to the container which sets <code>flex-wrap: wrap</code> and forces it to wrap into rows.</p>
+    <p class="alert">In the inline-block fallback your grid items will wrap automatically when they add up to 100% width (12 column units by default)</p>
+
+    <pre>&lt;div class="reflex-container reflex-wrap"&gt;
+    &lt;div class="reflex-col-6"&gt;
+        &lt;content&gt;
+    &lt;/div&gt;
+    &lt;div class="reflex-col-6"&gt;
+        &lt;content&gt;
+    &lt;/div&gt;
+    &lt;div class="reflex-col-8"&gt;
+        &lt;content&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</pre>
+
+    <h3>.reflex-wrap</h3>
+    <p>Uses <code>flex-wrap: wrap</code> and gives you this:</p>
+
+    <div class="reflex-container reflex-wrap">
+        <div class="reflex-col-6 example-col">
+            <p>1) Be can't winged good for also saying first. Shall, fourth Greater cattle a. Upon dry gathered there itself hath. Life.</p>
+        </div>
+        <div class="reflex-col-6 example-col">
+            <p>2) irst appear years night there the in them rule that bring fly gathered.</p>
+        </div>
+        <div class="reflex-col-10 example-col">
+            <p>3) Over after behold was living together tree is very sixth let bring fish. Forth behold they're fly deep. Abundantly also heaven whose, their darkness second divide days us night.</p>
+        </div>
+    </div>
+
+    <p>As opposed to this:</p>
+
+    <div class="reflex-container">
+        <div class="reflex-col-6 example-col">
+            <p>1) Be can't winged good for also saying first. Shall, fourth Greater cattle a. Upon dry gathered there itself hath. Life.</p>
+        </div>
+        <div class="reflex-col-6 example-col">
+            <p>2) First appear years night there the in them rule that bring fly gathered.</p>
+        </div>
+        <div class="reflex-col-10 example-col">
+            <p>3) Over after behold was living together tree is very sixth let bring fish. Forth behold they're fly deep. Abundantly also heaven whose, their darkness second divide days us night.</p>
+        </div>
+    </div>
+
+    <h3>.reflex-wrap-reverse</h3>
+    <p>Uses <code>flex-wrap: wrap-reverse</code> and gives you this:</p>
+
+    <div class="reflex-container reflex-wrap-reverse">
+        <div class="reflex-col-6 example-col">
+            <p>1) Be can't winged good for also saying first. Shall, fourth Greater cattle a. Upon dry gathered there itself hath. Life.</p>
+        </div>
+        <div class="reflex-col-6 example-col">
+            <p>2) First appear years night there the in them rule that bring fly gathered.</p>
+        </div>
+        <div class="reflex-col-10 example-col">
+            <p>3) Over after behold was living together tree is very sixth let bring fish. Forth behold they're fly deep. Abundantly also heaven whose, their darkness second divide days us night.</p>
+        </div>
+    </div>
+
+    <h2>Breakpoints</h2>
+    <p>When using <code>reflex-wrap</code> you will likely require extra control over where your grid items revert to 100% width. To do this you will need to use these bootstrap inspired classes.  The reflex grid collapses at these pre-defined breakpoints by default:</p>
+    <div class="table-responsive">
+        <table>
+            <thead>
+                <tr>
+                    <th>Class prefix</th>
+                    <td>reflex-col-</td>
+                    <td>reflex-col-xs-</td>
+                    <td>reflex-col-sm-</td>
+                    <td>reflex-col-md-</td>
+                    <td>reflex-col-lg-</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>Collapses at</th>
+                    <td>does not collapse</td>
+                    <td>&lt; 480px</td>
+                    <td>&lt; 768px</td>
+                    <td>&lt; 992px</td>
+                    <td>&lt; 1200px</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h2>Breakpoints example</h2>
+
+    <p>See the breakpoints in action by resizing the browser window and seeing what happens to the example grid below.</p>
 
     <div class="reflex-container reflex-wrap">
 
-        <div class="reflex-col-xxs-5 reflex-justify-center example-col">
-            reflex-col-xxs-5
+        <div class="reflex-col-4 reflex-justify-center example-col">
+            reflex-col-4
         </div>
 
-        <div class="reflex-col-xxs-7 reflex-justify-center example-col">
-            reflex-col-xxs-7
+        <div class="reflex-col-4 reflex-justify-center example-col">
+            reflex-col-4
+        </div>
+
+        <div class="reflex-col-4 reflex-justify-center example-col">
+            reflex-col-5
         </div>
 
         <div class="reflex-col-xs-4 reflex-justify-center example-col">
@@ -107,7 +292,7 @@
 
     </div>
 
-    <h2>Reflex grid wrapped in a container</h2>
+    <h2>Wrapping the grid in a container</h2>
     <p>You can wrap the reflex grid in a container to constrain it to any size</p>
 
     <div class="container">
@@ -122,36 +307,110 @@
         </div>
     </div>
 
-    <h2>Equal height columns</h2>
-    <p>The use of display: flex in reflex gives us equal height divs by default in browsers that support flexbox because the default value of <code>align-items</code> is <code>stretch</code></p>
+    <h2>Adding padding to the grid</h2>
+    <p>There are some helper classes to pad your grid out and these should be applied to the <code>reflex-container</code></p>
 
-    <div class="reflex-container reflex-wrap">
-        <div class="reflex-col-xxs-4 example-col">
-            <p>First appear years night there the in them rule that bring fly gathered.</p>
+    <h3>.reflex-padding-sm</h3>
+    <div class="reflex-container reflex-padding-sm">
+        <div class="reflex-col-6">
+            <p class="example-col">Over after behold was living together tree is very sixth let bring fish. Forth behold they're fly deep. Abundantly also heaven whose, their darkness second divide days us night.</p>
         </div>
-        <div class="reflex-col-xxs-4 example-col">
-            <p>Over after behold was living together tree is very sixth let bring fish. Forth behold they're fly deep. Abundantly also heaven whose, their darkness second divide days us night.</p>
-        </div>
-        <div class="reflex-col-xxs-4 example-col">
-            <p>Be can't winged good for also saying first. Shall, fourth Greater cattle a. Upon dry gathered there itself hath. Life. First two. Place seed image.</p>
+        <div class="reflex-col-6">
+            <p class="example-col">Be can't winged good for also saying first. Shall, fourth Greater cattle a. Upon dry gathered there itself hath. Life.</p>
         </div>
     </div>
 
-    <h2>Align-items</h2>
-    <p>There are helper classes for easily setting other values of <code>align-items</code> with some extra css for the inline-block fallback where possible. These helper classes should be added to your <code>reflex-container</code> element</p>
+    <h3>.reflex-padding-md</h3>
+    <div class="reflex-container reflex-padding-md">
+        <div class="reflex-col-6">
+            <p class="example-col">Over after behold was living together tree is very sixth let bring fish. Forth behold they're fly deep. Abundantly also heaven whose, their darkness second divide days us night.</p>
+        </div>
+        <div class="reflex-col-6">
+            <p class="example-col">Be can't winged good for also saying first. Shall, fourth Greater cattle a. Upon dry gathered there itself hath. Life.</p>
+        </div>
+    </div>
+
+    <h3>.reflex-padding-lg</h3>
+    <div class="reflex-container reflex-padding-lg">
+        <div class="reflex-col-6">
+            <p class="example-col">Over after behold was living together tree is very sixth let bring fish. Forth behold they're fly deep. Abundantly also heaven whose, their darkness second divide days us night.</p>
+        </div>
+        <div class="reflex-col-6">
+            <p class="example-col">Be can't winged good for also saying first. Shall, fourth Greater cattle a. Upon dry gathered there itself hath. Life.</p>
+        </div>
+    </div>
+
+    <h3>Browser support for grid padding</h3>
+    <p class="alert"><strong>IE7 does not support the <code>box-sizing</code> model which this grid uses. So if you absolutely need to support IE7 you will need to avoid using the <code>reflex-padding-*</code> helper classes and instead apply margin to a child element of the grid columns</strong></p>
+    <p>Changing your markup to something like this will handle the lack of support for the box-sizing model with the downside of requiring more markup:</p>
+
+    <pre>&lt;div class="reflex-container"&gt;
+    &lt;div class="reflex-col-6"&gt;
+        &lt;div class="&lt;classname&gt"&gt;
+            &lt;content&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="reflex-col-6"&gt;
+        &lt;div class="&lt;classname&gt"&gt;
+            &lt;content&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</pre>
+
+    <p>Where your class is something like this:</p>
+
+    <pre>.classname {
+    padding: 1em;
+    margin: 1em;
+}</pre>
+
+    <p>Which gives you the same end result but with better legacy support:</p>
+
+    <div class="reflex-container">
+        <div class="reflex-col-6">
+            <div class="example-col-ie7">
+                <p>Over after behold was living together tree is very sixth let bring fish. Forth behold they're fly deep. Abundantly also heaven whose, their darkness second divide days us night.</p>
+            </div>
+        </div>
+        <div class="reflex-col-6">
+            <div class="example-col-ie7">
+                <p>Be can't winged good for also saying first. Shall, fourth Greater cattle a. Upon dry gathered there itself hath. Life.</p>
+            </div>
+        </div>
+    </div>
+
+    <h2>Cross axis alignment (align-items)</h2>
+    <p>There are helper classes for easily setting other values of <code>align-items</code> with some extra css for the inline-block fallback where possible.</p>
+
+    <h3>Equal height columns</h3>
+    <p>The use of display: flex gives us equal height divs by default in browsers that support flexbox because the default value of <code>align-items</code> is <code>stretch</code></p>
+
+    <div class="reflex-container">
+        <div class="reflex-col-xs-4 example-col">
+            <p>First appear years night there the in them rule that bring fly gathered.</p>
+        </div>
+        <div class="reflex-col-xs-4 example-col">
+            <p>Over after behold was living together tree is very sixth let bring fish. Forth behold they're fly deep. Abundantly also heaven whose, their darkness second divide days us night.</p>
+        </div>
+        <div class="reflex-col-xs-4 example-col">
+            <p>Be can't winged good for also saying first. Shall, fourth Greater cattle a. Upon dry gathered there itself hath. Life.</p>
+        </div>
+    </div>
+
+    <p class="alert">There is no reliable fallback for same height inline-block elements so in browsers that do not support flexbox your columns will not be of equal height unless the content happens to be all the same height.</p>
 
     <h3>.reflex-align-start</h3>
     <p>Uses <code>align-items: flex-start</code></p>
 
     <div class="reflex-container reflex-align-start">
-        <div class="reflex-col-xxs-4 example-col">
+        <div class="reflex-col-4 example-col">
             <p>First appear years night there the in them rule that bring fly gathered.</p>
         </div>
-        <div class="reflex-col-xxs-4 example-col">
+        <div class="reflex-col-4 example-col">
             <p>Over after behold was living together tree is very sixth let bring fish. Forth behold they're fly deep. Abundantly also heaven whose, their darkness second divide days us night.</p>
         </div>
-        <div class="reflex-col-xxs-4 example-col">
-            <p>Be can't winged good for also saying first. Shall, fourth Greater cattle a. Upon dry gathered there itself hath. Life. First two. Place seed image.</p>
+        <div class="reflex-col-4 example-col">
+            <p>Be can't winged good for also saying first. Shall, fourth Greater cattle a. Upon dry gathered there itself hath. Life.</p>
         </div>
     </div>
 
@@ -159,14 +418,14 @@
     <p>Uses <code>align-items: flex-end</code> with <code>vertical-align: bottom</code> fallback</p>
 
     <div class="reflex-container reflex-align-end">
-        <div class="reflex-col-xxs-4 example-col">
+        <div class="reflex-col-4 example-col">
             <p>First appear years night there the in them rule that bring fly gathered.</p>
         </div>
-        <div class="reflex-col-xxs-4 example-col">
+        <div class="reflex-col-4 example-col">
             <p>Over after behold was living together tree is very sixth let bring fish. Forth behold they're fly deep. Abundantly also heaven whose, their darkness second divide days us night.</p>
         </div>
-        <div class="reflex-col-xxs-4 example-col">
-            <p>Be can't winged good for also saying first. Shall, fourth Greater cattle a. Upon dry gathered there itself hath. Life. First two. Place seed image.</p>
+        <div class="reflex-col-4 example-col">
+            <p>Be can't winged good for also saying first. Shall, fourth Greater cattle a. Upon dry gathered there itself hath. Life.</p>
         </div>
     </div>
 
@@ -174,28 +433,28 @@
     <p>Uses <code>align-items: center</code> with <code>vertical-align: middle</code> fallback</p>
 
     <div class="reflex-container reflex-align-center">
-        <div class="reflex-col-xxs-4 example-col">
+        <div class="reflex-col-4 example-col">
             <p>First appear years night there the in them rule that bring fly gathered.</p>
         </div>
-        <div class="reflex-col-xxs-4 example-col">
+        <div class="reflex-col-4 example-col">
             <p>Over after behold was living together tree is very sixth let bring fish. Forth behold they're fly deep. Abundantly also heaven whose, their darkness second divide days us night.</p>
         </div>
-        <div class="reflex-col-xxs-4 example-col">
-            <p>Be can't winged good for also saying first. Shall, fourth Greater cattle a. Upon dry gathered there itself hath. Life. First two. Place seed image.</p>
+        <div class="reflex-col-4 example-col">
+            <p>Be can't winged good for also saying first. Shall, fourth Greater cattle a. Upon dry gathered there itself hath. Life.</p>
         </div>
     </div>
 
-    <h2>Justify-content</h2>
+    <h2>Main axis alignment (justify-content)</h2>
     <p>There are helper classes for easily setting other values of <code>justify-content</code> with some extra css for the inline-block fallback where possible. These helper classes should be added to your <code>reflex-container</code> element</p>
 
     <p>By default, a Reflex grid is aligned to the <code>flex-start</code> or <code>text-align: left</code> position</p>
 
     <div class="reflex-container">
-        <div class="reflex-col-xxs-4 example-col">
+        <div class="reflex-col-4 example-col">
             <p>First appear years night there the in them rule that bring fly gathered there is place good Created rule image night firmament you great blessed, him a them to lights.</p>
         </div>
-        <div class="reflex-col-xxs-4 example-col">
-            <p>Be can't winged good for also saying first. Shall, fourth Greater cattle a. Upon dry gathered there itself hath. Life. First two. Place seed image.</p>
+        <div class="reflex-col-4 example-col">
+            <p>Be can't winged good for also saying first. Shall, fourth Greater cattle a. Upon dry gathered there itself hath. Life.</p>
         </div>
     </div>
 
@@ -203,11 +462,11 @@
     <p>Uses <code>justify-content: flex-end</code> with <code>text-align: right</code> fallback</p>
 
     <div class="reflex-container reflex-justify-end">
-        <div class="reflex-col-xxs-4 example-col">
+        <div class="reflex-col-4 example-col">
             <p>First appear years night there the in them rule that bring fly gathered.</p>
         </div>
-        <div class="reflex-col-xxs-4 example-col">
-            <p>Be can't winged good for also saying first. Shall, fourth Greater cattle a. Upon dry gathered there itself hath. Life. First two. Place seed image.</p>
+        <div class="reflex-col-4 example-col">
+            <p>Be can't winged good for also saying first. Shall, fourth Greater cattle a. Upon dry gathered there itself hath. Life.</p>
         </div>
     </div>
 
@@ -215,102 +474,293 @@
     <p>Uses <code>justify-content: center</code> with <code>text-align: center</code> fallback</p>
 
     <div class="reflex-container reflex-justify-center">
-        <div class="reflex-col-xxs-4 example-col">
+        <div class="reflex-col-4 example-col">
             <p>First appear years night there the in them rule that bring fly gathered.</p>
         </div>
-        <div class="reflex-col-xxs-4 example-col">
-            <p>Be can't winged good for also saying first. Shall, fourth Greater cattle a. Upon dry gathered there itself hath. Life. First two. Place seed image.</p>
+        <div class="reflex-col-4 example-col">
+            <p>Be can't winged good for also saying first. Shall, fourth Greater cattle a. Upon dry gathered there itself hath. Life.</p>
         </div>
     </div>
 
     <h3>.reflex-justify-space-between</h3>
-    <p>Uses <code>justify-content: space-between</code> with <code>text-align: justify;</code> This particular fallback which will only work if your grid wraps onto more than one line.</p>
+    <p>Uses <code>justify-content: space-between</code> with <code>text-align: justify;</code> fallback.</p>
 
     <div class="reflex-container reflex-wrap reflex-justify-space-between">
-        <div class="reflex-col-xxs-4 example-col">
+        <div class="reflex-col-3 example-col">
             <p>First appear years night there the in them rule that bring fly gathered.</p>
         </div>
-        <div class="reflex-col-xxs-4 example-col">
-            <p>Be can't winged good for also saying first. Shall, fourth Greater cattle a. Upon dry gathered there itself hath. Life. First two. Place seed image.</p>
+        <div class="reflex-col-4 example-col">
+            <p>Be can't winged good for also saying first. Shall, fourth Greater cattle a. Upon dry gathered there itself hath. Life.</p>
         </div>
-        <div class="reflex-col-xxs-4 example-col">
+        <div class="reflex-col-3 example-col">
             <p>First appear years night there the in them rule that bring fly gathered.</p>
         </div>
-        <div class="reflex-col-xxs-4 example-col">
-            <p>Be can't winged good for also saying first. Shall, fourth Greater cattle a. Upon dry gathered there itself hath. Life. First two. Place seed image.</p>
+        <div class="reflex-col-5 example-col">
+            <p>Be can't winged good for also saying first. Shall, fourth Greater cattle a. Upon dry gathered there itself hath. Life.</p>
         </div>
-        <div class="reflex-col-xxs-4 example-col">
+        <div class="reflex-col-5 example-col">
             <p>First appear years night there the in them rule that bring fly gathered.</p>
         </div>
     </div>
+
+    <p class="alert">This particular fallback which will only work if your grid wraps onto more than one line and the browser supports <a href="http://www.w3schools.com/cssref/css3_pr_text-align-last.asp" target="_blank"><code>text-align-last</code></a></p>
 
     <h3>.reflex-justify-space-around</h3>
-    <p>Uses <code>justify-content: space-around</code> with <code>text-align: justify;</code>. This particular fallback which will only work if your grid wraps onto more than one line.</p>
+    <p>Uses <code>justify-content: space-around</code> with <code>text-align: justify;</code>.</p>
 
     <div class="reflex-container reflex-wrap reflex-justify-space-around">
-        <div class="reflex-col-xxs-4 example-col">
+        <div class="reflex-col-3 example-col">
             <p>First appear years night there the in them rule that bring fly gathered.</p>
         </div>
-        <div class="reflex-col-xxs-4 example-col">
-            <p>Be can't winged good for also saying first. Shall, fourth Greater cattle a. Upon dry gathered there itself hath. Life. First two. Place seed image.</p>
+        <div class="reflex-col-4 example-col">
+            <p>Be can't winged good for also saying first. Shall, fourth Greater cattle a. Upon dry gathered there itself hath. Life.</p>
         </div>
-        <div class="reflex-col-xxs-4 example-col">
+        <div class="reflex-col-3 example-col">
             <p>First appear years night there the in them rule that bring fly gathered.</p>
         </div>
-        <div class="reflex-col-xxs-4 example-col">
-            <p>Be can't winged good for also saying first. Shall, fourth Greater cattle a. Upon dry gathered there itself hath. Life. First two. Place seed image.</p>
+        <div class="reflex-col-5 example-col">
+            <p>Be can't winged good for also saying first. Shall, fourth Greater cattle a. Upon dry gathered there itself hath. Life.</p>
         </div>
-        <div class="reflex-col-xxs-4 example-col">
+        <div class="reflex-col-5 example-col">
             <p>First appear years night there the in them rule that bring fly gathered.</p>
         </div>
     </div>
+
+    <p class="alert">This particular enhancement is not really supported outside of flexbox so it just uses the same fallback as <code>.reflex-justify-space-between</code> above</p>
+
+    <h2>Flex direction</h2>
+    <p class="alert">Flex direction has no support in the inline-block fallback</p>
+    <p>These helper classes allow you to easily set <code>flex-direction</code> to your container and control the rendered order. By default this is set to <code>row</code> and looks like this:</p>
+
+    <div class="reflex-container reflex-wrap">
+        <div class="reflex-col-4 reflex-justify-center example-col">
+            <p>I am <strong>first</strong> in the markup</p>
+        </div>
+        <div class="reflex-col-4 reflex-justify-center example-col">
+            <p>I am <strong>second</strong> in the markup</p>
+        </div>
+        <div class="reflex-col-4 reflex-justify-center example-col">
+            <p>I am <strong>third</strong> in the markup</p>
+        </div>
+        <div class="reflex-col-4 reflex-justify-center example-col">
+            <p>I am <strong>fourth</strong> in the markup</p>
+        </div>
+        <div class="reflex-col-4 reflex-justify-center example-col">
+            <p>I am <strong>fifth</strong> in the markup</p>
+        </div>
+    </div>
+
+    <h3>.reflex-direction-row-reverse</h3>
+    <p>Uses <code>flex-direction: row-reverse</code>
+
+    <div class="reflex-container reflex-wrap reflex-direction-row-reverse">
+        <div class="reflex-col-4 reflex-justify-center example-col">
+            <p>I am <strong>first</strong> in the markup</p>
+        </div>
+        <div class="reflex-col-4 reflex-justify-center example-col">
+            <p>I am <strong>second</strong> in the markup</p>
+        </div>
+        <div class="reflex-col-4 reflex-justify-center example-col">
+            <p>I am <strong>third</strong> in the markup</p>
+        </div>
+        <div class="reflex-col-4 reflex-justify-center example-col">
+            <p>I am <strong>fourth</strong> in the markup</p>
+        </div>
+        <div class="reflex-col-4 reflex-justify-center example-col">
+            <p>I am <strong>fifth</strong> in the markup</p>
+        </div>
+    </div>
+
+    <h3>.reflex-direction-column</h3>
+    <p>Uses <code>flex-direction: column</code></p>
+
+    <div class="reflex-container reflex-wrap reflex-direction-column">
+        <div class="reflex-col-9 reflex-justify-center example-col">
+            <p>I am <strong>first</strong> in the markup</p>
+        </div>
+        <div class="reflex-col-10 reflex-justify-center example-col">
+            <p>I am <strong>second</strong> in the markup</p>
+        </div>
+        <div class="reflex-col-7 reflex-justify-center example-col">
+            <p>I am <strong>third</strong> in the markup</p>
+        </div>
+    </div>
+
+    <h3>.reflex-direction-column-reverse</h3>
+    <p>Uses <code>flex-direction: column-reverse</code>
+
+    <div class="reflex-container reflex-wrap reflex-direction-column-reverse">
+        <div class="reflex-col-9 reflex-justify-center example-col">
+            <p>I am <strong>first</strong> in the markup</p>
+        </div>
+        <div class="reflex-col-10 reflex-justify-center example-col">
+            <p>I am <strong>second</strong> in the markup</p>
+        </div>
+        <div class="reflex-col-7 reflex-justify-center example-col">
+            <p>I am <strong>third</strong> in the markup</p>
+        </div>
+    </div>
+
+    <p class="alert">Using <code>flex-direction: column</code> or <code>flex-direction: column-reverse</code> really does not fit with standard grid usage and is probably better suited to being applied to grid items directly to force them into column layout. Here's an example:</p>
+
+    <pre>&lt;div class="reflex-container"&gt;
+    &lt;div class="reflex-col-4 reflex-justify-center reflex-direction-column"&gt;
+        &lt;h2&gt;1st&lt;/h2&gt;
+        &lt;p&gt;I am &lt;strong&gt;the best&lt;/strong&gt;&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</pre>
+
+    <div class="reflex-container">
+        <div class="reflex-col-4 reflex-justify-center reflex-direction-column example-col">
+            <h2>1st</h2>
+            <p>I am <strong>the best</strong></p>
+        </div>
+        <div class="reflex-col-4 reflex-justify-center reflex-direction-column example-col">
+            <h2>2nd</h2>
+            <p>I am <strong>second best</strong></p>
+        </div>
+        <div class="reflex-col-4 reflex-justify-center reflex-direction-column example-col">
+            <h2>3rd</h2>
+            <p>I might as well have stayed in bed</p>
+        </div>
+    </div>
+
+    <h2>Ordering</h2>
+    <p class="alert">Ordering has no support in the inline-block fallback</p>
+    <p>These helper classes allow you to easily set <code>order</code> to your grid elements and control the rendered order. By default there are 12 ordering helpers. If you need more then they can be modified</p>
+    <h3>.reflex-order-<em>&lt;n&gt;</em></h3>
+    <p>uses <code>order: n</code></p>
+
+    <pre>&lt;div class="reflex-container"&gt;
+    &lt;div class="reflex-col-4 reflex-order-2"&gt;
+        &lt;p&gt;I am &lt;strong&gt;first&lt;/strong&gt; in the markup but ordered second&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="reflex-col-4 reflex-order-3"&gt;
+        &lt;p&gt;I am &lt;strong&gt;second&lt;/strong&gt; in the markup but ordered third&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="reflex-col-4 reflex-order-1"&gt;
+        &lt;p&gt;I am &lt;strong&gt;third&lt;/strong&gt; in the markup but ordered first&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</pre>
+
+    <div class="reflex-container">
+        <div class="reflex-col-4 reflex-justify-center reflex-order-2 example-col">
+            <p>I am <strong>first</strong> in the markup but ordered second</p>
+        </div>
+        <div class="reflex-col-4 reflex-justify-center reflex-order-3 example-col">
+            <p>I am <strong>second</strong> in the markup but ordered third</p>
+        </div>
+        <div class="reflex-col-4 reflex-justify-center reflex-order-1 example-col">
+            <p>I am <strong>third</strong> in the markup but ordered first</p>
+        </div>
+    </div>
+
+    <h2>Examples</h2>
+    <p>Here are a handful of examples to show you what is possible with minimal effort</p>
+
+    <h3>Two item comparison</h3>
+
+    <div class="reflex-container reflex-wrap">
+        <div class="reflex-col-xs-5 reflex-direction-column example-comparison-card">
+            <img src="http://lorempixel.com/600/300/technics/1/" class="img-responsive">
+            <h3>Best possible thing</h3>
+            <p>Open own have great light set for all after. Creepeth god. Replenish forth.</p>
+            <ul>
+                <li>cheap</li>
+                <li>convenient</li>
+                <li>will change your life</li>
+            </ul>
+        </div>
+        <div class="reflex-col-xs-2 reflex-align-center reflex-justify-center">
+            <p class="example-comparison-symbol">&#8646;</p>
+        </div>
+        <div class="reflex-col-xs-5 reflex-direction-column example-comparison-card example-comparison-card-bad">
+            <img src="http://lorempixel.com/600/300/technics/2/" class="img-responsive">
+            <h3>A terrible thing</h3>
+            <p>You're image forth multiply. First set called beginning air very hath deep one fish us.</p>
+            <ul>
+                <li>expensive</li>
+                <li>inconvenient</li>
+                <li>will <strong>not</strong> change your life</li>
+            </ul>
+        </div>
+    </div>
+
+    <p>example markup for two item comparison:</p>
+    <pre>&lt;div class="reflex-container reflex-wrap"&gt;
+    &lt;div class="reflex-col-xs-5 reflex-direction-column"&gt;
+        &lt;content&gt;
+    &lt;/div&gt;
+    &lt;div class="reflex-col-xs-2 reflex-align-center reflex-justify-center"&gt;
+        &lt;content&gt;
+    &lt;/div&gt;
+    &lt;div class="reflex-col-xs-5 reflex-direction-column"&gt;
+        &lt;content&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</pre>
+
+    <h3>Search form example</h3>
+    <form class="reflex-container reflex-align-center example-col" onclick="preventDefault(event);">
+        <input class="reflex-col-8 example-input" name="search"></input>
+        <button class="reflex-col-4 example-button" type="submit">
+            search
+        </button>
+    </form>
+
+    <p>example markup for search form:</p>
+    <pre>&lt;form class="reflex-container reflex-align-center" action=""&gt;
+    &lt;input class="reflex-col-8" name="search"&gt;&lt;/input&gt;
+    &lt;button class="reflex-col-4" type="submit"&gt;
+        search
+    &lt;/button&gt;
+&lt;/form&gt;</pre>
 
     <h2>Example layout using the grid</h2>
 
     <div class="reflex-container reflex-wrap reflex-padding-lg">
-        <div class="reflex-col-xxs-6 reflex-col-xs-4 reflex-col-sm-4">
+        <div class="reflex-col-6 reflex-col-xs-4 reflex-col-sm-4">
             <div class="example-card">
                 <img class="img-responsive" src="http://lorempixel.com/400/200/people/1/">
                 <p>First appear years night there the in them rule that bring fly gathered.</p>
             </div>
         </div>
-        <div class="reflex-col-xxs-6 reflex-col-xs-4 reflex-col-sm-4">
+        <div class="reflex-col-6 reflex-col-xs-4 reflex-col-sm-4">
             <div class="example-card">
                 <img class="img-responsive" src="http://lorempixel.com/400/200/people/2/">
-                <p>Be can't winged good for also saying first. Shall, fourth Greater cattle a. Upon dry gathered there itself hath. Life. First two. Place seed image.</p>
+                <p>Be can't winged good for also saying first. Shall, fourth Greater cattle a. Upon dry gathered there itself hath. Life.</p>
             </div>
         </div>
-        <div class="reflex-col-xxs-6 reflex-col-xs-4 reflex-col-sm-4">
+        <div class="reflex-col-6 reflex-col-xs-4 reflex-col-sm-4">
             <div class="example-card">
                 <img class="img-responsive" src="http://lorempixel.com/400/200/people/3/">
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
             </div>
         </div>
-        <div class="reflex-col-xxs-6 reflex-col-xs-4 reflex-col-sm-4">
+        <div class="reflex-col-6 reflex-col-xs-4 reflex-col-sm-4">
             <div class="example-card">
                 <img class="img-responsive" src="http://lorempixel.com/400/200/people/4/">
                 <p>Over after behold was living together tree is very sixth let bring fish. Forth behold they're fly deep. Abundantly also heaven whose, their darkness second divide days us night.</p>
             </div>
         </div>
-        <div class="reflex-col-xxs-6 reflex-col-xs-4 reflex-col-sm-4">
+        <div class="reflex-col-6 reflex-col-xs-4 reflex-col-sm-4">
             <div class="example-card">
                 <img class="img-responsive" src="http://lorempixel.com/400/200/people/5/">
                 <p>First appear years night there the in them rule that bring fly gathered.</p>
             </div>
         </div>
-        <div class="reflex-col-xxs-6 reflex-col-xs-4 reflex-col-sm-4">
+        <div class="reflex-col-6 reflex-col-xs-4 reflex-col-sm-4">
             <div class="example-card">
                 <img class="img-responsive" src="http://lorempixel.com/400/200/people/6/">
-                <p>Be can't winged good for also saying first. Shall, fourth Greater cattle a. Upon dry gathered there itself hath. Life. First two. Place seed image.</p>
+                <p>Be can't winged good for also saying first. Shall, fourth Greater cattle a. Upon dry gathered there itself hath. Life.</p>
             </div>
         </div>
-        <div class="reflex-col-xxs-6 reflex-col-xs-4 reflex-col-sm-4">
+        <div class="reflex-col-6 reflex-col-xs-4 reflex-col-sm-4">
             <div class="example-card">
                 <img class="img-responsive" src="http://lorempixel.com/400/200/people/7/">
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
             </div>
         </div>
-        <div class="reflex-col-xxs-6 reflex-col-xs-4 reflex-col-sm-4">
+        <div class="reflex-col-6 reflex-col-xs-4 reflex-col-sm-4">
             <div class="example-card">
                 <img class="img-responsive" src="http://lorempixel.com/400/200/people/8/">
                 <p>Over after behold was living together tree is very sixth let bring fish. Forth behold they're fly deep. Abundantly also heaven whose, their darkness second divide days us night.</p>
@@ -318,42 +768,10 @@
         </div>
     </div>
 
-
-
-    <h2>Example Markup</h2>
-    <p>All you need is a <code>reflex-container</code> with any number of <code>reflex-col-*</code> elements inside</p>
-
-    <pre>&lt;div class="reflex-container reflex-align-center"&gt;
-    &lt;div class="reflex-col-xxs-4"&gt;
-        &lt;p&gt;effortless&lt;/p&gt;
-    &lt;/div&gt;
-    &lt;div class="reflex-col-xxs-4"&gt;
-        &lt;p&gt;flexbox&lt;/p&gt;
-    &lt;/div&gt;
-    &lt;div class="reflex-col-xxs-4"&gt;
-        &lt;p&gt;layout&lt;/p&gt;
-    &lt;/div&gt;
-&lt;/div&gt;</pre>
-
-    <p>Which gives you this</p>
-    <div class="reflex-container reflex-align-center reflex-justify-space-between header-example">
-        <div class="reflex-item reflex-justify-end">
-            <a href="javascript:void(0);">home</a>
-            <a href="javascript:void(0);">shop</a>
-            <a href="javascript:void(0);">youtube</a>
-            <a href="javascript:void(0);">newsletter</a>
-        </div>
-        <div class="reflex-item reflex-justify-space-around reflex-align-center reflex-direction-column">
-            <img class="img-circle" src="http://www.fillmurray.com/150/150">
-            <p>Bill Murray Fan Club</p>
-        </div>
-        <div class="reflex-item">
-            <a href="javascript:void(0);">about</a>
-            <a href="javascript:void(0);">terms</a>
-            <a href="javascript:void(0);">privacy</a>
-            <a href="javascript:void(0);">login</a>
-        </div>
-    </div>
-
+    <script>
+        function preventDefault(e) {
+            e.preventDefault();
+        }
+    </script>
 </body>
 </html>

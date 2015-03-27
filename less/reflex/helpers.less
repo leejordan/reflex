@@ -10,12 +10,24 @@
     .flex-wrap();
 }
 
+.reflex-wrap-reverse {
+    .flex-wrap(wrap-reverse);
+}
+
 // --------------------------------------------------
 // flex-direction
 // --------------------------------------------------
 
+.reflex-direction-row-reverse {
+    .flex-direction(row-reverse);
+}
+
 .reflex-direction-column {
     .flex-direction(column);
+}
+
+.reflex-direction-column-reverse {
+    .flex-direction(column-reverse);
 }
 
 // --------------------------------------------------
@@ -30,7 +42,6 @@
     .align-items(flex-end);
 
     // fallback to legacy vertical-align
-    .reflex-item,
     [class*="reflex-col-"] {
         vertical-align: bottom;
     }
@@ -40,10 +51,33 @@
     .align-items(center);
 
     // fallback to legacy vertical-align
-    .reflex-item,
     [class*="reflex-col-"] {
         vertical-align: middle;
     }
+}
+
+// --------------------------------------------------
+// align-self
+// --------------------------------------------------
+
+.reflex-align-self-stretch {
+    .align-self(stretch);
+}
+
+.reflex-align-self-center {
+    .align-self(center);
+}
+
+.reflex-align-self-flex-start {
+    .align-self(flex-start);
+}
+
+.reflex-align-self-flex-end {
+    .align-self(flex-end);
+}
+
+.reflex-align-self-baseline {
+    .align-self(baseline);
 }
 
 // --------------------------------------------------
@@ -69,11 +103,12 @@
 // --------------------------------------------------
 // reflex grid padding
 // --------------------------------------------------
+
 .reflex-padding-sm {
     margin: -0.25em 0 0.25em -0.25em;
 
     .flex-item,
-    [class*="flex-col-"] {
+    [class*="reflex-col-"] {
         // grid padding
         padding: 0.25em 0 0.25em 0.5em;
     }
@@ -83,7 +118,7 @@
     margin: -0.5em 0 0.5em -0.5em;
 
     .flex-item,
-    [class*="flex-col-"] {
+    [class*="reflex-col-"] {
         // grid padding
         padding: 0.5em 0 0.5em 1em;
     }
@@ -93,7 +128,7 @@
     margin: -1em 0 1em -1em;
 
     .flex-item,
-    [class*="flex-col-"] {
+    [class*="reflex-col-"] {
         // grid padding
         padding: 1em 0 1em 2em;
     }

@@ -12,13 +12,82 @@
  * Structure and calculations are inspired by twitter bootstrap
  *
  */
+.reflex-order-12 {
+  -webkit-order: 12;
+  -ms-flex-order: 12;
+  order: 12;
+}
+.reflex-order-11 {
+  -webkit-order: 11;
+  -ms-flex-order: 11;
+  order: 11;
+}
+.reflex-order-10 {
+  -webkit-order: 10;
+  -ms-flex-order: 10;
+  order: 10;
+}
+.reflex-order-9 {
+  -webkit-order: 9;
+  -ms-flex-order: 9;
+  order: 9;
+}
+.reflex-order-8 {
+  -webkit-order: 8;
+  -ms-flex-order: 8;
+  order: 8;
+}
+.reflex-order-7 {
+  -webkit-order: 7;
+  -ms-flex-order: 7;
+  order: 7;
+}
+.reflex-order-6 {
+  -webkit-order: 6;
+  -ms-flex-order: 6;
+  order: 6;
+}
+.reflex-order-5 {
+  -webkit-order: 5;
+  -ms-flex-order: 5;
+  order: 5;
+}
+.reflex-order-4 {
+  -webkit-order: 4;
+  -ms-flex-order: 4;
+  order: 4;
+}
+.reflex-order-3 {
+  -webkit-order: 3;
+  -ms-flex-order: 3;
+  order: 3;
+}
+.reflex-order-2 {
+  -webkit-order: 2;
+  -ms-flex-order: 2;
+  order: 2;
+}
+.reflex-order-1 {
+  -webkit-order: 1;
+  -ms-flex-order: 1;
+  order: 1;
+}
+.reflex-order-0 {
+  -webkit-order: 0;
+  -ms-flex-order: 0;
+  order: 0;
+}
 .reflex-container {
+  display: inline-block;
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
+  zoom: 1;
+  *display: inline;
   margin: 0;
   padding: 0;
   position: relative;
+  width: 100%;
   letter-spacing: -0.31em;
   *letter-spacing: normal;
   word-spacing: -0.43em;
@@ -35,197 +104,209 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-.reflex-item {
-  display: inline-block;
-  zoom: 1;
-  *display: inline;
+[class*="reflex-col-"] {
+  width: 100%;
   vertical-align: top;
   position: relative;
+  display: inline-block;
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
+  zoom: 1;
+  *display: inline;
   letter-spacing: normal;
   word-spacing: normal;
   white-space: normal;
   margin: 0;
   padding: 0;
-  width: 100%;
   text-align: left;
 }
-.reflex-col-xxs-12 {
+.reflex-col-12 {
   width: 100%;
-  display: inline-block;
   vertical-align: top;
-  zoom: 1;
-  *display: inline;
+  position: relative;
+  display: inline-block;
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
+  zoom: 1;
+  *display: inline;
   letter-spacing: normal;
   word-spacing: normal;
   white-space: normal;
   margin: 0;
   padding: 0;
 }
-.reflex-col-xxs-11 {
+.reflex-col-11 {
   width: 91.66666666666666%;
-  display: inline-block;
   vertical-align: top;
-  zoom: 1;
-  *display: inline;
+  position: relative;
+  display: inline-block;
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
+  zoom: 1;
+  *display: inline;
   letter-spacing: normal;
   word-spacing: normal;
   white-space: normal;
   margin: 0;
   padding: 0;
 }
-.reflex-col-xxs-10 {
+.reflex-col-10 {
   width: 83.33333333333334%;
-  display: inline-block;
   vertical-align: top;
-  zoom: 1;
-  *display: inline;
+  position: relative;
+  display: inline-block;
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
+  zoom: 1;
+  *display: inline;
   letter-spacing: normal;
   word-spacing: normal;
   white-space: normal;
   margin: 0;
   padding: 0;
 }
-.reflex-col-xxs-9 {
+.reflex-col-9 {
   width: 75%;
-  display: inline-block;
   vertical-align: top;
-  zoom: 1;
-  *display: inline;
+  position: relative;
+  display: inline-block;
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
+  zoom: 1;
+  *display: inline;
   letter-spacing: normal;
   word-spacing: normal;
   white-space: normal;
   margin: 0;
   padding: 0;
 }
-.reflex-col-xxs-8 {
+.reflex-col-8 {
   width: 66.66666666666666%;
-  display: inline-block;
   vertical-align: top;
-  zoom: 1;
-  *display: inline;
+  position: relative;
+  display: inline-block;
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
+  zoom: 1;
+  *display: inline;
   letter-spacing: normal;
   word-spacing: normal;
   white-space: normal;
   margin: 0;
   padding: 0;
 }
-.reflex-col-xxs-7 {
+.reflex-col-7 {
   width: 58.333333333333336%;
-  display: inline-block;
   vertical-align: top;
-  zoom: 1;
-  *display: inline;
+  position: relative;
+  display: inline-block;
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
+  zoom: 1;
+  *display: inline;
   letter-spacing: normal;
   word-spacing: normal;
   white-space: normal;
   margin: 0;
   padding: 0;
 }
-.reflex-col-xxs-6 {
+.reflex-col-6 {
   width: 50%;
-  display: inline-block;
   vertical-align: top;
-  zoom: 1;
-  *display: inline;
+  position: relative;
+  display: inline-block;
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
+  zoom: 1;
+  *display: inline;
   letter-spacing: normal;
   word-spacing: normal;
   white-space: normal;
   margin: 0;
   padding: 0;
 }
-.reflex-col-xxs-5 {
+.reflex-col-5 {
   width: 41.66666666666667%;
-  display: inline-block;
   vertical-align: top;
-  zoom: 1;
-  *display: inline;
+  position: relative;
+  display: inline-block;
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
+  zoom: 1;
+  *display: inline;
   letter-spacing: normal;
   word-spacing: normal;
   white-space: normal;
   margin: 0;
   padding: 0;
 }
-.reflex-col-xxs-4 {
+.reflex-col-4 {
   width: 33.33333333333333%;
-  display: inline-block;
   vertical-align: top;
-  zoom: 1;
-  *display: inline;
+  position: relative;
+  display: inline-block;
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
+  zoom: 1;
+  *display: inline;
   letter-spacing: normal;
   word-spacing: normal;
   white-space: normal;
   margin: 0;
   padding: 0;
 }
-.reflex-col-xxs-3 {
+.reflex-col-3 {
   width: 25%;
-  display: inline-block;
   vertical-align: top;
-  zoom: 1;
-  *display: inline;
+  position: relative;
+  display: inline-block;
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
+  zoom: 1;
+  *display: inline;
   letter-spacing: normal;
   word-spacing: normal;
   white-space: normal;
   margin: 0;
   padding: 0;
 }
-.reflex-col-xxs-2 {
+.reflex-col-2 {
   width: 16.666666666666664%;
-  display: inline-block;
   vertical-align: top;
-  zoom: 1;
-  *display: inline;
+  position: relative;
+  display: inline-block;
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
+  zoom: 1;
+  *display: inline;
   letter-spacing: normal;
   word-spacing: normal;
   white-space: normal;
   margin: 0;
   padding: 0;
 }
-.reflex-col-xxs-1 {
+.reflex-col-1 {
   width: 8.333333333333332%;
-  display: inline-block;
   vertical-align: top;
-  zoom: 1;
-  *display: inline;
+  position: relative;
+  display: inline-block;
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
+  zoom: 1;
+  *display: inline;
   letter-spacing: normal;
   word-spacing: normal;
   white-space: normal;
@@ -235,13 +316,14 @@
 @media (min-width: 480px) {
   .reflex-col-xs-12 {
     width: 100%;
-    display: inline-block;
     vertical-align: top;
-    zoom: 1;
-    *display: inline;
+    position: relative;
+    display: inline-block;
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
+    zoom: 1;
+    *display: inline;
     letter-spacing: normal;
     word-spacing: normal;
     white-space: normal;
@@ -250,13 +332,14 @@
   }
   .reflex-col-xs-11 {
     width: 91.66666666666666%;
-    display: inline-block;
     vertical-align: top;
-    zoom: 1;
-    *display: inline;
+    position: relative;
+    display: inline-block;
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
+    zoom: 1;
+    *display: inline;
     letter-spacing: normal;
     word-spacing: normal;
     white-space: normal;
@@ -265,13 +348,14 @@
   }
   .reflex-col-xs-10 {
     width: 83.33333333333334%;
-    display: inline-block;
     vertical-align: top;
-    zoom: 1;
-    *display: inline;
+    position: relative;
+    display: inline-block;
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
+    zoom: 1;
+    *display: inline;
     letter-spacing: normal;
     word-spacing: normal;
     white-space: normal;
@@ -280,13 +364,14 @@
   }
   .reflex-col-xs-9 {
     width: 75%;
-    display: inline-block;
     vertical-align: top;
-    zoom: 1;
-    *display: inline;
+    position: relative;
+    display: inline-block;
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
+    zoom: 1;
+    *display: inline;
     letter-spacing: normal;
     word-spacing: normal;
     white-space: normal;
@@ -295,13 +380,14 @@
   }
   .reflex-col-xs-8 {
     width: 66.66666666666666%;
-    display: inline-block;
     vertical-align: top;
-    zoom: 1;
-    *display: inline;
+    position: relative;
+    display: inline-block;
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
+    zoom: 1;
+    *display: inline;
     letter-spacing: normal;
     word-spacing: normal;
     white-space: normal;
@@ -310,13 +396,14 @@
   }
   .reflex-col-xs-7 {
     width: 58.333333333333336%;
-    display: inline-block;
     vertical-align: top;
-    zoom: 1;
-    *display: inline;
+    position: relative;
+    display: inline-block;
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
+    zoom: 1;
+    *display: inline;
     letter-spacing: normal;
     word-spacing: normal;
     white-space: normal;
@@ -325,13 +412,14 @@
   }
   .reflex-col-xs-6 {
     width: 50%;
-    display: inline-block;
     vertical-align: top;
-    zoom: 1;
-    *display: inline;
+    position: relative;
+    display: inline-block;
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
+    zoom: 1;
+    *display: inline;
     letter-spacing: normal;
     word-spacing: normal;
     white-space: normal;
@@ -340,13 +428,14 @@
   }
   .reflex-col-xs-5 {
     width: 41.66666666666667%;
-    display: inline-block;
     vertical-align: top;
-    zoom: 1;
-    *display: inline;
+    position: relative;
+    display: inline-block;
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
+    zoom: 1;
+    *display: inline;
     letter-spacing: normal;
     word-spacing: normal;
     white-space: normal;
@@ -355,13 +444,14 @@
   }
   .reflex-col-xs-4 {
     width: 33.33333333333333%;
-    display: inline-block;
     vertical-align: top;
-    zoom: 1;
-    *display: inline;
+    position: relative;
+    display: inline-block;
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
+    zoom: 1;
+    *display: inline;
     letter-spacing: normal;
     word-spacing: normal;
     white-space: normal;
@@ -370,13 +460,14 @@
   }
   .reflex-col-xs-3 {
     width: 25%;
-    display: inline-block;
     vertical-align: top;
-    zoom: 1;
-    *display: inline;
+    position: relative;
+    display: inline-block;
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
+    zoom: 1;
+    *display: inline;
     letter-spacing: normal;
     word-spacing: normal;
     white-space: normal;
@@ -385,13 +476,14 @@
   }
   .reflex-col-xs-2 {
     width: 16.666666666666664%;
-    display: inline-block;
     vertical-align: top;
-    zoom: 1;
-    *display: inline;
+    position: relative;
+    display: inline-block;
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
+    zoom: 1;
+    *display: inline;
     letter-spacing: normal;
     word-spacing: normal;
     white-space: normal;
@@ -400,13 +492,14 @@
   }
   .reflex-col-xs-1 {
     width: 8.333333333333332%;
-    display: inline-block;
     vertical-align: top;
-    zoom: 1;
-    *display: inline;
+    position: relative;
+    display: inline-block;
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
+    zoom: 1;
+    *display: inline;
     letter-spacing: normal;
     word-spacing: normal;
     white-space: normal;
@@ -417,13 +510,14 @@
 @media (min-width: 768px) {
   .reflex-col-sm-12 {
     width: 100%;
-    display: inline-block;
     vertical-align: top;
-    zoom: 1;
-    *display: inline;
+    position: relative;
+    display: inline-block;
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
+    zoom: 1;
+    *display: inline;
     letter-spacing: normal;
     word-spacing: normal;
     white-space: normal;
@@ -432,13 +526,14 @@
   }
   .reflex-col-sm-11 {
     width: 91.66666666666666%;
-    display: inline-block;
     vertical-align: top;
-    zoom: 1;
-    *display: inline;
+    position: relative;
+    display: inline-block;
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
+    zoom: 1;
+    *display: inline;
     letter-spacing: normal;
     word-spacing: normal;
     white-space: normal;
@@ -447,13 +542,14 @@
   }
   .reflex-col-sm-10 {
     width: 83.33333333333334%;
-    display: inline-block;
     vertical-align: top;
-    zoom: 1;
-    *display: inline;
+    position: relative;
+    display: inline-block;
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
+    zoom: 1;
+    *display: inline;
     letter-spacing: normal;
     word-spacing: normal;
     white-space: normal;
@@ -462,13 +558,14 @@
   }
   .reflex-col-sm-9 {
     width: 75%;
-    display: inline-block;
     vertical-align: top;
-    zoom: 1;
-    *display: inline;
+    position: relative;
+    display: inline-block;
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
+    zoom: 1;
+    *display: inline;
     letter-spacing: normal;
     word-spacing: normal;
     white-space: normal;
@@ -477,13 +574,14 @@
   }
   .reflex-col-sm-8 {
     width: 66.66666666666666%;
-    display: inline-block;
     vertical-align: top;
-    zoom: 1;
-    *display: inline;
+    position: relative;
+    display: inline-block;
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
+    zoom: 1;
+    *display: inline;
     letter-spacing: normal;
     word-spacing: normal;
     white-space: normal;
@@ -492,13 +590,14 @@
   }
   .reflex-col-sm-7 {
     width: 58.333333333333336%;
-    display: inline-block;
     vertical-align: top;
-    zoom: 1;
-    *display: inline;
+    position: relative;
+    display: inline-block;
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
+    zoom: 1;
+    *display: inline;
     letter-spacing: normal;
     word-spacing: normal;
     white-space: normal;
@@ -507,13 +606,14 @@
   }
   .reflex-col-sm-6 {
     width: 50%;
-    display: inline-block;
     vertical-align: top;
-    zoom: 1;
-    *display: inline;
+    position: relative;
+    display: inline-block;
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
+    zoom: 1;
+    *display: inline;
     letter-spacing: normal;
     word-spacing: normal;
     white-space: normal;
@@ -522,13 +622,14 @@
   }
   .reflex-col-sm-5 {
     width: 41.66666666666667%;
-    display: inline-block;
     vertical-align: top;
-    zoom: 1;
-    *display: inline;
+    position: relative;
+    display: inline-block;
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
+    zoom: 1;
+    *display: inline;
     letter-spacing: normal;
     word-spacing: normal;
     white-space: normal;
@@ -537,13 +638,14 @@
   }
   .reflex-col-sm-4 {
     width: 33.33333333333333%;
-    display: inline-block;
     vertical-align: top;
-    zoom: 1;
-    *display: inline;
+    position: relative;
+    display: inline-block;
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
+    zoom: 1;
+    *display: inline;
     letter-spacing: normal;
     word-spacing: normal;
     white-space: normal;
@@ -552,13 +654,14 @@
   }
   .reflex-col-sm-3 {
     width: 25%;
-    display: inline-block;
     vertical-align: top;
-    zoom: 1;
-    *display: inline;
+    position: relative;
+    display: inline-block;
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
+    zoom: 1;
+    *display: inline;
     letter-spacing: normal;
     word-spacing: normal;
     white-space: normal;
@@ -567,13 +670,14 @@
   }
   .reflex-col-sm-2 {
     width: 16.666666666666664%;
-    display: inline-block;
     vertical-align: top;
-    zoom: 1;
-    *display: inline;
+    position: relative;
+    display: inline-block;
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
+    zoom: 1;
+    *display: inline;
     letter-spacing: normal;
     word-spacing: normal;
     white-space: normal;
@@ -582,13 +686,14 @@
   }
   .reflex-col-sm-1 {
     width: 8.333333333333332%;
-    display: inline-block;
     vertical-align: top;
-    zoom: 1;
-    *display: inline;
+    position: relative;
+    display: inline-block;
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
+    zoom: 1;
+    *display: inline;
     letter-spacing: normal;
     word-spacing: normal;
     white-space: normal;
@@ -599,13 +704,14 @@
 @media (min-width: 992px) {
   .reflex-col-md-12 {
     width: 100%;
-    display: inline-block;
     vertical-align: top;
-    zoom: 1;
-    *display: inline;
+    position: relative;
+    display: inline-block;
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
+    zoom: 1;
+    *display: inline;
     letter-spacing: normal;
     word-spacing: normal;
     white-space: normal;
@@ -614,13 +720,14 @@
   }
   .reflex-col-md-11 {
     width: 91.66666666666666%;
-    display: inline-block;
     vertical-align: top;
-    zoom: 1;
-    *display: inline;
+    position: relative;
+    display: inline-block;
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
+    zoom: 1;
+    *display: inline;
     letter-spacing: normal;
     word-spacing: normal;
     white-space: normal;
@@ -629,13 +736,14 @@
   }
   .reflex-col-md-10 {
     width: 83.33333333333334%;
-    display: inline-block;
     vertical-align: top;
-    zoom: 1;
-    *display: inline;
+    position: relative;
+    display: inline-block;
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
+    zoom: 1;
+    *display: inline;
     letter-spacing: normal;
     word-spacing: normal;
     white-space: normal;
@@ -644,13 +752,14 @@
   }
   .reflex-col-md-9 {
     width: 75%;
-    display: inline-block;
     vertical-align: top;
-    zoom: 1;
-    *display: inline;
+    position: relative;
+    display: inline-block;
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
+    zoom: 1;
+    *display: inline;
     letter-spacing: normal;
     word-spacing: normal;
     white-space: normal;
@@ -659,13 +768,14 @@
   }
   .reflex-col-md-8 {
     width: 66.66666666666666%;
-    display: inline-block;
     vertical-align: top;
-    zoom: 1;
-    *display: inline;
+    position: relative;
+    display: inline-block;
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
+    zoom: 1;
+    *display: inline;
     letter-spacing: normal;
     word-spacing: normal;
     white-space: normal;
@@ -674,13 +784,14 @@
   }
   .reflex-col-md-7 {
     width: 58.333333333333336%;
-    display: inline-block;
     vertical-align: top;
-    zoom: 1;
-    *display: inline;
+    position: relative;
+    display: inline-block;
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
+    zoom: 1;
+    *display: inline;
     letter-spacing: normal;
     word-spacing: normal;
     white-space: normal;
@@ -689,13 +800,14 @@
   }
   .reflex-col-md-6 {
     width: 50%;
-    display: inline-block;
     vertical-align: top;
-    zoom: 1;
-    *display: inline;
+    position: relative;
+    display: inline-block;
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
+    zoom: 1;
+    *display: inline;
     letter-spacing: normal;
     word-spacing: normal;
     white-space: normal;
@@ -704,13 +816,14 @@
   }
   .reflex-col-md-5 {
     width: 41.66666666666667%;
-    display: inline-block;
     vertical-align: top;
-    zoom: 1;
-    *display: inline;
+    position: relative;
+    display: inline-block;
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
+    zoom: 1;
+    *display: inline;
     letter-spacing: normal;
     word-spacing: normal;
     white-space: normal;
@@ -719,13 +832,14 @@
   }
   .reflex-col-md-4 {
     width: 33.33333333333333%;
-    display: inline-block;
     vertical-align: top;
-    zoom: 1;
-    *display: inline;
+    position: relative;
+    display: inline-block;
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
+    zoom: 1;
+    *display: inline;
     letter-spacing: normal;
     word-spacing: normal;
     white-space: normal;
@@ -734,13 +848,14 @@
   }
   .reflex-col-md-3 {
     width: 25%;
-    display: inline-block;
     vertical-align: top;
-    zoom: 1;
-    *display: inline;
+    position: relative;
+    display: inline-block;
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
+    zoom: 1;
+    *display: inline;
     letter-spacing: normal;
     word-spacing: normal;
     white-space: normal;
@@ -749,13 +864,14 @@
   }
   .reflex-col-md-2 {
     width: 16.666666666666664%;
-    display: inline-block;
     vertical-align: top;
-    zoom: 1;
-    *display: inline;
+    position: relative;
+    display: inline-block;
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
+    zoom: 1;
+    *display: inline;
     letter-spacing: normal;
     word-spacing: normal;
     white-space: normal;
@@ -764,13 +880,14 @@
   }
   .reflex-col-md-1 {
     width: 8.333333333333332%;
-    display: inline-block;
     vertical-align: top;
-    zoom: 1;
-    *display: inline;
+    position: relative;
+    display: inline-block;
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
+    zoom: 1;
+    *display: inline;
     letter-spacing: normal;
     word-spacing: normal;
     white-space: normal;
@@ -781,13 +898,14 @@
 @media (min-width: 1200px) {
   .reflex-col-lg-12 {
     width: 100%;
-    display: inline-block;
     vertical-align: top;
-    zoom: 1;
-    *display: inline;
+    position: relative;
+    display: inline-block;
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
+    zoom: 1;
+    *display: inline;
     letter-spacing: normal;
     word-spacing: normal;
     white-space: normal;
@@ -796,13 +914,14 @@
   }
   .reflex-col-lg-11 {
     width: 91.66666666666666%;
-    display: inline-block;
     vertical-align: top;
-    zoom: 1;
-    *display: inline;
+    position: relative;
+    display: inline-block;
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
+    zoom: 1;
+    *display: inline;
     letter-spacing: normal;
     word-spacing: normal;
     white-space: normal;
@@ -811,13 +930,14 @@
   }
   .reflex-col-lg-10 {
     width: 83.33333333333334%;
-    display: inline-block;
     vertical-align: top;
-    zoom: 1;
-    *display: inline;
+    position: relative;
+    display: inline-block;
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
+    zoom: 1;
+    *display: inline;
     letter-spacing: normal;
     word-spacing: normal;
     white-space: normal;
@@ -826,13 +946,14 @@
   }
   .reflex-col-lg-9 {
     width: 75%;
-    display: inline-block;
     vertical-align: top;
-    zoom: 1;
-    *display: inline;
+    position: relative;
+    display: inline-block;
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
+    zoom: 1;
+    *display: inline;
     letter-spacing: normal;
     word-spacing: normal;
     white-space: normal;
@@ -841,13 +962,14 @@
   }
   .reflex-col-lg-8 {
     width: 66.66666666666666%;
-    display: inline-block;
     vertical-align: top;
-    zoom: 1;
-    *display: inline;
+    position: relative;
+    display: inline-block;
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
+    zoom: 1;
+    *display: inline;
     letter-spacing: normal;
     word-spacing: normal;
     white-space: normal;
@@ -856,13 +978,14 @@
   }
   .reflex-col-lg-7 {
     width: 58.333333333333336%;
-    display: inline-block;
     vertical-align: top;
-    zoom: 1;
-    *display: inline;
+    position: relative;
+    display: inline-block;
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
+    zoom: 1;
+    *display: inline;
     letter-spacing: normal;
     word-spacing: normal;
     white-space: normal;
@@ -871,13 +994,14 @@
   }
   .reflex-col-lg-6 {
     width: 50%;
-    display: inline-block;
     vertical-align: top;
-    zoom: 1;
-    *display: inline;
+    position: relative;
+    display: inline-block;
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
+    zoom: 1;
+    *display: inline;
     letter-spacing: normal;
     word-spacing: normal;
     white-space: normal;
@@ -886,13 +1010,14 @@
   }
   .reflex-col-lg-5 {
     width: 41.66666666666667%;
-    display: inline-block;
     vertical-align: top;
-    zoom: 1;
-    *display: inline;
+    position: relative;
+    display: inline-block;
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
+    zoom: 1;
+    *display: inline;
     letter-spacing: normal;
     word-spacing: normal;
     white-space: normal;
@@ -901,13 +1026,14 @@
   }
   .reflex-col-lg-4 {
     width: 33.33333333333333%;
-    display: inline-block;
     vertical-align: top;
-    zoom: 1;
-    *display: inline;
+    position: relative;
+    display: inline-block;
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
+    zoom: 1;
+    *display: inline;
     letter-spacing: normal;
     word-spacing: normal;
     white-space: normal;
@@ -916,13 +1042,14 @@
   }
   .reflex-col-lg-3 {
     width: 25%;
-    display: inline-block;
     vertical-align: top;
-    zoom: 1;
-    *display: inline;
+    position: relative;
+    display: inline-block;
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
+    zoom: 1;
+    *display: inline;
     letter-spacing: normal;
     word-spacing: normal;
     white-space: normal;
@@ -931,13 +1058,14 @@
   }
   .reflex-col-lg-2 {
     width: 16.666666666666664%;
-    display: inline-block;
     vertical-align: top;
-    zoom: 1;
-    *display: inline;
+    position: relative;
+    display: inline-block;
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
+    zoom: 1;
+    *display: inline;
     letter-spacing: normal;
     word-spacing: normal;
     white-space: normal;
@@ -946,13 +1074,14 @@
   }
   .reflex-col-lg-1 {
     width: 8.333333333333332%;
-    display: inline-block;
     vertical-align: top;
-    zoom: 1;
-    *display: inline;
+    position: relative;
+    display: inline-block;
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
+    zoom: 1;
+    *display: inline;
     letter-spacing: normal;
     word-spacing: normal;
     white-space: normal;
@@ -965,10 +1094,25 @@
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 }
+.reflex-wrap-reverse {
+  -webkit-flex-wrap: wrap-reverse;
+  -ms-flex-wrap: wrap-reverse;
+  flex-wrap: wrap-reverse;
+}
+.reflex-direction-row-reverse {
+  -webkit-flex-direction: row-reverse;
+  -ms-flex-direction: row-reverse;
+  flex-direction: row-reverse;
+}
 .reflex-direction-column {
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+}
+.reflex-direction-column-reverse {
+  -webkit-flex-direction: column-reverse;
+  -ms-flex-direction: column-reverse;
+  flex-direction: column-reverse;
 }
 .reflex-align-start {
   -webkit-align-items: flex-start;
@@ -980,7 +1124,6 @@
   -ms-flex-align: flex-end;
   align-items: flex-end;
 }
-.reflex-align-end .reflex-item,
 .reflex-align-end [class*="reflex-col-"] {
   vertical-align: bottom;
 }
@@ -989,9 +1132,33 @@
   -ms-flex-align: center;
   align-items: center;
 }
-.reflex-align-center .reflex-item,
 .reflex-align-center [class*="reflex-col-"] {
   vertical-align: middle;
+}
+.reflex-align-self-stretch {
+  -webkit-align-self: stretch;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+}
+.reflex-align-self-center {
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+}
+.reflex-align-self-flex-start {
+  -webkit-align-self: flex-start;
+  -ms-flex-item-align: flex-start;
+  align-self: flex-start;
+}
+.reflex-align-self-flex-end {
+  -webkit-align-self: flex-end;
+  -ms-flex-item-align: flex-end;
+  align-self: flex-end;
+}
+.reflex-align-self-baseline {
+  -webkit-align-self: baseline;
+  -ms-flex-item-align: baseline;
+  align-self: baseline;
 }
 .reflex-justify-end {
   text-align: right;
@@ -1022,23 +1189,23 @@
   justify-content: space-around;
 }
 .reflex-padding-sm {
-  margin: -0.5em 0 0.5em -0.5em;
+  margin: -0.25em 0 0.25em -0.25em;
 }
 .reflex-padding-sm .flex-item,
-.reflex-padding-sm [class*="flex-col-"] {
-  padding: 0.5em 0 0 0.5em;
+.reflex-padding-sm [class*="reflex-col-"] {
+  padding: 0.25em 0 0.25em 0.5em;
 }
 .reflex-padding-md {
-  margin: -1em 0 1em -1em;
+  margin: -0.5em 0 0.5em -0.5em;
 }
 .reflex-padding-md .flex-item,
-.reflex-padding-md [class*="flex-col-"] {
-  padding: 1em 0 0 1em;
+.reflex-padding-md [class*="reflex-col-"] {
+  padding: 0.5em 0 0.5em 1em;
 }
 .reflex-padding-lg {
-  margin: -2em 0 2em -2em;
+  margin: -1em 0 1em -1em;
 }
 .reflex-padding-lg .flex-item,
-.reflex-padding-lg [class*="flex-col-"] {
-  padding: 2em 0 0 2em;
+.reflex-padding-lg [class*="reflex-col-"] {
+  padding: 1em 0 1em 2em;
 }
