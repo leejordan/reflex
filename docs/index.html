@@ -96,9 +96,9 @@
     <h2>Browser support</h2>
     <p><a href="http://caniuse.com/#search=flex" target="_blank">Browser support for flexbox</a> is in a pretty good state right now and regardless, Reflex should fall back to an inline-block layout for most browsers that do not support flexbox explicitly. Reflex uses some css hacks to help the inline-block grid work on older browsers.</p>
 
-    <p class="alert"><strong>If you want to use the grid with breakpoints in ie8 and below you will need to use <a href="https://github.com/scottjehl/Respond" target="_blank">respond.js</a> which enables media query support in those browsers via JavaScript.</strong></p>
+    <p class="alert">If you want to use the grid with breakpoints in ie8 and below you will need to use <a href="https://github.com/scottjehl/Respond" target="_blank">respond.js</a> which enables media query support in those browsers via JavaScript.</p>
 
-    <p class="alert"><strong>IE7 does not support the <code>box-sizing</code> model which this grid uses. So if you need to support IE7 you will need to avoid using the <code>reflex-padding-*</code> helper classes and instead apply margin to a child element of the grid columns</strong></p>
+    <p class="alert">IE7 does not support the <code>box-sizing</code> model which this grid uses. So if you need to support IE7 you will need to avoid using the <code>reflex-padding-*</code> helper classes and instead apply margin to a child element of the grid columns</p>
 
     <h2>Semantic markup</h2>
     <p>You don't have to use <code>div</code> for your grid and ideally you should use the most semantically appropriate markup for your use case with no visible difference.</p>
@@ -342,7 +342,7 @@
     </div>
 
     <h3>Browser support for grid padding</h3>
-    <p class="alert"><strong>IE7 does not support the <code>box-sizing</code> model which this grid uses. So if you absolutely need to support IE7 you will need to avoid using the <code>reflex-padding-*</code> helper classes and instead apply margin to a child element of the grid columns</strong></p>
+    <p class="alert">IE7 does not support the <code>box-sizing</code> model which this grid uses. So if you absolutely need to support IE7 you will need to avoid using the <code>reflex-padding-*</code> helper classes and instead apply margin to a child element of the grid columns</p>
     <p>Changing your markup to something like this will handle the lack of support for the box-sizing model with the downside of requiring more markup:</p>
 
     <pre>&lt;div class="reflex-container"&gt;
@@ -442,6 +442,102 @@
         </div>
         <div class="reflex-col-4 example-col">
             <p>Be can't winged good for also saying first. Shall, fourth Greater cattle a. Upon dry gathered there itself hath. Life.</p>
+        </div>
+    </div>
+
+    <h2>Cross axis alignment override (align-self)</h2>
+    <p>You can override the value of <code>reflex-align</code> on the parent container by using <code>.reflex-align-self</code> helper classes. These helper classes use <code>align-self</code> with some extra css for the inline-block fallback</p>
+
+    <h3>.reflex-align-self-stretch</h3>
+    <p>Uses <code>align-self: stretch</code></p>
+
+    <div class="reflex-container reflex-align-start example-container-height">
+        <div class="reflex-col-4 example-col">
+            <p>First appear years night there the in them rule that bring fly gathered there is place good Created rule image night firmament you great blessed, him a them to lights.</p>
+        </div>
+        <div class="reflex-col-4 reflex-align-self-stretch example-col">
+            <p>stretch</p>
+        </div>
+        <div class="reflex-col-4 example-col">
+            <p>First appear years night there the in them rule that bring fly gathered there is place good Created rule image night firmament you great blessed, him a them to lights.</p>
+        </div>
+    </div>
+
+    <h3>.reflex-align-self-start</h3>
+    <p>Uses <code>align-self: flex-start</code></p>
+
+    <div class="reflex-container example-container-height">
+        <div class="reflex-col-4 example-col">
+            <p>First appear years night there the in them rule that bring fly gathered there is place good Created rule image night firmament you great blessed, him a them to lights.</p>
+        </div>
+        <div class="reflex-col-4 reflex-align-self-start example-col">
+            <p>start</p>
+        </div>
+        <div class="reflex-col-4 example-col">
+            <p>First appear years night there the in them rule that bring fly gathered there is place good Created rule image night firmament you great blessed, him a them to lights.</p>
+        </div>
+    </div>
+
+    <h3>.reflex-align-self-end</h3>
+    <p>Uses <code>align-self: flex-end</code> with <code>vertical-align: bottom</code> fallback</p>
+
+    <div class="reflex-container example-container-height">
+        <div class="reflex-col-4 example-col">
+            <p>First appear years night there the in them rule that bring fly gathered there is place good Created rule image night firmament you great blessed, him a them to lights.</p>
+        </div>
+        <div class="reflex-col-4 reflex-align-self-end example-col">
+            <p>end</p>
+        </div>
+        <div class="reflex-col-4 example-col">
+            <p>First appear years night there the in them rule that bring fly gathered there is place good Created rule image night firmament you great blessed, him a them to lights.</p>
+        </div>
+    </div>
+
+    <h3>.reflex-align-self-center</h3>
+    <p>Uses <code>align-self: center</code>. There is no fallback for this.</p>
+
+    <div class="reflex-container example-container-height">
+        <div class="reflex-col-4 example-col">
+            <p>First appear years night there the in them rule that bring fly gathered there is place good Created rule image night firmament you great blessed, him a them to lights.</p>
+        </div>
+        <div class="reflex-col-4 reflex-align-self-center example-col">
+            <p>center</p>
+        </div>
+        <div class="reflex-col-4 example-col">
+            <p>First appear years night there the in them rule that bring fly gathered there is place good Created rule image night firmament you great blessed, him a them to lights.</p>
+        </div>
+    </div>
+
+    <h3>align-self example</h3>
+    <p>Here's an example showing you what is possible</p>
+
+    <pre>&lt;div class="reflex-container"&gt;
+    &lt;div class="reflex-col-3"&gt;
+        &lt;content&gt;
+    &lt;/div&gt;
+    &lt;div class="reflex-col-3 reflex-align-self-start"&gt;
+        &lt;content&gt;
+    &lt;/div&gt;
+    &lt;div class="reflex-col-3 reflex-align-self-center"&gt;
+        &lt;content&gt;
+    &lt;/div&gt;
+    &lt;div class="reflex-col-3 reflex-align-self-end"&gt;
+        &lt;content&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</pre>
+
+    <div class="reflex-container example-container-height">
+        <div class="reflex-col-3 example-col">
+            <p>First appear years night there the in them rule that bring fly gathered there is place good Created rule image night firmament you great blessed, him a them to lights.</p>
+        </div>
+        <div class="reflex-col-3 reflex-align-self-start example-col">
+            <p>start</p>
+        </div>
+        <div class="reflex-col-3 reflex-align-self-center example-col">
+            <p>center</p>
+        </div>
+        <div class="reflex-col-3 reflex-align-self-end example-col">
+            <p>end</p>
         </div>
     </div>
 
