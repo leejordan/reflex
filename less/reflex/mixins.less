@@ -13,6 +13,7 @@
 .calc-reflex-columns(@index, @class, @type) when (@type = width) and (@index > 0) {
     .reflex-col-@{class}@{index} {
         width: percentage((@index / @reflex-columns));
+        *width: percentage((@index / @reflex-columns)) - 0.1;
 
         // legacy support
         vertical-align: top;

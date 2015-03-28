@@ -109,6 +109,7 @@
 }
 .reflex-col-12 {
   width: 100%;
+  *width: 99.9%;
   vertical-align: top;
   position: relative;
   display: inline-block;
@@ -125,6 +126,7 @@
 }
 .reflex-col-11 {
   width: 91.66666666666666%;
+  *width: 91.56666666666666%;
   vertical-align: top;
   position: relative;
   display: inline-block;
@@ -141,6 +143,7 @@
 }
 .reflex-col-10 {
   width: 83.33333333333334%;
+  *width: 83.23333333333335%;
   vertical-align: top;
   position: relative;
   display: inline-block;
@@ -157,6 +160,7 @@
 }
 .reflex-col-9 {
   width: 75%;
+  *width: 74.9%;
   vertical-align: top;
   position: relative;
   display: inline-block;
@@ -173,6 +177,7 @@
 }
 .reflex-col-8 {
   width: 66.66666666666666%;
+  *width: 66.56666666666666%;
   vertical-align: top;
   position: relative;
   display: inline-block;
@@ -189,6 +194,7 @@
 }
 .reflex-col-7 {
   width: 58.333333333333336%;
+  *width: 58.233333333333334%;
   vertical-align: top;
   position: relative;
   display: inline-block;
@@ -205,6 +211,7 @@
 }
 .reflex-col-6 {
   width: 50%;
+  *width: 49.9%;
   vertical-align: top;
   position: relative;
   display: inline-block;
@@ -221,6 +228,7 @@
 }
 .reflex-col-5 {
   width: 41.66666666666667%;
+  *width: 41.56666666666667%;
   vertical-align: top;
   position: relative;
   display: inline-block;
@@ -237,6 +245,7 @@
 }
 .reflex-col-4 {
   width: 33.33333333333333%;
+  *width: 33.23333333333333%;
   vertical-align: top;
   position: relative;
   display: inline-block;
@@ -253,6 +262,7 @@
 }
 .reflex-col-3 {
   width: 25%;
+  *width: 24.9%;
   vertical-align: top;
   position: relative;
   display: inline-block;
@@ -269,6 +279,7 @@
 }
 .reflex-col-2 {
   width: 16.666666666666664%;
+  *width: 16.566666666666663%;
   vertical-align: top;
   position: relative;
   display: inline-block;
@@ -285,6 +296,7 @@
 }
 .reflex-col-1 {
   width: 8.333333333333332%;
+  *width: 8.233333333333333%;
   vertical-align: top;
   position: relative;
   display: inline-block;
@@ -302,6 +314,7 @@
 @media (min-width: 480px) {
   .reflex-col-xs-12 {
     width: 100%;
+    *width: 99.9%;
     vertical-align: top;
     position: relative;
     display: inline-block;
@@ -318,6 +331,7 @@
   }
   .reflex-col-xs-11 {
     width: 91.66666666666666%;
+    *width: 91.56666666666666%;
     vertical-align: top;
     position: relative;
     display: inline-block;
@@ -334,6 +348,7 @@
   }
   .reflex-col-xs-10 {
     width: 83.33333333333334%;
+    *width: 83.23333333333335%;
     vertical-align: top;
     position: relative;
     display: inline-block;
@@ -350,6 +365,7 @@
   }
   .reflex-col-xs-9 {
     width: 75%;
+    *width: 74.9%;
     vertical-align: top;
     position: relative;
     display: inline-block;
@@ -366,6 +382,7 @@
   }
   .reflex-col-xs-8 {
     width: 66.66666666666666%;
+    *width: 66.56666666666666%;
     vertical-align: top;
     position: relative;
     display: inline-block;
@@ -382,6 +399,7 @@
   }
   .reflex-col-xs-7 {
     width: 58.333333333333336%;
+    *width: 58.233333333333334%;
     vertical-align: top;
     position: relative;
     display: inline-block;
@@ -398,6 +416,7 @@
   }
   .reflex-col-xs-6 {
     width: 50%;
+    *width: 49.9%;
     vertical-align: top;
     position: relative;
     display: inline-block;
@@ -414,6 +433,7 @@
   }
   .reflex-col-xs-5 {
     width: 41.66666666666667%;
+    *width: 41.56666666666667%;
     vertical-align: top;
     position: relative;
     display: inline-block;
@@ -430,6 +450,7 @@
   }
   .reflex-col-xs-4 {
     width: 33.33333333333333%;
+    *width: 33.23333333333333%;
     vertical-align: top;
     position: relative;
     display: inline-block;
@@ -446,6 +467,7 @@
   }
   .reflex-col-xs-3 {
     width: 25%;
+    *width: 24.9%;
     vertical-align: top;
     position: relative;
     display: inline-block;
@@ -462,6 +484,7 @@
   }
   .reflex-col-xs-2 {
     width: 16.666666666666664%;
+    *width: 16.566666666666663%;
     vertical-align: top;
     position: relative;
     display: inline-block;
@@ -478,6 +501,7 @@
   }
   .reflex-col-xs-1 {
     width: 8.333333333333332%;
+    *width: 8.233333333333333%;
     vertical-align: top;
     position: relative;
     display: inline-block;
@@ -496,6 +520,7 @@
 @media (min-width: 768px) {
   .reflex-col-sm-12 {
     width: 100%;
+    *width: 99.9%;
     vertical-align: top;
     position: relative;
     display: inline-block;
@@ -512,6 +537,7 @@
   }
   .reflex-col-sm-11 {
     width: 91.66666666666666%;
+    *width: 91.56666666666666%;
     vertical-align: top;
     position: relative;
     display: inline-block;
@@ -528,6 +554,7 @@
   }
   .reflex-col-sm-10 {
     width: 83.33333333333334%;
+    *width: 83.23333333333335%;
     vertical-align: top;
     position: relative;
     display: inline-block;
@@ -544,6 +571,7 @@
   }
   .reflex-col-sm-9 {
     width: 75%;
+    *width: 74.9%;
     vertical-align: top;
     position: relative;
     display: inline-block;
@@ -560,6 +588,7 @@
   }
   .reflex-col-sm-8 {
     width: 66.66666666666666%;
+    *width: 66.56666666666666%;
     vertical-align: top;
     position: relative;
     display: inline-block;
@@ -576,6 +605,7 @@
   }
   .reflex-col-sm-7 {
     width: 58.333333333333336%;
+    *width: 58.233333333333334%;
     vertical-align: top;
     position: relative;
     display: inline-block;
@@ -592,6 +622,7 @@
   }
   .reflex-col-sm-6 {
     width: 50%;
+    *width: 49.9%;
     vertical-align: top;
     position: relative;
     display: inline-block;
@@ -608,6 +639,7 @@
   }
   .reflex-col-sm-5 {
     width: 41.66666666666667%;
+    *width: 41.56666666666667%;
     vertical-align: top;
     position: relative;
     display: inline-block;
@@ -624,6 +656,7 @@
   }
   .reflex-col-sm-4 {
     width: 33.33333333333333%;
+    *width: 33.23333333333333%;
     vertical-align: top;
     position: relative;
     display: inline-block;
@@ -640,6 +673,7 @@
   }
   .reflex-col-sm-3 {
     width: 25%;
+    *width: 24.9%;
     vertical-align: top;
     position: relative;
     display: inline-block;
@@ -656,6 +690,7 @@
   }
   .reflex-col-sm-2 {
     width: 16.666666666666664%;
+    *width: 16.566666666666663%;
     vertical-align: top;
     position: relative;
     display: inline-block;
@@ -672,6 +707,7 @@
   }
   .reflex-col-sm-1 {
     width: 8.333333333333332%;
+    *width: 8.233333333333333%;
     vertical-align: top;
     position: relative;
     display: inline-block;
@@ -690,6 +726,7 @@
 @media (min-width: 992px) {
   .reflex-col-md-12 {
     width: 100%;
+    *width: 99.9%;
     vertical-align: top;
     position: relative;
     display: inline-block;
@@ -706,6 +743,7 @@
   }
   .reflex-col-md-11 {
     width: 91.66666666666666%;
+    *width: 91.56666666666666%;
     vertical-align: top;
     position: relative;
     display: inline-block;
@@ -722,6 +760,7 @@
   }
   .reflex-col-md-10 {
     width: 83.33333333333334%;
+    *width: 83.23333333333335%;
     vertical-align: top;
     position: relative;
     display: inline-block;
@@ -738,6 +777,7 @@
   }
   .reflex-col-md-9 {
     width: 75%;
+    *width: 74.9%;
     vertical-align: top;
     position: relative;
     display: inline-block;
@@ -754,6 +794,7 @@
   }
   .reflex-col-md-8 {
     width: 66.66666666666666%;
+    *width: 66.56666666666666%;
     vertical-align: top;
     position: relative;
     display: inline-block;
@@ -770,6 +811,7 @@
   }
   .reflex-col-md-7 {
     width: 58.333333333333336%;
+    *width: 58.233333333333334%;
     vertical-align: top;
     position: relative;
     display: inline-block;
@@ -786,6 +828,7 @@
   }
   .reflex-col-md-6 {
     width: 50%;
+    *width: 49.9%;
     vertical-align: top;
     position: relative;
     display: inline-block;
@@ -802,6 +845,7 @@
   }
   .reflex-col-md-5 {
     width: 41.66666666666667%;
+    *width: 41.56666666666667%;
     vertical-align: top;
     position: relative;
     display: inline-block;
@@ -818,6 +862,7 @@
   }
   .reflex-col-md-4 {
     width: 33.33333333333333%;
+    *width: 33.23333333333333%;
     vertical-align: top;
     position: relative;
     display: inline-block;
@@ -834,6 +879,7 @@
   }
   .reflex-col-md-3 {
     width: 25%;
+    *width: 24.9%;
     vertical-align: top;
     position: relative;
     display: inline-block;
@@ -850,6 +896,7 @@
   }
   .reflex-col-md-2 {
     width: 16.666666666666664%;
+    *width: 16.566666666666663%;
     vertical-align: top;
     position: relative;
     display: inline-block;
@@ -866,6 +913,7 @@
   }
   .reflex-col-md-1 {
     width: 8.333333333333332%;
+    *width: 8.233333333333333%;
     vertical-align: top;
     position: relative;
     display: inline-block;
@@ -884,6 +932,7 @@
 @media (min-width: 1200px) {
   .reflex-col-lg-12 {
     width: 100%;
+    *width: 99.9%;
     vertical-align: top;
     position: relative;
     display: inline-block;
@@ -900,6 +949,7 @@
   }
   .reflex-col-lg-11 {
     width: 91.66666666666666%;
+    *width: 91.56666666666666%;
     vertical-align: top;
     position: relative;
     display: inline-block;
@@ -916,6 +966,7 @@
   }
   .reflex-col-lg-10 {
     width: 83.33333333333334%;
+    *width: 83.23333333333335%;
     vertical-align: top;
     position: relative;
     display: inline-block;
@@ -932,6 +983,7 @@
   }
   .reflex-col-lg-9 {
     width: 75%;
+    *width: 74.9%;
     vertical-align: top;
     position: relative;
     display: inline-block;
@@ -948,6 +1000,7 @@
   }
   .reflex-col-lg-8 {
     width: 66.66666666666666%;
+    *width: 66.56666666666666%;
     vertical-align: top;
     position: relative;
     display: inline-block;
@@ -964,6 +1017,7 @@
   }
   .reflex-col-lg-7 {
     width: 58.333333333333336%;
+    *width: 58.233333333333334%;
     vertical-align: top;
     position: relative;
     display: inline-block;
@@ -980,6 +1034,7 @@
   }
   .reflex-col-lg-6 {
     width: 50%;
+    *width: 49.9%;
     vertical-align: top;
     position: relative;
     display: inline-block;
@@ -996,6 +1051,7 @@
   }
   .reflex-col-lg-5 {
     width: 41.66666666666667%;
+    *width: 41.56666666666667%;
     vertical-align: top;
     position: relative;
     display: inline-block;
@@ -1012,6 +1068,7 @@
   }
   .reflex-col-lg-4 {
     width: 33.33333333333333%;
+    *width: 33.23333333333333%;
     vertical-align: top;
     position: relative;
     display: inline-block;
@@ -1028,6 +1085,7 @@
   }
   .reflex-col-lg-3 {
     width: 25%;
+    *width: 24.9%;
     vertical-align: top;
     position: relative;
     display: inline-block;
@@ -1044,6 +1102,7 @@
   }
   .reflex-col-lg-2 {
     width: 16.666666666666664%;
+    *width: 16.566666666666663%;
     vertical-align: top;
     position: relative;
     display: inline-block;
@@ -1060,6 +1119,7 @@
   }
   .reflex-col-lg-1 {
     width: 8.333333333333332%;
+    *width: 8.233333333333333%;
     vertical-align: top;
     position: relative;
     display: inline-block;
@@ -1309,7 +1369,6 @@ pre {
   margin-bottom: 0;
 }
 .example-col-ie7 {
-  padding: 1em;
   margin: 1em;
 }
 .example-container-height {
