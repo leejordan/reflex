@@ -104,6 +104,24 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
+[class*="reflex-col-"] {
+  width: 100%;
+  vertical-align: top;
+  position: relative;
+  display: inline-block;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  zoom: 1;
+  *display: inline;
+  letter-spacing: normal;
+  word-spacing: normal;
+  white-space: normal;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  text-align: start;
+}
 .reflex-col-12 {
   width: 100%;
   *width: 99.9%;
@@ -1316,10 +1334,13 @@
   -ms-flex-line-pack: flex-end;
   align-content: flex-end;
 }
+.reflex-align-content-end [class*="reflex-col-"] {
+  vertical-align: bottom;
+}
 .reflex-align-content-center {
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
 }
 .reflex-align-content-space-between {
   -webkit-align-content: space-between;

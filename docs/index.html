@@ -2,27 +2,43 @@
 
 <html lang="en">
 <head>
-  <meta charset="utf-8">
+    <meta charset="utf-8">
 
-  <title>reflex - responsive flexbox grid with inline-block legacy support</title>
-  <meta name="description" content="reflex is a responsive flexbox grid with inline-block legacy support">
+    <title>reflex - responsive flexbox grid with inline-block legacy support</title>
+    <meta name="description" content="reflex is a responsive flexbox grid with inline-block legacy support">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
 
-  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/docs.css">
 
-  <link rel="stylesheet" href="css/docs.css">
-
-  <script src="js/respond.min.js"></script>
+    <script src="js/respond.min.js"></script>
 </head>
 
 <body>
-    <h1>Reflex</h1>
+    <div class="reflex-container reflex-wrap">
+        <div class="reflex-col-12 reflex-direction-column reflex-justify-center">
+            <h1>Reflex</h1>
+            <p>a responsive flexbox grid with inline-block legacy support.</p>
+        </div>
+        <ul class="reflex-container reflex-padding-lg reflex-justify-center">
+            <li class="reflex-col-xs-3 reflex-justify-center">
+                <a href="https://github.com/leejordan/reflex" class="btn btn-code fill">github</a>
+            </li>
+            <li class="reflex-col-xs-3 reflex-justify-center">
+                <a href="../css/reflex.css" class="btn btn-download fill">download css</a>
+            </li>
+            <li class="reflex-col-xs-3 reflex-justify-center">
+                <a href="http://www.lendmeyourear.net" class="btn btn-external fill">my blog</a>
+            </li>
+        </ul>
+    </div>
 
     <h2>What is Reflex?</h2>
-    <p>Reflex is a responsive flexbox grid with inline-block legacy support.</p>
     <p>Reflex gives you the ability to easily take advantage of flexbox for layout with a reasonable feeling of warmth and security that things will still look ok in older browsers. <a href="http://caniuse.com/#search=flex" target="_blank">Browser support for flexbox</a> is in a pretty good state right now and is growing all the time. At the time of writing, full global flexbox support is at 81.74% and if we include partial support it is at 92.11% so I propose that it's acceptable to start taking advantage of flexbox and accept that the inline-block fallback won't support everything. You'll still have a working grid on older browsers (all the way back to ie7), just not all of the cool flexbox stuff that doesn't have an inline-block equivalent such as <code>order</code></p>
 
-    <h2>What is Reflex good for?</h2>
+    <p>It's useful for:</p>
+
     <ul>
         <li>Dynamically generated grids of content e.g. a set of products for sale</li>
         <li>Easily creating a grid where every item has the same height</li>
@@ -36,7 +52,7 @@
     <h2>Reflex grid introduction</h2>
     <p>The <code>reflex-container</code> class sets a section of your page up as <code>display: flex</code>. It's children with a class like <code>reflex-col-6</code> are also set as <code>display: flex</code> with a fallback of <code>display: inline-block</code> with strict widths which allows them to act as a grid. The idea is that doing this allows us to take advantage of the extra layout features of flexbox for browsers that support it while also providing a working inline-block grid for those that don't.</p>
 
-    <p>By default Reflex is set up as a 12 column grid but it can be modified to support more of less columns</p>
+    <p>By default Reflex is set up as a 12 column grid but it can be modified to support more or less columns as required</p>
 
     <p>As a consequence of the grid container and the grid elements being set to <code>display: flex</code> most of the helper classes can be applied to the grid items themselves which gives you a really flexible grid structure with (for example) column based grids inside row based grids. There are some examples later on to demonstrate some of this.</p>
 
@@ -916,6 +932,22 @@
             <a class="reflex-col-4 reflex-justify-center" href="javascript:void(0);"><li>login</li></a>
         </ul>
     </div>
+
+    <p>example markup for a nav bar:</p>
+    <pre>&lt;div class="reflex-container reflex-wrap reflex-justify-space-around reflex-align-center"&gt;
+        &lt;div class="reflex-col-sm-8 reflex-align-center"&gt;
+            &lt;h1 class="reflex-col-4 reflex-justify-center"&gt;Brand&lt;/h1&gt;
+            &lt;form class="reflex-col-8"&gt;
+                &lt;input class="reflex-col-10" name="search"&gt;&lt;/input&gt;
+                &lt;button class="reflex-col-2" type="submit"&gt;
+                    search
+                &lt;/button&gt;
+            &lt;/form&gt;
+        &lt;/div&gt;
+        &lt;ul class="reflex-col-sm-4 reflex-justify-space-around"&gt;
+            &lt;links&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;</pre>
 
     <h3>Two item comparison</h3>
 

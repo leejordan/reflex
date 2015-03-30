@@ -1415,6 +1415,275 @@
 .reflex-padding-lg [class*="reflex-col-"] {
   padding: 1em 0 1em 2em;
 }
+@-webkit-keyframes blink {
+  1%,
+  50% {
+    opacity: 1;
+  }
+  51%,
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes blink {
+  0%,
+  50% {
+    opacity: 0;
+  }
+  51%,
+  100% {
+    opacity: 1;
+  }
+}
+a:hover,
+button:hover {
+  text-decoration: underline;
+}
+a:focus,
+button:focus {
+  text-decoration: underline;
+  outline: 1px solid #00b5e9;
+}
+a.btn,
+button.btn {
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  border-radius: 3px;
+  overflow: hidden;
+  display: inline-block;
+  padding: 1em;
+  position: relative;
+  font-size: 1em;
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+  background-color: #00b5e9;
+  color: #ffffff;
+  border: 0;
+}
+a.btn:hover,
+button.btn:hover,
+a.btn:focus,
+button.btn:focus {
+  outline: none;
+  text-decoration: none;
+  background-color: #008db6;
+}
+a.btn-block,
+button.btn-block {
+  width: 100%;
+  display: block;
+  text-align: center;
+}
+a.btn-download,
+button.btn-download {
+  padding: 1em 2em;
+}
+a.btn-download:before,
+button.btn-download:before,
+a.btn-download:after,
+button.btn-download:after {
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  position: absolute;
+  right: 1em;
+  top: 1em;
+  display: inline-block;
+  font-size: 1em;
+  color: #00b5e9;
+}
+a.btn-download:before,
+button.btn-download:before {
+  right: 1em;
+}
+a.btn-download:hover:before,
+button.btn-download:hover:before,
+a.btn-download:focus:before,
+button.btn-download:focus:before,
+a.btn-download:hover:after,
+button.btn-download:hover:after,
+a.btn-download:focus:after,
+button.btn-download:focus:after {
+  color: #ffffff;
+}
+a.btn-download:after,
+button.btn-download:after {
+  content: "\2192";
+}
+a.btn-download:hover:after,
+button.btn-download:hover:after,
+a.btn-download:focus:after,
+button.btn-download:focus:after {
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  transform: rotate(90deg);
+  border-right: 1px solid #fff;
+}
+a.btn-external,
+button.btn-external {
+  padding: 1em 2em;
+}
+a.btn-external:before,
+button.btn-external:before,
+a.btn-external:after,
+button.btn-external:after {
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  position: absolute;
+  right: 1em;
+  top: 1em;
+  display: inline-block;
+  font-size: 1em;
+  color: #00b5e9;
+}
+a.btn-external:before,
+button.btn-external:before {
+  right: 1em;
+}
+a.btn-external:hover:before,
+button.btn-external:hover:before,
+a.btn-external:focus:before,
+button.btn-external:focus:before,
+a.btn-external:hover:after,
+button.btn-external:hover:after,
+a.btn-external:focus:after,
+button.btn-external:focus:after {
+  color: #ffffff;
+}
+a.btn-external:after,
+button.btn-external:after {
+  content: "\2192";
+}
+a.btn-external:hover:after,
+button.btn-external:hover:after,
+a.btn-external:focus:after,
+button.btn-external:focus:after {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+a.btn-submit,
+button.btn-submit {
+  padding: 1em 2em;
+}
+a.btn-submit:before,
+button.btn-submit:before,
+a.btn-submit:after,
+button.btn-submit:after {
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  position: absolute;
+  right: 1em;
+  top: 1em;
+  display: inline-block;
+  font-size: 1em;
+  color: #00b5e9;
+}
+a.btn-submit:before,
+button.btn-submit:before {
+  right: 1em;
+}
+a.btn-submit:hover:before,
+button.btn-submit:hover:before,
+a.btn-submit:focus:before,
+button.btn-submit:focus:before,
+a.btn-submit:hover:after,
+button.btn-submit:hover:after,
+a.btn-submit:focus:after,
+button.btn-submit:focus:after {
+  color: #ffffff;
+}
+a.btn-submit:after,
+button.btn-submit:after {
+  content: "\00BB";
+  -webkit-transform: translateX(-0.2em) translateY(-0.1em) scale(1.4);
+  -moz-transform: translateX(-0.2em) translateY(-0.1em) scale(1.4);
+  -ms-transform: translateX(-0.2em) translateY(-0.1em) scale(1.4);
+  -o-transform: translateX(-0.2em) translateY(-0.1em) scale(1.4);
+  transform: translateX(-0.2em) translateY(-0.1em) scale(1.4);
+}
+a.btn-submit:hover:after,
+button.btn-submit:hover:after,
+a.btn-submit:focus:after,
+button.btn-submit:focus:after {
+  -webkit-transform: translateX(0em) translateY(-0.1em) scale(1.4);
+  -moz-transform: translateX(0em) translateY(-0.1em) scale(1.4);
+  -ms-transform: translateX(0em) translateY(-0.1em) scale(1.4);
+  -o-transform: translateX(0em) translateY(-0.1em) scale(1.4);
+  transform: translateX(0em) translateY(-0.1em) scale(1.4);
+}
+a.btn-code,
+button.btn-code {
+  padding: 1em 2em;
+}
+a.btn-code:before,
+button.btn-code:before,
+a.btn-code:after,
+button.btn-code:after {
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  position: absolute;
+  right: 1em;
+  top: 1em;
+  display: inline-block;
+  font-size: 1em;
+  color: #00b5e9;
+}
+a.btn-code:before,
+button.btn-code:before {
+  right: 1em;
+}
+a.btn-code:hover:before,
+button.btn-code:hover:before,
+a.btn-code:focus:before,
+button.btn-code:focus:before,
+a.btn-code:hover:after,
+button.btn-code:hover:after,
+a.btn-code:focus:after,
+button.btn-code:focus:after {
+  color: #ffffff;
+}
+a.btn-code:before,
+button.btn-code:before {
+  content: "\003E";
+}
+a.btn-code:after,
+button.btn-code:after {
+  -webkit-transition: none;
+  -moz-transition: none;
+  -ms-transition: none;
+  -o-transition: none;
+  transition: none;
+  content: "\005F";
+}
+a.btn-code:hover:after,
+button.btn-code:hover:after,
+a.btn-code:focus:after,
+button.btn-code:focus:after {
+  -webkit-animation: blink 1s infinite normal linear;
+  -moz-animation: blink 1s infinite normal linear;
+  -ms-animation: blink 1s infinite normal linear;
+  animation: blink 1s infinite normal linear;
+}
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -1430,15 +1699,18 @@ body {
   margin: 0 auto;
   padding: 4%;
   max-width: 1200px;
-  font-family: helvetica, sans-serif;
+  font-family: 'Lato', sans-serif;
   line-height: 1.5em;
-  font-size: 16px;
+  font-size: 18px;
 }
 h1,
 h2,
 h3,
 h4 {
   margin-top: 5em;
+}
+h1:first-of-type {
+  color: #00b5e9;
 }
 li {
   margin-bottom: 0.4em;
@@ -1489,6 +1761,10 @@ pre {
   -o-tab-size: 4;
   tab-size: 4;
 }
+.fill {
+  width: 100%;
+  height: 100%;
+}
 .alert {
   padding: 2em;
   background-color: #ffcccc;
@@ -1511,7 +1787,7 @@ pre {
 }
 .example-col,
 .example-col-ie7 {
-  background-color: #e9e9e9;
+  background-color: #b6efff;
   margin: 0;
   padding: 1em;
   border-right: 1px solid white;
@@ -1524,7 +1800,7 @@ pre {
   min-height: 160px;
 }
 .example-container-height-lg {
-  background-color: #cccccc;
+  background-color: #003e50;
   min-height: 300px;
 }
 .example-col-height {
@@ -1570,8 +1846,12 @@ pre {
   padding: 9px;
   font-size: 1em;
   border: none;
-  border: 1px solid #333;
+  border: 1px solid #00b5e9;
   background-color: #fff;
+}
+.example-input:hover,
+.example-input:focus {
+  text-decoration: none;
 }
 .example-button {
   display: inline-block;
@@ -1579,19 +1859,23 @@ pre {
   font-size: 1em;
   color: #fff;
   text-align: center;
-  background-color: #333;
-  border: 1px solid #333;
+  background-color: #00b5e9;
+  border: 1px solid #00b5e9;
 }
 .example-button:hover {
   cursor: pointer;
+  text-decoration: none;
+  border: 1px solid #006683;
 }
 .example-nav {
   margin: 0;
   padding: 0;
-  border-top: 1px solid #ccc;
-  border-bottom: 1px solid #ccc;
+  border-top: 1px solid #00b5e9;
+  border-bottom: 1px solid #00b5e9;
+  background-color: #83e3ff;
 }
 .example-nav h1 {
+  color: #000;
   margin: 0.5em 0;
 }
 .example-nav form {
@@ -1603,21 +1887,21 @@ pre {
 .example-nav ul a {
   text-decoration: none;
   color: #333;
-  padding: 0.5em 0;
-  background-color: #e9e9e9;
+  padding: 1em 0;
 }
 .example-nav ul a:hover,
 .example-nav ul a:focus {
-  background-color: #ccc;
+  background-color: #00b5e9;
+  color: #fff;
 }
 .example-nav ul li {
   margin: 0;
-  padding: 0.5em;
+  padding: 0;
 }
 .icon-mag {
   position: relative;
   display: inline-block;
-  background: #333;
+  background: #00b5e9;
   border-radius: 30px;
   height: 10px;
   width: 10px;

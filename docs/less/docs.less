@@ -2,6 +2,9 @@
 @import "../../less/reflex/mixins.less";
 @import "../../less/reflex/grid.less";
 @import "../../less/reflex/helpers.less";
+@import "button-anims.less";
+
+@theme: #00b5e9;
 
 * {
     .box-sizing(border-box);
@@ -15,9 +18,9 @@ body {
     margin: 0 auto;
     padding: 4%;
     max-width: 1200px;
-    font-family: helvetica, sans-serif;
+    font-family: 'Lato', sans-serif;
     line-height: 1.5em;
-    font-size: 16px;
+    font-size: 18px;
 }
 
 h1,
@@ -25,6 +28,10 @@ h2,
 h3,
 h4 {
     margin-top: 5em;
+}
+
+h1:first-of-type {
+    color: @theme;
 }
 
 li {
@@ -85,6 +92,11 @@ pre {
     tab-size: 4;
 }
 
+.fill {
+    width: 100%;
+    height: 100%;
+}
+
 .alert {
     padding: 2em;
     background-color: lighten(red, 40%);
@@ -110,9 +122,17 @@ pre {
     margin-bottom: 2em;
 }
 
+.transition(@transition) {
+    -webkit-transition:     @transition;
+    -moz-transition:        @transition;
+    -ms-transition:         @transition;
+    -o-transition:          @transition;
+    transition:             @transition;
+}
+
 .example-col,
 .example-col-ie7 {
-    background-color: #e9e9e9;
+    background-color: lighten(@theme, 40%);
     margin: 0;
     padding: 1em;
     border-right: 1px solid white;
@@ -128,7 +148,7 @@ pre {
 }
 
 .example-container-height-lg {
-    background-color: #cccccc;
+    background-color: darken(@theme, 30%);
     min-height: 300px;
 }
 
@@ -186,12 +206,12 @@ pre {
     padding: 9px;
     font-size: 1em;
     border: none;
-    border: 1px solid #333;
+    border: 1px solid @theme;
     background-color: #fff;
 
     &:hover,
     &:focus {
-
+        text-decoration: none;
     }
 }
 
@@ -201,21 +221,25 @@ pre {
     font-size: 1em;
     color: #fff;
     text-align: center;
-    background-color: #333;
-    border: 1px solid #333;
+    background-color: @theme;
+    border: 1px solid @theme;
 
     &:hover {
         cursor: pointer;
+        text-decoration: none;
+        border: 1px solid darken(@theme, 20%);
     }
 }
 
 .example-nav {
     margin: 0;
     padding: 0;
-    border-top: 1px solid #ccc;
-    border-bottom: 1px solid #ccc;
+    border-top: 1px solid @theme;
+    border-bottom: 1px solid @theme;
+    background-color: lighten(@theme, 30%);
 
     h1 {
+        color: #000;
         margin: 0.5em 0;
     }
 
@@ -229,18 +253,18 @@ pre {
         a {
             text-decoration: none;
             color: #333;
-            padding: 0.5em 0;
-            background-color: #e9e9e9;
+            padding: 1em 0;
 
             &:hover,
             &:focus {
-                background-color: #ccc;
+                background-color: @theme;
+                color: #fff;
             }
         }
 
         li {
             margin: 0;
-            padding: 0.5em;
+            padding: 0;
         }
     }
 }
@@ -248,7 +272,7 @@ pre {
 .icon-mag {
     position:relative;
     display:inline-block;
-    background: #333;
+    background: @theme;
     border-radius: 30px;
     height: 10px;
     width: 10px;
