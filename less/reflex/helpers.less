@@ -66,6 +66,37 @@
 }
 
 // --------------------------------------------------
+// align-content (cross axis)
+// --------------------------------------------------
+
+.reflex-align-content-start {
+    .align-content(flex-start);
+}
+
+.reflex-align-content-end {
+    .align-content(flex-end);
+
+    // fallback to legacy vertical-align
+    [class*="reflex-col-"] {
+        vertical-align: bottom;
+    }
+}
+
+.reflex-align-content-center {
+    .align-content(center);
+}
+
+.reflex-align-content-space-between {
+    .align-content(space-between);
+}
+
+.reflex-align-content-space-around {
+    .align-content(space-around);
+}
+
+
+
+// --------------------------------------------------
 // align-self
 // --------------------------------------------------
 
@@ -84,6 +115,7 @@
 
 .reflex-align-self-center {
     .align-self(center);
+    vertical-align: middle;
 }
 
 .reflex-align-self-baseline {

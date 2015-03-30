@@ -106,6 +106,7 @@
   margin: 0;
   padding: 0;
   text-align: left;
+  text-align: start;
 }
 .reflex-col-12 {
   width: 100%;
@@ -123,6 +124,8 @@
   white-space: normal;
   margin: 0;
   padding: 0;
+  text-align: left;
+  text-align: start;
 }
 .reflex-col-11 {
   width: 91.66666666666666%;
@@ -140,6 +143,8 @@
   white-space: normal;
   margin: 0;
   padding: 0;
+  text-align: left;
+  text-align: start;
 }
 .reflex-col-10 {
   width: 83.33333333333334%;
@@ -157,6 +162,8 @@
   white-space: normal;
   margin: 0;
   padding: 0;
+  text-align: left;
+  text-align: start;
 }
 .reflex-col-9 {
   width: 75%;
@@ -174,6 +181,8 @@
   white-space: normal;
   margin: 0;
   padding: 0;
+  text-align: left;
+  text-align: start;
 }
 .reflex-col-8 {
   width: 66.66666666666666%;
@@ -191,6 +200,8 @@
   white-space: normal;
   margin: 0;
   padding: 0;
+  text-align: left;
+  text-align: start;
 }
 .reflex-col-7 {
   width: 58.333333333333336%;
@@ -208,6 +219,8 @@
   white-space: normal;
   margin: 0;
   padding: 0;
+  text-align: left;
+  text-align: start;
 }
 .reflex-col-6 {
   width: 50%;
@@ -225,6 +238,8 @@
   white-space: normal;
   margin: 0;
   padding: 0;
+  text-align: left;
+  text-align: start;
 }
 .reflex-col-5 {
   width: 41.66666666666667%;
@@ -242,6 +257,8 @@
   white-space: normal;
   margin: 0;
   padding: 0;
+  text-align: left;
+  text-align: start;
 }
 .reflex-col-4 {
   width: 33.33333333333333%;
@@ -259,6 +276,8 @@
   white-space: normal;
   margin: 0;
   padding: 0;
+  text-align: left;
+  text-align: start;
 }
 .reflex-col-3 {
   width: 25%;
@@ -276,6 +295,8 @@
   white-space: normal;
   margin: 0;
   padding: 0;
+  text-align: left;
+  text-align: start;
 }
 .reflex-col-2 {
   width: 16.666666666666664%;
@@ -293,6 +314,8 @@
   white-space: normal;
   margin: 0;
   padding: 0;
+  text-align: left;
+  text-align: start;
 }
 .reflex-col-1 {
   width: 8.333333333333332%;
@@ -310,6 +333,8 @@
   white-space: normal;
   margin: 0;
   padding: 0;
+  text-align: left;
+  text-align: start;
 }
 @media (min-width: 480px) {
   .reflex-col-xs-12 {
@@ -328,6 +353,8 @@
     white-space: normal;
     margin: 0;
     padding: 0;
+    text-align: left;
+    text-align: start;
   }
   .reflex-col-xs-11 {
     width: 91.66666666666666%;
@@ -345,6 +372,8 @@
     white-space: normal;
     margin: 0;
     padding: 0;
+    text-align: left;
+    text-align: start;
   }
   .reflex-col-xs-10 {
     width: 83.33333333333334%;
@@ -362,6 +391,8 @@
     white-space: normal;
     margin: 0;
     padding: 0;
+    text-align: left;
+    text-align: start;
   }
   .reflex-col-xs-9 {
     width: 75%;
@@ -379,6 +410,8 @@
     white-space: normal;
     margin: 0;
     padding: 0;
+    text-align: left;
+    text-align: start;
   }
   .reflex-col-xs-8 {
     width: 66.66666666666666%;
@@ -396,6 +429,8 @@
     white-space: normal;
     margin: 0;
     padding: 0;
+    text-align: left;
+    text-align: start;
   }
   .reflex-col-xs-7 {
     width: 58.333333333333336%;
@@ -413,6 +448,8 @@
     white-space: normal;
     margin: 0;
     padding: 0;
+    text-align: left;
+    text-align: start;
   }
   .reflex-col-xs-6 {
     width: 50%;
@@ -430,6 +467,8 @@
     white-space: normal;
     margin: 0;
     padding: 0;
+    text-align: left;
+    text-align: start;
   }
   .reflex-col-xs-5 {
     width: 41.66666666666667%;
@@ -447,6 +486,8 @@
     white-space: normal;
     margin: 0;
     padding: 0;
+    text-align: left;
+    text-align: start;
   }
   .reflex-col-xs-4 {
     width: 33.33333333333333%;
@@ -464,6 +505,8 @@
     white-space: normal;
     margin: 0;
     padding: 0;
+    text-align: left;
+    text-align: start;
   }
   .reflex-col-xs-3 {
     width: 25%;
@@ -481,6 +524,8 @@
     white-space: normal;
     margin: 0;
     padding: 0;
+    text-align: left;
+    text-align: start;
   }
   .reflex-col-xs-2 {
     width: 16.666666666666664%;
@@ -498,6 +543,8 @@
     white-space: normal;
     margin: 0;
     padding: 0;
+    text-align: left;
+    text-align: start;
   }
   .reflex-col-xs-1 {
     width: 8.333333333333332%;
@@ -515,6 +562,8 @@
     white-space: normal;
     margin: 0;
     padding: 0;
+    text-align: left;
+    text-align: start;
   }
 }
 @media (min-width: 768px) {
@@ -534,6 +583,8 @@
     white-space: normal;
     margin: 0;
     padding: 0;
+    text-align: left;
+    text-align: start;
   }
   .reflex-col-sm-11 {
     width: 91.66666666666666%;
@@ -551,6 +602,8 @@
     white-space: normal;
     margin: 0;
     padding: 0;
+    text-align: left;
+    text-align: start;
   }
   .reflex-col-sm-10 {
     width: 83.33333333333334%;
@@ -568,6 +621,8 @@
     white-space: normal;
     margin: 0;
     padding: 0;
+    text-align: left;
+    text-align: start;
   }
   .reflex-col-sm-9 {
     width: 75%;
@@ -585,6 +640,8 @@
     white-space: normal;
     margin: 0;
     padding: 0;
+    text-align: left;
+    text-align: start;
   }
   .reflex-col-sm-8 {
     width: 66.66666666666666%;
@@ -602,6 +659,8 @@
     white-space: normal;
     margin: 0;
     padding: 0;
+    text-align: left;
+    text-align: start;
   }
   .reflex-col-sm-7 {
     width: 58.333333333333336%;
@@ -619,6 +678,8 @@
     white-space: normal;
     margin: 0;
     padding: 0;
+    text-align: left;
+    text-align: start;
   }
   .reflex-col-sm-6 {
     width: 50%;
@@ -636,6 +697,8 @@
     white-space: normal;
     margin: 0;
     padding: 0;
+    text-align: left;
+    text-align: start;
   }
   .reflex-col-sm-5 {
     width: 41.66666666666667%;
@@ -653,6 +716,8 @@
     white-space: normal;
     margin: 0;
     padding: 0;
+    text-align: left;
+    text-align: start;
   }
   .reflex-col-sm-4 {
     width: 33.33333333333333%;
@@ -670,6 +735,8 @@
     white-space: normal;
     margin: 0;
     padding: 0;
+    text-align: left;
+    text-align: start;
   }
   .reflex-col-sm-3 {
     width: 25%;
@@ -687,6 +754,8 @@
     white-space: normal;
     margin: 0;
     padding: 0;
+    text-align: left;
+    text-align: start;
   }
   .reflex-col-sm-2 {
     width: 16.666666666666664%;
@@ -704,6 +773,8 @@
     white-space: normal;
     margin: 0;
     padding: 0;
+    text-align: left;
+    text-align: start;
   }
   .reflex-col-sm-1 {
     width: 8.333333333333332%;
@@ -721,6 +792,8 @@
     white-space: normal;
     margin: 0;
     padding: 0;
+    text-align: left;
+    text-align: start;
   }
 }
 @media (min-width: 992px) {
@@ -740,6 +813,8 @@
     white-space: normal;
     margin: 0;
     padding: 0;
+    text-align: left;
+    text-align: start;
   }
   .reflex-col-md-11 {
     width: 91.66666666666666%;
@@ -757,6 +832,8 @@
     white-space: normal;
     margin: 0;
     padding: 0;
+    text-align: left;
+    text-align: start;
   }
   .reflex-col-md-10 {
     width: 83.33333333333334%;
@@ -774,6 +851,8 @@
     white-space: normal;
     margin: 0;
     padding: 0;
+    text-align: left;
+    text-align: start;
   }
   .reflex-col-md-9 {
     width: 75%;
@@ -791,6 +870,8 @@
     white-space: normal;
     margin: 0;
     padding: 0;
+    text-align: left;
+    text-align: start;
   }
   .reflex-col-md-8 {
     width: 66.66666666666666%;
@@ -808,6 +889,8 @@
     white-space: normal;
     margin: 0;
     padding: 0;
+    text-align: left;
+    text-align: start;
   }
   .reflex-col-md-7 {
     width: 58.333333333333336%;
@@ -825,6 +908,8 @@
     white-space: normal;
     margin: 0;
     padding: 0;
+    text-align: left;
+    text-align: start;
   }
   .reflex-col-md-6 {
     width: 50%;
@@ -842,6 +927,8 @@
     white-space: normal;
     margin: 0;
     padding: 0;
+    text-align: left;
+    text-align: start;
   }
   .reflex-col-md-5 {
     width: 41.66666666666667%;
@@ -859,6 +946,8 @@
     white-space: normal;
     margin: 0;
     padding: 0;
+    text-align: left;
+    text-align: start;
   }
   .reflex-col-md-4 {
     width: 33.33333333333333%;
@@ -876,6 +965,8 @@
     white-space: normal;
     margin: 0;
     padding: 0;
+    text-align: left;
+    text-align: start;
   }
   .reflex-col-md-3 {
     width: 25%;
@@ -893,6 +984,8 @@
     white-space: normal;
     margin: 0;
     padding: 0;
+    text-align: left;
+    text-align: start;
   }
   .reflex-col-md-2 {
     width: 16.666666666666664%;
@@ -910,6 +1003,8 @@
     white-space: normal;
     margin: 0;
     padding: 0;
+    text-align: left;
+    text-align: start;
   }
   .reflex-col-md-1 {
     width: 8.333333333333332%;
@@ -927,6 +1022,8 @@
     white-space: normal;
     margin: 0;
     padding: 0;
+    text-align: left;
+    text-align: start;
   }
 }
 @media (min-width: 1200px) {
@@ -946,6 +1043,8 @@
     white-space: normal;
     margin: 0;
     padding: 0;
+    text-align: left;
+    text-align: start;
   }
   .reflex-col-lg-11 {
     width: 91.66666666666666%;
@@ -963,6 +1062,8 @@
     white-space: normal;
     margin: 0;
     padding: 0;
+    text-align: left;
+    text-align: start;
   }
   .reflex-col-lg-10 {
     width: 83.33333333333334%;
@@ -980,6 +1081,8 @@
     white-space: normal;
     margin: 0;
     padding: 0;
+    text-align: left;
+    text-align: start;
   }
   .reflex-col-lg-9 {
     width: 75%;
@@ -997,6 +1100,8 @@
     white-space: normal;
     margin: 0;
     padding: 0;
+    text-align: left;
+    text-align: start;
   }
   .reflex-col-lg-8 {
     width: 66.66666666666666%;
@@ -1014,6 +1119,8 @@
     white-space: normal;
     margin: 0;
     padding: 0;
+    text-align: left;
+    text-align: start;
   }
   .reflex-col-lg-7 {
     width: 58.333333333333336%;
@@ -1031,6 +1138,8 @@
     white-space: normal;
     margin: 0;
     padding: 0;
+    text-align: left;
+    text-align: start;
   }
   .reflex-col-lg-6 {
     width: 50%;
@@ -1048,6 +1157,8 @@
     white-space: normal;
     margin: 0;
     padding: 0;
+    text-align: left;
+    text-align: start;
   }
   .reflex-col-lg-5 {
     width: 41.66666666666667%;
@@ -1065,6 +1176,8 @@
     white-space: normal;
     margin: 0;
     padding: 0;
+    text-align: left;
+    text-align: start;
   }
   .reflex-col-lg-4 {
     width: 33.33333333333333%;
@@ -1082,6 +1195,8 @@
     white-space: normal;
     margin: 0;
     padding: 0;
+    text-align: left;
+    text-align: start;
   }
   .reflex-col-lg-3 {
     width: 25%;
@@ -1099,6 +1214,8 @@
     white-space: normal;
     margin: 0;
     padding: 0;
+    text-align: left;
+    text-align: start;
   }
   .reflex-col-lg-2 {
     width: 16.666666666666664%;
@@ -1116,6 +1233,8 @@
     white-space: normal;
     margin: 0;
     padding: 0;
+    text-align: left;
+    text-align: start;
   }
   .reflex-col-lg-1 {
     width: 8.333333333333332%;
@@ -1133,6 +1252,8 @@
     white-space: normal;
     margin: 0;
     padding: 0;
+    text-align: left;
+    text-align: start;
   }
 }
 .reflex-wrap {
@@ -1189,6 +1310,34 @@
 .reflex-align-baseline [class*="reflex-col-"] {
   vertical-align: baseline;
 }
+.reflex-align-content-start {
+  -webkit-align-content: flex-start;
+  -ms-flex-line-pack: flex-start;
+  align-content: flex-start;
+}
+.reflex-align-content-end {
+  -webkit-align-content: flex-end;
+  -ms-flex-line-pack: flex-end;
+  align-content: flex-end;
+}
+.reflex-align-content-end [class*="reflex-col-"] {
+  vertical-align: bottom;
+}
+.reflex-align-content-center {
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+}
+.reflex-align-content-space-between {
+  -webkit-align-content: space-between;
+  -ms-flex-line-pack: space-between;
+  align-content: space-between;
+}
+.reflex-align-content-space-around {
+  -webkit-align-content: space-around;
+  -ms-flex-line-pack: space-around;
+  align-content: space-around;
+}
 .reflex-align-self-stretch {
   -webkit-align-self: stretch;
   -ms-flex-item-align: stretch;
@@ -1209,6 +1358,7 @@
   -webkit-align-self: center;
   -ms-flex-item-align: center;
   align-self: center;
+  vertical-align: middle;
 }
 .reflex-align-self-baseline {
   -webkit-align-self: baseline;
@@ -1367,22 +1517,15 @@ pre {
   border-right: 1px solid white;
   border-bottom: 1px solid white;
 }
-.example-col h1,
-.example-col-ie7 h1,
-.example-col h2,
-.example-col-ie7 h2,
-.example-col h3,
-.example-col-ie7 h3,
-.example-col h4,
-.example-col-ie7 h4 {
-  margin-top: 1em;
-  margin-bottom: 0;
-}
 .example-col-ie7 {
   margin: 1em;
 }
 .example-container-height {
   min-height: 160px;
+}
+.example-container-height-lg {
+  background-color: #cccccc;
+  min-height: 300px;
 }
 .example-col-height {
   height: 100px;
@@ -1420,27 +1563,76 @@ pre {
   font-size: 4em;
   color: #cccccc;
 }
+.example-heading {
+  margin: 0;
+}
 .example-input {
-  padding: 20px;
+  padding: 9px;
   font-size: 1em;
   border: none;
-  background-color: #fff;
-}
-.example-input:hover,
-.example-input:focus {
-  outline: none;
+  border: 1px solid #333;
   background-color: #fff;
 }
 .example-button {
   display: inline-block;
-  padding: 18px;
+  padding: 9px;
   font-size: 1em;
   color: #fff;
   text-align: center;
   background-color: #333;
-  border: 2px solid #333;
+  border: 1px solid #333;
 }
 .example-button:hover {
   cursor: pointer;
-  border: 2px solid yellow;
+}
+.example-nav {
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+.example-nav h1 {
+  margin: 0.5em 0;
+}
+.example-nav form {
+  padding: 0 1em;
+}
+.example-nav ul {
+  list-style-type: none;
+}
+.example-nav ul a {
+  text-decoration: none;
+  color: #333;
+  padding: 0.5em 0;
+  background-color: #e9e9e9;
+}
+.example-nav ul a:hover,
+.example-nav ul a:focus {
+  background-color: #ccc;
+}
+.example-nav ul li {
+  margin: 0;
+  padding: 0.5em;
+}
+.icon-mag {
+  position: relative;
+  display: inline-block;
+  background: #333;
+  border-radius: 30px;
+  height: 10px;
+  width: 10px;
+  border: 2px solid #FFF;
+}
+.icon-mag:after {
+  content: "";
+  height: 2px;
+  width: 6px;
+  background: #FFF;
+  position: absolute;
+  top: 7px;
+  left: 5px;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
 }
