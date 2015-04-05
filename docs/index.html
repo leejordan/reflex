@@ -4,12 +4,13 @@
 <head>
     <meta charset="utf-8">
 
-    <title>reflex - responsive flexbox grid with inline-block legacy support</title>
-    <meta name="description" content="reflex is a responsive flexbox grid with inline-block legacy support">
+    <title>reflex - responsive flexbox grid with inline-block legacy support and no polyfills</title>
+    <meta name="description" content="reflex is a responsive flexbox grid with inline-block legacy support and no polyfills">
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
 
     <link href='http://fonts.googleapis.com/css?family=Lato:300,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../css/reflex.min.css">
     <link rel="stylesheet" href="css/docs.css">
 
     <script src="js/respond.min.js"></script>
@@ -19,35 +20,47 @@
     <div class="reflex-container reflex-wrap">
         <div class="reflex-col-12 reflex-direction-column reflex-justify-center">
             <h1>Reflex</h1>
-            <p>a responsive flexbox grid with inline-block legacy support.</p>
+            <p>a lightweight responsive flexbox grid with cross browser support and an inline-block fallback</p>
         </div>
-        <ul class="reflex-container reflex-padding-lg reflex-justify-center">
-            <li class="reflex-col-xs-3 reflex-justify-center">
-                <a href="https://github.com/leejordan/reflex" class="btn btn-code fill">github</a>
+        <ul class="reflex-container reflex-container-padding-lg reflex-wrap reflex-justify-center">
+            <li class="reflex-col-sm-3 reflex-justify-center">
+                <a href="https://github.com/leejordan/reflex" target="_blank" class="btn btn-code fill">github</a>
             </li>
-            <li class="reflex-col-xs-3 reflex-justify-center">
-                <a href="../css/reflex.css" class="btn btn-download fill">download css</a>
+            <li class="reflex-col-sm-3 reflex-justify-center">
+                <a href="../css/reflex.css" target="_blank" class="btn btn-download fill">css</a>
             </li>
-            <li class="reflex-col-xs-3 reflex-justify-center">
-                <a href="http://www.lendmeyourear.net" class="btn btn-external fill">my blog</a>
+            <li class="reflex-col-sm-3 reflex-justify-center">
+                <a href="demo.html" class="btn btn-external fill">demo</a>
             </li>
         </ul>
     </div>
 
     <h2>What is Reflex?</h2>
-    <p>Reflex gives you the ability to easily take advantage of flexbox for layout with a reasonable feeling of warmth and security that things will still look ok in older browsers. <a href="http://caniuse.com/#search=flex" target="_blank">Browser support for flexbox</a> is in a pretty good state right now and is growing all the time. At the time of writing, full global flexbox support is at 81.74% and if we include partial support it is at 92.11% so I propose that it's acceptable to start taking advantage of flexbox and accept that the inline-block fallback won't support everything. You'll still have a working grid on older browsers (all the way back to ie7), just not all of the cool flexbox stuff that doesn't have an inline-block equivalent such as <code>order</code></p>
+    <p>Reflex gives you the ability to easily take advantage of flexbox for laying out a grid while having a reliable fallback for older browsers that do not support flexbox. <a href="http://caniuse.com/#search=flex" target="_blank">Browser support for flexbox</a> is in a pretty good state right now and is growing all the time. At the time of writing, full global flexbox support is at 81.74% (excluding browsers with outdated or partial support) so I propose that it's acceptable to start taking advantage of flexbox and accept that the inline-block fallback won't support everything. You'll still have a working grid on older browsers (all the way back to ie7), just not all of the cool flexbox stuff that doesn't have an inline-block equivalent such as <code>order</code></p>
 
-    <p>It's useful for:</p>
+    <p>The benefits are:</p>
 
     <ul>
-        <li>Dynamically generated grids of content e.g. a set of products for sale</li>
-        <li>Easily creating a grid where every item has the same height</li>
-        <li>Creating a grid where items in the grid never push each other out of the way</li>
-        <li>Content layout taking advantage of flexbox where supported</li>
-        <li>A set of vendor-prefixed helper classes and mixins to get your flexbox solution off the ground faster</li>
+        <li>It's lightweight - 8.5KB in it's minified form and <strong>1.6KB gzipped</strong></li>
+        <li>Where flexbox is supported, grid items are all the same height</li>
+        <li>Grid items never push each other out of the way (as with floated grids)</li>
+        <li>Good cross browser support</li>
     </ul>
 
-    <p>It is not intended as a replacement for more fully featured css frameworks such as bootstrap and does not include css for anything else apart from the flexbox/inline-block grid. In fact, It's easy to use this <em>in addition to</em> your existing css framework and only use it when you need some flexbox magic or for easily creating a grid of dynamically generated, same height content such as a list of products.</p>
+    <p>It's intended to be used as:</p>
+
+    <ul>
+        <li>A means of generating a reliable grid with dynamic content e.g. a list of products</li>
+        <li>An addition to your current css framework</li>
+        <li>A set of vendor-prefixed helper classes and LESS mixins to get your flexbox solution off the ground faster</li>
+    </ul>
+
+    <p>It's <strong>not</strong> intended to be used as:</p>
+
+    <ul>
+        <li>A framework for full page layout (although you probably could if you wanted to)</li>
+        <li>A replacement for bootstrap or any other css framework</li>
+    </ul>
 
     <h2>Reflex grid introduction</h2>
     <p>The <code>reflex-container</code> class sets a section of your page up as <code>display: flex</code>. It's children with a class like <code>reflex-col-6</code> are also set as <code>display: flex</code> with a fallback of <code>display: inline-block</code> with strict widths which allows them to act as a grid. The idea is that doing this allows us to take advantage of the extra layout features of flexbox for browsers that support it while also providing a working inline-block grid for those that don't.</p>
@@ -70,51 +83,20 @@
     <p>Which gives you this:</p>
 
     <div class="reflex-container">
-        <div class="reflex-col-6">
-            <p>Over after behold was living together tree is very sixth let bring fish. Forth behold they're fly deep. Abundantly also heaven whose, their darkness second divide days us night.</p>
+        <div class="reflex-col-6 example-col">
+            <p>reflex-col-6</p>
         </div>
-        <div class="reflex-col-6">
-            <p>Be can't winged good for also saying first. Shall, fourth Greater cattle a. Upon dry gathered there itself hath. Life.</p>
+        <div class="reflex-col-6 example-col">
+            <p>reflex-col-6</p>
         </div>
     </div>
 
-    <p>You'll probably want to add some css styles to the columns themselves to space things out a bit and perhaps visually distinguish them:</p>
-
-    <pre>&lt;div class="reflex-container"&gt;
-    &lt;div class="reflex-col-6 &lt;classname&gt"&gt;
-        &lt;content&gt;
-    &lt;/div&gt;
-    &lt;div class="reflex-col-6 &lt;classname&gt"&gt;
-        &lt;content&gt;
-    &lt;/div&gt;
-&lt;/div&gt;</pre>
-
-    <p>Where your class is something like this:</p>
-
-    <pre>.classname {
-    background-color: #e9e9e9;
-    margin: 0;
-    padding: 1em;
-    border-right: 1px solid white;
-}</pre>
-
-    <p>Which gives you this:</p>
-
-    <div class="reflex-container">
-        <div class="reflex-col-6 example-col">
-            <p>Over after behold was living together tree is very sixth let bring fish. Forth behold they're fly deep. Abundantly also heaven whose, their darkness second divide days us night.</p>
-        </div>
-        <div class="reflex-col-6 example-col">
-            <p>Be can't winged good for also saying first. Shall, fourth Greater cattle a. Upon dry gathered there itself hath. Life.</p>
-        </div>
-    </div>
+    <p>(background color and border added for emphasis and is not default)</p>
 
     <h2>Browser support</h2>
-    <p><a href="http://caniuse.com/#search=flex" target="_blank">Browser support for flexbox</a> is in a pretty good state right now and regardless, Reflex should fall back to an inline-block layout for most browsers that do not support flexbox explicitly. Reflex uses some css hacks to help the inline-block grid work on older browsers. It's important to note that some of the features of flexbox so not have an equivalent in the inline-block fallback so not everything will work in the fallback, but your grid will remain intact.</p>
+    <p>Reflex should fall back to an inline-block layout for browsers that do not support flexbox explicitly. Reflex uses some css hacks to help the inline-block grid work on older browsers. It's important to note that some of the features of flexbox do not have an equivalent in the inline-block fallback so not everything will work in the fallback, but <strong>your grid will remain intact.</strong></p>
 
     <p class="alert">If you want to use the grid with breakpoints in ie8 and below you will need to use <a href="https://github.com/scottjehl/Respond" target="_blank">respond.js</a> which enables media query support in those browsers via JavaScript.</p>
-
-    <p class="alert">IE7 does not support the <code>box-sizing</code> model which this grid uses. So if you need to support IE7 you will need to avoid using the <code>reflex-padding-*</code> helper classes and instead apply margin to a child element of the grid columns</p>
 
     <h2>Semantic markup</h2>
     <p>You don't have to use <code>div</code> for your grid and ideally you should use the most semantically appropriate markup for your use case with no visible difference.</p>
@@ -129,10 +111,10 @@
 
     <div class="reflex-container">
         <div class="reflex-col-6 example-col">
-            <p>Be can't winged good for also saying first. Shall, fourth Greater cattle a. Upon dry gathered there itself hath. Life.</p>
+            <p>reflex-col-6 (div)</p>
         </div>
         <div class="reflex-col-6 example-col">
-            <p>First appear years night there the in them rule that bring fly gathered.</p>
+            <p>reflex-col-6 (div)</p>
         </div>
     </div>
 
@@ -146,10 +128,10 @@
 
     <ul class="reflex-container">
         <li class="reflex-col-6 example-col">
-            <p>Be can't winged good for also saying first. Shall, fourth Greater cattle a. Upon dry gathered there itself hath. Life.</p>
+            <p>reflex-col-6 (list item)</p>
         </li>
         <li class="reflex-col-6 example-col">
-            <p>First appear years night there the in them rule that bring fly gathered.</p>
+            <p>reflex-col-6 (list item)</p>
         </li>
     </ul>
 
@@ -163,10 +145,10 @@
 
     <section class="reflex-container">
         <article class="reflex-col-6 example-col">
-            <p>Be can't winged good for also saying first. Shall, fourth Greater cattle a. Upon dry gathered there itself hath. Life.</p>
+            <p>reflex-col-6 (article)</p>
         </article>
         <article class="reflex-col-6 example-col">
-            <p>First appear years night there the in them rule that bring fly gathered.</p>
+            <p>reflex-col-6 (article)</p>
         </article>
     </section>
 
@@ -191,13 +173,13 @@
 
     <div class="reflex-container reflex-wrap">
         <div class="reflex-col-6 example-col">
-            <p>1) Be can't winged good for also saying first. Shall, fourth Greater cattle a. Upon dry gathered there itself hath. Life.</p>
+            <p>reflex-col-6</p>
         </div>
         <div class="reflex-col-6 example-col">
-            <p>2) irst appear years night there the in them rule that bring fly gathered.</p>
+            <p>reflex-col-6</p>
         </div>
         <div class="reflex-col-10 example-col">
-            <p>3) Over after behold was living together tree is very sixth let bring fish. Forth behold they're fly deep. Abundantly also heaven whose, their darkness second divide days us night.</p>
+            <p>reflex-col-10</p>
         </div>
     </div>
 
@@ -205,13 +187,13 @@
 
     <div class="reflex-container">
         <div class="reflex-col-6 example-col">
-            <p>1) Be can't winged good for also saying first. Shall, fourth Greater cattle a. Upon dry gathered there itself hath. Life.</p>
+            <p>reflex-col-6</p>
         </div>
         <div class="reflex-col-6 example-col">
-            <p>2) First appear years night there the in them rule that bring fly gathered.</p>
+            <p>reflex-col-6</p>
         </div>
         <div class="reflex-col-10 example-col">
-            <p>3) Over after behold was living together tree is very sixth let bring fish. Forth behold they're fly deep. Abundantly also heaven whose, their darkness second divide days us night.</p>
+            <p>reflex-col-10</p>
         </div>
     </div>
 
@@ -220,13 +202,13 @@
 
     <div class="reflex-container reflex-wrap-reverse">
         <div class="reflex-col-6 example-col">
-            <p>1) Be can't winged good for also saying first. Shall, fourth Greater cattle a. Upon dry gathered there itself hath. Life.</p>
+            <p>reflex-col-6</p>
         </div>
         <div class="reflex-col-6 example-col">
-            <p>2) First appear years night there the in them rule that bring fly gathered.</p>
+            <p>reflex-col-6</p>
         </div>
         <div class="reflex-col-10 example-col">
-            <p>3) Over after behold was living together tree is very sixth let bring fish. Forth behold they're fly deep. Abundantly also heaven whose, their darkness second divide days us night.</p>
+            <p>reflex-col-10</p>
         </div>
     </div>
 
@@ -263,48 +245,48 @@
 
     <div class="reflex-container reflex-wrap">
 
-        <div class="reflex-col-4 reflex-justify-center example-col">
-            reflex-col-4
+        <div class="reflex-col-4 example-col">
+            <p>reflex-col-4</p>
         </div>
 
-        <div class="reflex-col-4 reflex-justify-center example-col">
-            reflex-col-4
+        <div class="reflex-col-4 example-col">
+            <p>reflex-col-4</p>
         </div>
 
-        <div class="reflex-col-4 reflex-justify-center example-col">
-            reflex-col-5
+        <div class="reflex-col-4 example-col">
+            <p>reflex-col-5</p>
         </div>
 
-        <div class="reflex-col-xs-4 reflex-justify-center example-col">
-            reflex-col-xs-4
+        <div class="reflex-col-xs-4 example-col">
+            <p>reflex-col-xs-4</p>
         </div>
 
-        <div class="reflex-col-xs-8 reflex-justify-center example-col">
-            reflex-col-xs-8
+        <div class="reflex-col-xs-8 example-col">
+            <p>reflex-col-xs-8</p>
         </div>
 
-        <div class="reflex-col-sm-6 reflex-justify-center example-col">
-            reflex-col-sm-6
+        <div class="reflex-col-sm-6 example-col">
+            <p>reflex-col-sm-6</p>
         </div>
 
-        <div class="reflex-col-sm-6 reflex-justify-center example-col">
-            reflex-col-sm-6
+        <div class="reflex-col-sm-6 example-col">
+            <p>reflex-col-sm-6</p>
         </div>
 
-        <div class="reflex-col-md-8 reflex-justify-center example-col">
-            reflex-col-md-8
+        <div class="reflex-col-md-8 example-col">
+            <p>reflex-col-md-8</p>
         </div>
 
-        <div class="reflex-col-md-4 reflex-justify-center example-col">
-            reflex-col-md-4
+        <div class="reflex-col-md-4 example-col">
+            <p>reflex-col-md-4</p>
         </div>
 
-        <div class="reflex-col-lg-4 reflex-justify-center example-col">
-            reflex-col-lg-4
+        <div class="reflex-col-lg-4 example-col">
+            <p>reflex-col-lg-4</p>
         </div>
 
-        <div class="reflex-col-lg-8 reflex-justify-center example-col">
-            reflex-col-lg-8
+        <div class="reflex-col-lg-8 example-col">
+            <p>reflex-col-lg-8</p>
         </div>
 
     </div>
@@ -314,84 +296,153 @@
 
     <div class="container">
         <div class="reflex-container reflex-wrap">
-            <div class="reflex-col-xs-6 reflex-justify-center example-col">
-                reflex-col-xs-6
+            <div class="reflex-col-xs-6 example-col">
+                <p>reflex-col-xs-6</p>
             </div>
 
-            <div class="reflex-col-xs-6 reflex-justify-center example-col">
-                reflex-col-xs-6
+            <div class="reflex-col-xs-6 example-col">
+                <p>reflex-col-xs-6</p>
             </div>
         </div>
     </div>
 
-    <h2>Adding padding to the grid</h2>
-    <p>There are some helper classes to pad your grid out and these should be applied to the <code>reflex-container</code></p>
+    <h2>Using flexbox inside the grid</h2>
+    <p>You can take advantage of flex inside your columns themselves by using the <code>.reflex-item</code> elements as children elements of your <code>.reflex-col-*</code> which allows you to do things like add a footer to the bottom of your same height grid elements.</p>
 
-    <h3>.reflex-padding-sm</h3>
-    <div class="reflex-container reflex-padding-sm">
-        <div class="reflex-col-6">
-            <p class="example-col">Over after behold was living together tree is very sixth let bring fish. Forth behold they're fly deep. Abundantly also heaven whose, their darkness second divide days us night.</p>
-        </div>
-        <div class="reflex-col-6">
-            <p class="example-col">Be can't winged good for also saying first. Shall, fourth Greater cattle a. Upon dry gathered there itself hath. Life.</p>
-        </div>
-    </div>
+    <h3>.reflex-item</h3>
+    <p>used as a child element of a <code>.reflex-col-*</code> element, this creates a flexbox element set up as <code>flex-direction: column</code> which allows each item in it to take advantage of flex properties.</p>
 
-    <h3>.reflex-padding-md</h3>
-    <div class="reflex-container reflex-padding-md">
-        <div class="reflex-col-6">
-            <p class="example-col">Over after behold was living together tree is very sixth let bring fish. Forth behold they're fly deep. Abundantly also heaven whose, their darkness second divide days us night.</p>
-        </div>
-        <div class="reflex-col-6">
-            <p class="example-col">Be can't winged good for also saying first. Shall, fourth Greater cattle a. Upon dry gathered there itself hath. Life.</p>
-        </div>
-    </div>
-
-    <h3>.reflex-padding-lg</h3>
-    <div class="reflex-container reflex-padding-lg">
-        <div class="reflex-col-6">
-            <p class="example-col">Over after behold was living together tree is very sixth let bring fish. Forth behold they're fly deep. Abundantly also heaven whose, their darkness second divide days us night.</p>
-        </div>
-        <div class="reflex-col-6">
-            <p class="example-col">Be can't winged good for also saying first. Shall, fourth Greater cattle a. Upon dry gathered there itself hath. Life.</p>
-        </div>
-    </div>
-
-    <h3>Browser support for grid padding</h3>
-    <p class="alert">IE7 does not support the <code>box-sizing</code> model which this grid uses. So if you absolutely need to support IE7 you will need to avoid using the <code>reflex-padding-*</code> helper classes and instead apply margin to a child element of the grid columns</p>
-    <p>Changing your markup to something like this will handle the lack of support for the box-sizing model with the downside of requiring more markup:</p>
-
-    <pre>&lt;div class="reflex-container"&gt;
-    &lt;div class="reflex-col-6"&gt;
-        &lt;div class="&lt;classname&gt"&gt;
-            &lt;content&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div class="reflex-col-6"&gt;
-        &lt;div class="&lt;classname&gt"&gt;
-            &lt;content&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;</pre>
-
-    <p>Where your class is something like this:</p>
-
-    <pre>.classname {
-    padding: 1em;
-    margin: 1em;
-}</pre>
-
-    <p>Which gives you the same end result but with better legacy support:</p>
-
-    <div class="reflex-container">
-        <div class="reflex-col-6">
-            <div class="example-col-ie7">
-                <p>Over after behold was living together tree is very sixth let bring fish. Forth behold they're fly deep. Abundantly also heaven whose, their darkness second divide days us night.</p>
+    <div class="reflex-container reflex-wrap">
+        <div class="reflex-col-12 reflex-col-xs-6">
+            <div class="reflex-item example-col">
+                <h3>Lorem ipsum</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
             </div>
         </div>
-        <div class="reflex-col-6">
-            <div class="example-col-ie7">
-                <p>Be can't winged good for also saying first. Shall, fourth Greater cattle a. Upon dry gathered there itself hath. Life.</p>
+        <div class="reflex-col-12 reflex-col-xs-6">
+            <div class="reflex-item example-col">
+                <h3>Lorem ipsum</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+        </div>
+    </div>
+
+    <h3>.reflex-item-margin-*</h3>
+    <p>Adds a margin to the reflex item itself. Comes in sm, md and lg flavours.</p>
+
+    <div class="reflex-container reflex-wrap">
+        <div class="reflex-col-12 reflex-col-xs-6">
+            <div class="reflex-item reflex-item-margin-md example-col">
+                <h3>Lorem ipsum</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+        </div>
+        <div class="reflex-col-12 reflex-col-xs-6">
+            <div class="reflex-item reflex-item-margin-md example-col">
+                <h3>Lorem ipsum</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+        </div>
+    </div>
+
+    <h3>.reflex-item-content-margin-*</h3>
+    <p>Adds a margin to all child elements of the reflex item. Comes in sm, md and lg flavours.</p>
+
+    <div class="reflex-container reflex-wrap">
+        <div class="reflex-col-12 reflex-col-xs-6">
+            <div class="reflex-item reflex-item-content-margin-md example-col">
+                <h3>Lorem ipsum</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+        </div>
+        <div class="reflex-col-12 reflex-col-xs-6">
+            <div class="reflex-item reflex-item-content-margin-md example-col">
+                <h3>Lorem ipsum</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+        </div>
+    </div>
+
+    <h3>.reflex-img</h3>
+    <p>When applied to an img inside a <code>.reflex-item</code> element, this sets up a full width responsive image that will fill the width of it's parent while maintaining its aspect ratio</p>
+
+    <div class="reflex-container reflex-wrap">
+        <div class="reflex-col-12 reflex-col-xs-6">
+            <div class="reflex-item reflex-item-content-margin-md example-col">
+                <img class="reflex-img" src="http://lorempixel.com/400/200/people/3/">
+                <p>Lorem ipsum dolor sit amet.</p>
+            </div>
+        </div>
+        <div class="reflex-col-12 reflex-col-xs-6">
+            <div class="reflex-item reflex-item-content-margin-md example-col">
+                <img class="reflex-img" src="http://lorempixel.com/400/200/people/4/">
+                <p>Lorem ipsum dolor sit amet.</p>
+            </div>
+        </div>
+    </div>
+
+    <h3>.reflex-item-footer</h3>
+    <p>Creates a full width element that is aligned to the very bottom of the <code>reflex-item</code></p>
+
+    <div class="reflex-container reflex-wrap">
+        <div class="reflex-col-12 reflex-col-xs-6">
+            <div class="reflex-item example-col">
+                <h3>Lorem ipsum</h3>
+                <p>Lorem ipsum dolor sit amet.</p>
+                <div class="reflex-item-footer">
+                    <p><a href="javascript:void(0);">more info</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="reflex-col-12 reflex-col-xs-6">
+            <div class="reflex-item example-col">
+                <h3>Lorem ipsum</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <div class="reflex-item-footer">
+                    <p><a href="javascript:void(0);">more info</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h3>Example of .reflex-item use</h3>
+    <p>Here's an example of all of the above in use. There is also a further example on the <a href="demo.html">demo page</a></p>
+
+    <div class="reflex-container reflex-wrap">
+        <div class="reflex-col-12 reflex-col-xs-6 reflex-col-md-3">
+            <div class="reflex-item reflex-item-margin-md reflex-item-content-margin-md example-col">
+                <img class="reflex-img" src="http://lorempixel.com/400/200/people/3/">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <div class="reflex-item-footer">
+                    <p><a href="javascript:void(0);">more info</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="reflex-col-12 reflex-col-xs-6 reflex-col-md-3">
+            <div class="reflex-item reflex-item-margin-md reflex-item-content-margin-md example-col">
+                <img class="reflex-img" src="http://lorempixel.com/400/200/people/1/">
+                <p>First appear years night there the in them rule that bring fly gathered.</p>
+                <div class="reflex-item-footer">
+                    <p><a href="javascript:void(0);">more info</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="reflex-col-12 reflex-col-xs-6 reflex-col-md-3">
+            <div class="reflex-item reflex-item-margin-md reflex-item-content-margin-md example-col">
+                <img class="reflex-img" src="http://lorempixel.com/400/200/people/3/">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <div class="reflex-item-footer example-footer">
+                    <p><a href="javascript:void(0);">more info</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="reflex-col-12 reflex-col-xs-6 reflex-col-md-3">
+            <div class="reflex-item reflex-item-margin-md reflex-item-content-margin-md example-col">
+                <img class="reflex-img" src="http://lorempixel.com/400/200/people/1/">
+                <p>First appear years night there the in them rule that bring fly gathered.</p>
+                <div class="reflex-item-footer example-footer">
+                    <p><a href="javascript:void(0);">more info</a></p>
+                </div>
             </div>
         </div>
     </div>
@@ -544,7 +595,7 @@
 
     <div class="reflex-container example-container-height">
         <div class="reflex-col-3 example-col">
-            <p>First appear years night there the in them rule that bring fly.</p>
+            <p>First appear years night there the in them rule that bring fly gathered there is place good Created rule image night firmament.</p>
         </div>
         <div class="reflex-col-3 reflex-align-self-start example-col">
             <p>start</p>
@@ -856,30 +907,6 @@
         </div>
     </div>
 
-    <p class="alert">Using <code>flex-direction: column</code> or <code>flex-direction: column-reverse</code> really does not fit with standard grid usage and is probably better suited to being applied to grid items directly to force them into column layout. Here's an example:</p>
-
-    <pre>&lt;div class="reflex-container"&gt;
-    &lt;div class="reflex-col-4 reflex-justify-center reflex-direction-column"&gt;
-        &lt;h2&gt;1st&lt;/h2&gt;
-        &lt;p&gt;I am &lt;strong&gt;the best&lt;/strong&gt;&lt;/p&gt;
-    &lt;/div&gt;
-&lt;/div&gt;</pre>
-
-    <div class="reflex-container">
-        <div class="reflex-col-4 reflex-justify-center reflex-direction-column example-col">
-            <h2 class="example-heading">1st</h2>
-            <p>I am <strong>the best</strong></p>
-        </div>
-        <div class="reflex-col-4 reflex-justify-center reflex-direction-column example-col">
-            <h2 class="example-heading">2nd</h2>
-            <p>I am <strong>second best</strong></p>
-        </div>
-        <div class="reflex-col-4 reflex-justify-center reflex-direction-column example-col">
-            <h2 class="example-heading">3rd</h2>
-            <p>I might as well have stayed in bed</p>
-        </div>
-    </div>
-
     <h2>Ordering</h2>
     <p>These helper classes allow you to easily set <code>order</code> to your grid elements and control the rendered order. By default there are 12 ordering helpers. If you need more then they can be modified</p>
     <p class="alert">Ordering has no support in the inline-block fallback</p>
@@ -900,169 +927,28 @@
 &lt;/div&gt;</pre>
 
     <div class="reflex-container">
-        <div class="reflex-col-4 reflex-justify-center reflex-order-2 example-col">
+        <div class="reflex-col-4 reflex-order-2 example-col">
             <p>I am <strong>first</strong> in the markup but ordered second</p>
         </div>
-        <div class="reflex-col-4 reflex-justify-center reflex-order-3 example-col">
+        <div class="reflex-col-4 reflex-order-3 example-col">
             <p>I am <strong>second</strong> in the markup but ordered third</p>
         </div>
-        <div class="reflex-col-4 reflex-justify-center reflex-order-1 example-col">
+        <div class="reflex-col-4 reflex-order-1 example-col">
             <p>I am <strong>third</strong> in the markup but ordered first</p>
         </div>
     </div>
 
     <h2>Examples</h2>
-    <p>Here are a handful of examples to show you what is possible with minimal effort</p>
+    <p>There are a handful of examples to show you what is possible with minimal effort on the <a href="demo.html">demo page</a></p>
 
-    <h3>Nav bar example</h3>
-    <div class="reflex-container reflex-wrap reflex-justify-space-around reflex-align-center example-nav">
-        <div class="reflex-col-sm-8 reflex-align-center">
-            <h1 class="reflex-col-4 reflex-justify-center example-heading">Brand</h1>
-            <form class="reflex-col-8">
-                <input class="reflex-col-10 example-input" name="search"></input>
-                <button class="reflex-col-2 example-button" type="submit" onclick="preventDefault(event);">
-                    <span class="icon-mag"></span>
-                </button>
-            </form>
-        </div>
-        <ul class="reflex-col-sm-4 reflex-justify-space-around">
-            <a class="reflex-col-4 reflex-justify-center" href="javascript:void(0);"><li>shop</li></a>
-            <a class="reflex-col-4 reflex-justify-center" href="javascript:void(0);"><li>faq</li></a>
-            <a class="reflex-col-4 reflex-justify-center" href="javascript:void(0);"><li>about</li></a>
-            <a class="reflex-col-4 reflex-justify-center" href="javascript:void(0);"><li>login</li></a>
-        </ul>
-    </div>
-
-    <p>example markup for a nav bar:</p>
-    <pre>&lt;div class="reflex-container reflex-wrap reflex-justify-space-around reflex-align-center"&gt;
-        &lt;div class="reflex-col-sm-8 reflex-align-center"&gt;
-            &lt;h1 class="reflex-col-4 reflex-justify-center"&gt;Brand&lt;/h1&gt;
-            &lt;form class="reflex-col-8"&gt;
-                &lt;input class="reflex-col-10" name="search"&gt;&lt;/input&gt;
-                &lt;button class="reflex-col-2" type="submit"&gt;
-                    search
-                &lt;/button&gt;
-            &lt;/form&gt;
-        &lt;/div&gt;
-        &lt;ul class="reflex-col-sm-4 reflex-justify-space-around"&gt;
-            &lt;links&gt;
-        &lt;/ul&gt;
-    &lt;/div&gt;</pre>
-
-    <h3>Two item comparison</h3>
-
-    <div class="reflex-container reflex-wrap">
-        <div class="reflex-col-xs-5 reflex-direction-column example-comparison-card">
-            <img src="http://lorempixel.com/600/300/technics/1/" class="img-responsive">
-            <h3>Best possible thing</h3>
-            <p>Open own have great light set for all after. Creepeth god. Replenish forth.</p>
-            <ul>
-                <li>cheap</li>
-                <li>convenient</li>
-                <li>will change your life</li>
-            </ul>
-        </div>
-        <div class="reflex-col-xs-2 reflex-align-center reflex-justify-center">
-            <p class="example-comparison-symbol">&#8646;</p>
-        </div>
-        <div class="reflex-col-xs-5 reflex-direction-column example-comparison-card example-comparison-card-bad">
-            <img src="http://lorempixel.com/600/300/technics/2/" class="img-responsive">
-            <h3>A terrible thing</h3>
-            <p>You're image forth multiply. First set called beginning air very hath deep one fish us.</p>
-            <ul>
-                <li>expensive</li>
-                <li>inconvenient</li>
-                <li>will <strong>not</strong> change your life</li>
-            </ul>
-        </div>
-    </div>
-
-    <p>example markup for two item comparison:</p>
-    <pre>&lt;div class="reflex-container reflex-wrap"&gt;
-    &lt;div class="reflex-col-xs-5 reflex-direction-column"&gt;
-        &lt;content&gt;
-    &lt;/div&gt;
-    &lt;div class="reflex-col-xs-2 reflex-align-center reflex-justify-center"&gt;
-        &lt;content&gt;
-    &lt;/div&gt;
-    &lt;div class="reflex-col-xs-5 reflex-direction-column"&gt;
-        &lt;content&gt;
-    &lt;/div&gt;
-&lt;/div&gt;</pre>
-
-    <h3>Form example</h3>
-    <form class="reflex-container reflex-align-center example-col">
-        <input class="reflex-col-8 example-input" name="search"></input>
-        <button class="reflex-col-4 example-button" type="submit" onclick="preventDefault(event);">
-            <span class="icon-mag"></span> search
-        </button>
-    </form>
-
-    <p>example markup for search form:</p>
-    <pre>&lt;form class="reflex-container reflex-align-center" action=""&gt;
-    &lt;input class="reflex-col-8" name="search"&gt;&lt;/input&gt;
-    &lt;button class="reflex-col-4" type="submit"&gt;
-        search
-    &lt;/button&gt;
-&lt;/form&gt;</pre>
-
-    <h2>Example layout using the grid</h2>
-
-    <div class="reflex-container reflex-wrap reflex-padding-lg">
-        <div class="reflex-col-6 reflex-col-xs-4 reflex-col-sm-4">
-            <div class="example-card">
-                <img class="img-responsive" src="http://lorempixel.com/400/200/people/1/">
-                <p>First appear years night there the in them rule that bring fly gathered.</p>
-            </div>
-        </div>
-        <div class="reflex-col-6 reflex-col-xs-4 reflex-col-sm-4">
-            <div class="example-card">
-                <img class="img-responsive" src="http://lorempixel.com/400/200/people/2/">
-                <p>Be can't winged good for also saying first. Shall, fourth Greater cattle a. Upon dry gathered there itself hath. Life.</p>
-            </div>
-        </div>
-        <div class="reflex-col-6 reflex-col-xs-4 reflex-col-sm-4">
-            <div class="example-card">
-                <img class="img-responsive" src="http://lorempixel.com/400/200/people/3/">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-            </div>
-        </div>
-        <div class="reflex-col-6 reflex-col-xs-4 reflex-col-sm-4">
-            <div class="example-card">
-                <img class="img-responsive" src="http://lorempixel.com/400/200/people/4/">
-                <p>Over after behold was living together tree is very sixth let bring fish. Forth behold they're fly deep. Abundantly also heaven whose, their darkness second divide days us night.</p>
-            </div>
-        </div>
-        <div class="reflex-col-6 reflex-col-xs-4 reflex-col-sm-4">
-            <div class="example-card">
-                <img class="img-responsive" src="http://lorempixel.com/400/200/people/5/">
-                <p>First appear years night there the in them rule that bring fly gathered.</p>
-            </div>
-        </div>
-        <div class="reflex-col-6 reflex-col-xs-4 reflex-col-sm-4">
-            <div class="example-card">
-                <img class="img-responsive" src="http://lorempixel.com/400/200/people/6/">
-                <p>Be can't winged good for also saying first. Shall, fourth Greater cattle a. Upon dry gathered there itself hath. Life.</p>
-            </div>
-        </div>
-        <div class="reflex-col-6 reflex-col-xs-4 reflex-col-sm-4">
-            <div class="example-card">
-                <img class="img-responsive" src="http://lorempixel.com/400/200/people/7/">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            </div>
-        </div>
-        <div class="reflex-col-6 reflex-col-xs-4 reflex-col-sm-4">
-            <div class="example-card">
-                <img class="img-responsive" src="http://lorempixel.com/400/200/people/8/">
-                <p>Over after behold was living together tree is very sixth let bring fish. Forth behold they're fly deep. Abundantly also heaven whose, their darkness second divide days us night.</p>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        function preventDefault(e) {
-            e.preventDefault();
-        }
-    </script>
+    <h2>Acknowledgements</h2>
+    <p>Firstly I would like to thank <a href="http://graze.com" target="_blank">graze.com</a> for believing in the concept of "hacker time" and understanding that allowing developers to spend time on things that interest them is valuable.</p>
+    <p>I would also like to acknowledge the following resources which all helped in some way while I was building this:</p>
+    <ul>
+        <li><a href="http://getbootstrap.com/" target="_blank">bootstrap</a> for some of the calculations and mixins</li>
+        <li><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank">css-tricks</a> for their flexbox introduction</li>
+        <li><a href="http://caniuse.com/" target="_blank">caniuse</a> for browser coverage statistics</li>
+        <li><a href="http://lorempixel.com" target="_blank">lorempixel.com</a> for placeholder images</li>
+    </ul>
 </body>
 </html>

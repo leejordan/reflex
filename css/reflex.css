@@ -79,7 +79,6 @@
 }
 .reflex-container {
   display: inline-block;
-  display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
   zoom: 1;
@@ -93,10 +92,16 @@
   word-spacing: -0.43em;
   list-style-type: none;
 }
-.reflex-container * {
+.reflex-container *,
+.reflex-container:before,
+.reflex-container:after {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+  max-width: 100%;
+  letter-spacing: normal;
+  word-spacing: normal;
+  white-space: normal;
 }
 .reflex-container *:before,
 .reflex-container *:after {
@@ -109,1200 +114,300 @@
   vertical-align: top;
   position: relative;
   display: inline-block;
-  display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
   zoom: 1;
   *display: inline;
-  letter-spacing: normal;
-  word-spacing: normal;
-  white-space: normal;
-  margin: 0;
-  padding: 0;
   text-align: left;
   text-align: start;
+}
+.reflex-item {
+  display: block;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex: 1 1 auto;
+  flex: 1 1 auto;
+}
+_:-ms-fullscreen,
+:root .reflex-item {
+  width: 100%;
 }
 .reflex-col-12 {
   width: 100%;
   *width: 99.9%;
-  vertical-align: top;
-  position: relative;
-  display: inline-block;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  zoom: 1;
-  *display: inline;
-  letter-spacing: normal;
-  word-spacing: normal;
-  white-space: normal;
-  margin: 0;
-  padding: 0;
-  text-align: left;
-  text-align: start;
 }
 .reflex-col-11 {
   width: 91.66666666666666%;
   *width: 91.56666666666666%;
-  vertical-align: top;
-  position: relative;
-  display: inline-block;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  zoom: 1;
-  *display: inline;
-  letter-spacing: normal;
-  word-spacing: normal;
-  white-space: normal;
-  margin: 0;
-  padding: 0;
-  text-align: left;
-  text-align: start;
 }
 .reflex-col-10 {
   width: 83.33333333333334%;
   *width: 83.23333333333335%;
-  vertical-align: top;
-  position: relative;
-  display: inline-block;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  zoom: 1;
-  *display: inline;
-  letter-spacing: normal;
-  word-spacing: normal;
-  white-space: normal;
-  margin: 0;
-  padding: 0;
-  text-align: left;
-  text-align: start;
 }
 .reflex-col-9 {
   width: 75%;
   *width: 74.9%;
-  vertical-align: top;
-  position: relative;
-  display: inline-block;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  zoom: 1;
-  *display: inline;
-  letter-spacing: normal;
-  word-spacing: normal;
-  white-space: normal;
-  margin: 0;
-  padding: 0;
-  text-align: left;
-  text-align: start;
 }
 .reflex-col-8 {
   width: 66.66666666666666%;
   *width: 66.56666666666666%;
-  vertical-align: top;
-  position: relative;
-  display: inline-block;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  zoom: 1;
-  *display: inline;
-  letter-spacing: normal;
-  word-spacing: normal;
-  white-space: normal;
-  margin: 0;
-  padding: 0;
-  text-align: left;
-  text-align: start;
 }
 .reflex-col-7 {
   width: 58.333333333333336%;
   *width: 58.233333333333334%;
-  vertical-align: top;
-  position: relative;
-  display: inline-block;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  zoom: 1;
-  *display: inline;
-  letter-spacing: normal;
-  word-spacing: normal;
-  white-space: normal;
-  margin: 0;
-  padding: 0;
-  text-align: left;
-  text-align: start;
 }
 .reflex-col-6 {
   width: 50%;
   *width: 49.9%;
-  vertical-align: top;
-  position: relative;
-  display: inline-block;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  zoom: 1;
-  *display: inline;
-  letter-spacing: normal;
-  word-spacing: normal;
-  white-space: normal;
-  margin: 0;
-  padding: 0;
-  text-align: left;
-  text-align: start;
 }
 .reflex-col-5 {
   width: 41.66666666666667%;
   *width: 41.56666666666667%;
-  vertical-align: top;
-  position: relative;
-  display: inline-block;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  zoom: 1;
-  *display: inline;
-  letter-spacing: normal;
-  word-spacing: normal;
-  white-space: normal;
-  margin: 0;
-  padding: 0;
-  text-align: left;
-  text-align: start;
 }
 .reflex-col-4 {
   width: 33.33333333333333%;
   *width: 33.23333333333333%;
-  vertical-align: top;
-  position: relative;
-  display: inline-block;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  zoom: 1;
-  *display: inline;
-  letter-spacing: normal;
-  word-spacing: normal;
-  white-space: normal;
-  margin: 0;
-  padding: 0;
-  text-align: left;
-  text-align: start;
 }
 .reflex-col-3 {
   width: 25%;
   *width: 24.9%;
-  vertical-align: top;
-  position: relative;
-  display: inline-block;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  zoom: 1;
-  *display: inline;
-  letter-spacing: normal;
-  word-spacing: normal;
-  white-space: normal;
-  margin: 0;
-  padding: 0;
-  text-align: left;
-  text-align: start;
 }
 .reflex-col-2 {
   width: 16.666666666666664%;
   *width: 16.566666666666663%;
-  vertical-align: top;
-  position: relative;
-  display: inline-block;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  zoom: 1;
-  *display: inline;
-  letter-spacing: normal;
-  word-spacing: normal;
-  white-space: normal;
-  margin: 0;
-  padding: 0;
-  text-align: left;
-  text-align: start;
 }
 .reflex-col-1 {
   width: 8.333333333333332%;
   *width: 8.233333333333333%;
-  vertical-align: top;
-  position: relative;
-  display: inline-block;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  zoom: 1;
-  *display: inline;
-  letter-spacing: normal;
-  word-spacing: normal;
-  white-space: normal;
-  margin: 0;
-  padding: 0;
-  text-align: left;
-  text-align: start;
 }
 @media (min-width: 480px) {
   .reflex-col-xs-12 {
     width: 100%;
     *width: 99.9%;
-    vertical-align: top;
-    position: relative;
-    display: inline-block;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    zoom: 1;
-    *display: inline;
-    letter-spacing: normal;
-    word-spacing: normal;
-    white-space: normal;
-    margin: 0;
-    padding: 0;
-    text-align: left;
-    text-align: start;
   }
   .reflex-col-xs-11 {
     width: 91.66666666666666%;
     *width: 91.56666666666666%;
-    vertical-align: top;
-    position: relative;
-    display: inline-block;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    zoom: 1;
-    *display: inline;
-    letter-spacing: normal;
-    word-spacing: normal;
-    white-space: normal;
-    margin: 0;
-    padding: 0;
-    text-align: left;
-    text-align: start;
   }
   .reflex-col-xs-10 {
     width: 83.33333333333334%;
     *width: 83.23333333333335%;
-    vertical-align: top;
-    position: relative;
-    display: inline-block;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    zoom: 1;
-    *display: inline;
-    letter-spacing: normal;
-    word-spacing: normal;
-    white-space: normal;
-    margin: 0;
-    padding: 0;
-    text-align: left;
-    text-align: start;
   }
   .reflex-col-xs-9 {
     width: 75%;
     *width: 74.9%;
-    vertical-align: top;
-    position: relative;
-    display: inline-block;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    zoom: 1;
-    *display: inline;
-    letter-spacing: normal;
-    word-spacing: normal;
-    white-space: normal;
-    margin: 0;
-    padding: 0;
-    text-align: left;
-    text-align: start;
   }
   .reflex-col-xs-8 {
     width: 66.66666666666666%;
     *width: 66.56666666666666%;
-    vertical-align: top;
-    position: relative;
-    display: inline-block;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    zoom: 1;
-    *display: inline;
-    letter-spacing: normal;
-    word-spacing: normal;
-    white-space: normal;
-    margin: 0;
-    padding: 0;
-    text-align: left;
-    text-align: start;
   }
   .reflex-col-xs-7 {
     width: 58.333333333333336%;
     *width: 58.233333333333334%;
-    vertical-align: top;
-    position: relative;
-    display: inline-block;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    zoom: 1;
-    *display: inline;
-    letter-spacing: normal;
-    word-spacing: normal;
-    white-space: normal;
-    margin: 0;
-    padding: 0;
-    text-align: left;
-    text-align: start;
   }
   .reflex-col-xs-6 {
     width: 50%;
     *width: 49.9%;
-    vertical-align: top;
-    position: relative;
-    display: inline-block;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    zoom: 1;
-    *display: inline;
-    letter-spacing: normal;
-    word-spacing: normal;
-    white-space: normal;
-    margin: 0;
-    padding: 0;
-    text-align: left;
-    text-align: start;
   }
   .reflex-col-xs-5 {
     width: 41.66666666666667%;
     *width: 41.56666666666667%;
-    vertical-align: top;
-    position: relative;
-    display: inline-block;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    zoom: 1;
-    *display: inline;
-    letter-spacing: normal;
-    word-spacing: normal;
-    white-space: normal;
-    margin: 0;
-    padding: 0;
-    text-align: left;
-    text-align: start;
   }
   .reflex-col-xs-4 {
     width: 33.33333333333333%;
     *width: 33.23333333333333%;
-    vertical-align: top;
-    position: relative;
-    display: inline-block;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    zoom: 1;
-    *display: inline;
-    letter-spacing: normal;
-    word-spacing: normal;
-    white-space: normal;
-    margin: 0;
-    padding: 0;
-    text-align: left;
-    text-align: start;
   }
   .reflex-col-xs-3 {
     width: 25%;
     *width: 24.9%;
-    vertical-align: top;
-    position: relative;
-    display: inline-block;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    zoom: 1;
-    *display: inline;
-    letter-spacing: normal;
-    word-spacing: normal;
-    white-space: normal;
-    margin: 0;
-    padding: 0;
-    text-align: left;
-    text-align: start;
   }
   .reflex-col-xs-2 {
     width: 16.666666666666664%;
     *width: 16.566666666666663%;
-    vertical-align: top;
-    position: relative;
-    display: inline-block;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    zoom: 1;
-    *display: inline;
-    letter-spacing: normal;
-    word-spacing: normal;
-    white-space: normal;
-    margin: 0;
-    padding: 0;
-    text-align: left;
-    text-align: start;
   }
   .reflex-col-xs-1 {
     width: 8.333333333333332%;
     *width: 8.233333333333333%;
-    vertical-align: top;
-    position: relative;
-    display: inline-block;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    zoom: 1;
-    *display: inline;
-    letter-spacing: normal;
-    word-spacing: normal;
-    white-space: normal;
-    margin: 0;
-    padding: 0;
-    text-align: left;
-    text-align: start;
   }
 }
 @media (min-width: 768px) {
   .reflex-col-sm-12 {
     width: 100%;
     *width: 99.9%;
-    vertical-align: top;
-    position: relative;
-    display: inline-block;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    zoom: 1;
-    *display: inline;
-    letter-spacing: normal;
-    word-spacing: normal;
-    white-space: normal;
-    margin: 0;
-    padding: 0;
-    text-align: left;
-    text-align: start;
   }
   .reflex-col-sm-11 {
     width: 91.66666666666666%;
     *width: 91.56666666666666%;
-    vertical-align: top;
-    position: relative;
-    display: inline-block;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    zoom: 1;
-    *display: inline;
-    letter-spacing: normal;
-    word-spacing: normal;
-    white-space: normal;
-    margin: 0;
-    padding: 0;
-    text-align: left;
-    text-align: start;
   }
   .reflex-col-sm-10 {
     width: 83.33333333333334%;
     *width: 83.23333333333335%;
-    vertical-align: top;
-    position: relative;
-    display: inline-block;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    zoom: 1;
-    *display: inline;
-    letter-spacing: normal;
-    word-spacing: normal;
-    white-space: normal;
-    margin: 0;
-    padding: 0;
-    text-align: left;
-    text-align: start;
   }
   .reflex-col-sm-9 {
     width: 75%;
     *width: 74.9%;
-    vertical-align: top;
-    position: relative;
-    display: inline-block;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    zoom: 1;
-    *display: inline;
-    letter-spacing: normal;
-    word-spacing: normal;
-    white-space: normal;
-    margin: 0;
-    padding: 0;
-    text-align: left;
-    text-align: start;
   }
   .reflex-col-sm-8 {
     width: 66.66666666666666%;
     *width: 66.56666666666666%;
-    vertical-align: top;
-    position: relative;
-    display: inline-block;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    zoom: 1;
-    *display: inline;
-    letter-spacing: normal;
-    word-spacing: normal;
-    white-space: normal;
-    margin: 0;
-    padding: 0;
-    text-align: left;
-    text-align: start;
   }
   .reflex-col-sm-7 {
     width: 58.333333333333336%;
     *width: 58.233333333333334%;
-    vertical-align: top;
-    position: relative;
-    display: inline-block;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    zoom: 1;
-    *display: inline;
-    letter-spacing: normal;
-    word-spacing: normal;
-    white-space: normal;
-    margin: 0;
-    padding: 0;
-    text-align: left;
-    text-align: start;
   }
   .reflex-col-sm-6 {
     width: 50%;
     *width: 49.9%;
-    vertical-align: top;
-    position: relative;
-    display: inline-block;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    zoom: 1;
-    *display: inline;
-    letter-spacing: normal;
-    word-spacing: normal;
-    white-space: normal;
-    margin: 0;
-    padding: 0;
-    text-align: left;
-    text-align: start;
   }
   .reflex-col-sm-5 {
     width: 41.66666666666667%;
     *width: 41.56666666666667%;
-    vertical-align: top;
-    position: relative;
-    display: inline-block;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    zoom: 1;
-    *display: inline;
-    letter-spacing: normal;
-    word-spacing: normal;
-    white-space: normal;
-    margin: 0;
-    padding: 0;
-    text-align: left;
-    text-align: start;
   }
   .reflex-col-sm-4 {
     width: 33.33333333333333%;
     *width: 33.23333333333333%;
-    vertical-align: top;
-    position: relative;
-    display: inline-block;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    zoom: 1;
-    *display: inline;
-    letter-spacing: normal;
-    word-spacing: normal;
-    white-space: normal;
-    margin: 0;
-    padding: 0;
-    text-align: left;
-    text-align: start;
   }
   .reflex-col-sm-3 {
     width: 25%;
     *width: 24.9%;
-    vertical-align: top;
-    position: relative;
-    display: inline-block;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    zoom: 1;
-    *display: inline;
-    letter-spacing: normal;
-    word-spacing: normal;
-    white-space: normal;
-    margin: 0;
-    padding: 0;
-    text-align: left;
-    text-align: start;
   }
   .reflex-col-sm-2 {
     width: 16.666666666666664%;
     *width: 16.566666666666663%;
-    vertical-align: top;
-    position: relative;
-    display: inline-block;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    zoom: 1;
-    *display: inline;
-    letter-spacing: normal;
-    word-spacing: normal;
-    white-space: normal;
-    margin: 0;
-    padding: 0;
-    text-align: left;
-    text-align: start;
   }
   .reflex-col-sm-1 {
     width: 8.333333333333332%;
     *width: 8.233333333333333%;
-    vertical-align: top;
-    position: relative;
-    display: inline-block;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    zoom: 1;
-    *display: inline;
-    letter-spacing: normal;
-    word-spacing: normal;
-    white-space: normal;
-    margin: 0;
-    padding: 0;
-    text-align: left;
-    text-align: start;
   }
 }
 @media (min-width: 992px) {
   .reflex-col-md-12 {
     width: 100%;
     *width: 99.9%;
-    vertical-align: top;
-    position: relative;
-    display: inline-block;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    zoom: 1;
-    *display: inline;
-    letter-spacing: normal;
-    word-spacing: normal;
-    white-space: normal;
-    margin: 0;
-    padding: 0;
-    text-align: left;
-    text-align: start;
   }
   .reflex-col-md-11 {
     width: 91.66666666666666%;
     *width: 91.56666666666666%;
-    vertical-align: top;
-    position: relative;
-    display: inline-block;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    zoom: 1;
-    *display: inline;
-    letter-spacing: normal;
-    word-spacing: normal;
-    white-space: normal;
-    margin: 0;
-    padding: 0;
-    text-align: left;
-    text-align: start;
   }
   .reflex-col-md-10 {
     width: 83.33333333333334%;
     *width: 83.23333333333335%;
-    vertical-align: top;
-    position: relative;
-    display: inline-block;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    zoom: 1;
-    *display: inline;
-    letter-spacing: normal;
-    word-spacing: normal;
-    white-space: normal;
-    margin: 0;
-    padding: 0;
-    text-align: left;
-    text-align: start;
   }
   .reflex-col-md-9 {
     width: 75%;
     *width: 74.9%;
-    vertical-align: top;
-    position: relative;
-    display: inline-block;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    zoom: 1;
-    *display: inline;
-    letter-spacing: normal;
-    word-spacing: normal;
-    white-space: normal;
-    margin: 0;
-    padding: 0;
-    text-align: left;
-    text-align: start;
   }
   .reflex-col-md-8 {
     width: 66.66666666666666%;
     *width: 66.56666666666666%;
-    vertical-align: top;
-    position: relative;
-    display: inline-block;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    zoom: 1;
-    *display: inline;
-    letter-spacing: normal;
-    word-spacing: normal;
-    white-space: normal;
-    margin: 0;
-    padding: 0;
-    text-align: left;
-    text-align: start;
   }
   .reflex-col-md-7 {
     width: 58.333333333333336%;
     *width: 58.233333333333334%;
-    vertical-align: top;
-    position: relative;
-    display: inline-block;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    zoom: 1;
-    *display: inline;
-    letter-spacing: normal;
-    word-spacing: normal;
-    white-space: normal;
-    margin: 0;
-    padding: 0;
-    text-align: left;
-    text-align: start;
   }
   .reflex-col-md-6 {
     width: 50%;
     *width: 49.9%;
-    vertical-align: top;
-    position: relative;
-    display: inline-block;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    zoom: 1;
-    *display: inline;
-    letter-spacing: normal;
-    word-spacing: normal;
-    white-space: normal;
-    margin: 0;
-    padding: 0;
-    text-align: left;
-    text-align: start;
   }
   .reflex-col-md-5 {
     width: 41.66666666666667%;
     *width: 41.56666666666667%;
-    vertical-align: top;
-    position: relative;
-    display: inline-block;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    zoom: 1;
-    *display: inline;
-    letter-spacing: normal;
-    word-spacing: normal;
-    white-space: normal;
-    margin: 0;
-    padding: 0;
-    text-align: left;
-    text-align: start;
   }
   .reflex-col-md-4 {
     width: 33.33333333333333%;
     *width: 33.23333333333333%;
-    vertical-align: top;
-    position: relative;
-    display: inline-block;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    zoom: 1;
-    *display: inline;
-    letter-spacing: normal;
-    word-spacing: normal;
-    white-space: normal;
-    margin: 0;
-    padding: 0;
-    text-align: left;
-    text-align: start;
   }
   .reflex-col-md-3 {
     width: 25%;
     *width: 24.9%;
-    vertical-align: top;
-    position: relative;
-    display: inline-block;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    zoom: 1;
-    *display: inline;
-    letter-spacing: normal;
-    word-spacing: normal;
-    white-space: normal;
-    margin: 0;
-    padding: 0;
-    text-align: left;
-    text-align: start;
   }
   .reflex-col-md-2 {
     width: 16.666666666666664%;
     *width: 16.566666666666663%;
-    vertical-align: top;
-    position: relative;
-    display: inline-block;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    zoom: 1;
-    *display: inline;
-    letter-spacing: normal;
-    word-spacing: normal;
-    white-space: normal;
-    margin: 0;
-    padding: 0;
-    text-align: left;
-    text-align: start;
   }
   .reflex-col-md-1 {
     width: 8.333333333333332%;
     *width: 8.233333333333333%;
-    vertical-align: top;
-    position: relative;
-    display: inline-block;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    zoom: 1;
-    *display: inline;
-    letter-spacing: normal;
-    word-spacing: normal;
-    white-space: normal;
-    margin: 0;
-    padding: 0;
-    text-align: left;
-    text-align: start;
   }
 }
 @media (min-width: 1200px) {
   .reflex-col-lg-12 {
     width: 100%;
     *width: 99.9%;
-    vertical-align: top;
-    position: relative;
-    display: inline-block;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    zoom: 1;
-    *display: inline;
-    letter-spacing: normal;
-    word-spacing: normal;
-    white-space: normal;
-    margin: 0;
-    padding: 0;
-    text-align: left;
-    text-align: start;
   }
   .reflex-col-lg-11 {
     width: 91.66666666666666%;
     *width: 91.56666666666666%;
-    vertical-align: top;
-    position: relative;
-    display: inline-block;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    zoom: 1;
-    *display: inline;
-    letter-spacing: normal;
-    word-spacing: normal;
-    white-space: normal;
-    margin: 0;
-    padding: 0;
-    text-align: left;
-    text-align: start;
   }
   .reflex-col-lg-10 {
     width: 83.33333333333334%;
     *width: 83.23333333333335%;
-    vertical-align: top;
-    position: relative;
-    display: inline-block;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    zoom: 1;
-    *display: inline;
-    letter-spacing: normal;
-    word-spacing: normal;
-    white-space: normal;
-    margin: 0;
-    padding: 0;
-    text-align: left;
-    text-align: start;
   }
   .reflex-col-lg-9 {
     width: 75%;
     *width: 74.9%;
-    vertical-align: top;
-    position: relative;
-    display: inline-block;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    zoom: 1;
-    *display: inline;
-    letter-spacing: normal;
-    word-spacing: normal;
-    white-space: normal;
-    margin: 0;
-    padding: 0;
-    text-align: left;
-    text-align: start;
   }
   .reflex-col-lg-8 {
     width: 66.66666666666666%;
     *width: 66.56666666666666%;
-    vertical-align: top;
-    position: relative;
-    display: inline-block;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    zoom: 1;
-    *display: inline;
-    letter-spacing: normal;
-    word-spacing: normal;
-    white-space: normal;
-    margin: 0;
-    padding: 0;
-    text-align: left;
-    text-align: start;
   }
   .reflex-col-lg-7 {
     width: 58.333333333333336%;
     *width: 58.233333333333334%;
-    vertical-align: top;
-    position: relative;
-    display: inline-block;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    zoom: 1;
-    *display: inline;
-    letter-spacing: normal;
-    word-spacing: normal;
-    white-space: normal;
-    margin: 0;
-    padding: 0;
-    text-align: left;
-    text-align: start;
   }
   .reflex-col-lg-6 {
     width: 50%;
     *width: 49.9%;
-    vertical-align: top;
-    position: relative;
-    display: inline-block;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    zoom: 1;
-    *display: inline;
-    letter-spacing: normal;
-    word-spacing: normal;
-    white-space: normal;
-    margin: 0;
-    padding: 0;
-    text-align: left;
-    text-align: start;
   }
   .reflex-col-lg-5 {
     width: 41.66666666666667%;
     *width: 41.56666666666667%;
-    vertical-align: top;
-    position: relative;
-    display: inline-block;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    zoom: 1;
-    *display: inline;
-    letter-spacing: normal;
-    word-spacing: normal;
-    white-space: normal;
-    margin: 0;
-    padding: 0;
-    text-align: left;
-    text-align: start;
   }
   .reflex-col-lg-4 {
     width: 33.33333333333333%;
     *width: 33.23333333333333%;
-    vertical-align: top;
-    position: relative;
-    display: inline-block;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    zoom: 1;
-    *display: inline;
-    letter-spacing: normal;
-    word-spacing: normal;
-    white-space: normal;
-    margin: 0;
-    padding: 0;
-    text-align: left;
-    text-align: start;
   }
   .reflex-col-lg-3 {
     width: 25%;
     *width: 24.9%;
-    vertical-align: top;
-    position: relative;
-    display: inline-block;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    zoom: 1;
-    *display: inline;
-    letter-spacing: normal;
-    word-spacing: normal;
-    white-space: normal;
-    margin: 0;
-    padding: 0;
-    text-align: left;
-    text-align: start;
   }
   .reflex-col-lg-2 {
     width: 16.666666666666664%;
     *width: 16.566666666666663%;
-    vertical-align: top;
-    position: relative;
-    display: inline-block;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    zoom: 1;
-    *display: inline;
-    letter-spacing: normal;
-    word-spacing: normal;
-    white-space: normal;
-    margin: 0;
-    padding: 0;
-    text-align: left;
-    text-align: start;
   }
   .reflex-col-lg-1 {
     width: 8.333333333333332%;
     *width: 8.233333333333333%;
-    vertical-align: top;
-    position: relative;
-    display: inline-block;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    zoom: 1;
-    *display: inline;
-    letter-spacing: normal;
-    word-spacing: normal;
-    white-space: normal;
-    margin: 0;
-    padding: 0;
-    text-align: left;
-    text-align: start;
   }
 }
 .reflex-wrap {
   -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 }
 .reflex-wrap-reverse {
   -webkit-flex-wrap: wrap-reverse;
-  -ms-flex-wrap: wrap-reverse;
   flex-wrap: wrap-reverse;
 }
 .reflex-direction-row-reverse {
   -webkit-flex-direction: row-reverse;
-  -ms-flex-direction: row-reverse;
   flex-direction: row-reverse;
 }
 .reflex-direction-column {
   -webkit-flex-direction: column;
-  -ms-flex-direction: column;
   flex-direction: column;
 }
 .reflex-direction-column-reverse {
   -webkit-flex-direction: column-reverse;
-  -ms-flex-direction: column-reverse;
   flex-direction: column-reverse;
 }
 .reflex-align-start {
   -webkit-align-items: flex-start;
-  -ms-flex-align: flex-start;
   align-items: flex-start;
 }
 .reflex-align-end {
   -webkit-align-items: flex-end;
-  -ms-flex-align: flex-end;
   align-items: flex-end;
 }
 .reflex-align-end [class*="reflex-col-"] {
@@ -1310,7 +415,6 @@
 }
 .reflex-align-center {
   -webkit-align-items: center;
-  -ms-flex-align: center;
   align-items: center;
 }
 .reflex-align-center [class*="reflex-col-"] {
@@ -1318,7 +422,6 @@
 }
 .reflex-align-baseline {
   -webkit-align-items: baseline;
-  -ms-flex-align: baseline;
   align-items: baseline;
 }
 .reflex-align-baseline [class*="reflex-col-"] {
@@ -1326,12 +429,10 @@
 }
 .reflex-align-content-start {
   -webkit-align-content: flex-start;
-  -ms-flex-line-pack: flex-start;
   align-content: flex-start;
 }
 .reflex-align-content-end {
   -webkit-align-content: flex-end;
-  -ms-flex-line-pack: flex-end;
   align-content: flex-end;
 }
 .reflex-align-content-end [class*="reflex-col-"] {
@@ -1339,57 +440,47 @@
 }
 .reflex-align-content-center {
   -webkit-align-content: center;
-  -ms-flex-line-pack: center;
   align-content: center;
 }
 .reflex-align-content-space-between {
   -webkit-align-content: space-between;
-  -ms-flex-line-pack: space-between;
   align-content: space-between;
 }
 .reflex-align-content-space-around {
   -webkit-align-content: space-around;
-  -ms-flex-line-pack: space-around;
   align-content: space-around;
 }
 .reflex-align-self-stretch {
   -webkit-align-self: stretch;
-  -ms-flex-item-align: stretch;
   align-self: stretch;
 }
 .reflex-align-self-start {
   -webkit-align-self: flex-start;
-  -ms-flex-item-align: flex-start;
   align-self: flex-start;
 }
 .reflex-align-self-end {
   -webkit-align-self: flex-end;
-  -ms-flex-item-align: flex-end;
   align-self: flex-end;
   vertical-align: bottom;
 }
 .reflex-align-self-center {
   -webkit-align-self: center;
-  -ms-flex-item-align: center;
   align-self: center;
   vertical-align: middle;
 }
 .reflex-align-self-baseline {
   -webkit-align-self: baseline;
-  -ms-flex-item-align: baseline;
   align-self: baseline;
   vertical-align: baseline;
 }
 .reflex-justify-end {
   text-align: right;
   -webkit-justify-content: flex-end;
-  -ms-flex-pack: flex-end;
   justify-content: flex-end;
 }
 .reflex-justify-center {
   text-align: center;
   -webkit-justify-content: center;
-  -ms-flex-pack: center;
   justify-content: center;
 }
 .reflex-justify-space-between {
@@ -1397,7 +488,6 @@
   -moz-text-align-last: justify;
   text-align-last: justify;
   -webkit-justify-content: space-between;
-  -ms-flex-pack: space-between;
   justify-content: space-between;
 }
 .reflex-justify-space-around {
@@ -1405,27 +495,45 @@
   -moz-text-align-last: justify;
   text-align-last: justify;
   -webkit-justify-content: space-around;
-  -ms-flex-pack: space-around;
   justify-content: space-around;
 }
-.reflex-padding-sm {
-  margin: -0.25em 0 0.25em -0.25em;
+.reflex-item-margin-sm {
+  margin: 0 0.25em 0.5em;
 }
-.reflex-padding-sm .flex-item,
-.reflex-padding-sm [class*="reflex-col-"] {
-  padding: 0.25em 0 0.25em 0.5em;
+.reflex-item-margin-md {
+  margin: 0 0.5em 1em;
 }
-.reflex-padding-md {
-  margin: -0.5em 0 0.5em -0.5em;
+.reflex-item-margin-lg {
+  margin: 0 1em 2em;
 }
-.reflex-padding-md .flex-item,
-.reflex-padding-md [class*="reflex-col-"] {
-  padding: 0.5em 0 0.5em 1em;
+.reflex-item-content-margin-sm * {
+  margin-right: 0.25em;
+  margin-left: 0.25em;
 }
-.reflex-padding-lg {
-  margin: -1em 0 1em -1em;
+.reflex-item-content-margin-md * {
+  margin-right: 0.5em;
+  margin-left: 0.5em;
 }
-.reflex-padding-lg .flex-item,
-.reflex-padding-lg [class*="reflex-col-"] {
-  padding: 1em 0 1em 2em;
+.reflex-item-content-margin-lg * {
+  margin-right: 1em;
+  margin-left: 1em;
+}
+.reflex-img {
+  display: inline-block;
+  display: -webkit-flex;
+  display: flex;
+  zoom: 1;
+  *display: inline;
+  -webkit-flex: 0 0 auto;
+  flex: 0 0 auto;
+  margin-left: 0;
+  margin-right: 0;
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+}
+.reflex-item-footer {
+  margin-top: auto;
+  margin-left: 0;
+  margin-right: 0;
 }

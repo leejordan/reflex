@@ -21,9 +21,18 @@
     // when using a ul, remove list icon
     list-style-type: none;
 
-    * {
+    *,
+    &:before,
+    &:after {
         .box-sizing(border-box);
+        max-width: 100%;
+
+        // reset whitespace
+        letter-spacing: normal;
+        word-spacing: normal;
+        white-space: normal;
     }
+
     *:before,
     *:after {
         .box-sizing(border-box);
@@ -44,16 +53,25 @@
     // set display with inline-block and inline fallback
     .display-flex();
 
-    // reset whitespace
-    letter-spacing: normal;
-    word-spacing: normal;
-    white-space: normal;
-    margin: 0;
-    padding: 0;
-
     // default alignment
     text-align: left;
     text-align: start;
+}
+
+// --------------------------------------------------
+// reflex item defaults
+// --------------------------------------------------
+
+.reflex-item {
+    display: block;
+    .display-flex-only();
+    .flex-direction(column);
+    .flex(1, 1, auto);
+}
+
+// ie11 hack
+_:-ms-fullscreen, :root .reflex-item {
+    width: 100%;
 }
 
 // --------------------------------------------------

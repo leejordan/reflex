@@ -144,35 +144,58 @@
 }
 
 // --------------------------------------------------
-// reflex grid padding
+// grid item margin
 // --------------------------------------------------
 
-.reflex-padding-sm {
-    margin: -0.25em 0 0.25em -0.25em;
+.reflex-item-margin-sm {
+    margin: 0 0.25em 0.5em;
+}
 
-    .flex-item,
-    [class*="reflex-col-"] {
-        // grid padding
-        padding: 0.25em 0 0.25em 0.5em;
+.reflex-item-margin-md {
+    margin: 0 0.5em 1em;
+}
+
+.reflex-item-margin-lg {
+    margin: 0 1em 2em;
+}
+
+// --------------------------------------------------
+// grid item helpers
+// --------------------------------------------------
+
+.reflex-item-content-margin-sm {
+    * {
+        margin-right: 0.25em;
+        margin-left: 0.25em;
     }
 }
 
-.reflex-padding-md {
-    margin: -0.5em 0 0.5em -0.5em;
-
-    .flex-item,
-    [class*="reflex-col-"] {
-        // grid padding
-        padding: 0.5em 0 0.5em 1em;
+.reflex-item-content-margin-md {
+    * {
+        margin-right: 0.5em;
+        margin-left: 0.5em;
     }
 }
 
-.reflex-padding-lg {
-    margin: -1em 0 1em -1em;
-
-    .flex-item,
-    [class*="reflex-col-"] {
-        // grid padding
-        padding: 1em 0 1em 2em;
+.reflex-item-content-margin-lg {
+    * {
+        margin-right: 1em;
+        margin-left: 1em;
     }
+}
+
+.reflex-img {
+    .display-flex();
+    .flex(0, 0, auto);
+    margin-left: 0;
+    margin-right: 0;
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+}
+
+.reflex-item-footer {
+    margin-top: auto;
+    margin-left: 0;
+    margin-right: 0;
 }
