@@ -1,8 +1,7 @@
 # Reflex
 
-a lightweight responsive flexbox grid with cross browser support and an inline-block fallback
+a lightweight responsive flexbox grid with cross browser support, an inline-block fallback and no polyfills
 
-*   [github](https://github.com/leejordan/reflex)
 *   [docs](http://leejordan.github.io/reflex/docs)
 *   [demo](http://leejordan.github.io/reflex/docs/demo.html)
 
