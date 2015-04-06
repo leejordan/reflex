@@ -3,8 +3,8 @@
 a lightweight responsive flexbox grid with cross browser support and an inline-block fallback
 
 *   [github](https://github.com/leejordan/reflex)
-*   [docs](https://github.com/leejordan/reflex)
-*   [demo](https://github.com/leejordan/reflex/demo.html)
+*   [docs](http://leejordan.github.io/reflex)
+*   [demo](http://leejordan.github.io/demo.html)
 
 Reflex gives you the ability to easily take advantage of flexbox for laying out a grid while having a reliable fallback for older browsers that do not support flexbox.[Browser support for flexbox](http://caniuse.com/#search=flex) is in a pretty good state right now and is growing all the time. At the time of writing, full global flexbox support is at 81.74% (excluding browsers with outdated or partial support) so I propose that it's acceptable to start taking advantage of flexbox and accept that the inline-block fallback won't support everything. You'll still have a working grid on older browsers (all the way back to ie7), just not all of the cool flexbox stuff that doesn't have an inline-block equivalent such as`order`
 
