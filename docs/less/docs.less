@@ -165,10 +165,10 @@ pre {
         z-index: 1;
     }
 
-    &:focus {
+    &:focus,
+    &:active {
         .transform(scale(1.1));
         z-index: 2;
-        background-color: #fff;
 
         .info {
             position: absolute;
@@ -313,12 +313,12 @@ pre {
     img {
         height: auto;
         width: 100%;
-        padding-right: 1em;
     }
 
     a {
         text-decoration: none;
         color: @theme;
+        margin-right: 1em;
 
         &:hover,
         &:focus {

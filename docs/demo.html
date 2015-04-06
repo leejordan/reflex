@@ -35,7 +35,7 @@
     </div>
 
     <h2>Examples</h2>
-    <p>Here are a handful of examples to show you what is possible with minimal effort</p>
+    <p>Here are a handful of examples to show you what is possible with minimal effort using just the standard helper classes. If you require finer control over the contents of your grid you would need to look into using and setting various flex values manually.</p>
 
     <h3>Product grid</h3>
 
@@ -251,7 +251,7 @@
 
     <pre>&lt;div class="reflex-container reflex-wrap"&gt;
     &lt;div class="reflex-col-6 reflex-col-xs-4 reflex-col-sm-3 reflex-col-md-2"&gt;
-        &lt;a href="" class="reflex-item reflex-item-content-margin-md"&gt;
+        &lt;a href="" class="reflex-item reflex-item-content-margin-sm"&gt;
             &lt;img class="reflex-img" src=""&gt;
         &lt;/a&gt;
     &lt;/div&gt;
@@ -260,11 +260,9 @@
     <h3>Forum posts</h3>
 
     <ol class="example-forum">
-        <li class="reflex-container reflex-wrap">
+        <li class="reflex-container">
             <div class="reflex-col-3 reflex-align-start">
-                <a href="javascript:void(0);">
-                    <img src="http://lorempixel.com/400/300/city/1">
-                </a>
+                <a href="javascript:void(0);"><img src="http://lorempixel.com/400/300/city/1"></a>
             </div>
             <div class="reflex-col-9 reflex-direction-column example-text">
                 <h3><a href="javascript:void(0);">Housewife discovers one neat trick that makes web developers crazy</a></h3>
@@ -280,11 +278,9 @@
                 </div>
             </div>
         </li>
-        <li class="reflex-container reflex-wrap">
+        <li class="reflex-container">
             <div class="reflex-col-3 reflex-align-start">
-                <a href="javascript:void(0);">
-                    <img src="http://lorempixel.com/400/300/city/2">
-                </a>
+                <a href="javascript:void(0);"><img src="http://lorempixel.com/400/300/city/2"></a>
             </div>
             <div class="reflex-col-9 reflex-direction-column example-text">
                 <h3><a href="javascript:void(0);">Interesting article about frogs and their application in modern medical science</a></h3>
@@ -301,6 +297,19 @@
             </div>
         </li>
     </ol>
+
+    <p>example markup for forum posts:</p>
+
+    <pre>&lt;ol&gt;
+    &lt;li class="reflex-container"&gt;
+        &lt;div class="reflex-col-3 reflex-align-start"&gt;
+            &lt;a href=""&gt;&lt;img src=""&gt;&lt;/a&gt;
+        &lt;/div&gt;
+        &lt;div class="reflex-col-9 reflex-direction-column example-text"&gt;
+            &lt;content&gt;
+        &lt;/div&gt;
+    &lt;/li&gt;
+&lt;/ol&gt;</pre>
 
     <h3>Bar chart</h3>
 
