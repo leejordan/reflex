@@ -148,15 +148,15 @@
 // --------------------------------------------------
 
 .reflex-item-margin-sm {
-    margin: 0 0.25em 0.5em;
+    margin: 0 @spacing-sm @spacing-sm*2;
 }
 
 .reflex-item-margin-md {
-    margin: 0 0.5em 1em;
+    margin: 0 @spacing-md @spacing-md*2;
 }
 
 .reflex-item-margin-lg {
-    margin: 0 1em 2em;
+    margin: 0 @spacing-lg @spacing-lg*2;
 }
 
 // --------------------------------------------------
@@ -165,22 +165,22 @@
 
 .reflex-item-content-margin-sm {
     * {
-        margin-right: 0.25em;
-        margin-left: 0.25em;
+        margin-right: @spacing-sm;
+        margin-left: @spacing-sm;
     }
 }
 
 .reflex-item-content-margin-md {
     * {
-        margin-right: 0.5em;
-        margin-left: 0.5em;
+        margin-right: @spacing-md;
+        margin-left: @spacing-sm;
     }
 }
 
 .reflex-item-content-margin-lg {
     * {
-        margin-right: 1em;
-        margin-left: 1em;
+        margin-right: @spacing-lg;
+        margin-left: @spacing-lg;
     }
 }
 

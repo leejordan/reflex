@@ -2,7 +2,6 @@
 @import "../../less/reflex/mixins.less";
 @import "../../less/reflex/grid.less";
 @import "../../less/reflex/helpers.less";
-@import "button-anims.less";
 
 .transition(@transition) {
     -webkit-transition:     @transition;
@@ -39,11 +38,33 @@ body {
     font-size: 18px;
 }
 
+a {
+    text-decoration: none;
+    color: @theme;
+
+    &:hover,
+    &:focus {
+        color: darken(@theme, 10%);
+    }
+}
+
 h1,
 h2,
 h3,
 h4 {
     margin-top: 5em;
+
+    a {
+        opacity: 0;
+    }
+
+    &:hover,
+    &:focus {
+        a {
+            .transition(all 0.2s linear);
+            opacity: 1;
+        }
+    }
 }
 
 h1:first-of-type {
@@ -316,14 +337,7 @@ pre {
     }
 
     a {
-        text-decoration: none;
-        color: @theme;
         margin-right: 1em;
-
-        &:hover,
-        &:focus {
-            color: darken(@theme, 20%);
-        }
     }
 
     h3,
@@ -354,3 +368,5 @@ pre {
         }
     }
 }
+
+@import "button-anims.less";
