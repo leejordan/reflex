@@ -512,7 +512,7 @@ _:-ms-fullscreen,
 }
 .reflex-item-content-margin-md * {
   margin-right: 0.5em;
-  margin-left: 0.5em;
+  margin-left: 0.25em;
 }
 .reflex-item-content-margin-lg * {
   margin-right: 1em;
