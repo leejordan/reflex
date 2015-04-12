@@ -31,11 +31,11 @@
 
 body {
     margin: 0 auto;
-    padding: 6%;
-    max-width: 1600px;
+    padding: 0;
     font-family: 'Lato', sans-serif;
     line-height: 1.5em;
     font-size: 18px;
+    background-color: #fff;
 }
 
 a {
@@ -68,6 +68,7 @@ h4 {
 }
 
 h1:first-of-type {
+    margin-top: 2em;
     color: @theme;
 }
 
@@ -75,6 +76,12 @@ h1:first-of-type {
 
 li {
     margin-bottom: 0.4em;
+}
+
+.content-container {
+    margin: 0 auto;
+    padding: 1em 6%;
+    max-width: 1600px;
 }
 
 .table-responsive {
@@ -142,11 +149,7 @@ pre {
     font-weight: bold;
 }
 
-.img-circle {
-  border-radius: 50%;
-}
-
-.container {
+.example-container {
     margin: 0 auto;
     width: 80%;
 }
@@ -268,10 +271,9 @@ pre {
 }
 
 .example-card {
-    border: 1px solid #e9e9e9;
+    background-color: #e9e9e9;
     font-size: 0.9em;
     line-height: 1.3em;
-    background: #fff;
 
     h3 {
         margin-top: 1em;
@@ -283,7 +285,8 @@ pre {
     }
 
     .example-footer {
-        border-top: 1px solid #e9e9e9;
+        border-top: 1px solid #333;
+        background-color: #fff;
         padding: 0.5em;
 
         .example-footer-right {
@@ -367,6 +370,48 @@ pre {
                     margin-right: 1em;
                 }
             }
+        }
+    }
+}
+
+.respond-demo-wrap {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .respond-demo-wrap {
+        box-sizing: border-box;
+        height: 500px;
+        width: 100%;
+        padding: 20px 10px;
+        overflow: hidden;
+        display: block;
+        background: #e9e9e9;
+        border-bottom: 1px solid #000;
+    }
+
+    .respond-demo {
+        -webkit-animation: resize 10s infinite normal linear;
+        box-sizing: border-box;
+        display: block;
+        border: 40px solid #000;
+        box-shadow: 0 0 0 2px #ccc, 0 0 0 1px #000;
+        border-radius: 10px;
+        margin-left: auto;
+        margin-right: auto;
+        height: 540px;
+        width: 1080px;
+    }
+
+    @-webkit-keyframes resize {
+        0%, 32%, 100% {
+          width: 1080px;
+        }
+        33%, 65% {
+          width: 748px;
+        }
+        66%, 99% {
+          width: 400px;
         }
     }
 }
