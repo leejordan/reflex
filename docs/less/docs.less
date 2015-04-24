@@ -392,6 +392,7 @@ pre {
 
     .respond-demo {
         -webkit-animation: resize 10s infinite normal linear;
+        animation: resize 10s infinite normal linear;
         box-sizing: border-box;
         display: block;
         border: 40px solid #000;
@@ -404,6 +405,18 @@ pre {
     }
 
     @-webkit-keyframes resize {
+        0%, 32%, 100% {
+          width: 1080px;
+        }
+        33%, 65% {
+          width: 748px;
+        }
+        66%, 99% {
+          width: 400px;
+        }
+    }
+
+    @keyframes resize {
         0%, 32%, 100% {
           width: 1080px;
         }
