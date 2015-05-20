@@ -1,0 +1,357 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <title>reflex - a lightweight responsive flexbox grid with cross browser support, an inline-block fallback and no polyfills</title>
+    <meta name="description" content="reflex is a responsive flexbox grid with inline-block legacy support">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
+
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/docs.css">
+
+    <script src="js/respond.min.js"></script>
+</head>
+
+<body>
+    <div class="content-container">
+
+        <h2>no item margin</h2>
+
+        <div class="reflex-container reflex-wrap">
+            <div class="reflex-col-xs-6">
+                <div class="reflex-container reflex-wrap">
+                    <div class="reflex-col-6">
+                        <div class="reflex-item example-card">
+                            <h3>Lorem ipsum</h3>
+                            <img class="reflex-img" src="http://lorempixel.com/400/200/technics/1/">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <div class="reflex-item-footer example-footer">
+                                <a href="javascript:void(0);" class="example-footer-right">buy</a>
+                                $4.99
+                            </div>
+                        </div>
+                    </div>
+                    <div class="reflex-col-6">
+                        <div class="reflex-item example-card">
+                            <h3>Lorem ipsum</h3>
+                            <img class="reflex-img" src="http://lorempixel.com/400/200/technics/1/">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <div class="reflex-item-footer example-footer">
+                                <a href="javascript:void(0);" class="example-footer-right">buy</a>
+                                $4.99
+                            </div>
+                        </div>
+                    </div>
+                    <div class="reflex-col-6">
+                        <div class="reflex-item example-card">
+                            <h3>Lorem ipsum</h3>
+                            <img class="reflex-img" src="http://lorempixel.com/400/200/technics/1/">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <div class="reflex-item-footer example-footer">
+                                <a href="javascript:void(0);" class="example-footer-right">buy</a>
+                                $4.99
+                            </div>
+                        </div>
+                    </div>
+                    <div class="reflex-col-6">
+                        <div class="reflex-item example-card">
+                            <h3>Lorem ipsum</h3>
+                            <img class="reflex-img" src="http://lorempixel.com/400/200/technics/1/">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <div class="reflex-item-footer example-footer">
+                                <a href="javascript:void(0);" class="example-footer-right">buy</a>
+                                $4.99
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="reflex-col-xs-6">
+                <div class="reflex-item example-card">
+                    <h3>First</h3>
+                    <img class="reflex-img" src="http://lorempixel.com/400/200/technics/2/">
+                    <p>First appear.</p>
+                    <div class="reflex-item-footer example-footer">
+                        <a href="javascript:void(0);" class="example-footer-right">buy</a>
+                        $2.99
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2>content-margin</h2>
+
+        <div class="reflex-container reflex-wrap">
+            <div class="reflex-col-xs-6">
+                <div class="reflex-container reflex-wrap">
+                    <div class="reflex-col-6">
+                        <div class="reflex-item reflex-item-content-margin-md example-card">
+                            <h3>Lorem ipsum</h3>
+                            <img class="reflex-img" src="http://lorempixel.com/400/200/technics/1/">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <div class="reflex-item-footer example-footer">
+                                <a href="javascript:void(0);" class="example-footer-right">buy</a>
+                                $4.99
+                            </div>
+                        </div>
+                    </div>
+                    <div class="reflex-col-6">
+                        <div class="reflex-item reflex-item-content-margin-md example-card">
+                            <h3>Lorem ipsum</h3>
+                            <img class="reflex-img" src="http://lorempixel.com/400/200/technics/1/">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <div class="reflex-item-footer example-footer">
+                                <a href="javascript:void(0);" class="example-footer-right">buy</a>
+                                $4.99
+                            </div>
+                        </div>
+                    </div>
+                    <div class="reflex-col-6">
+                        <div class="reflex-item reflex-item-content-margin-md example-card">
+                            <h3>Lorem ipsum</h3>
+                            <img class="reflex-img" src="http://lorempixel.com/400/200/technics/1/">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <div class="reflex-item-footer example-footer">
+                                <a href="javascript:void(0);" class="example-footer-right">buy</a>
+                                $4.99
+                            </div>
+                        </div>
+                    </div>
+                    <div class="reflex-col-6">
+                        <div class="reflex-item reflex-item-content-margin-md example-card">
+                            <h3>Lorem ipsum</h3>
+                            <img class="reflex-img" src="http://lorempixel.com/400/200/technics/1/">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <div class="reflex-item-footer example-footer">
+                                <a href="javascript:void(0);" class="example-footer-right">buy</a>
+                                $4.99
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="reflex-col-xs-6">
+                <div class="reflex-item reflex-item-content-margin-md example-card">
+                    <h3>First</h3>
+                    <img class="reflex-img" src="http://lorempixel.com/400/200/technics/2/">
+                    <p>First appear.</p>
+                    <div class="reflex-item-footer example-footer">
+                        <a href="javascript:void(0);" class="example-footer-right">buy</a>
+                        $2.99
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2>item-margin</h2>
+
+        <div class="reflex-container reflex-wrap">
+            <div class="reflex-col-xs-6">
+                <div class="reflex-container reflex-wrap">
+                    <div class="reflex-col-6">
+                        <div class="reflex-item reflex-item-margin-md example-card">
+                            <h3>Lorem ipsum</h3>
+                            <img class="reflex-img" src="http://lorempixel.com/400/200/technics/1/">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <div class="reflex-item-footer example-footer">
+                                <a href="javascript:void(0);" class="example-footer-right">buy</a>
+                                $4.99
+                            </div>
+                        </div>
+                    </div>
+                    <div class="reflex-col-6">
+                        <div class="reflex-item reflex-item-margin-md example-card">
+                            <h3>Lorem ipsum</h3>
+                            <img class="reflex-img" src="http://lorempixel.com/400/200/technics/1/">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <div class="reflex-item-footer example-footer">
+                                <a href="javascript:void(0);" class="example-footer-right">buy</a>
+                                $4.99
+                            </div>
+                        </div>
+                    </div>
+                    <div class="reflex-col-6">
+                        <div class="reflex-item reflex-item-margin-md example-card">
+                            <h3>Lorem ipsum</h3>
+                            <img class="reflex-img" src="http://lorempixel.com/400/200/technics/1/">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <div class="reflex-item-footer example-footer">
+                                <a href="javascript:void(0);" class="example-footer-right">buy</a>
+                                $4.99
+                            </div>
+                        </div>
+                    </div>
+                    <div class="reflex-col-6">
+                        <div class="reflex-item reflex-item-margin-md example-card">
+                            <h3>Lorem ipsum</h3>
+                            <img class="reflex-img" src="http://lorempixel.com/400/200/technics/1/">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <div class="reflex-item-footer example-footer">
+                                <a href="javascript:void(0);" class="example-footer-right">buy</a>
+                                $4.99
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="reflex-col-xs-6">
+                <div class="reflex-item reflex-item-margin-md example-card">
+                    <h3>First</h3>
+                    <img class="reflex-img" src="http://lorempixel.com/400/200/technics/2/">
+                    <p>First appear.</p>
+                    <div class="reflex-item-footer example-footer">
+                        <a href="javascript:void(0);" class="example-footer-right">buy</a>
+                        $2.99
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2>item-margin and content-margin</h2>
+
+        <div class="reflex-container reflex-wrap">
+            <div class="reflex-col-xs-6">
+                <div class="reflex-container reflex-wrap">
+                    <div class="reflex-col-6">
+                        <div class="reflex-item reflex-item-content-margin-md reflex-item-margin-md example-card">
+                            <h3>Lorem ipsum</h3>
+                            <img class="reflex-img" src="http://lorempixel.com/400/200/technics/1/">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <div class="reflex-item-footer example-footer">
+                                <a href="javascript:void(0);" class="example-footer-right">buy</a>
+                                $4.99
+                            </div>
+                        </div>
+                    </div>
+                    <div class="reflex-col-6">
+                        <div class="reflex-item reflex-item-content-margin-md reflex-item-margin-md example-card">
+                            <h3>Lorem ipsum</h3>
+                            <img class="reflex-img" src="http://lorempixel.com/400/200/technics/1/">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <div class="reflex-item-footer example-footer">
+                                <a href="javascript:void(0);" class="example-footer-right">buy</a>
+                                $4.99
+                            </div>
+                        </div>
+                    </div>
+                    <div class="reflex-col-6">
+                        <div class="reflex-item reflex-item-content-margin-md reflex-item-margin-md example-card">
+                            <h3>Lorem ipsum</h3>
+                            <img class="reflex-img" src="http://lorempixel.com/400/200/technics/1/">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <div class="reflex-item-footer example-footer">
+                                <a href="javascript:void(0);" class="example-footer-right">buy</a>
+                                $4.99
+                            </div>
+                        </div>
+                    </div>
+                    <div class="reflex-col-6">
+                        <div class="reflex-item reflex-item-content-margin-md reflex-item-margin-md example-card">
+                            <h3>Lorem ipsum</h3>
+                            <img class="reflex-img" src="http://lorempixel.com/400/200/technics/1/">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <div class="reflex-item-footer example-footer">
+                                <a href="javascript:void(0);" class="example-footer-right">buy</a>
+                                $4.99
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="reflex-col-xs-6">
+                <div class="reflex-item reflex-item-content-margin-md reflex-item-margin-md example-card">
+                    <h3>First</h3>
+                    <img class="reflex-img" src="http://lorempixel.com/400/200/technics/2/">
+                    <p>First appear.</p>
+                    <div class="reflex-item-footer example-footer">
+                        <a href="javascript:void(0);" class="example-footer-right">buy</a>
+                        $2.99
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2>classic three column layout</h2>
+
+        <div class="reflex-container reflex-wrap">
+            <div class="reflex-col-sm-3">
+                <div class="reflex-item reflex-item-content-margin-md reflex-item-margin-md example-card">
+                    <img class="reflex-img" src="http://lorempixel.com/400/200" />
+
+                    <ol>
+                        <li>Inscite autem</li>
+                        <li>Atqui reperies</li>
+                        <li>Age nunc isti doceant</li>
+                        <li>vel tu potius quis</li>
+                        <li>enim ista melius?</li>
+                        <li>Hoc dixerit potius</li>
+                    </ol>
+                </div>
+            </div>
+            <div class="reflex-col-sm-6">
+                <div class="reflex-container reflex-wrap">
+                    <div class="reflex-col-6">
+                        <div class="reflex-item reflex-item-content-margin-md reflex-item-margin-md example-card">
+                            <h3>Lorem ipsum</h3>
+                            <img class="reflex-img" src="http://lorempixel.com/400/200/technics/1/">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <div class="reflex-item-footer example-footer">
+                                <a href="javascript:void(0);" class="example-footer-right">buy</a>
+                                $4.99
+                            </div>
+                        </div>
+                    </div>
+                    <div class="reflex-col-6">
+                        <div class="reflex-item reflex-item-content-margin-md reflex-item-margin-md example-card">
+                            <h3>Lorem ipsum</h3>
+                            <img class="reflex-img" src="http://lorempixel.com/400/200/technics/1/">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <div class="reflex-item-footer example-footer">
+                                <a href="javascript:void(0);" class="example-footer-right">buy</a>
+                                $4.99
+                            </div>
+                        </div>
+                    </div>
+                    <div class="reflex-col-6">
+                        <div class="reflex-item reflex-item-content-margin-md reflex-item-margin-md example-card">
+                            <h3>Lorem ipsum</h3>
+                            <img class="reflex-img" src="http://lorempixel.com/400/200/technics/1/">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <div class="reflex-item-footer example-footer">
+                                <a href="javascript:void(0);" class="example-footer-right">buy</a>
+                                $4.99
+                            </div>
+                        </div>
+                    </div>
+                    <div class="reflex-col-6">
+                        <div class="reflex-item reflex-item-content-margin-md reflex-item-margin-md example-card">
+                            <h3>Lorem ipsum</h3>
+                            <img class="reflex-img" src="http://lorempixel.com/400/200/technics/1/">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <div class="reflex-item-footer example-footer">
+                                <a href="javascript:void(0);" class="example-footer-right">buy</a>
+                                $4.99
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="reflex-col-sm-3">
+                <div class="reflex-item reflex-item-content-margin-md reflex-item-margin-md example-card">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quae duo sunt, unum facit. Duo Reges: constructio interrete. Id mihi magnum videtur. Quid igitur, inquit, eos responsuros putas? Nos paucis ad haec additis finem faciamus aliquando; Quid adiuvas? Erat enim res aperta. </p>
+
+                    <ol>
+                        <li>Inscite autem medicinae et gubernationis ultimum cum ultimo sapientiae comparatur.</li>
+                        <li>Atqui reperies, inquit, in hoc quidem pertinacem;</li>
+                        <li>Age nunc isti doceant, vel tu potius quis enim ista melius?</li>
+                        <li>Hoc dixerit potius Ennius: Nimium boni est, cui nihil est mali.</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -13,29 +13,22 @@
     position: relative;
     width: 100%;
 
-    // set default whitespace
-    letter-spacing: -0.31em;
-    *letter-spacing: normal;
-    word-spacing: -0.43em;
+    .setupWhitespace();
 
     // when using a ul, remove list icon
     list-style-type: none;
 
-    *,
     &:before,
     &:after {
         .box-sizing(border-box);
+        .resetWhitespace();
         max-width: 100%;
-
-        // reset whitespace
-        letter-spacing: normal;
-        word-spacing: normal;
-        white-space: normal;
     }
 
     *:before,
     *:after {
         .box-sizing(border-box);
+        .resetWhitespace();
     }
 }
 
@@ -45,17 +38,8 @@
 
 [class*="reflex-col-"] {
     width: 100%;
-
-    // legacy support
-    vertical-align: top;
-    position: relative;
-
-    // set display with inline-block and inline fallback
-    .display-flex();
-
-    // default alignment
-    text-align: left;
-    text-align: start;
+    .resetTextAlign();
+    .setupCols();
 }
 
 // --------------------------------------------------

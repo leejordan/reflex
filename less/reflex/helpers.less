@@ -133,18 +133,34 @@
 
 .reflex-justify-end {
     .justify-content-end();
+
+    &.reflex-item {
+        .resetTextAlign();
+    }
 }
 
 .reflex-justify-center {
     .justify-content-center();
+
+    &.reflex-item {
+        .resetTextAlign();
+    }
 }
 
 .reflex-justify-space-between {
     .justify-content-space-between();
+
+    &.reflex-item {
+        .resetTextAlign();
+    }
 }
 
 .reflex-justify-space-around {
     .justify-content-space-around();
+
+    &.reflex-item {
+        .resetTextAlign();
+    }
 }
 
 // --------------------------------------------------
@@ -177,7 +193,7 @@
 .reflex-item-content-margin-md {
     * {
         margin-right: @spacing-md;
-        margin-left: @spacing-sm;
+        margin-left: @spacing-md;
     }
 }
 

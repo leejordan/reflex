@@ -17,10 +17,5 @@ The benefits are:
 It's intended to be used as:
 
 *   A means of generating a reliable grid with dynamic content e.g. a list of products
-*   An addition to your current css framework
+*   A replacement or addition to your current css framework
 *   A set of vendor-prefixed helper classes and LESS mixins to get your flexbox solution off the ground faster
-
-It's**not** intended to be used as:
-
-*   A framework for full page layout (although you probably could if you wanted to)
-*   A replacement for bootstrap or any other css framework

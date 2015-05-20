@@ -62,13 +62,6 @@
             <li>A set of vendor-prefixed helper classes and LESS mixins to get your flexbox solution off the ground faster</li>
         </ul>
 
-        <p>It's <strong>not</strong> intended to be used as:</p>
-
-        <ul>
-            <li>A framework for full page layout (although you probably could if you wanted to)</li>
-            <li>A replacement for bootstrap or any other css framework</li>
-        </ul>
-
         <h2 id="grid-introduction">Reflex grid introduction <a href="#grid-introduction">&#35;</a></h2>
         <p>The <code>reflex-container</code> class sets a section of your page up as <code>display: flex</code>. It's children with a class like <code>reflex-col-6</code> are also set as <code>display: flex</code> with a fallback of <code>display: inline-block</code> with strict widths which allows them to act as a grid. The idea is that doing this allows us to take advantage of the extra layout features of flexbox for browsers that support it while also providing a working inline-block grid for those that don't.</p>
 
@@ -79,13 +72,13 @@
         <p>Here is an example of the bare minimum markup you need to create a grid:</p>
 
         <pre>&lt;div class="reflex-container"&gt;
-        &lt;div class="reflex-col-6"&gt;
-            &lt;content&gt;
-        &lt;/div&gt;
-        &lt;div class="reflex-col-6"&gt;
-            &lt;content&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;</pre>
+    &lt;div class="reflex-col-6"&gt;
+        &lt;content&gt;
+    &lt;/div&gt;
+    &lt;div class="reflex-col-6"&gt;
+        &lt;content&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</pre>
 
         <p>Which gives you this:</p>
 
@@ -105,16 +98,18 @@
 
         <p class="alert">If you want to use the grid with breakpoints in ie8 and below you will need to use <a href="https://github.com/scottjehl/Respond" target="_blank">respond.js</a> which enables media query support in those browsers via JavaScript.</p>
 
+        <p class="alert">It is possible for this framework to support ie6. If you're unfortunate enough to have to support it you can make some tiny changes to enable support but it greatly increases the filesize of the css. Look in <a href="https://github.com/leejordan/reflex/blob/master/less/reflex/mixins.less">mixins.less</a> for the commented line.</p>
+
         <h2 id="semantic-markup">Semantic markup <a href="#semantic-markup">&#35;</a></h2>
         <p>You don't have to use <code>div</code> for your grid and ideally you should use the most semantically appropriate markup for your use case with no visible difference.</p>
 
         <h3 id="using-divs">Using divs <a href="#using-divs">&#35;</a></h3>
 
         <pre>&lt;div class="reflex-container"&gt;
-        &lt;div class="reflex-col-6"&gt;
-            &lt;content&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;</pre>
+    &lt;div class="reflex-col-6"&gt;
+        &lt;content&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</pre>
 
         <div class="reflex-container">
             <div class="reflex-col-6 example-col">
@@ -128,10 +123,10 @@
         <h3 id="using-list">Using an unordered list <a href="#using-list">&#35;</a></h3>
 
         <pre>&lt;ul class="reflex-container"&gt;
-        &lt;li class="reflex-col-6"&gt;
-            &lt;content&gt;
-        &lt;/li&gt;
-    &lt;/ul&gt;</pre>
+    &lt;li class="reflex-col-6"&gt;
+        &lt;content&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;</pre>
 
         <ul class="reflex-container">
             <li class="reflex-col-6 example-col">
@@ -145,10 +140,10 @@
         <h3 id="using-html5">Using html5 elements <a href="#using-html5">&#35;</a></h3>
 
         <pre>&lt;section class="reflex-container"&gt;
-        &lt;article class="reflex-col-6"&gt;
-            &lt;content&gt;
-        &lt;/article&gt;
-    &lt;/section&gt;</pre>
+    &lt;article class="reflex-col-6"&gt;
+        &lt;content&gt;
+    &lt;/article&gt;
+&lt;/section&gt;</pre>
 
         <section class="reflex-container">
             <article class="reflex-col-6 example-col">
@@ -164,16 +159,16 @@
         <p class="alert">In the inline-block fallback your grid items will wrap automatically when they add up to 100% width (12 column units by default)</p>
 
         <pre>&lt;div class="reflex-container reflex-wrap"&gt;
-        &lt;div class="reflex-col-6"&gt;
-            &lt;content&gt;
-        &lt;/div&gt;
-        &lt;div class="reflex-col-6"&gt;
-            &lt;content&gt;
-        &lt;/div&gt;
-        &lt;div class="reflex-col-8"&gt;
-            &lt;content&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;</pre>
+    &lt;div class="reflex-col-6"&gt;
+        &lt;content&gt;
+    &lt;/div&gt;
+    &lt;div class="reflex-col-6"&gt;
+        &lt;content&gt;
+    &lt;/div&gt;
+    &lt;div class="reflex-col-8"&gt;
+        &lt;content&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</pre>
 
         <h3 id="reflex-wrap">.reflex-wrap <a href="#reflex-wrap">&#35;</a></h3>
         <p>Uses <code>flex-wrap: wrap</code> and gives you this:</p>
@@ -590,19 +585,19 @@
         <p>Here's an example showing you what is possible</p>
 
         <pre>&lt;div class="reflex-container"&gt;
-        &lt;div class="reflex-col-3"&gt;
-            &lt;content&gt;
-        &lt;/div&gt;
-        &lt;div class="reflex-col-3 reflex-align-self-start"&gt;
-            &lt;content&gt;
-        &lt;/div&gt;
-        &lt;div class="reflex-col-3 reflex-align-self-center"&gt;
-            &lt;content&gt;
-        &lt;/div&gt;
-        &lt;div class="reflex-col-3 reflex-align-self-end"&gt;
-            &lt;content&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;</pre>
+    &lt;div class="reflex-col-3"&gt;
+        &lt;content&gt;
+    &lt;/div&gt;
+    &lt;div class="reflex-col-3 reflex-align-self-start"&gt;
+        &lt;content&gt;
+    &lt;/div&gt;
+    &lt;div class="reflex-col-3 reflex-align-self-center"&gt;
+        &lt;content&gt;
+    &lt;/div&gt;
+    &lt;div class="reflex-col-3 reflex-align-self-end"&gt;
+        &lt;content&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</pre>
 
         <div class="reflex-container example-container-height">
             <div class="reflex-col-3 example-col">
@@ -926,16 +921,16 @@
         <p>uses <code>order: n</code></p>
 
         <pre>&lt;div class="reflex-container"&gt;
-        &lt;div class="reflex-col-4 reflex-order-2"&gt;
-            &lt;p&gt;I am &lt;strong&gt;first&lt;/strong&gt; in the markup but ordered second&lt;/p&gt;
-        &lt;/div&gt;
-        &lt;div class="reflex-col-4 reflex-order-3"&gt;
-            &lt;p&gt;I am &lt;strong&gt;second&lt;/strong&gt; in the markup but ordered third&lt;/p&gt;
-        &lt;/div&gt;
-        &lt;div class="reflex-col-4 reflex-order-1"&gt;
-            &lt;p&gt;I am &lt;strong&gt;third&lt;/strong&gt; in the markup but ordered first&lt;/p&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;</pre>
+    &lt;div class="reflex-col-4 reflex-order-2"&gt;
+        &lt;p&gt;I am &lt;strong&gt;first&lt;/strong&gt; in the markup but ordered second&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="reflex-col-4 reflex-order-3"&gt;
+        &lt;p&gt;I am &lt;strong&gt;second&lt;/strong&gt; in the markup but ordered third&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="reflex-col-4 reflex-order-1"&gt;
+        &lt;p&gt;I am &lt;strong&gt;third&lt;/strong&gt; in the markup but ordered first&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</pre>
 
         <div class="reflex-container">
             <div class="reflex-col-4 reflex-order-2 example-col">

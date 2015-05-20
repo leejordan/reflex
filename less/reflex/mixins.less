@@ -14,6 +14,9 @@
     .reflex-col-@{class}@{index} {
         width: percentage((@index / @reflex-columns));
         *width: percentage((@index / @reflex-columns)) - 0.1;
+
+        //for ie6 support you can uncomment this line but it will increase css filesize
+        //.setupCols();
     }
 }
 
@@ -21,6 +24,38 @@
     .calc-reflex-columns(@index, @class, @type);
     // next iteration
     .loop-reflex-columns((@index - 1), @class, @type);
+}
+
+// defaults for all cols
+.setupCols() {
+    .display-flex();
+    vertical-align: top;
+    position: relative;
+
+    & * {
+        .resetWhitespace();
+    }
+}
+
+// --------------------------------------------------
+// inline-block specific mixins
+// --------------------------------------------------
+
+.setupWhitespace() {
+    letter-spacing: -0.31em !important;
+    *letter-spacing: normal !important;
+    word-spacing: -0.43em !important;
+}
+
+.resetWhitespace() {
+    letter-spacing: normal;
+    word-spacing: normal;
+    white-space: normal;
+}
+
+.resetTextAlign() {
+    text-align: left;
+    text-align: start;
 }
 
 // --------------------------------------------------
@@ -64,8 +99,8 @@
     display: inline-block;
     display: -webkit-flex;
     display: flex;
-    zoom: 1;
     *display: inline;
+    zoom: 1;
 }
 
 .flex(@grow: 0, @shrink: 1, @basis: auto) {
