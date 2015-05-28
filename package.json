@@ -11,5 +11,9 @@
   },
   "bugs": {
     "url": "https://github.com/leejordan/reflex/issues"
+  },
+  "devDependencies": {
+    "gulp": "^3.8.11",
+    "gulp-less": "^3.0.3"
   }
 }
