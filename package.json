@@ -1,0 +1,29 @@
+{
+  "name": "Reflex",
+  "description": "Lightweight responsive flexbox grid with cross browser support, an inline-block fallback and no polyfills",
+  "version": "1.0.0",
+  "author": "Lee Jordan  G.C.S.E",
+  "email": "ldjordan@gmail.com",
+  "github": "https://github.com/leejordan",
+  "homepage": "https://github.com/leejordan/reflex",
+  "license": "The MIT License (MIT)",
+  "keywords": "flexbox",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/leejordan/reflex.git"
+  },
+  "bugs": {
+    "url": "https://github.com/leejordan/reflex/issues"
+  },
+  "devDependencies": {
+    "connect-gzip": "^0.1.6",
+    "gulp": "^3.8.11",
+    "gulp-connect": "^2.2.0",
+    "gulp-csso": "^1.0.0",
+    "gulp-header": "^1.2.2",
+    "gulp-less": "^3.0.3",
+    "gulp-plumber": "^1.0.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sizereport": "^1.1.2"
+  }
+}
