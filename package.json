@@ -1,0 +1,15 @@
+{
+  "name": "reflex",
+  "description": "Lightweight responsive flexbox grid with cross browser support, an inline-block fallback and no polyfills",
+  "version": "1.0.0",
+  "author": "Lee Jordan <ldjordan@gmail.com>",
+  "license": "MIT",
+  "keywords": "flexbox",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/leejordan/reflex.git"
+  },
+  "bugs": {
+    "url": "https://github.com/leejordan/reflex/issues"
+  }
+}
