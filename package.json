@@ -1,0 +1,24 @@
+{
+  "name": "reflex",
+  "version": "0.0.1",
+  "description": "responsive flexbox grid with inline-block legacy support",
+  "directories": {
+    "doc": "docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/leejordan/reflex.git"
+  },
+  "keywords": [
+    "reflex",
+    "flexbox",
+    "responsive",
+    "css-grid"
+  ],
+  "author": "@leejordan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/leejordan/reflex/issues"
+  },
+  "homepage": "https://github.com/leejordan/reflex"
+}
