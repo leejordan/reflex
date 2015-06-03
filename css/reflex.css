@@ -526,25 +526,25 @@ _:-ms-fullscreen,
   text-align: start;
 }
 .reflex-item-margin-sm {
-  margin: 0 0.25em 0.5em;
+  margin: 0 5px 10px;
 }
 .reflex-item-margin-md {
-  margin: 0 0.5em 1em;
+  margin: 0 10px 20px;
 }
 .reflex-item-margin-lg {
-  margin: 0 1em 2em;
+  margin: 0 20px 40px;
 }
 .reflex-item-content-margin-sm > * {
-  margin-right: 0.25em;
-  margin-left: 0.25em;
+  margin-right: 5px;
+  margin-left: 5px;
 }
 .reflex-item-content-margin-md > * {
-  margin-right: 0.5em;
-  margin-left: 0.5em;
+  margin-right: 10px;
+  margin-left: 10px;
 }
 .reflex-item-content-margin-lg > * {
-  margin-right: 1em;
-  margin-left: 1em;
+  margin-right: 20px;
+  margin-left: 20px;
 }
 .reflex-img {
   display: inline-block;
