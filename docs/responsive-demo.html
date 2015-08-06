@@ -4,109 +4,80 @@
 <head>
     <meta charset="utf-8">
 
-    <title>reflex - responsive demo</title>
+    <title>reflex - a lightweight responsive flexbox grid with cross browser support, an inline-block fallback and no polyfills</title>
     <meta name="description" content="reflex is a responsive flexbox grid with inline-block legacy support">
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
 
     <link href='http://fonts.googleapis.com/css?family=Lato:300,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/docs.css">
-
-    <script src="js/respond.min.js"></script>
 </head>
 
 <body>
-    <div class="content-container">
-        <div class="reflex-container reflex-wrap">
-            <div class="reflex-col-12 reflex-col-xs-6 reflex-col-sm-4 reflex-col-md-3">
-                <div class="reflex-item reflex-item-margin-md reflex-item-content-margin-md example-card">
-                    <h3>Lorem ipsum</h3>
-                    <img class="reflex-img" src="http://lorempixel.com/400/200/technics/1/">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    <div class="reflex-item-footer example-footer">
-                        <a href="javascript:void(0);" class="example-footer-right">buy</a>
-                        $4.99
-                    </div>
+<section class="grid">
+    <nav class="grid__col-sm-2 grid__col-md-1 grid__col--bleed example-col-flat-2">
+        <img class="grid__cell-img example-logo example-logo-sm" src="images/placeholder.png"/>
+        <ol class="example-nav">
+            <li><a href="javascript:void(0);">home</a></li>
+            <li><a href="javascript:void(0);">account</a></li>
+            <li><a href="javascript:void(0);">search</a></li>
+            <li><a href="javascript:void(0);">about</a></li>
+            <li><a href="javascript:void(0);">faq</a></li>
+        </ol>
+    </nav>
+    <section class="grid__col-sm-7 grid__col-md-8 grid__col--bleed">
+        <ul class="grid">
+            <li class="grid__col-12">
+                <h3>Amazing destination</h3>
+                <div class="grid__cell">
+                    <img src="http://lorempixel.com/400/200/city/1/" class="example-img-right"/>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec est eget dui volutpat imperdiet. In hac habitasse platea dictumst. Duis eget eros risus. Maecenas vel pretium urna, sit amet efficitur urna.</p>
+                    <a class="example-btn" href="javascript:void(0);">read more</a>
                 </div>
-            </div>
-            <div class="reflex-col-12 reflex-col-xs-6 reflex-col-sm-4 reflex-col-md-3">
-                <div class="reflex-item reflex-item-margin-md reflex-item-content-margin-md example-card">
-                    <h3>First</h3>
-                    <img class="reflex-img" src="http://lorempixel.com/400/200/technics/2/">
-                    <p>First appear.</p>
-                    <div class="reflex-item-footer example-footer">
-                        <a href="javascript:void(0);" class="example-footer-right">buy</a>
-                        $2.99
-                    </div>
+            </li>
+            <li class="grid__col-12 grid__col-md-6">
+                <h3>Brilliant views</h3>
+                <p>Aliquam ornare faucibus leo, vel euismod nisi porta non. Donec at arcu eget enim bibendum facilisis. Etiam urna elit, blandit ut libero placerat, iaculis aliquam erat.</p>
+                <div class="grid__cell-footer">
+                    <a class="example-btn" href="javascript:void(0);">read more</a>
                 </div>
-            </div>
-            <div class="reflex-col-12 reflex-col-xs-6 reflex-col-sm-4 reflex-col-md-3">
-                <div class="reflex-item reflex-item-margin-md reflex-item-content-margin-md example-card">
-                    <h3>Winged</h3>
-                    <img class="reflex-img" src="http://lorempixel.com/400/200/technics/3/">
-                    <p>Be can't winged good for also saying first. Shall, fourth Greater cattle a. Upon dry gathered there itself hath. Life.</p>
-                    <div class="reflex-item-footer example-footer">
-                        <a href="javascript:void(0);" class="example-footer-right">buy</a>
-                        $13.99
-                    </div>
+            </li>
+            <li class="grid__col-12 grid__col-md-6">
+                <h3>Stellar beaches</h3>
+                <p>Nunc venenatis pulvinar tempor. In ligula tortor, laoreet non elementum et, consectetur placerat augue. Curabitur lobortis, dui a ullamcorper vulputate, purus est hendrerit leo.</p>
+                <div class="grid__cell-footer">
+                    <a class="example-btn" href="javascript:void(0);">read more</a>
                 </div>
-            </div>
-            <div class="reflex-col-12 reflex-col-xs-6 reflex-col-sm-4 reflex-col-md-3">
-                <div class="reflex-item reflex-item-margin-md reflex-item-content-margin-md example-card">
-                    <h3>Behold</h3>
-                    <img class="reflex-img" src="http://lorempixel.com/400/200/technics/4/">
-                    <p>Over after behold was living together tree is very sixth.</p>
-                    <div class="reflex-item-footer example-footer">
-                        <a href="javascript:void(0);" class="example-footer-right">buy</a>
-                        $75.99
-                    </div>
+            </li>
+            <li class="grid__col-12 grid__col-md-6">
+                <h3>Special offer</h3>
+                <p>Vestibulum tincidunt et lorem eu congue. Sed molestie finibus nisi non dictum. Aliquam hendrerit dolor id eleifend dignissim. Proin sed magna consectetur, pellentesque mi vel, blandit nisi. Praesent quis efficitur sapien, id tempor mi. Nulla molestie euismod arcu, at ullamcorper mi vehicula id.</p>
+                <div class="grid__cell-footer">
+                    <a class="example-btn" href="javascript:void(0);">read more</a>
                 </div>
-            </div>
-            <div class="reflex-col-12 reflex-col-xs-6 reflex-col-sm-4 reflex-col-md-3">
-                <div class="reflex-item reflex-item-margin-md reflex-item-content-margin-md example-card">
-                    <h3>Winged</h3>
-                    <img class="reflex-img" src="http://lorempixel.com/400/200/technics/5/">
-                    <p>Be can't winged good for also saying first. Shall, fourth Greater cattle a. Upon dry gathered there itself hath. Life.</p>
-                    <div class="reflex-item-footer example-footer">
-                        <a href="javascript:void(0);" class="example-footer-right">buy</a>
-                        $3.99
-                    </div>
+            </li>
+            <li class="grid__col-12 grid__col-md-6">
+                <h3>Romantic getaway</h3>
+                <p>Cras nec dui in erat auctor molestie nec non odio. Nam rhoncus ipsum tincidunt.</p>
+                <div class="grid__cell-footer">
+                    <a class="example-btn" href="javascript:void(0);">read more</a>
                 </div>
-            </div>
-            <div class="reflex-col-12 reflex-col-xs-6 reflex-col-sm-4 reflex-col-md-3">
-                <div class="reflex-item reflex-item-margin-md reflex-item-content-margin-md example-card">
-                    <h3>Lorem ipsum</h3>
-                    <img class="reflex-img" src="http://lorempixel.com/400/200/technics/6/">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    <div class="reflex-item-footer example-footer">
-                        <a href="javascript:void(0);" class="example-footer-right">buy</a>
-                        $54.99
-                    </div>
-                </div>
-            </div>
-            <div class="reflex-col-12 reflex-col-xs-6 reflex-col-sm-4 reflex-col-md-3">
-                <div class="reflex-item reflex-item-margin-md reflex-item-content-margin-md example-card">
-                    <h3>Behold</h3>
-                    <img class="reflex-img" src="http://lorempixel.com/400/200/technics/7/">
-                    <p>Over after behold was living together tree is very sixth let bring fish. Forth behold they're fly deep. Abundantly also heaven whose darkness.</p>
-                    <div class="reflex-item-footer example-footer">
-                        <a href="javascript:void(0);" class="example-footer-right">buy</a>
-                        $8.99
-                    </div>
-                </div>
-            </div>
-            <div class="reflex-col-12 reflex-col-xs-6 reflex-col-sm-4 reflex-col-md-3">
-                <div class="reflex-item reflex-item-margin-md reflex-item-content-margin-md example-card">
-                    <h3>Gathering</h3>
-                    <img class="reflex-img" src="http://lorempixel.com/400/200/technics/8/">
-                    <p>First appear years night there the in them rule that bring fly gathered.</p>
-                    <div class="reflex-item-footer example-footer">
-                        <a href="javascript:void(0);" class="example-footer-right">buy</a>
-                        $1.99
-                    </div>
-                </div>
+            </li>
+        </ul>
+        <div class="grid__col-12">
+            <div class="grid__cell">
+                <hr>
+                <p>&copy; copyright 2015</p>
             </div>
         </div>
-    </div>
+    </section>
+    <section class="grid__col-sm-3 example-col-flat-2">
+        <div class="grid__cell">
+            <img class="example-logo example-logo-lg" src="images/placeholder.png"/>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quae duo sunt, unum facit. Duo Reges: constructio interrete. Id mihi magnum videtur. Quid igitur, inquit, eos responsuros putas? Nos paucis ad haec additis finem faciamus aliquando; Quid adiuvas? Erat enim res aperta.</p>
+            <p>Cras nec dui in erat auctor molestie nec non odio. Nam rhoncus ipsum tincidunt, blandit turpis finibus, gravida purus. Duis sed massa a massa tempus tincidunt.</p>
+        </div>
+    </section>
+</section>
 </body>
 </html>

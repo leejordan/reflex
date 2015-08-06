@@ -10,8 +10,8 @@ Reflex gives you the ability to easily take advantage of flexbox for laying out 
 The benefits are:
 
 *   It's lightweight - 8.5KB in it's minified form and**1.6KB gzipped**
-*   Where flexbox is supported, grid items are all the same height by default
-*   Grid items never push each other out of the way (as with floated grids)
+*   Where flexbox is supported, grid cells are all the same height by default
+*   Grid grid__col-cells never push each other out of the way (as with floated grids)
 *   Good cross browser support
 
 It's intended to be used as:

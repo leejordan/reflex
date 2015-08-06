@@ -16,489 +16,508 @@
 </head>
 
 <body>
-    <div class="content-container">
-        <div class="reflex-container reflex-wrap">
-            <div class="reflex-col-12 reflex-direction-column reflex-justify-center">
-                <h1>Reflex</h1>
+    <header class="content-grid" role="banner">
+        <div class="grid">
+            <div class="grid__col-12 grid--justify-center">
+                <h1>Reflex demo</h1>
                 <p>a lightweight responsive flexbox grid with cross browser support, an inline-block fallback and no polyfills</p>
             </div>
-            <ul class="reflex-container reflex-container-padding-lg reflex-wrap reflex-justify-center">
-                <li class="reflex-col-sm-3 reflex-justify-center">
+        </div>
+        <nav role="navigation" class="grid grid--justify-center">
+            <ul class="grid grid--justify-center">
+                <li class="grid__col-sm-3 grid--align-center">
                     <a href="https://github.com/leejordan/reflex" target="_blank" class="btn btn-code fill">github</a>
                 </li>
-                <li class="reflex-col-sm-3 reflex-justify-center">
+                <li class="grid__col-sm-3 grid--align-center">
                     <a href="../css/reflex.css" target="_blank" class="btn btn-download fill">css</a>
                 </li>
-                <li class="reflex-col-sm-3 reflex-justify-center">
+                <li class="grid__col-sm-3 grid--align-center">
                     <a href="index.html" class="btn btn-external fill">docs</a>
                 </li>
             </ul>
-        </div>
+        </nav>
+    </header>
 
-        <h2 id="examples">Examples <a href="#examples">&#35;</a></h2>
-        <p>Here are a handful of examples to show you what is possible with minimal effort using just the standard helper classes. If you require finer control over the contents of your grid you would need to look into using and setting various flex values manually.</p>
+    <section class="content-grid">
+        <section class="grid">
+            <div class="grid__col-12">
+                <h2 id="product-grid-examples">Product grids <a href="#product-grid-examples">&#35;</a></h2>
+                <h3 id="product-grid-plain">Product grid plain <a href="#product-grid-plain">&#35;</a></h3>
+            </div>
+            <ul class="grid">
+                <li class="grid__col-12 grid__col-xs-6 grid__col-md-3">
+                    <div class="grid__cell">
+                        <h3>Amazing</h3>
+                        <img class="grid__cell-img" src="http://lorempixel.com/400/200/fashion/1/">
+                        <p>Lorem ipsum dolor sit amet, Consectetur adipiscing elit, sed do eiusmod.</p>
+                    </div>
+                    <div class="grid__cell-footer grid--justify-space-between grid--align-center">
+                        <span>$4.99</span>
+                        <a class="example-btn" href="javascript:void(0);">buy</a>
+                    </div>
+                </li>
+                <li class="grid__col-12 grid__col-xs-6 grid__col-md-3">
+                    <div class="grid__cell">
+                        <h3>Brilliant</h3>
+                        <img class="grid__cell-img" src="http://lorempixel.com/400/200/fashion/2/">
+                        <p>Consectetur adipiscing elit, sed do eiusmod.</p>
+                    </div>
+                    <div class="grid__cell-footer grid--justify-space-between grid--align-center">
+                        <span>$4.99</span>
+                        <a class="example-btn" href="javascript:void(0);">buy</a>
+                    </div>
+                </li>
+                <li class="grid__col-12 grid__col-xs-6 grid__col-md-3">
+                    <div class="grid__cell">
+                        <h3>Super</h3>
+                        <img class="grid__cell-img" src="http://lorempixel.com/400/200/fashion/3/">
+                        <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                    <div class="grid__cell-footer grid--justify-space-between grid--align-center">
+                        <span>$4.99</span>
+                        <a class="example-btn" href="javascript:void(0);">buy</a>
+                    </div>
+                </li>
+                <li class="grid__col-12 grid__col-xs-6 grid__col-md-3">
+                    <div class="grid__cell">
+                        <h3>Crazy good</h3>
+                        <img class="grid__cell-img" src="http://lorempixel.com/400/200/fashion/4/">
+                        <p>Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                    <div class="grid__cell-footer grid--justify-space-between grid--align-center">
+                        <span>$4.99</span>
+                        <a class="example-btn" href="javascript:void(0);">buy</a>
+                    </div>
+                </li>
+            </ul>
+        </section>
 
-        <h3 id="product-grid-example">Product grid <a href="#product-grid-example">&#35;</a></h3>
+        <section class="grid">
+            <div class="grid__col-12">
+                <h3 id="product-grid-flat">Product grid with flat panels <a href="#product-grid-flat">&#35;</a></h3>
+            </div>
+            <ul class="grid">
+                <li class="grid__col-12 grid__col-xs-6 grid__col-md-3">
+                    <div class="grid__cell grid__cell--padding-md example-col-flat-1">
+                        <h3>Amazing</h3>
+                        <img class="grid__cell-img" src="http://lorempixel.com/400/200/technics/1/">
+                        <p>Lorem ipsum dolor sit amet, Consectetur adipiscing elit, sed do eiusmod.</p>
+                    </div>
+                    <div class="grid__cell-footer grid__cell--padding-md grid--justify-space-between grid--align-center example-col-flat-1">
+                        <span>$4.99</span>
+                        <a class="example-btn" href="javascript:void(0);">buy</a>
+                    </div>
+                </li>
+                <li class="grid__col-12 grid__col-xs-6 grid__col-md-3">
+                    <div class="grid__cell grid__cell--padding-md example-col-flat-1">
+                        <h3>Brilliant</h3>
+                        <img class="grid__cell-img" src="http://lorempixel.com/400/200/technics/2/">
+                        <p>Consectetur adipiscing elit, sed do eiusmod.</p>
+                    </div>
+                    <div class="grid__cell-footer grid__cell--padding-md grid--justify-space-between grid--align-center example-col-flat-1">
+                        <span>$4.99</span>
+                        <a class="example-btn" href="javascript:void(0);">buy</a>
+                    </div>
+                </li>
+                <li class="grid__col-12 grid__col-xs-6 grid__col-md-3">
+                    <div class="grid__cell grid__cell--padding-md example-col-flat-1">
+                        <h3>Super</h3>
+                        <img class="grid__cell-img" src="http://lorempixel.com/400/200/technics/3/">
+                        <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                    <div class="grid__cell-footer grid__cell--padding-md grid--justify-space-between grid--align-center example-col-flat-1">
+                        <span>$4.99</span>
+                        <a class="example-btn" href="javascript:void(0);">buy</a>
+                    </div>
+                </li>
+                <li class="grid__col-12 grid__col-xs-6 grid__col-md-3">
+                    <div class="grid__cell grid__cell--padding-md example-col-flat-1">
+                        <h3>Crazy good</h3>
+                        <img class="grid__cell-img" src="http://lorempixel.com/400/200/technics/4/">
+                        <p>Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                    <div class="grid__cell-footer grid__cell--padding-md grid--justify-space-between grid--align-center example-col-flat-1">
+                        <span>$4.99</span>
+                        <a class="example-btn" href="javascript:void(0);">buy</a>
+                    </div>
+                </li>
+            </ul>
+        </section>
 
-        <div class="reflex-container reflex-wrap">
-            <div class="reflex-col-12 reflex-col-xs-6 reflex-col-sm-4 reflex-col-md-3">
-                <div class="reflex-item reflex-item-margin-md reflex-item-content-margin-md example-card">
-                    <h3>Lorem ipsum</h3>
-                    <img class="reflex-img" src="http://lorempixel.com/400/200/technics/1/">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    <div class="reflex-item-footer example-footer">
-                        <a href="javascript:void(0);" class="example-footer-right">buy</a>
-                        $4.99
-                    </div>
-                </div>
+        <section class="grid">
+            <div class="grid__col-12">
+                <h3 id="product-grid-images">Product grid with full width images <a href="#product-grid-images">&#35;</a></h3>
             </div>
-            <div class="reflex-col-12 reflex-col-xs-6 reflex-col-sm-4 reflex-col-md-3">
-                <div class="reflex-item reflex-item-margin-md reflex-item-content-margin-md example-card">
-                    <h3>First</h3>
-                    <img class="reflex-img" src="http://lorempixel.com/400/200/technics/2/">
-                    <p>First appear.</p>
-                    <div class="reflex-item-footer example-footer">
-                        <a href="javascript:void(0);" class="example-footer-right">buy</a>
-                        $2.99
+            <ul class="grid">
+                <li class="grid__col-12 grid__col-xs-6 grid__col-md-3">
+                    <img class="grid__cell-img" src="http://lorempixel.com/400/200/food/1/">
+                    <div class="grid__cell grid__cell--padding-md example-col-flat-1">
+                        <h3>Amazing</h3>
+                        <p>Lorem ipsum dolor sit amet, Consectetur adipiscing elit, sed do eiusmod.</p>
                     </div>
-                </div>
-            </div>
-            <div class="reflex-col-12 reflex-col-xs-6 reflex-col-sm-4 reflex-col-md-3">
-                <div class="reflex-item reflex-item-margin-md reflex-item-content-margin-md example-card">
-                    <h3>Winged</h3>
-                    <img class="reflex-img" src="http://lorempixel.com/400/200/technics/3/">
-                    <p>Be can't winged good for also saying first. Shall, fourth Greater cattle a. Upon dry gathered there itself hath. Life.</p>
-                    <div class="reflex-item-footer example-footer">
-                        <a href="javascript:void(0);" class="example-footer-right">buy</a>
-                        $13.99
+                    <div class="grid__cell-footer grid__cell--padding-md grid--justify-space-between grid--align-center example-col-flat-1">
+                        <span>$4.99</span>
+                        <a class="example-btn" href="javascript:void(0);">buy</a>
                     </div>
-                </div>
-            </div>
-            <div class="reflex-col-12 reflex-col-xs-6 reflex-col-sm-4 reflex-col-md-3">
-                <div class="reflex-item reflex-item-margin-md reflex-item-content-margin-md example-card">
-                    <h3>Behold</h3>
-                    <img class="reflex-img" src="http://lorempixel.com/400/200/technics/4/">
-                    <p>Over after behold was living together tree is very sixth.</p>
-                    <div class="reflex-item-footer example-footer">
-                        <a href="javascript:void(0);" class="example-footer-right">buy</a>
-                        $75.99
+                </li>
+                <li class="grid__col-12 grid__col-xs-6 grid__col-md-3">
+                    <img class="grid__cell-img" src="http://lorempixel.com/400/200/food/2/">
+                    <div class="grid__cell grid__cell--padding-md example-col-flat-1">
+                        <h3>Brilliant</h3>
+                        <p>Consectetur adipiscing elit, sed do eiusmod.</p>
                     </div>
-                </div>
-            </div>
-            <div class="reflex-col-12 reflex-col-xs-6 reflex-col-sm-4 reflex-col-md-3">
-                <div class="reflex-item reflex-item-margin-md reflex-item-content-margin-md example-card">
-                    <h3>Winged</h3>
-                    <img class="reflex-img" src="http://lorempixel.com/400/200/technics/5/">
-                    <p>Be can't winged good for also saying first. Shall, fourth Greater cattle a. Upon dry gathered there itself hath. Life.</p>
-                    <div class="reflex-item-footer example-footer">
-                        <a href="javascript:void(0);" class="example-footer-right">buy</a>
-                        $3.99
+                    <div class="grid__cell-footer grid__cell--padding-md grid--justify-space-between grid--align-center example-col-flat-1">
+                        <span>$4.99</span>
+                        <a class="example-btn" href="javascript:void(0);">buy</a>
                     </div>
-                </div>
-            </div>
-            <div class="reflex-col-12 reflex-col-xs-6 reflex-col-sm-4 reflex-col-md-3">
-                <div class="reflex-item reflex-item-margin-md reflex-item-content-margin-md example-card">
-                    <h3>Lorem ipsum</h3>
-                    <img class="reflex-img" src="http://lorempixel.com/400/200/technics/6/">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    <div class="reflex-item-footer example-footer">
-                        <a href="javascript:void(0);" class="example-footer-right">buy</a>
-                        $54.99
+                </li>
+                <li class="grid__col-12 grid__col-xs-6 grid__col-md-3">
+                    <img class="grid__cell-img" src="http://lorempixel.com/400/200/food/3/">
+                    <div class="grid__cell grid__cell--padding-md example-col-flat-1">
+                        <h3>Super</h3>
+                        <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                     </div>
-                </div>
-            </div>
-            <div class="reflex-col-12 reflex-col-xs-6 reflex-col-sm-4 reflex-col-md-3">
-                <div class="reflex-item reflex-item-margin-md reflex-item-content-margin-md example-card">
-                    <h3>Behold</h3>
-                    <img class="reflex-img" src="http://lorempixel.com/400/200/technics/7/">
-                    <p>Over after behold was living together tree is very sixth let bring fish. Forth behold they're fly deep. Abundantly also heaven whose darkness.</p>
-                    <div class="reflex-item-footer example-footer">
-                        <a href="javascript:void(0);" class="example-footer-right">buy</a>
-                        $8.99
+                    <div class="grid__cell-footer grid__cell--padding-md grid--justify-space-between grid--align-center example-col-flat-1">
+                        <span>$4.99</span>
+                        <a class="example-btn" href="javascript:void(0);">buy</a>
                     </div>
-                </div>
-            </div>
-            <div class="reflex-col-12 reflex-col-xs-6 reflex-col-sm-4 reflex-col-md-3">
-                <div class="reflex-item reflex-item-margin-md reflex-item-content-margin-md example-card">
-                    <h3>Gathering</h3>
-                    <img class="reflex-img" src="http://lorempixel.com/400/200/technics/8/">
-                    <p>First appear years night there the in them rule that bring fly gathered.</p>
-                    <div class="reflex-item-footer example-footer">
-                        <a href="javascript:void(0);" class="example-footer-right">buy</a>
-                        $1.99
+                </li>
+                <li class="grid__col-12 grid__col-xs-6 grid__col-md-3">
+                    <img class="grid__cell-img" src="http://lorempixel.com/400/200/food/4/">
+                    <div class="grid__cell grid__cell--padding-md example-col-flat-1">
+                        <h3>Crazy good</h3>
+                        <p>Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                     </div>
-                </div>
-            </div>
-        </div>
+                    <div class="grid__cell-footer grid__cell--padding-md grid--justify-space-between grid--align-center example-col-flat-1">
+                        <span>$4.99</span>
+                        <a class="example-btn" href="javascript:void(0);">buy</a>
+                    </div>
+                </li>
+            </ul>
+        </section>
 
-        <p>example markup for product grid:</p>
-
-        <pre>&lt;div class="reflex-container reflex-wrap"&gt;
-    &lt;div class="reflex-col-12 reflex-col-xs-6 reflex-col-sm-4 reflex-col-md-3"&gt;
-        &lt;div class="reflex-item reflex-item-margin-md reflex-item-content-margin-md"&gt;
-            &lt;h3&gt;heading&lt;/h3&gt;
-            &lt;img class="reflex-img" src=""&gt;
-            &lt;p&gt;blah blah blah&lt;/p&gt;
-            &lt;div class="reflex-item-footer"&gt;
-                $4.99
-            &lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;repeat grid items&gt;
-&lt;/div&gt;</pre>
-
-        <h3 id="three-column">Classic three column layout with nested grids <a href="#three-column">&#35;</a></h3>
-
-        <div class="reflex-container reflex-wrap">
-            <div class="reflex-col-sm-3">
-                <div class="reflex-item reflex-item-content-margin-md reflex-item-margin-md example-card example-nav">
-                    <img class="reflex-img" src="http://lorempixel.com/400/200" />
-
-                    <ol>
-                        <li><a href="javascript:void(0);">Inscite autem</a></li>
-                        <li><a href="javascript:void(0);">Atqui reperies</a></li>
-                        <li><a href="javascript:void(0);">Age nunc isti doceant</a></li>
-                        <li><a href="javascript:void(0);">vel tu potius quis</a></li>
-                        <li><a href="javascript:void(0);">enim ista melius?</a></li>
-                        <li><a href="javascript:void(0);">Hoc dixerit potius</a></li>
-                    </ol>
-                </div>
-            </div>
-            <div class="reflex-col-sm-6">
-                <div class="reflex-container reflex-wrap">
-                    <div class="reflex-col-6">
-                        <div class="reflex-item reflex-item-content-margin-lg reflex-item-margin-md example-card">
-                            <h3>Lorem ipsum</h3>
-                            <img class="reflex-img" src="http://lorempixel.com/400/200/technics/1/">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                            <div class="reflex-item-footer example-footer">
-                                <a href="javascript:void(0);" class="example-footer-right">buy</a>
-                                $4.99
-                            </div>
-                        </div>
-                    </div>
-                    <div class="reflex-col-6">
-                        <div class="reflex-item reflex-item-content-margin-md reflex-item-margin-md example-card">
-                            <h3>Lorem ipsum</h3>
-                            <img class="reflex-img" src="http://lorempixel.com/400/200/technics/1/">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                            <div class="reflex-item-footer example-footer">
-                                <a href="javascript:void(0);" class="example-footer-right">buy</a>
-                                $4.99
-                            </div>
-                        </div>
-                    </div>
-                    <div class="reflex-col-6">
-                        <div class="reflex-item reflex-item-content-margin-md reflex-item-margin-md example-card">
-                            <h3>Lorem ipsum</h3>
-                            <img class="reflex-img" src="http://lorempixel.com/400/200/technics/1/">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                            <div class="reflex-item-footer example-footer">
-                                <a href="javascript:void(0);" class="example-footer-right">buy</a>
-                                $4.99
-                            </div>
-                        </div>
-                    </div>
-                    <div class="reflex-col-6">
-                        <div class="reflex-item reflex-item-content-margin-md reflex-item-margin-md example-card">
-                            <h3>Lorem ipsum</h3>
-                            <img class="reflex-img" src="http://lorempixel.com/400/200/technics/1/">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                            <div class="reflex-item-footer example-footer">
-                                <a href="javascript:void(0);" class="example-footer-right">buy</a>
-                                $4.99
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="reflex-col-sm-3">
-                <div class="reflex-item reflex-item-content-margin-lg reflex-item-margin-md example-card example-nav">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quae duo sunt, unum facit. Duo Reges: constructio interrete. Id mihi magnum videtur. Quid igitur, inquit, eos responsuros putas? Nos paucis ad haec additis finem faciamus aliquando; Quid adiuvas? Erat enim res aperta. </p>
-                </div>
+        <div class="grid">
+            <div class="grid__col-12">
+                <h2 id="three-column">Classic three column layout with nested grids <a href="#three-column">&#35;</a></h2>
             </div>
         </div>
+    </section>
 
-        <p>example markup for classic three column layout with nested grids</p>
+    <section class="content-full">
+        <section class="grid">
+            <nav class="grid__col-sm-2 grid__col-md-1 grid__col--bleed example-col-flat-2">
+                <img class="grid__cell-img example-logo example-logo-sm" src="images/placeholder.png"/>
+                <ol class="example-nav">
+                    <li><a href="javascript:void(0);">home</a></li>
+                    <li><a href="javascript:void(0);">account</a></li>
+                    <li><a href="javascript:void(0);">search</a></li>
+                    <li><a href="javascript:void(0);">about</a></li>
+                    <li><a href="javascript:void(0);">faq</a></li>
+                </ol>
+            </nav>
+            <section class="grid__col-sm-7 grid__col-md-8 grid__col--bleed">
+                <ul class="grid">
+                    <li class="grid__col-12">
+                        <h3>Amazing destination</h3>
+                        <div class="grid__cell">
+                            <img src="http://lorempixel.com/400/200/city/1/" class="example-img-right"/>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec est eget dui volutpat imperdiet. In hac habitasse platea dictumst. Duis eget eros risus. Maecenas vel pretium urna, sit amet efficitur urna.</p>
+                            <a class="example-btn" href="javascript:void(0);">read more</a>
+                        </div>
+                    </li>
+                    <li class="grid__col-12 grid__col-md-6">
+                        <h3>Brilliant views</h3>
+                        <p>Aliquam ornare faucibus leo, vel euismod nisi porta non. Donec at arcu eget enim bibendum facilisis. Etiam urna elit, blandit ut libero placerat, iaculis aliquam erat.</p>
+                        <div class="grid__cell-footer">
+                            <a class="example-btn" href="javascript:void(0);">read more</a>
+                        </div>
+                    </li>
+                    <li class="grid__col-12 grid__col-md-6">
+                        <h3>Stellar beaches</h3>
+                        <p>Nunc venenatis pulvinar tempor. In ligula tortor, laoreet non elementum et, consectetur placerat augue. Curabitur lobortis, dui a ullamcorper vulputate, purus est hendrerit leo.</p>
+                        <div class="grid__cell-footer">
+                            <a class="example-btn" href="javascript:void(0);">read more</a>
+                        </div>
+                    </li>
+                    <li class="grid__col-12 grid__col-md-6">
+                        <h3>Special offer</h3>
+                        <p>Vestibulum tincidunt et lorem eu congue. Sed molestie finibus nisi non dictum. Aliquam hendrerit dolor id eleifend dignissim. Proin sed magna consectetur, pellentesque mi vel, blandit nisi. Praesent quis efficitur sapien, id tempor mi. Nulla molestie euismod arcu, at ullamcorper mi vehicula id.</p>
+                        <div class="grid__cell-footer">
+                            <a class="example-btn" href="javascript:void(0);">read more</a>
+                        </div>
+                    </li>
+                    <li class="grid__col-12 grid__col-md-6">
+                        <h3>Romantic getaway</h3>
+                        <p>Cras nec dui in erat auctor molestie nec non odio. Nam rhoncus ipsum tincidunt.</p>
+                        <div class="grid__cell-footer">
+                            <a class="example-btn" href="javascript:void(0);">read more</a>
+                        </div>
+                    </li>
+                </ul>
+                <div class="grid__col-12">
+                    <div class="grid__cell">
+                        <hr>
+                        <p>&copy; copyright 2015</p>
+                    </div>
+                </div>
+            </section>
+            <section class="grid__col-sm-3 example-col-flat-2">
+                <div class="grid__cell">
+                    <img class="example-logo example-logo-lg" src="images/placeholder.png"/>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quae duo sunt, unum facit. Duo Reges: constructio interrete. Id mihi magnum videtur. Quid igitur, inquit, eos responsuros putas? Nos paucis ad haec additis finem faciamus aliquando; Quid adiuvas? Erat enim res aperta.</p>
+                    <p>Cras nec dui in erat auctor molestie nec non odio. Nam rhoncus ipsum tincidunt, blandit turpis finibus, gravida purus. Duis sed massa a massa tempus tincidunt.</p>
+                </div>
+            </section>
+        </section>
+    </section>
 
-        <pre>&lt;div class="reflex-container reflex-wrap"&gt;
-    &lt;div class="reflex-col-sm-3"&gt;
-        &lt;div class="reflex-item reflex-item-content-margin-lg reflex-item-margin-md"&gt;
-            &lt;content&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div class="reflex-col-sm-6"&gt;
-        &lt;div class="reflex-container reflex-wrap"&gt;
-            &lt;div class="reflex-col-6"&gt;
-                &lt;div class="reflex-item reflex-item-content-margin-md reflex-item-margin-md"&gt;
-                    &lt;content&gt;
-                &lt;/div&gt;
-            &lt;/div&gt;
-            &lt;div class="reflex-col-6"&gt;
-                &lt;div class="reflex-item reflex-item-content-margin-md reflex-item-margin-md"&gt;
-                    &lt;content&gt;
-                &lt;/div&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div class="reflex-col-sm-3"&gt;
-        &lt;div class="reflex-item reflex-item-content-margin-lg reflex-item-margin-md"&gt;
-            &lt;content&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;</pre>
+    <section class="content-grid">
+        <section class="grid">
+            <div class="grid__col-12">
+                <h2 id="info-grid-example">Info grid <a href="#info-grid-example">&#35;</a></h2>
+            </div>
+        </div>
 
-        <h3 id="info-grid-example">Info grid <a href="#info-grid-example">&#35;</a></h3>
-
-        <div class="reflex-container reflex-wrap">
-            <div class="reflex-col-6 reflex-col-xs-4 reflex-col-sm-3 reflex-col-md-2">
-                <a href="javascript:void(0);" class="reflex-item reflex-item-content-margin-sm example-info">
-                    <img class="reflex-img" src="http://media.steampowered.com/apps/dota2/images/heroes/ancient_apparition_full.png">
+        <ul class="grid grid--bleed">
+            <li class="grid__col-6 grid__col-xs-4 grid__col-sm-3 grid__col-md-2">
+                <a href="javascript:void(0);" class="example-info" style="background-image: url(http://media.steampowered.com/apps/dota2/images/heroes/ancient_apparition_full.png);">
                     <div class="info">
                         <h3>Ancient Apparition</h3>
                     </div>
                 </a>
-            </div>
-            <div class="reflex-col-6 reflex-col-xs-4 reflex-col-sm-3 reflex-col-md-2">
-                <a href="javascript:void(0);" class="reflex-item reflex-item-content-margin-sm example-info">
-                    <img class="reflex-img" src="http://media.steampowered.com/apps/dota2/images/heroes/chaos_knight_full.png">
+            </li>
+            <li class="grid__col-6 grid__col-xs-4 grid__col-sm-3 grid__col-md-2">
+                <a href="javascript:void(0);" class="example-info"  style="background-image: url(http://media.steampowered.com/apps/dota2/images/heroes/chaos_knight_full.png);">
                     <div class="info">
                         <h3>Chaos Knight</h3>
                     </div>
                 </a>
-            </div>
-            <div class="reflex-col-6 reflex-col-xs-4 reflex-col-sm-3 reflex-col-md-2">
-                <a href="javascript:void(0);" class="reflex-item reflex-item-content-margin-sm example-info">
-                    <img class="reflex-img" src="http://media.steampowered.com/apps/dota2/images/heroes/meepo_full.png">
+            </li>
+            <li class="grid__col-6 grid__col-xs-4 grid__col-sm-3 grid__col-md-2">
+                <a href="javascript:void(0);" class="example-info"  style="background-image: url(http://media.steampowered.com/apps/dota2/images/heroes/meepo_full.png);">
                     <div class="info">
                         <h3>Meepo</h3>
                     </div>
                 </a>
-            </div>
-            <div class="reflex-col-6 reflex-col-xs-4 reflex-col-sm-3 reflex-col-md-2">
-                <a href="javascript:void(0);" class="reflex-item reflex-item-content-margin-sm example-info">
-                    <img class="reflex-img" src="http://media.steampowered.com/apps/dota2/images/heroes/tusk_full.png">
+            </li>
+            <li class="grid__col-6 grid__col-xs-4 grid__col-sm-3 grid__col-md-2">
+                <a href="javascript:void(0);" class="example-info"  style="background-image: url(http://media.steampowered.com/apps/dota2/images/heroes/tusk_full.png);">
                     <div class="info">
                         <h3>Tusk</h3>
                     </div>
                 </a>
-            </div>
-            <div class="reflex-col-6 reflex-col-xs-4 reflex-col-sm-3 reflex-col-md-2">
-                <a href="javascript:void(0);" class="reflex-item reflex-item-content-margin-sm example-info">
-                    <img class="reflex-img" src="http://media.steampowered.com/apps/dota2/images/heroes/sven_full.png">
+            </li>
+            <li class="grid__col-6 grid__col-xs-4 grid__col-sm-3 grid__col-md-2">
+                <a href="javascript:void(0);" class="example-info"  style="background-image: url(http://media.steampowered.com/apps/dota2/images/heroes/sven_full.png);">
                     <div class="info">
                         <h3>Sven</h3>
                     </div>
                 </a>
-            </div>
-            <div class="reflex-col-6 reflex-col-xs-4 reflex-col-sm-3 reflex-col-md-2">
-                <a href="javascript:void(0);" class="reflex-item reflex-item-content-margin-sm example-info">
-                    <img class="reflex-img" src="http://media.steampowered.com/apps/dota2/images/heroes/techies_full.png">
+            </li>
+            <li class="grid__col-6 grid__col-xs-4 grid__col-sm-3 grid__col-md-2">
+                <a href="javascript:void(0);" class="example-info"  style="background-image: url(http://media.steampowered.com/apps/dota2/images/heroes/techies_full.png);">
                     <div class="info">
                         <h3>Techies</h3>
                     </div>
                 </a>
-            </div>
-            <div class="reflex-col-6 reflex-col-xs-4 reflex-col-sm-3 reflex-col-md-2">
-                <a href="javascript:void(0);" class="reflex-item reflex-item-content-margin-sm example-info">
-                    <img class="reflex-img" src="http://media.steampowered.com/apps/dota2/images/heroes/storm_spirit_full.png">
+            </li>
+            <li class="grid__col-6 grid__col-xs-4 grid__col-sm-3 grid__col-md-2">
+                <a href="javascript:void(0);" class="example-info"  style="background-image: url(http://media.steampowered.com/apps/dota2/images/heroes/storm_spirit_full.png);">
                     <div class="info">
                         <h3>Storm spirit</h3>
                     </div>
                 </a>
-            </div>
-            <div class="reflex-col-6 reflex-col-xs-4 reflex-col-sm-3 reflex-col-md-2">
-                <a href="javascript:void(0);" class="reflex-item reflex-item-content-margin-sm example-info">
-                    <img class="reflex-img" src="http://media.steampowered.com/apps/dota2/images/heroes/spirit_breaker_full.png">
+            </li>
+            <li class="grid__col-6 grid__col-xs-4 grid__col-sm-3 grid__col-md-2">
+                <a href="javascript:void(0);" class="example-info"  style="background-image: url(http://media.steampowered.com/apps/dota2/images/heroes/spirit_breaker_full.png);">
                     <div class="info">
                         <h3>Spirit breaker</h3>
                     </div>
                 </a>
-            </div>
-            <div class="reflex-col-6 reflex-col-xs-4 reflex-col-sm-3 reflex-col-md-2">
-                <a href="javascript:void(0);" class="reflex-item reflex-item-content-margin-sm example-info">
-                    <img class="reflex-img" src="http://media.steampowered.com/apps/dota2/images/heroes/sniper_full.png">
+            </li>
+            <li class="grid__col-6 grid__col-xs-4 grid__col-sm-3 grid__col-md-2">
+                <a href="javascript:void(0);" class="example-info"  style="background-image: url(http://media.steampowered.com/apps/dota2/images/heroes/sniper_full.png);">
                     <div class="info">
                         <h3>Sniper</h3>
                     </div>
                 </a>
-            </div>
-            <div class="reflex-col-6 reflex-col-xs-4 reflex-col-sm-3 reflex-col-md-2">
-                <a href="javascript:void(0);" class="reflex-item reflex-item-content-margin-sm example-info">
-                    <img class="reflex-img" src="http://media.steampowered.com/apps/dota2/images/heroes/windrunner_full.png">
+            </li>
+            <li class="grid__col-6 grid__col-xs-4 grid__col-sm-3 grid__col-md-2">
+                <a href="javascript:void(0);" class="example-info"  style="background-image: url(http://media.steampowered.com/apps/dota2/images/heroes/windrunner_full.png);">
                     <div class="info">
                         <h3>Windrunner</h3>
                     </div>
                 </a>
-            </div>
-            <div class="reflex-col-6 reflex-col-xs-4 reflex-col-sm-3 reflex-col-md-2">
-                <a href="javascript:void(0);" class="reflex-item reflex-item-content-margin-sm example-info">
-                    <img class="reflex-img" src="http://media.steampowered.com/apps/dota2/images/heroes/zuus_full.png">
+            </li>
+            <li class="grid__col-6 grid__col-xs-4 grid__col-sm-3 grid__col-md-2">
+                <a href="javascript:void(0);" class="example-info"  style="background-image: url(http://media.steampowered.com/apps/dota2/images/heroes/zuus_full.png);">
                     <div class="info">
                         <h3>Zeus</h3>
                     </div>
                 </a>
-            </div>
-            <div class="reflex-col-6 reflex-col-xs-4 reflex-col-sm-3 reflex-col-md-2">
-                <a href="javascript:void(0);" class="reflex-item reflex-item-content-margin-sm example-info">
-                    <img class="reflex-img" src="http://media.steampowered.com/apps/dota2/images/heroes/wisp_full.png">
+            </li>
+            <li class="grid__col-6 grid__col-xs-4 grid__col-sm-3 grid__col-md-2">
+                <a href="javascript:void(0);" class="example-info"  style="background-image: url(http://media.steampowered.com/apps/dota2/images/heroes/wisp_full.png);">
                     <div class="info">
                         <h3>Io</h3>
                     </div>
                 </a>
+            </li>
+        </ul>
+
+        <div class="grid">
+            <div class="grid__col-12">
+                <h2 id="forum-post-example">Forum posts <a href="#forum-post-example">&#35;</a></h2>
             </div>
         </div>
 
-        <p>example markup for info grid:</p>
-
-        <pre>&lt;div class="reflex-container reflex-wrap"&gt;
-    &lt;div class="reflex-col-6 reflex-col-xs-4 reflex-col-sm-3 reflex-col-md-2"&gt;
-        &lt;a href="" class="reflex-item reflex-item-content-margin-sm"&gt;
-            &lt;img class="reflex-img" src=""&gt;
-        &lt;/a&gt;
-    &lt;/div&gt;
-&lt;/div&gt;</pre>
-
-        <h3 id="forum-post-example">Forum posts <a href="#forum-post-example">&#35;</a></h3>
-
         <ol class="example-forum">
-            <li class="reflex-container">
-                <div class="reflex-col-3 reflex-align-start">
-                    <a href="javascript:void(0);"><img src="http://lorempixel.com/400/300/city/1"></a>
+            <li class="grid">
+                <div class="grid__col-xs-3 example-col-flat-1">
+                    <a href="javascript:void(0);">
+                        <img src="http://lorempixel.com/400/300/city/2" class="grid__cell-img">
+                    </a>
                 </div>
-                <div class="reflex-col-9 reflex-direction-column example-text">
-                    <div class="reflex-item reflex-item-margin-lg">
-                        <a href="javascript:void(0);"><h3>Housewife discovers one neat trick that makes web developers crazy</h3></a>
-                        <p>One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin.</p>
-                        <div class="example-meta">
-                            <p>posted 5 hours ago by <a href="javascript:void(0);">Barry Jones</a></p>
-                            <ul>
-                                <li><a href="javascript:void(0);">125 comments</a></li>
-                                <li><a href="javascript:void(0);">share</a></li>
-                                <li><a href="javascript:void(0);">save</a></li>
-                                <li><a href="javascript:void(0);">hide</a></li>
-                            </ul>
-                        </div>
+                <div class="grid__col-xs-9 example-col-flat-1">
+                    <div class="grid__cell">
+                        <a href="javascript:void(0);">
+                            <h3>Housewife discovers one neat trick that makes web developers crazy</h3>
+                        </a>
+                        <p>
+                            Squatting on old bones and excrement and rusty iron, in a white blaze of heat, a panorama of naked idiots stretches to the horizon. Complete silence - their speech centres are destroyed - except for the crackle of sparks and the popping of singed flesh as they apply electrodes up and down the spine. White smoke of burning flesh hangs in the motionless air.
+                        </p>
+                    </div>
+                    <div class="grid__cell-footer grid--direction-column example-meta">
+                        <p>
+                            posted 5 hours ago by <a href="javascript:void(0);">Barry Jones</a>
+                        </p>
+                        <ul>
+                            <li><a href="javascript:void(0);">125 comments</a></li>
+                            <li><a href="javascript:void(0);">share</a></li>
+                            <li><a href="javascript:void(0);">save</a></li>
+                            <li><a href="javascript:void(0);">hide</a></li>
+                        </ul>
                     </div>
                 </div>
             </li>
-            <li class="reflex-container">
-                <div class="reflex-col-3 reflex-align-start">
-                    <a href="javascript:void(0);"><img src="http://lorempixel.com/400/300/city/2"></a>
+            <li class="grid">
+                <div class="grid__col-xs-3">
+                    <a href="javascript:void(0);">
+                        <img src="http://lorempixel.com/400/300/people/3" class="grid__cell-img">
+                    </a>
                 </div>
-                <div class="reflex-col-9 reflex-direction-column example-text">
-                    <div class="reflex-item reflex-item-margin-lg">
-                        <a href="javascript:void(0);"><h3>Interesting article about frogs and their application in modern medical science</h3></a>
-                        <p>He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment. His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked.</p>
-                        <div class="example-meta">
-                            <p>posted 7 hours ago by <a href="javascript:void(0);">Mr Pickles</a></p>
-                            <ul>
-                                <li><a href="javascript:void(0);">4 comments</a></li>
-                                <li><a href="javascript:void(0);">share</a></li>
-                                <li><a href="javascript:void(0);">save</a></li>
-                                <li><a href="javascript:void(0);">hide</a></li>
-                            </ul>
-                        </div>
+                <div class="grid__col-xs-9">
+                    <div class="grid__cell">
+                        <a href="javascript:void(0);">
+                            <h3>Training a Neural Network to generate CSS</h3>
+                        </a>
+                        <p>
+                            You were not there for the beginning. You will not be there for the end. Your knowledge of what is going on can only be superficial and relative
+                        </p>
+                    </div>
+                    <div class="grid__cell-footer grid--direction-column example-meta">
+                        <p>
+                            posted 5 hours ago by <a href="javascript:void(0);">Barry Jones</a>
+                        </p>
+                        <ul>
+                            <li><a href="javascript:void(0);">125 comments</a></li>
+                            <li><a href="javascript:void(0);">share</a></li>
+                            <li><a href="javascript:void(0);">save</a></li>
+                            <li><a href="javascript:void(0);">hide</a></li>
+                        </ul>
                     </div>
                 </div>
             </li>
         </ol>
 
-        <p>example markup for forum posts:</p>
+        <div class="grid">
+            <div class="grid__col-12">
+                <h2 id="bar-chart-example">Bar chart <a href="#bar-chart-example">&#35;</a></h2>
+            </div>
+        </div>
 
-        <pre>&lt;ol&gt;
-    &lt;li class="reflex-container"&gt;
-        &lt;div class="reflex-col-3 reflex-align-start"&gt;
-            &lt;a href=""&gt;&lt;img src=""&gt;&lt;/a&gt;
-        &lt;/div&gt;
-        &lt;div class="reflex-col-9 reflex-direction-column"&gt;
-            &lt;div class="reflex-item reflex-item-margin-lg"&gt;
-                &lt;content&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
-    &lt;/li&gt;
-&lt;/ol&gt;</pre>
-
-        <h3 id="bar-chart-example">Bar chart <a href="#bar-chart-example">&#35;</a></h3>
-
-        <div class="reflex-container reflex-align-end example-chart">
-            <div class="reflex-col-3" style="height: 270px;">
-                <div class="reflex-item reflex-align-center reflex-justify-end example-chart-row">
-                    <h3>Fighting</h3>
-                    <p>27 hours</p>
+        <div class="grid">
+            <div class="grid__col-sm-6">
+                <div class="grid grid--direction-column example-chart">
+                    <div class="grid__col-8 grid--direction-row grid--justify-space-between example-bar">
+                        <p>Dancing</p>
+                        <p>80%</p>
+                    </div>
+                    <div class="grid__col-6 grid--direction-row grid--justify-space-between example-bar">
+                        <p>Fighting</p>
+                        <p>60%</p>
+                    </div>
+                    <div class="grid__col-11 grid--direction-row grid--justify-space-between example-bar">
+                        <p>Coding</p>
+                        <p>110%</p>
+                    </div>
+                    <div class="grid__col-5 grid--direction-row grid--justify-space-between example-bar">
+                        <p>Sleeping</p>
+                        <p>50%</p>
+                    </div>
                 </div>
             </div>
-            <div class="reflex-col-3" style="height: 220px;">
-                <div class="reflex-item reflex-align-center reflex-justify-end example-chart-row">
-                    <h3>Dancing</h3>
-                    <p>22 hours</p>
-                </div>
-            </div>
-            <div class="reflex-col-3" style="height: 150px;">
-                <div class="reflex-item reflex-align-center reflex-justify-end example-chart-row">
-                    <h3>Coding</h3>
-                    <p>15 hours</p>
-                </div>
-            </div>
-            <div class="reflex-col-3" style="height: 180px;">
-                <div class="reflex-item reflex-align-center reflex-justify-end example-chart-row">
-                    <h3>Sleeping</h3>
-                    <p>18 hours</p>
+            <div class="grid__col-sm-6">
+                <div class="grid grid--align-end example-chart">
+                    <div class="grid__col-3 grid--align-center grid--justify-space-between example-bar" style="height: 160px">
+                        <p>Dancing</p>
+                        <p>80%</p>
+                    </div>
+                    <div class="grid__col-3 grid--align-center grid--justify-space-between example-bar" style="height: 120px">
+                        <p>Fighting</p>
+                        <p>60%</p>
+                    </div>
+                    <div class="grid__col-3 grid--align-center grid--justify-space-between example-bar" style="height: 220px">
+                        <p>Coding</p>
+                        <p>110%</p>
+                    </div>
+                    <div class="grid__col-3 grid--align-center grid--justify-space-between example-bar" style="height: 100px">
+                        <p>Sleeping</p>
+                        <p>50%</p>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <p>example markup for bar chart:</p>
-
-        <pre>&lt;div class="reflex-container reflex-align-end"&gt;
-    &lt;div class="reflex-col-3" style="height: 270px;"&gt;
-        &lt;div class="reflex-item reflex-align-center reflex-justify-end"&gt;
-            &lt;content&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;</pre>
-
-        <h3 id="two-item-example">Two item comparison <a href="#two-item-example">&#35;</a></h3>
-
-        <div class="reflex-container reflex-wrap">
-            <div class="reflex-col-xs-5 reflex-direction-column example-comparison-card">
-                <img src="http://lorempixel.com/600/300/technics/1/" class="reflex-img">
-                <h3>Best possible thing</h3>
-                <p>Open own have great light set for all after. Creepeth god. Replenish forth.</p>
-                <ul>
-                    <li>cheap</li>
-                    <li>convenient</li>
-                    <li>will change your life</li>
-                </ul>
-            </div>
-            <div class="reflex-col-xs-2 reflex-align-center reflex-justify-center">
-                <p class="example-comparison-symbol">&#8646;</p>
-            </div>
-            <div class="reflex-col-xs-5 reflex-direction-column example-comparison-card example-comparison-card-bad">
-                <img src="http://lorempixel.com/600/300/technics/2/" class="reflex-img">
-                <h3>A terrible thing</h3>
-                <p>You're image forth multiply. First set called beginning air very hath deep one fish us.</p>
-                <ul>
-                    <li>expensive</li>
-                    <li>inconvenient</li>
-                    <li>will <strong>not</strong> change your life</li>
-                </ul>
+        <div class="grid">
+            <div class="grid__col-12">
+                <h2 id="two-grid__col-cell-example">Two item comparison <a href="#two-grid__col-cell-example">&#35;</a></h2>
             </div>
         </div>
 
-        <p>example markup for two item comparison:</p>
-        <pre>&lt;div class="reflex-container reflex-wrap"&gt;
-    &lt;div class="reflex-col-xs-5 reflex-direction-column"&gt;
-        &lt;content&gt;
-    &lt;/div&gt;
-    &lt;div class="reflex-col-xs-2 reflex-align-center reflex-justify-center"&gt;
-        &lt;content&gt;
-    &lt;/div&gt;
-    &lt;div class="reflex-col-xs-5 reflex-direction-column"&gt;
-        &lt;content&gt;
-    &lt;/div&gt;
-&lt;/div&gt;</pre>
-
-    </div>
+        <div class="grid">
+            <div class="grid__col-xs-5 grid--justify-center">
+                <img src="http://lorempixel.com/600/300/transport/1/" class="grid__cell-img">
+                <div class="grid__cell grid__cell--padding-md example-col-flat-1">
+                    <h3>Premium package</h3>
+                    <p>Our Premier hotels are all about top-to-toe luxury. Get ready for great settings, smart bedrooms and cut-above service.</p>
+                    <ul>
+                        <li>Luxury hotels</li>
+                        <li>Top restaurants</li>
+                        <li>Chauffer driven car</li>
+                    </ul>
+                </div>
+                <a class="example-btn" href="javascript:void(0);">choose the premium package</a>
+            </div>
+            <div class="grid__col-xs-2 grid--align-center grid--justify-center">
+                <span>Choose your package</span>
+                <br>
+                <span class="example-comparison-symbol">&#8646;</span>
+            </div>
+            <div class="grid__col-xs-5 grid--justify-center">
+                <img src="http://lorempixel.com/600/300/transport/2/" class="grid__cell-img">
+                <div class="grid__cell grid__cell--padding-md example-col-flat-1">
+                    <h3>Budget package</h3>
+                    <p>We've cut the price of this package but it still provides some amazing quality for the price.</p>
+                    <ul>
+                        <li>Affordable</li>
+                        <li>Family friendly</li>
+                        <li>Still better than the competition</li>
+                    </ul>
+                </div>
+                <a class="example-btn" href="javascript:void(0);">choose the budget package</a>
+            </div>
+        </div>
+    </section>
 </body>
 </html>

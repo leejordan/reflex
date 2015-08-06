@@ -1,16 +1,25 @@
 // --------------------------------------------------
-// reflex helpers
+// grid modifiers
 // --------------------------------------------------
+
+// --------------------------------------------------
+// grid full bleed (no internal padding)
+// --------------------------------------------------
+.@{reflex-prefix}grid--bleed {
+    [class*="@{reflex-prefix}grid__col-"] {
+        padding: 0;
+    }
+}
 
 // --------------------------------------------------
 // flex-wrap
 // --------------------------------------------------
 
-.reflex-wrap {
-    .flex-wrap();
+.@{reflex-prefix}grid--no-wrap {
+    .flex-wrap(nowrap);
 }
 
-.reflex-wrap-reverse {
+.@{reflex-prefix}grid--wrap-reverse {
     .flex-wrap(wrap-reverse);
 }
 
@@ -18,49 +27,53 @@
 // flex-direction
 // --------------------------------------------------
 
-.reflex-direction-row-reverse {
+.@{reflex-prefix}grid--direction-row {
+    .flex-direction(row);
+}
+
+.@{reflex-prefix}grid--direction-row-reverse {
     .flex-direction(row-reverse);
 }
 
-.reflex-direction-column {
+.@{reflex-prefix}grid--direction-column {
     .flex-direction(column);
 }
 
-.reflex-direction-column-reverse {
+.@{reflex-prefix}grid--direction-column-reverse {
     .flex-direction(column-reverse);
 }
 
 // --------------------------------------------------
-// align-items (cross axis)
+// align-grid__col-cells (cross axis)
 // --------------------------------------------------
 
-.reflex-align-start {
+.@{reflex-prefix}grid--align-start {
     .align-items(flex-start);
 }
 
-.reflex-align-end {
+.@{reflex-prefix}grid--align-end {
     .align-items(flex-end);
 
     // fallback to legacy vertical-align
-    [class*="reflex-col-"] {
+    [class*="@{reflex-prefix}grid__col-"] {
         vertical-align: bottom;
     }
 }
 
-.reflex-align-center {
+.@{reflex-prefix}grid--align-center {
     .align-items(center);
 
     // fallback to legacy vertical-align
-    [class*="reflex-col-"] {
+    [class*="@{reflex-prefix}grid__col-"] {
         vertical-align: middle;
     }
 }
 
-.reflex-align-baseline {
+.@{reflex-prefix}grid--align-baseline {
     .align-items(baseline);
 
     // fallback to legacy vertical-align
-    [class*="reflex-col-"] {
+    [class*="@{reflex-prefix}grid__col-"] {
         vertical-align: baseline;
     }
 }
@@ -69,28 +82,28 @@
 // align-content (cross axis)
 // --------------------------------------------------
 
-.reflex-align-content-start {
+.@{reflex-prefix}grid--align-content-start {
     .align-content(flex-start);
 }
 
-.reflex-align-content-end {
+.@{reflex-prefix}grid--align-content-end {
     .align-content(flex-end);
 
     // fallback to legacy vertical-align
-    [class*="reflex-col-"] {
+    [class*="@{reflex-prefix}grid__col-"] {
         vertical-align: bottom;
     }
 }
 
-.reflex-align-content-center {
+.@{reflex-prefix}grid--align-content-center {
     .align-content(center);
 }
 
-.reflex-align-content-space-between {
+.@{reflex-prefix}grid--align-content-space-between {
     .align-content(space-between);
 }
 
-.reflex-align-content-space-around {
+.@{reflex-prefix}grid--align-content-space-around {
     .align-content(space-around);
 }
 
@@ -100,25 +113,25 @@
 // align-self
 // --------------------------------------------------
 
-.reflex-align-self-stretch {
+.@{reflex-prefix}grid--align-self-stretch {
     .align-self(stretch);
 }
 
-.reflex-align-self-start {
+.@{reflex-prefix}grid--align-self-start {
     .align-self(flex-start);
 }
 
-.reflex-align-self-end {
+.@{reflex-prefix}grid--align-self-end {
     .align-self(flex-end);
     vertical-align: bottom;
 }
 
-.reflex-align-self-center {
+.@{reflex-prefix}grid--align-self-center {
     .align-self(center);
     vertical-align: middle;
 }
 
-.reflex-align-self-baseline {
+.@{reflex-prefix}grid--align-self-baseline {
     .align-self(baseline);
     vertical-align: baseline;
 }
@@ -127,85 +140,69 @@
 // justify-content (main axis)
 // --------------------------------------------------
 
-.reflex-justify-start {
+.@{reflex-prefix}grid--justify-start {
     .justify-content-start();
 }
 
-.reflex-justify-end {
+.@{reflex-prefix}grid--justify-end {
     .justify-content-end();
 
-    &.reflex-item {
+    .@{reflex-prefix}grid__cell {
         .resetTextAlign();
     }
 }
 
-.reflex-justify-center {
+.@{reflex-prefix}grid--justify-center {
     .justify-content-center();
 
-    &.reflex-item {
+    .@{reflex-prefix}grid__cell {
         .resetTextAlign();
     }
 }
 
-.reflex-justify-space-between {
+.@{reflex-prefix}grid--justify-space-between {
     .justify-content-space-between();
 
-    &.reflex-item {
+    .@{reflex-prefix}grid__cell {
         .resetTextAlign();
     }
 }
 
-.reflex-justify-space-around {
+.@{reflex-prefix}grid--justify-space-around {
     .justify-content-space-around();
 
-    &.reflex-item {
+    .@{reflex-prefix}grid__cell {
         .resetTextAlign();
     }
 }
 
 // --------------------------------------------------
-// grid item margin
+// grid__col modifiers
 // --------------------------------------------------
 
-.reflex-item-margin-sm {
-    margin: 0 @spacing-sm @spacing-sm*2;
-}
-
-.reflex-item-margin-md {
-    margin: 0 @spacing-md @spacing-md*2;
-}
-
-.reflex-item-margin-lg {
-    margin: 0 @spacing-lg @spacing-lg*2;
+.@{reflex-prefix}grid__col--bleed {
+    padding: 0;
 }
 
 // --------------------------------------------------
-// grid item helpers
+// grid__cell modifiers
 // --------------------------------------------------
 
-.reflex-item-content-margin-sm {
-    & > * {
-        margin-right: @spacing-sm;
-        margin-left: @spacing-sm;
-    }
+.@{reflex-prefix}grid__cell--padding-sm {
+    padding: @reflex-cell-spacing-sm;
 }
 
-.reflex-item-content-margin-md {
-    & > * {
-        margin-right: @spacing-md;
-        margin-left: @spacing-md;
-    }
+.@{reflex-prefix}grid__cell--padding-md {
+    padding: @reflex-cell-spacing-md;
 }
 
-.reflex-item-content-margin-lg {
-    & > * {
-        margin-right: @spacing-lg;
-        margin-left: @spacing-lg;
-    }
+.@{reflex-prefix}grid__cell--padding-lg {
+    padding: @reflex-cell-spacing-lg;
 }
 
-.reflex-img {
-    .display-flex();
+.@{reflex-prefix}grid__cell-img {
+    display: block;
+    .display-flex-only();
     .flex(0, 0, auto);
     margin-left: 0;
     margin-right: 0;
@@ -214,8 +211,9 @@
     height: auto;
 }
 
-.reflex-item-footer {
+.@{reflex-prefix}grid__cell-footer {
+    .display-flex();
+    width: 100%;
     margin-top: auto;
-    margin-left: 0;
-    margin-right: 0;
+    padding-top: @reflex-grid-spacing;
 }

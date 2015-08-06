@@ -3,20 +3,19 @@
 // --------------------------------------------------
 
 // --------------------------------------------------
-// reflex grid container
+// reflex grid
 // --------------------------------------------------
 
-.reflex-container {
+.@{reflex-prefix}grid {
     .display-flex();
-    margin: 0;
+    .flex-wrap();
     padding: 0;
+    margin: 0 0 @reflex-grid-spacing;
     position: relative;
     width: 100%;
+    max-width: @reflex-max-width;
 
     .setupWhitespace();
-
-    // when using a ul, remove list icon
-    list-style-type: none;
 
     &:before,
     &:after {
@@ -30,31 +29,41 @@
         .box-sizing(border-box);
         .resetWhitespace();
     }
+
+    // handle nested grids
+    & .@{reflex-prefix}grid {
+        .flex(1, 1, auto);
+        margin-bottom: 0;
+    }
+
+    // handle when lists are used as a grid
+    list-style-type: none;
+
+    & > li {
+        margin: 0;
+    }
 }
 
 // --------------------------------------------------
-// reflex col defaults
+// reflex grid__col defaults
 // --------------------------------------------------
 
-[class*="reflex-col-"] {
-    width: 100%;
-    .resetTextAlign();
+[class*="@{reflex-prefix}grid__col-"] {
     .setupCols();
 }
 
 // --------------------------------------------------
-// reflex item defaults
+// reflex grid__cell defaults
 // --------------------------------------------------
 
-.reflex-item {
+.@{reflex-prefix}grid__cell {
     display: block;
-    .display-flex-only();
-    .flex-direction(column);
     .flex(1, 1, auto);
+    .inner-content-fix();
 }
 
 // ie11 hack
-_:-ms-fullscreen, :root .reflex-item {
+_:-ms-fullscreen, :root .reflex-grid__col-cell {
     width: 100%;
 }
 
@@ -62,20 +71,20 @@ _:-ms-fullscreen, :root .reflex-item {
 // reflex grid generation
 // --------------------------------------------------
 
-.make-reflex-grid();
+.make-reflex-grid(grid__col-);
 
 @media (min-width: @reflex-xs) {
-    .make-reflex-grid(xs-);
+    .make-reflex-grid(grid__col-xs-);
 }
 
 @media (min-width: @reflex-sm) {
-    .make-reflex-grid(sm-);
+    .make-reflex-grid(grid__col-sm-);
 }
 
 @media (min-width: @reflex-md) {
-    .make-reflex-grid(md-);
+    .make-reflex-grid(grid__col-md-);
 }
 
 @media (min-width: @reflex-lg) {
-    .make-reflex-grid(lg-);
+    .make-reflex-grid(grid__col-lg-);
 }
