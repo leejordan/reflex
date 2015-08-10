@@ -1,9 +1,13 @@
+//
+// Button animations
+// ---
+
 // variables
 
 @bg-color: @theme;
 @bg-color-focus: darken(@bg-color, 10%);
 @color: #fff;
-@padding: 1em;
+@padding: 0.5em;
 @font-size: 1em;
 
 // Generic mixins
@@ -64,7 +68,7 @@
 }
 
 .button-icon() {
-    padding: @padding @padding*2;
+    padding: @padding @padding*4;
 
     &:before,
     &:after {

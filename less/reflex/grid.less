@@ -38,10 +38,6 @@
 
     // handle when lists are used as a grid
     list-style-type: none;
-
-    & > li {
-        margin: 0;
-    }
 }
 
 // --------------------------------------------------
@@ -59,7 +55,6 @@
 .@{reflex-prefix}grid__cell {
     display: block;
     .flex(1, 1, auto);
-    .inner-content-fix();
 }
 
 // ie11 hack

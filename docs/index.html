@@ -13,13 +13,14 @@
     <link rel="stylesheet" href="css/docs.css">
 
     <script src="js/respond.min.js"></script>
+    <script src="js/html5shiv.js"></script>
 </head>
 
-<body>
+<body class="body-inset">
     <header class="content-grid" role="banner">
         <div class="grid">
             <div class="grid__col-xs-8">
-                <h1>Reflex</h1>
+                <h1>Reflex grid</h1>
                 <p>a lightweight responsive flexbox grid with cross browser support, an inline-block fallback and no polyfills</p>
             </div>
             <nav role="navigation" class="grid__col-xs-4">
@@ -35,7 +36,7 @@
     </section>
 
     <div class="content-grid">
-        <div class="grid">
+        <section class="grid">
             <div class="grid__col-sm-4">
                 <h2 id="what-is-reflex">What is reflex? <a href="#what-is-reflex">&#35;</a></h2>
                 <p>Reflex gives you the ability to easily take advantage of flexbox for laying out a grid while having a reliable inline-block fallback for older browsers.
@@ -66,7 +67,7 @@
                     <li>A set of vendor-prefixed helper classes and LESS mixins to get your flexbox solution off the ground faster</li>
                 </ul>
             </div>
-        </div>
+        </section>
 
         <section class="grid">
             <div class="grid__col-12">
@@ -85,10 +86,10 @@
             <div class="grid__col-sm-6">
                 <div class="grid">
                     <div class="grid__col-6 example-col">
-                        <p>grid__col-6</p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc et sagittis dui. Maecenas rhoncus justo aliquam urna finibus tincidunt et ut mauris.
                     </div>
                     <div class="grid__col-6 example-col">
-                        <p>grid__col-6</p>
+                        Vivamus nulla leo, dignissim nec tempor vel, consequat ac dolor. Nunc dignissim in ante sed dapibus. Aenean sit amet aliquet dolor, at auctor erat. 
                     </div>
                 </div>
             </div>
@@ -100,10 +101,10 @@
             </div>
 
             <div class="grid__col-sm-4">
-                <h3>.grid block</h3>
+                <h3>.grid</h3>
                 <p>example: <code>grid</code></p>
                 <p>
-                    This is the top level block element and is similar to a <code>row</code> in bootstrap. It sets the following properties:
+                    This is the top level element and is similar to a <code>row</code> in bootstrap. It sets the following properties:
                 </p>
                 <ul>
                     <li><code>display: flex</code></li>
@@ -225,6 +226,45 @@
     <div class="content-grid">
         <section class="grid">
             <div class="grid__col-12">
+                <h2 id="flexbox-introduction">Flexbox direction and axis <a href="#flexbox-introduction">&#35;</a></h2>
+                <p>
+                    To understand how this grid works, you'll need to first understand how flexbox works, especially in relation to the cross axis and main axis. There's a pretty good <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank">introduction to flexbox here</a> but here's a quick demo of the main points: flex direction, main axis, and cross axis.
+                </p>
+                <div class="grid" style="margin-bottom: 1em;">
+                    <div class="grid__col-sm-6 grid--direction-row grid--align-center grid--justify-space-between example-col">
+                        <h3>row</h3>
+                        <p>
+                            &#8596; main axis
+                        </p>
+                        <p>
+                            &#8597; cross axis
+                        </p>
+                    </div>
+                    <div class="grid__col-sm-6 grid--align-center example-col">
+                        <h3>column</h3>
+                        <p>
+                            &#8597; main axis
+                        </p>
+                        <p>
+                            &#8596; cross axis
+                        </p>
+                    </div>
+                </div>
+                <p>
+                    By default any <code>grid</code> element is set to <code>flex-direction: row</code> and the main axis therefore follows the horizontal direction.
+                </p>
+                <p>
+                    By default any <code>grid__col-x</code> element is set to <code>flex-direction: column</code> and the main axis therefore follows the vertical direction.
+                </p>
+                <p>
+                    This will become important when you are using the modifier classes which typically act upon either the main or cross axis</p>
+            </div>
+        </section>
+    </div>
+
+    <div class="content-grid">
+        <section class="grid">
+            <div class="grid__col-12">
                 <h2 id="grid-modifiers">Grid modifiers <a href="#grid-modifiers">&#35;</a></h2>
             </div>
             <div class="grid__col-12">
@@ -232,7 +272,7 @@
             </div>
             <div class="grid__col-sm-8">
                 <p>By default, the <code>flex-wrap</code> property of a <code>display: flex</code> element is set to <code>nowrap</code> but because this is a grid framework we generally need our grid to wrap so we explcitly set <code>flex-wrap: wrap</code> on our <code>grid</code> element</p>
-                <p>These modifiers change that default value and should only be used on <code>grid</code> elements:</p>
+                <p><code>grid__col-x</code> elements do not wrap by default, but you can make them do so by using the modifier <code>grid--wrap</code>.</p>
             </div>
             <div class="grid__col-sm-4">
                 <p class="alert">In the inline-block fallback your grid columns will always wrap when they add up to 100% width (12 column by default).</p>
@@ -344,6 +384,38 @@
                             </div>
                             <div class="grid__col-4 example-col">
                                 <p>Be can't winged good for also saying first.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid__col-sm-12">
+                        <h4 id="grid--align-baseline">.grid--align-baseline <a href="#grid--align-baseline">&#35;</a></h4>
+                        <p>When applied to <code>grid</code> or <code>grid__col-x</code> sets <code>align-items: baseline</code>.</p>
+                    </div>
+                    <div class="grid__col-sm-6">
+                        <p>By default, different text elements in adjacent columns will be aligned by their size and margin:</p>
+                        <div class="grid example-grid">
+                            <div class="grid__col-4 example-col">
+                                <h2>Heading 2</h2>
+                            </div>
+                            <div class="grid__col-4 example-col">
+                                <h3>Heading 3</h3>
+                            </div>
+                            <div class="grid__col-4 example-col">
+                                <p>Paragraph</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid__col-sm-6">
+                        <p>With <code>grid--align-baseline</code> applied to the <code>grid</code> element the text lines up:</p>
+                        <div class="grid grid--align-baseline example-grid">
+                            <div class="grid__col-4 example-col">
+                                <h2>Heading 2</h2>
+                            </div>
+                            <div class="grid__col-4 example-col">
+                                <h3>Heading 3</h3>
+                            </div>
+                            <div class="grid__col-4 example-col">
+                                <p>Paragraph</p>
                             </div>
                         </div>
                     </div>
@@ -610,7 +682,7 @@
                     </div>
                     <div class="grid__col-sm-6">
                         <h4 id="grid--justify-end">.grid--justify-end <a href="#grid--justify-end">&#35;</a></h4>
-                        <p>When applied to <code>grid</code> or <code>grid__col-x</code> sets <code>justify-content: flex-end</code> with <code>text-align: right</code> fallback</p>
+                        <p>When applied to <code>grid</code> or <code>grid__col-x</code> sets <code>justify-content: flex-end</code>
 
                         <div class="grid grid--justify-end example-grid-height-lg">
                             <div class="grid__col-4 example-col">
@@ -623,7 +695,7 @@
                     </div>
                     <div class="grid__col-sm-6">
                         <h4 id="grid--justify-center">.grid--justify-center <a href="#grid--justify-center">&#35;</a></h4>
-                        <p>When applied to <code>grid</code> or <code>grid__col-x</code> sets <code>justify-content: center</code> with <code>text-align: center</code> fallback</p>
+                        <p>When applied to <code>grid</code> or <code>grid__col-x</code> sets <code>justify-content: center</code></p>
 
                         <div class="grid grid--justify-center example-grid-height-lg">
                             <div class="grid__col-4 example-col">
@@ -652,7 +724,7 @@
                     </div>
                     <div class="grid__col-12">
                         <h4 id="grid--justify-space-around">.grid--justify-space-around <a href="#grid--justify-space-around">&#35;</a></h4>
-                        <p>Uses <code>justify-content: space-around</code> with <code>text-align: justify;</code>.</p>
+                        <p>When applied to <code>grid</code> or <code>grid__col-x</code> sets <code>justify-content: space-around</code></p>
 
                         <div class="grid grid--justify-space-around example-grid-height-lg">
                             <div class="grid__col-3 example-col">
@@ -760,14 +832,14 @@
 
         <section class="grid">
             <div class="grid__col-12">
-                <h3 id="ordering">Ordering grid elements<a href="#ordering">&#35;</a></h3>
+                <h3 id="ordering">Ordering grid elements <a href="#ordering">&#35;</a></h3>
             </div>
-            <div class="grid__col-6">
+            <div class="grid__col-xs-6">
                 <p>These helper classes allow you to easily set <code>order</code> to your grid elements. This is useful because it allows you to have your markup in the correct semantic order for accessiblity purposes but in a different order visually.</p>
 
                 <p>By default there are 12 ordering helpers to match the default 12 columns. Changing the number of columns by editing the variable will also produce a matching number of order helper classes</p>
             </div>
-            <div class="grid__col-6">
+            <div class="grid__col-xs-6">
                 <section class="grid example-section">
                     <div class="grid__col-12">
                         <h3 id="order">.grid--order-<em>&lt;n&gt;</em> <a href="#order">&#35;</a></h3>
@@ -790,187 +862,232 @@
             </div>
         </section>
 
-
-
-
-
-
-
-
-
-
-
-        mention grid__cell resets itself to block so user can use regular positioning inside those cells
-
-
-        mention grid--bleed to remove padding from all columns in a grid
-
-        mention grid__col--bleed to remove padding from a single column
-
-
-
-
-
-
-        <h2 id="flex-inside-grid">Using flexbox inside the grid <a href="#flex-inside-grid">&#35;</a></h2>
-        <p>You can take advantage of flex inside your columns themselves by using the <code>.grid__col-cell</code> elements as children elements of your <code>.grid__col-*</code> which allows you to do things like add a footer to the bottom of your same height grid elements.</p>
-
-        <h3 id="grid__col-cell">.grid__col-cell <a href="#grid__col-cell">&#35;</a></h3>
-        <p>used as a child element of a <code>.grid__col-*</code> element, this creates a flexbox element set up as <code>flex-direction: column</code> which allows each grid__col-cell in it to take advantage of flex properties.</p>
-
-        <div class="grid">
-            <div class="grid__col-12 grid__col-xs-6">
-                <div class="grid__col-cell example-col">
-                    <h3>Lorem ipsum</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                </div>
+        <section class="grid">
+            <div class="grid__col-12">
+                <h2 id="advanced-grid-layout">Advanced grid layout <a href="#advanced-grid-layout">&#35;</a></h2>
             </div>
-            <div class="grid__col-12 grid__col-xs-6">
-                <div class="grid__col-cell example-col">
-                    <h3>Lorem ipsum</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                </div>
+            <div class="grid__col-12">
+                <h3 id="grid-cell">.grid__cell <a href="#grid-cell">&#35;</a></h3>
             </div>
-        </div>
+            <div class="grid__col-12">
+                <div class="grid example-section">
+                    <div class="grid__col-sm-7">
+                        <p>
+                            There are some nuances with flexbox that may make your life difficult if you're not expecting them. There is a wealth of information available on this subject in the <a href="http://www.w3.org/TR/css-flexbox-1/#flex-items" target="_blank">flexbox working draft</a>.
+                        </p>
+                        <p>
+                            This is part of flexbox, and is entirely expected. However, flexbox layout is not always appropriate so it's possible to add a <code>grid__cell</code> child element to your <code>grid__col-x</code> columns which defines an area of your column as <code>display: block</code> allowing you to lay out the contents of your grid elements like you would normally.
+                        </p>
+                    </div>
+                    <div class="grid__col-sm-5">
+                        <div class="alert">
+                            <h3>Flexbox differences</h3>
+                            <ul>
+                                <li>Margins on adjacent elements do not collapse</li>
+                                <li>Margins set to <code>auto</code> absorb extra space and can be used for alignment</li>
+                                <li><code>float</code>, <code>clear</code> and <code>vertical-align</code> have no effect on a flex item</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="grid__col-sm-6">
+                        <h3>Column content by default</h3>
+                        <pre>&lt;div class="grid"&gt;
+            &lt;div class="grid__col-6"&gt;
+                &lt;content&gt;
+            &lt;/div&gt;
+            &lt;div class="grid__col-6"&gt;
+                &lt;content&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;</pre>
+                        <br>
+                        <p class="pull-right example-content">
+                            float: right
+                        </p>
+                        <p class="pull-left example-content">
+                            float: left
+                        </p>
 
-        <h3 id="grid__col-cell-margin">.margin-* <a href="#grid__col-cell-margin">&#35;</a></h3>
-        <p>Adds a margin to the reflex grid__col-cell itself. Comes in sm, md and lg flavours.</p>
+                        <p class="example-content" style="clear: both; margin: 1em 0;">
+                            The top and bottom margins on these paragraphs do not collapse together as you would expect
+                        </p>
+                        <p class="example-content" style="margin: 1em 0;">
+                            The top and bottom margins on these paragraphs do not collapse together as you would expect
+                        </p>
+                    </div>
+                    <div class="grid__col-sm-6">
+                        <h3>Column content using .grid__cell</h3>
+                        <pre>&lt;div class="grid"&gt;
+            &lt;div class="grid__col-6"&gt;
+                &lt;div class="grid__cell"&gt;
+                    &lt;content&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="grid__col-6"&gt;
+                &lt;div class="grid__cell"&gt;
+                    &lt;content&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;</pre>
+                        <br>
+                        <div class="grid__cell">
+                            <p class="pull-right example-content">
+                                float: right
+                            </p>
+                            <p class="pull-left example-content">
+                                float: left
+                            </p>
 
-        <div class="grid">
-            <div class="grid__col-12 grid__col-xs-6">
-                <div class="grid__col-cell margin-md example-col">
-                    <h3>Lorem ipsum</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                </div>
-            </div>
-            <div class="grid__col-12 grid__col-xs-6">
-                <div class="grid__col-cell margin-md example-col">
-                    <h3>Lorem ipsum</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                </div>
-            </div>
-        </div>
-
-        <h3 id="grid__col-cell-content-margin">.padding-* <a href="#grid__col-cell-content-margin">&#35;</a></h3>
-        <p>Adds a margin to all child elements of the reflex grid__col-cell. Comes in sm, md and lg flavours.</p>
-
-        <div class="grid">
-            <div class="grid__col-12 grid__col-xs-6">
-                <div class="grid__col-cell padding-md example-col">
-                    <h3>Lorem ipsum</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                </div>
-            </div>
-            <div class="grid__col-12 grid__col-xs-6">
-                <div class="grid__col-cell padding-md example-col">
-                    <h3>Lorem ipsum</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                </div>
-            </div>
-        </div>
-
-        <h3 id="img">.img <a href="#img">&#35;</a></h3>
-        <p>When applied to an img inside a <code>.grid__col-cell</code> element, this sets up a full width responsive image that will fill the width of it's parent while maintaining its aspect ratio</p>
-
-        <div class="grid">
-            <div class="grid__col-12 grid__col-xs-6">
-                <div class="grid__col-cell padding-md example-col">
-                    <img class="grid__cell-img" src="http://lorempixel.com/400/200/people/3/">
-                    <p>Lorem ipsum dolor sit amet.</p>
-                </div>
-            </div>
-            <div class="grid__col-12 grid__col-xs-6">
-                <div class="grid__col-cell padding-md example-col">
-                    <img class="grid__cell-img" src="http://lorempixel.com/400/200/people/4/">
-                    <p>Lorem ipsum dolor sit amet.</p>
-                </div>
-            </div>
-        </div>
-
-        <h3 id="grid__col-cell-footer">.grid__col-cell-footer <a href="#grid__col-cell-footer">&#35;</a></h3>
-        <p>Creates a full width element that is aligned to the very bottom of the <code>grid__col-cell</code></p>
-
-        <div class="grid">
-            <div class="grid__col-12 grid__col-xs-6">
-                <div class="grid__col-cell example-col">
-                    <h3>Lorem ipsum</h3>
-                    <p>Lorem ipsum dolor sit amet.</p>
-                    <div class="grid__col-cell-footer">
-                        <p><a href="javascript:void(0);">more info</a></p>
+                            <p class="example-content" style="clear: both; margin: 1em 0;">
+                                The top and bottom margins on these paragraphs collapse together as you would expect
+                            </p>
+                            <p class="example-content" style="margin: 1em 0;">
+                                The top and bottom margins on these paragraphs collapse together as you would expect
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="grid__col-12 grid__col-xs-6">
-                <div class="grid__col-cell example-col">
-                    <h3>Lorem ipsum</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    <div class="grid__col-cell-footer">
-                        <p><a href="javascript:void(0);">more info</a></p>
-                    </div>
-                </div>
+        </section>
+
+        <section class="grid">
+            <div class="grid__col-12">
+                <h3 id="grid-cell-img">.grid__cell-img <a href="#grid-cell-img">&#35;</a></h3>
             </div>
-        </div>
-
-        <h3 id="example-grid__col-cell">Example of .grid__col-cell use <a href="#example-grid__col-cell">&#35;</a></h3>
-        <p>Here's an example of all of the above in use. There is also a further example on the <a href="demo.html">demo page</a></p>
-
-        <div class="grid">
-            <div class="grid__col-12 grid__col-xs-6 grid__col-md-3">
-                <div class="grid__col-cell margin-md padding-md example-col">
-                    <img class="grid__cell-img" src="http://lorempixel.com/400/200/people/3/">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    <div class="grid__col-cell-footer">
-                        <p><a href="javascript:void(0);">more info</a></p>
-                    </div>
-                </div>
+            <div class="grid__col-xs-12 grid__col-sm-4">
+                <p>
+                    If you're using a <code>grid__cell</code> as above, you can simply use your regular responsive image solution such as the <a href="https://github.com/twbs/bootstrap/blob/3487898a6af8c1d5b12f7b040d30e71b19e34923/less/mixins/image.less#L9" target="_blank">solution used in bootstrap</a>.
+                </p>
+                <p>
+                    If you're not using a <code>grid__cell</code>, flex images need to be handled differently to make them responsive and you should use <code>grid__cell-img</code>.
+                </p>
             </div>
-            <div class="grid__col-12 grid__col-xs-6 grid__col-md-3">
-                <div class="grid__col-cell margin-md padding-md example-col">
-                    <img class="grid__cell-img" src="http://lorempixel.com/400/200/people/1/">
-                    <p>First appear years night there the in them rule that bring fly gathered.</p>
-                    <div class="grid__col-cell-footer">
-                        <p><a href="javascript:void(0);">more info</a></p>
-                    </div>
-                </div>
+            <div class="grid__col-xs-6 grid__col-sm-4">
+                <img class="grid__cell-img" src="http://lorempixel.com/400/200/fashion/1/">
             </div>
-            <div class="grid__col-12 grid__col-xs-6 grid__col-md-3">
-                <div class="grid__col-cell margin-md padding-md example-col">
-                    <img class="grid__cell-img" src="http://lorempixel.com/400/200/people/3/">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    <div class="grid__col-cell-footer example-footer">
-                        <p><a href="javascript:void(0);">more info</a></p>
-                    </div>
-                </div>
+            <div class="grid__col-xs-6 grid__col-sm-4">
+                <pre>&lt;div class="grid"&gt;
+    &lt;div class="grid__col-sm-4"&gt;
+        &lt;img class="grid__cell-img" src=""&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</div>
+        </section>
+
+        <section class="grid">
+            <div class="grid__col-12">
+                <h3 id="grid-cell-footer">.grid__cell-footer <a href="#grid-cell-footer">&#35;</a></h3>
             </div>
-            <div class="grid__col-12 grid__col-xs-6 grid__col-md-3">
-                <div class="grid__col-cell margin-md padding-md example-col">
-                    <img class="grid__cell-img" src="http://lorempixel.com/400/200/people/1/">
-                    <p>First appear years night there the in them rule that bring fly gathered.</p>
-                    <div class="grid__col-cell-footer example-footer">
-                        <p><a href="javascript:void(0);">more info</a></p>
-                    </div>
-                </div>
+            <div class="grid__col-sm-4">
+                <p>It's possible to set up a footer section in a <code>grid__col-x</code> element that is always aligned to the bottom by using <code>grid__cell-footer</code>. This footer element is set up as a flex box so all the usual grid modifers work on it.</p>
             </div>
-        </div>
+            <div class="grid__col-sm-8">
+                <ul class="grid example-section">
+                    <li class="grid__col-6">
+                        <p>Consectetur adipiscing elit, sed do eiusmod.</p>
+                        <div class="grid__cell-footer example-col-flat-1">
+                            <p>grid__cell-footer</p>
+                        </div>
+                    </li>
+                    <li class="grid__col-6">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc et sagittis dui. Maecenas rhoncus justo aliquam urna finibus tincidunt et ut mauris.</p>
+                        <div class="grid__cell-footer example-col-flat-1">
+                            <p>grid__cell-footer</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
 
+        <section class="grid">
+            <div class="grid__col-12">
+                <h3 id="grid-bleed">.grid--bleed <a href="#grid-bleed">&#35;</a></h3>
+            </div>
+            <div class="grid__col-sm-4">
+                <p>
+                    By default, <code>grid__col-x</code> elements have padding to space the grid out. It's possible to override this by applying the modifer <code>grid--bleed</code> to your <code>grid</code> element.
+                </p>
+            </div>
+            <div class="grid__col-sm-8">
+                <ul class="grid grid--bleed example-section">
+                    <li class="grid__col-6">
+                        <p>Consectetur adipiscing elit, sed do eiusmod.</p>
+                    </li>
+                    <li class="grid__col-6">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc et sagittis dui. Maecenas rhoncus justo aliquam urna finibus tincidunt et ut mauris.</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
 
+        <section class="grid">
+            <div class="grid__col-12">
+                <h3 id="grid-col-bleed">.grid__col--bleed <a href="#grid-col-bleed">&#35;</a></h3>
+            </div>
+            <div class="grid__col-sm-4">
+                <p>
+                    You can override the padding on individual <code>grid__col-x</code> elements by using <code>grid__col--bleed</code>.
+                </p>
+            </div>
+            <div class="grid__col-sm-8">
+                <ul class="grid example-section">
+                    <li class="grid__col-6">
+                        <p>Default</p>
+                    </li>
+                    <li class="grid__col-6 grid__col--bleed">
+                        <p><code>grid__col--bleed</code> applied</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
 
+        <section class="grid">
+            <div class="grid__col-12">
+                <h3 id="grid-cell-padding">.grid__cell--padding-x <a href="#grid-cell-padding">&#35;</a></h3>
+            </div>
+            <div class="grid__col-sm-4">
+                <p>
+                    You can apply padding to individual <code>grid__cell</code> elements by using <code>grid__cell--padding-x</code>.
+                </p>
+            </div>
+            <div class="grid__col-sm-8">
+                <ul class="grid example-section">
+                    <li class="grid__col-4">
+                        <div class="grid__cell grid__cell--padding-sm example-col">
+                            <p>padding-sm</p>
+                        </div>
+                    </li>
+                    <li class="grid__col-4">
+                        <div class="grid__cell grid__cell--padding-md example-col">
+                            <p>padding-md</p>
+                        </div>
+                    </li>
+                    <li class="grid__col-4">
+                        <div class="grid__cell grid__cell--padding-lg example-col">
+                            <p>padding-lg</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
 
+        <section class="grid">
+            <div class="grid__col-12">
+                <h2 id="examples">Examples <a href="#examples">&#35;</a></h2>
+                <p>There are a handful of examples to show you what is possible with minimal effort on the <a href="demo.html">demo page</a></p>
+            </div>
+        </section>
 
-
-
-
-        <h2 id="examples">Examples <a href="#examples">&#35;</a></h2>
-        <p>There are a handful of examples to show you what is possible with minimal effort on the <a href="demo.html">demo page</a></p>
-
-        <h2 id="acknowledgements">Acknowledgements <a href="#acknowledgements">&#35;</a></h2>
-        <p>I would like to acknowledge the following resources which all helped in some way while I was building this:</p>
-        <ul>
-            <li><a href="http://getbootstrap.com/" target="_blank">bootstrap</a> for some of the calculations and mixins</li>
-            <li><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank">css-tricks</a> for their flexbox introduction</li>
-            <li><a href="http://caniuse.com/" target="_blank">caniuse</a> for browser coverage statistics</li>
-            <li><a href="http://lorempixel.com" target="_blank">lorempixel.com</a> for placeholder images</li>
-        </ul>
+        <section class="grid">
+            <div class="grid__col-12">
+                <h2 id="acknowledgements">Acknowledgements <a href="#acknowledgements">&#35;</a></h2>
+                <p>I would like to acknowledge the following resources which all helped in some way while I was building this:</p>
+                <ul>
+                    <li><a href="http://getbootstrap.com/" target="_blank">bootstrap</a> for some of the calculations and mixins</li>
+                    <li><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank">css-tricks</a> for their flexbox introduction</li>
+                    <li><a href="http://caniuse.com/" target="_blank">caniuse</a> for browser coverage statistics</li>
+                    <li><a href="http://lorempixel.com" target="_blank">lorempixel.com</a> for placeholder images</li>
+                </ul>
+            </div>
+        </section>
     </div>
 </body>
 </html>

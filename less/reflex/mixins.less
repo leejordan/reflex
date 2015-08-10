@@ -31,29 +31,11 @@
     .display-flex();
     .flex-direction(column);
     .resetTextAlign();
+    .resetWhitespace();
     position: relative;
     width: 100%;
     vertical-align: top;
     padding: @reflex-grid-spacing;
-
-    & * {
-        .resetWhitespace();
-    }
-
-    & pre {
-        white-space: pre;
-    }
-}
-
-// Improve alignment and spacing of inner content
-.inner-content-fix() {
-    & > :first-child:not(.@{reflex-prefix}grid) {
-        margin-top: 0;
-    }
-
-    & > :last-child:not(.@{reflex-prefix}grid) {
-        margin-bottom: 0;
-    }
 }
 
 // --------------------------------------------------
@@ -101,7 +83,7 @@
 .make-grid--order-helpers();
 
 // --------------------------------------------------
-// reflex helper mixins
+// reflex modifier mixins
 // --------------------------------------------------
 
 .display-flex-only() {

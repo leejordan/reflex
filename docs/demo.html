@@ -13,189 +13,25 @@
     <link rel="stylesheet" href="css/docs.css">
 
     <script src="js/respond.min.js"></script>
+    <script src="js/html5shiv.js"></script>
 </head>
 
-<body>
+<body class="body-inset">
     <header class="content-grid" role="banner">
         <div class="grid">
-            <div class="grid__col-12 grid--justify-center">
+            <div class="grid__col-xs-8">
                 <h1>Reflex demo</h1>
                 <p>a lightweight responsive flexbox grid with cross browser support, an inline-block fallback and no polyfills</p>
             </div>
+            <nav role="navigation" class="grid__col-xs-4">
+                <a href="https://github.com/leejordan/reflex" target="_blank" class="btn btn-code">github</a>
+                <a href="../css/reflex.css" target="_blank" class="btn btn-download">css</a>
+                <a href="index.html" class="btn btn-external">docs</a>
+            </nav>
         </div>
-        <nav role="navigation" class="grid grid--justify-center">
-            <ul class="grid grid--justify-center">
-                <li class="grid__col-sm-3 grid--align-center">
-                    <a href="https://github.com/leejordan/reflex" target="_blank" class="btn btn-code fill">github</a>
-                </li>
-                <li class="grid__col-sm-3 grid--align-center">
-                    <a href="../css/reflex.css" target="_blank" class="btn btn-download fill">css</a>
-                </li>
-                <li class="grid__col-sm-3 grid--align-center">
-                    <a href="index.html" class="btn btn-external fill">docs</a>
-                </li>
-            </ul>
-        </nav>
     </header>
 
     <section class="content-grid">
-        <section class="grid">
-            <div class="grid__col-12">
-                <h2 id="product-grid-examples">Product grids <a href="#product-grid-examples">&#35;</a></h2>
-                <h3 id="product-grid-plain">Product grid plain <a href="#product-grid-plain">&#35;</a></h3>
-            </div>
-            <ul class="grid">
-                <li class="grid__col-12 grid__col-xs-6 grid__col-md-3">
-                    <div class="grid__cell">
-                        <h3>Amazing</h3>
-                        <img class="grid__cell-img" src="http://lorempixel.com/400/200/fashion/1/">
-                        <p>Lorem ipsum dolor sit amet, Consectetur adipiscing elit, sed do eiusmod.</p>
-                    </div>
-                    <div class="grid__cell-footer grid--justify-space-between grid--align-center">
-                        <span>$4.99</span>
-                        <a class="example-btn" href="javascript:void(0);">buy</a>
-                    </div>
-                </li>
-                <li class="grid__col-12 grid__col-xs-6 grid__col-md-3">
-                    <div class="grid__cell">
-                        <h3>Brilliant</h3>
-                        <img class="grid__cell-img" src="http://lorempixel.com/400/200/fashion/2/">
-                        <p>Consectetur adipiscing elit, sed do eiusmod.</p>
-                    </div>
-                    <div class="grid__cell-footer grid--justify-space-between grid--align-center">
-                        <span>$4.99</span>
-                        <a class="example-btn" href="javascript:void(0);">buy</a>
-                    </div>
-                </li>
-                <li class="grid__col-12 grid__col-xs-6 grid__col-md-3">
-                    <div class="grid__cell">
-                        <h3>Super</h3>
-                        <img class="grid__cell-img" src="http://lorempixel.com/400/200/fashion/3/">
-                        <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    </div>
-                    <div class="grid__cell-footer grid--justify-space-between grid--align-center">
-                        <span>$4.99</span>
-                        <a class="example-btn" href="javascript:void(0);">buy</a>
-                    </div>
-                </li>
-                <li class="grid__col-12 grid__col-xs-6 grid__col-md-3">
-                    <div class="grid__cell">
-                        <h3>Crazy good</h3>
-                        <img class="grid__cell-img" src="http://lorempixel.com/400/200/fashion/4/">
-                        <p>Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    </div>
-                    <div class="grid__cell-footer grid--justify-space-between grid--align-center">
-                        <span>$4.99</span>
-                        <a class="example-btn" href="javascript:void(0);">buy</a>
-                    </div>
-                </li>
-            </ul>
-        </section>
-
-        <section class="grid">
-            <div class="grid__col-12">
-                <h3 id="product-grid-flat">Product grid with flat panels <a href="#product-grid-flat">&#35;</a></h3>
-            </div>
-            <ul class="grid">
-                <li class="grid__col-12 grid__col-xs-6 grid__col-md-3">
-                    <div class="grid__cell grid__cell--padding-md example-col-flat-1">
-                        <h3>Amazing</h3>
-                        <img class="grid__cell-img" src="http://lorempixel.com/400/200/technics/1/">
-                        <p>Lorem ipsum dolor sit amet, Consectetur adipiscing elit, sed do eiusmod.</p>
-                    </div>
-                    <div class="grid__cell-footer grid__cell--padding-md grid--justify-space-between grid--align-center example-col-flat-1">
-                        <span>$4.99</span>
-                        <a class="example-btn" href="javascript:void(0);">buy</a>
-                    </div>
-                </li>
-                <li class="grid__col-12 grid__col-xs-6 grid__col-md-3">
-                    <div class="grid__cell grid__cell--padding-md example-col-flat-1">
-                        <h3>Brilliant</h3>
-                        <img class="grid__cell-img" src="http://lorempixel.com/400/200/technics/2/">
-                        <p>Consectetur adipiscing elit, sed do eiusmod.</p>
-                    </div>
-                    <div class="grid__cell-footer grid__cell--padding-md grid--justify-space-between grid--align-center example-col-flat-1">
-                        <span>$4.99</span>
-                        <a class="example-btn" href="javascript:void(0);">buy</a>
-                    </div>
-                </li>
-                <li class="grid__col-12 grid__col-xs-6 grid__col-md-3">
-                    <div class="grid__cell grid__cell--padding-md example-col-flat-1">
-                        <h3>Super</h3>
-                        <img class="grid__cell-img" src="http://lorempixel.com/400/200/technics/3/">
-                        <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    </div>
-                    <div class="grid__cell-footer grid__cell--padding-md grid--justify-space-between grid--align-center example-col-flat-1">
-                        <span>$4.99</span>
-                        <a class="example-btn" href="javascript:void(0);">buy</a>
-                    </div>
-                </li>
-                <li class="grid__col-12 grid__col-xs-6 grid__col-md-3">
-                    <div class="grid__cell grid__cell--padding-md example-col-flat-1">
-                        <h3>Crazy good</h3>
-                        <img class="grid__cell-img" src="http://lorempixel.com/400/200/technics/4/">
-                        <p>Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    </div>
-                    <div class="grid__cell-footer grid__cell--padding-md grid--justify-space-between grid--align-center example-col-flat-1">
-                        <span>$4.99</span>
-                        <a class="example-btn" href="javascript:void(0);">buy</a>
-                    </div>
-                </li>
-            </ul>
-        </section>
-
-        <section class="grid">
-            <div class="grid__col-12">
-                <h3 id="product-grid-images">Product grid with full width images <a href="#product-grid-images">&#35;</a></h3>
-            </div>
-            <ul class="grid">
-                <li class="grid__col-12 grid__col-xs-6 grid__col-md-3">
-                    <img class="grid__cell-img" src="http://lorempixel.com/400/200/food/1/">
-                    <div class="grid__cell grid__cell--padding-md example-col-flat-1">
-                        <h3>Amazing</h3>
-                        <p>Lorem ipsum dolor sit amet, Consectetur adipiscing elit, sed do eiusmod.</p>
-                    </div>
-                    <div class="grid__cell-footer grid__cell--padding-md grid--justify-space-between grid--align-center example-col-flat-1">
-                        <span>$4.99</span>
-                        <a class="example-btn" href="javascript:void(0);">buy</a>
-                    </div>
-                </li>
-                <li class="grid__col-12 grid__col-xs-6 grid__col-md-3">
-                    <img class="grid__cell-img" src="http://lorempixel.com/400/200/food/2/">
-                    <div class="grid__cell grid__cell--padding-md example-col-flat-1">
-                        <h3>Brilliant</h3>
-                        <p>Consectetur adipiscing elit, sed do eiusmod.</p>
-                    </div>
-                    <div class="grid__cell-footer grid__cell--padding-md grid--justify-space-between grid--align-center example-col-flat-1">
-                        <span>$4.99</span>
-                        <a class="example-btn" href="javascript:void(0);">buy</a>
-                    </div>
-                </li>
-                <li class="grid__col-12 grid__col-xs-6 grid__col-md-3">
-                    <img class="grid__cell-img" src="http://lorempixel.com/400/200/food/3/">
-                    <div class="grid__cell grid__cell--padding-md example-col-flat-1">
-                        <h3>Super</h3>
-                        <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    </div>
-                    <div class="grid__cell-footer grid__cell--padding-md grid--justify-space-between grid--align-center example-col-flat-1">
-                        <span>$4.99</span>
-                        <a class="example-btn" href="javascript:void(0);">buy</a>
-                    </div>
-                </li>
-                <li class="grid__col-12 grid__col-xs-6 grid__col-md-3">
-                    <img class="grid__cell-img" src="http://lorempixel.com/400/200/food/4/">
-                    <div class="grid__cell grid__cell--padding-md example-col-flat-1">
-                        <h3>Crazy good</h3>
-                        <p>Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    </div>
-                    <div class="grid__cell-footer grid__cell--padding-md grid--justify-space-between grid--align-center example-col-flat-1">
-                        <span>$4.99</span>
-                        <a class="example-btn" href="javascript:void(0);">buy</a>
-                    </div>
-                </li>
-            </ul>
-        </section>
-
         <div class="grid">
             <div class="grid__col-12">
                 <h2 id="three-column">Classic three column layout with nested grids <a href="#three-column">&#35;</a></h2>
@@ -273,6 +109,162 @@
 
     <section class="content-grid">
         <section class="grid">
+            <div class="grid__col-12">
+                <h2 id="product-grid-plain">Product grid plain <a href="#product-grid-plain">&#35;</a></h2>
+            </div>
+            <ul class="grid">
+                <li class="grid__col-12 grid__col-xs-6 grid__col-md-3">
+                    <h3>Amazing</h3>
+                    <img class="grid__cell-img" src="http://lorempixel.com/400/200/fashion/1/">
+                    <p>Lorem ipsum dolor sit amet, Consectetur adipiscing elit, sed do eiusmod.</p>
+                    <div class="grid__cell-footer grid--justify-space-between grid--align-center">
+                        <span>$4.99</span>
+                        <a class="example-btn" href="javascript:void(0);">buy</a>
+                    </div>
+                </li>
+                <li class="grid__col-12 grid__col-xs-6 grid__col-md-3">
+                    <h3>Brilliant</h3>
+                    <img class="grid__cell-img" src="http://lorempixel.com/400/200/fashion/2/">
+                    <p>Consectetur adipiscing elit, sed do eiusmod.</p>
+                    <div class="grid__cell-footer grid--justify-space-between grid--align-center">
+                        <span>$4.99</span>
+                        <a class="example-btn" href="javascript:void(0);">buy</a>
+                    </div>
+                </li>
+                <li class="grid__col-12 grid__col-xs-6 grid__col-md-3">
+                    <h3>Super</h3>
+                    <img class="grid__cell-img" src="http://lorempixel.com/400/200/fashion/3/">
+                    <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                    <div class="grid__cell-footer grid--justify-space-between grid--align-center">
+                        <span>$4.99</span>
+                        <a class="example-btn" href="javascript:void(0);">buy</a>
+                    </div>
+                </li>
+                <li class="grid__col-12 grid__col-xs-6 grid__col-md-3">
+                    <h3>Crazy good</h3>
+                    <img class="grid__cell-img" src="http://lorempixel.com/400/200/fashion/4/">
+                    <p>Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <div class="grid__cell-footer grid--justify-space-between grid--align-center">
+                        <span>$4.99</span>
+                        <a class="example-btn" href="javascript:void(0);">buy</a>
+                    </div>
+                </li>
+            </ul>
+        </section>
+    </section>
+
+    <section class="content-grid">
+        <section class="grid">
+            <div class="grid__col-12">
+                <h2 id="product-grid-flat">Product grid with flat panels <a href="#product-grid-flat">&#35;</a></h2>
+            </div>
+            <ul class="grid">
+                <li class="grid__col-12 grid__col-xs-6 grid__col-md-3">
+                    <div class="grid__cell grid__cell--padding-md example-col-flat-1">
+                        <h3>Amazing</h3>
+                        <img class="grid__cell-img" src="http://lorempixel.com/400/200/technics/1/">
+                        <p>Lorem ipsum dolor sit amet, Consectetur adipiscing elit, sed do eiusmod.</p>
+                    </div>
+                    <div class="grid__cell-footer grid__cell--padding-md grid--justify-space-between grid--align-center example-col-flat-1">
+                        <span>$4.99</span>
+                        <a class="example-btn" href="javascript:void(0);">buy</a>
+                    </div>
+                </li>
+                <li class="grid__col-12 grid__col-xs-6 grid__col-md-3">
+                    <div class="grid__cell grid__cell--padding-md example-col-flat-1">
+                        <h3>Brilliant</h3>
+                        <img class="grid__cell-img" src="http://lorempixel.com/400/200/technics/2/">
+                        <p>Consectetur adipiscing elit, sed do eiusmod.</p>
+                    </div>
+                    <div class="grid__cell-footer grid__cell--padding-md grid--justify-space-between grid--align-center example-col-flat-1">
+                        <span>$4.99</span>
+                        <a class="example-btn" href="javascript:void(0);">buy</a>
+                    </div>
+                </li>
+                <li class="grid__col-12 grid__col-xs-6 grid__col-md-3">
+                    <div class="grid__cell grid__cell--padding-md example-col-flat-1">
+                        <h3>Super</h3>
+                        <img class="grid__cell-img" src="http://lorempixel.com/400/200/technics/3/">
+                        <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                    <div class="grid__cell-footer grid__cell--padding-md grid--justify-space-between grid--align-center example-col-flat-1">
+                        <span>$4.99</span>
+                        <a class="example-btn" href="javascript:void(0);">buy</a>
+                    </div>
+                </li>
+                <li class="grid__col-12 grid__col-xs-6 grid__col-md-3">
+                    <div class="grid__cell grid__cell--padding-md example-col-flat-1">
+                        <h3>Crazy good</h3>
+                        <img class="grid__cell-img" src="http://lorempixel.com/400/200/technics/4/">
+                        <p>Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                    <div class="grid__cell-footer grid__cell--padding-md grid--justify-space-between grid--align-center example-col-flat-1">
+                        <span>$4.99</span>
+                        <a class="example-btn" href="javascript:void(0);">buy</a>
+                    </div>
+                </li>
+            </ul>
+        </section>
+    </section>
+
+    <section class="content-grid">
+        <section class="grid">
+            <div class="grid__col-12">
+                <h2 id="product-grid-images">Product grid with full width images <a href="#product-grid-images">&#35;</a></h2>
+            </div>
+            <ul class="grid">
+                <li class="grid__col-12 grid__col-xs-6 grid__col-md-3">
+                    <img class="grid__cell-img" src="http://lorempixel.com/400/200/food/1/">
+                    <div class="grid__cell grid__cell--padding-md example-col-flat-1">
+                        <h3>Amazing</h3>
+                        <p>Lorem ipsum dolor sit amet, Consectetur adipiscing elit, sed do eiusmod.</p>
+                    </div>
+                    <div class="grid__cell-footer grid__cell--padding-md grid--justify-space-between grid--align-center example-col-flat-1">
+                        <span>$4.99</span>
+                        <a class="example-btn" href="javascript:void(0);">buy</a>
+                    </div>
+                </li>
+                <li class="grid__col-12 grid__col-xs-6 grid__col-md-3">
+                    <img class="grid__cell-img" src="http://lorempixel.com/400/200/food/2/">
+                    <div class="grid__cell grid__cell--padding-md example-col-flat-1">
+                        <h3>Brilliant</h3>
+                        <p>Consectetur adipiscing elit, sed do eiusmod.</p>
+                    </div>
+                    <div class="grid__cell-footer grid__cell--padding-md grid--justify-space-between grid--align-center example-col-flat-1">
+                        <span>$4.99</span>
+                        <a class="example-btn" href="javascript:void(0);">buy</a>
+                    </div>
+                </li>
+                <li class="grid__col-12 grid__col-xs-6 grid__col-md-3">
+                    <img class="grid__cell-img" src="http://lorempixel.com/400/200/food/3/">
+                    <div class="grid__cell grid__cell--padding-md example-col-flat-1">
+                        <h3>Super</h3>
+                        <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                    <div class="grid__cell-footer grid__cell--padding-md grid--justify-space-between grid--align-center example-col-flat-1">
+                        <span>$4.99</span>
+                        <a class="example-btn" href="javascript:void(0);">buy</a>
+                    </div>
+                </li>
+                <li class="grid__col-12 grid__col-xs-6 grid__col-md-3">
+                    <img class="grid__cell-img" src="http://lorempixel.com/400/200/food/4/">
+                    <div class="grid__cell grid__cell--padding-md example-col-flat-1">
+                        <h3>Crazy good</h3>
+                        <p>Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                    <div class="grid__cell-footer grid__cell--padding-md grid--justify-space-between grid--align-center example-col-flat-1">
+                        <span>$4.99</span>
+                        <a class="example-btn" href="javascript:void(0);">buy</a>
+                    </div>
+                </li>
+            </ul>
+        </section>
+    </section>
+
+
+    <section class="content-grid">
+        <div class="grid">
             <div class="grid__col-12">
                 <h2 id="info-grid-example">Info grid <a href="#info-grid-example">&#35;</a></h2>
             </div>
@@ -364,7 +356,9 @@
                 </a>
             </li>
         </ul>
+    </section>
 
+    <section class="content-grid">
         <div class="grid">
             <div class="grid__col-12">
                 <h2 id="forum-post-example">Forum posts <a href="#forum-post-example">&#35;</a></h2>
@@ -429,7 +423,9 @@
                 </div>
             </li>
         </ol>
+    </section>
 
+    <section class="content-grid">
         <div class="grid">
             <div class="grid__col-12">
                 <h2 id="bar-chart-example">Bar chart <a href="#bar-chart-example">&#35;</a></h2>
@@ -478,10 +474,12 @@
                 </div>
             </div>
         </div>
+    </section>
 
+    <section class="content-grid">
         <div class="grid">
             <div class="grid__col-12">
-                <h2 id="two-grid__col-cell-example">Two item comparison <a href="#two-grid__col-cell-example">&#35;</a></h2>
+                <h2 id="two-item-example">Two item comparison <a href="#two-item-example">&#35;</a></h2>
             </div>
         </div>
 
@@ -517,6 +515,45 @@
                 </div>
                 <a class="example-btn" href="javascript:void(0);">choose the budget package</a>
             </div>
+        </div>
+    </section>
+
+    <section class="content-grid">
+        <div class="grid">
+            <div class="grid__col-12">
+                <h2 id="tiles-example">Tiles <a href="#tiles-example">&#35;</a></h2>
+            </div>
+        </div>
+
+        <div class="grid">
+            <a href="javascript:void(0);"class="grid__col-6 grid--justify-center grid--align-center example-tile example-tile-1">
+                <h3>Lesson 1</h3>
+                <p>Introducing HTML</p>
+                <span class="cta">
+                    more info
+                </span>
+            </a>
+            <a href="javascript:void(0);"class="grid__col-6 grid--justify-center grid--align-center example-tile example-tile-2">
+                <h3>Lesson 2</h3>
+                <p>Introducing CSS</p>
+                <span class="cta">
+                    more info
+                </span>
+            </a>
+            <a href="javascript:void(0);"class="grid__col-6 grid--justify-center grid--align-center example-tile example-tile-3">
+                <h3>Lesson 3</h3>
+                <p>CSS, layouts and formatting</p>
+                <span class="cta">
+                    more info
+                </span>
+            </a>
+            <a href="javascript:void(0);"class="grid__col-6 grid--justify-center grid--align-center example-tile example-tile-4">
+                <h3>Lesson 4</h3>
+                <p>Advanced HTML5</p>
+                <span class="cta">
+                    more info
+                </span>
+            </a>
         </div>
     </section>
 </body>
