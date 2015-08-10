@@ -1,6 +1,6 @@
 {
   "name": "reflex",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "responsive flexbox grid with inline-block legacy support",
   "directories": {
     "doc": "docs"
@@ -20,5 +20,5 @@
   "bugs": {
     "url": "https://github.com/leejordan/reflex/issues"
   },
-  "homepage": "https://github.com/leejordan/reflex"
+  "homepage": "http://leejordan.github.io/reflex/docs/"
 }
