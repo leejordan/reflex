@@ -19,7 +19,7 @@
     .display-flex();
     .flex-wrap();
     padding: 0;
-    margin: 0 0 @reflex-grid-spacing;
+    margin: 0;
     position: relative;
     width: 100%;
     max-width: @reflex-max-width;
@@ -42,7 +42,6 @@
     // handle nested grids
     & .@{reflex-prefix}grid {
         .flex(1, 1, auto);
-        margin-bottom: 0;
     }
 
     // handle when lists are used as a grid

@@ -64,6 +64,17 @@
   -webkit-order: 0;
   order: 0;
 }
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
 .grid {
   display: inline-block;
   display: -webkit-flex;
@@ -73,7 +84,7 @@
   -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
   padding: 0;
-  margin: 0 0 1em;
+  margin: 0;
   position: relative;
   width: 100%;
   max-width: 100%;
@@ -104,7 +115,6 @@
 .grid .grid {
   -webkit-flex: 1 1 auto;
   flex: 1 1 auto;
-  margin-bottom: 0;
 }
 [class*="grid__col-"] {
   display: inline-block;
