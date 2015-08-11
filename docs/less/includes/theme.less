@@ -104,17 +104,36 @@ a {
     &:hover,
     &:focus {
         .example-btn {
-            .transition(all 0.2s ease-out);
-            color: #fff;
-            background-color: darken(@theme, 5%);
+            .transition(all 0.4s ease-out);
+            background-color: darken(@theme, 10%);
             text-decoration: underline;
         }
     }
 }
 
-.example-grid-bg {
+.example-focus {
+    outline-offset: -1em;
+
+    &:hover {
+        outline: 1px solid darken(@theme, 10%);
+    }
+
+    &:focus {
+        outline: 4px solid darken(@theme, 10%);
+    }
+}
+
+.example-img-grid {
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
+    // height is for inline-block fallback only
+    height: 140px;
+}
+
+.example-img-grid-double {
+    // height is for inline-block fallback only
+    height: 280px;
 }
 
 .example-col-flat-1 {
@@ -220,6 +239,18 @@ a {
         float: none;
         padding-left: 0;
         padding-right: 0;
+    }
+}
+
+.example-top-nav {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+        display: inline-block;
+        margin: 0 1em;
+        text-align: center;
     }
 }
 
