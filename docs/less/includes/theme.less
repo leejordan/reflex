@@ -85,15 +85,36 @@ h1:first-of-type {
 }
 
 .example-btn {
+    text-align: center;
     padding: 0.5em 2em;
     background-color: @theme;
     color: #fff;
     font-weight: normal;
 
     &:hover,
-    &:focus{
+    &:focus {
+        .transition(all 0.4s ease-out);
         color: #fff;
+        background-color: darken(@theme, 5%);
+        text-decoration: underline;
     }
+}
+
+a {
+    &:hover,
+    &:focus {
+        .example-btn {
+            .transition(all 0.2s ease-out);
+            color: #fff;
+            background-color: darken(@theme, 5%);
+            text-decoration: underline;
+        }
+    }
+}
+
+.example-grid-bg {
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .example-col-flat-1 {
