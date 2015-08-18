@@ -116,6 +116,12 @@
   -webkit-flex: 1 1 auto;
   flex: 1 1 auto;
 }
+.grid__col-auto {
+  -webkit-flex: 1 0 0;
+  flex: 1 0 0;
+  width: auto !important;
+  max-width: 100%;
+}
 [class*="grid__col-"] {
   display: inline-block;
   display: -webkit-flex;
