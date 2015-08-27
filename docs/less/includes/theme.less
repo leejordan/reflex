@@ -4,6 +4,7 @@
 
 h1:first-of-type {
     line-height: 1;
+    margin: 0 0 0.5em;
 }
 
 // general helpers
@@ -90,6 +91,7 @@ h1:first-of-type {
     background-color: @theme;
     color: #fff;
     font-weight: normal;
+    border: 0;
 
     &:hover,
     &:focus {
@@ -243,14 +245,42 @@ a {
 }
 
 .example-top-nav {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
+    background-color: @theme;
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
 
     li {
         display: inline-block;
-        margin: 0 1em;
+    }
+
+    li:first-of-type {
+        margin-right: auto;
+    }
+
+    a {
+        height: 4em;
+        display: block;
+        padding: 1.5em 1em;
+        line-height: 1;
         text-align: center;
+        color: #fff;
+
+        &:hover,
+        &:focus {
+            background-color: darken(@theme, 10%);
+        }
+    }
+
+    .example-top-nav-input {
+        width: 80%;
+        margin: 1em;
+        padding: 0.2em 1em;
+        border: 2px solid darken(@theme, 10%);
+        border-radius: 20px;
     }
 }
 
@@ -422,6 +452,14 @@ a {
 
 .example-tile-4 {
     background-color: darken(@theme, 20%);
+}
+
+.example-tile-5 {
+    background-color: darken(@theme, 25%);
+}
+
+.example-tile-6 {
+    background-color: darken(@theme, 30%);
 }
 
 .respond-demo-wrap {

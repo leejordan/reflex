@@ -189,8 +189,36 @@
 
         <section class="grid">
             <div class="grid__col-12">
-                <h2 id="breakpoints">Breakpoints <a href="#breakpoints">&#35;</a></h2>
-                <p>You will likely require extra control over the breakpoints at which your grid elements revert to 100% width. To do this you will need to use these modifier classes.  The reflex grid breakpoints can be easily re-defined but are set to these values by default:</p>
+                <h2 id="auto-grid">Auto columns <a href="#auto">&#35;</a></h2>
+                <p>You can add any number of auto sizing <code>grid__col-auto</code> columns to a <code>grid</code>. A grid built using auto columns will not remain fully intact in the inline-block fallback.</p>
+            </div>
+            <div class="grid">
+                <div class="grid__col-auto example-col">
+                    grid__col-auto
+                </div>
+                <div class="grid__col-auto example-col">
+                    grid__col-auto
+                </div>
+            </div>
+            <div class="grid">
+                <div class="grid__col-auto example-col">
+                    grid__col-auto
+                </div>
+                <div class="grid__col-auto example-col">
+                    grid__col-auto
+                </div>
+                <div class="grid__col-auto example-col">
+                    grid__col-auto
+                </div>
+            </div>
+        </section>
+
+        <section class="grid">
+            <div class="grid__col-12">
+                <h2 id="breakpoints">Responsive columns <a href="#breakpoints">&#35;</a></h2>
+                <p>You will likely require extra control over the breakpoints at which your grid elements revert to 100% width. To do this you will need to use these modifier classes which determine grid columns at various viewport sizes. A grid built using numbered columns in this way will remain fully intact in the inline-block fallback.</p>
+
+                <p>The reflex grid breakpoints can be easily re-defined but are set to these values by default:</p>
                 <div class="table-responsive">
                     <table>
                         <thead>
