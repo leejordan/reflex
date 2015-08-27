@@ -53,9 +53,31 @@
 // --------------------------------------------------
 
 .@{reflex-prefix}grid__col-auto {
-    .flex(1, 0, 0);
-    width: auto !important;
-    max-width: 100%;
+    .setupAutoCols();
+}
+
+@media (min-width: @reflex-xs) {
+    .@{reflex-prefix}grid__col-xs-auto {
+        .setupAutoCols();
+    }
+}
+
+@media (min-width: @reflex-sm) {
+    .@{reflex-prefix}grid__col-sm-auto {
+        .setupAutoCols();
+    }
+}
+
+@media (min-width: @reflex-md) {
+    .@{reflex-prefix}grid__col-md-auto {
+        .setupAutoCols();
+    }
+}
+
+@media (min-width: @reflex-lg) {
+    .@{reflex-prefix}grid__col-lg-auto {
+        .setupAutoCols();
+    }
 }
 
 // --------------------------------------------------
