@@ -28,14 +28,12 @@
 
     &:before,
     &:after {
-        .box-sizing(border-box);
         .resetWhitespace();
         max-width: 100%;
     }
 
     *:before,
     *:after {
-        .box-sizing(border-box);
         .resetWhitespace();
     }
 
@@ -46,16 +44,6 @@
 
     // handle when lists are used as a grid
     list-style-type: none;
-}
-
-// --------------------------------------------------
-// reflex grid__col-auto
-// --------------------------------------------------
-
-.@{reflex-prefix}grid__col-auto {
-    .flex(1, 0, 0);
-    width: auto !important;
-    max-width: 100%;
 }
 
 // --------------------------------------------------
@@ -100,4 +88,37 @@ _:-ms-fullscreen, :root .reflex-grid__col-cell {
 
 @media (min-width: @reflex-lg) {
     .make-reflex-grid(grid__col-lg-);
+}
+
+
+// --------------------------------------------------
+// reflex grid__col-auto
+// --------------------------------------------------
+
+.@{reflex-prefix}grid__col-auto {
+    .setupAutoCols();
+}
+
+@media (min-width: @reflex-xs) {
+    .@{reflex-prefix}grid__col-xs-auto {
+        .setupAutoCols();
+    }
+}
+
+@media (min-width: @reflex-sm) {
+    .@{reflex-prefix}grid__col-sm-auto {
+        .setupAutoCols();
+    }
+}
+
+@media (min-width: @reflex-md) {
+    .@{reflex-prefix}grid__col-md-auto {
+        .setupAutoCols();
+    }
+}
+
+@media (min-width: @reflex-lg) {
+    .@{reflex-prefix}grid__col-lg-auto {
+        .setupAutoCols();
+    }
 }

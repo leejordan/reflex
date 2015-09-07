@@ -230,10 +230,16 @@ hr {
 }
 .table-responsive {
   width: 100%;
-  overflow-x: scroll;
-  -ms-overflow-style: -ms-autohiding-scrollbar;
-  -webkit-overflow-scrolling: touch;
-  border-right: 1px solid #cbcbcb;
+  min-height: .01%;
+}
+@media screen and (max-width: 768px) {
+  .table-responsive {
+    overflow-y: hidden;
+    overflow-x: auto;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    -webkit-overflow-scrolling: touch;
+    border-right: 1px solid #cbcbcb;
+  }
 }
 table {
   width: 100%;
@@ -1079,7 +1085,7 @@ a:focus .example-btn {
 }
 /*!
  *
- * Reflex v1.0
+ * Reflex v1.0.3
  *
  * Reflex is a flexbox grid which provides a way to take advantage of emerging
  * flexbox support while providing a fall back to inline-block on older browsers
@@ -1174,9 +1180,6 @@ a:focus .example-btn {
 }
 .grid:before,
 .grid:after {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
   letter-spacing: normal;
   word-spacing: normal;
   white-space: normal;
@@ -1184,9 +1187,6 @@ a:focus .example-btn {
 }
 .grid *:before,
 .grid *:after {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
   letter-spacing: normal;
   word-spacing: normal;
   white-space: normal;
@@ -1194,12 +1194,6 @@ a:focus .example-btn {
 .grid .grid {
   -webkit-flex: 1 1 auto;
   flex: 1 1 auto;
-}
-.grid__col-auto {
-  -webkit-flex: 1 0 0;
-  flex: 1 0 0;
-  width: auto !important;
-  max-width: 100%;
 }
 [class*="grid__col-"] {
   display: inline-block;
@@ -1474,6 +1468,44 @@ _:-ms-fullscreen,
   .grid__col-lg-1 {
     width: 8.333333333333332%;
     *width: 8.233333333333333%;
+  }
+}
+.grid__col-auto {
+  -webkit-flex: 1 0 0;
+  flex: 1 0 0;
+  width: auto !important;
+  max-width: 100%;
+}
+@media (min-width: 480px) {
+  .grid__col-xs-auto {
+    -webkit-flex: 1 0 0;
+    flex: 1 0 0;
+    width: auto !important;
+    max-width: 100%;
+  }
+}
+@media (min-width: 768px) {
+  .grid__col-sm-auto {
+    -webkit-flex: 1 0 0;
+    flex: 1 0 0;
+    width: auto !important;
+    max-width: 100%;
+  }
+}
+@media (min-width: 992px) {
+  .grid__col-md-auto {
+    -webkit-flex: 1 0 0;
+    flex: 1 0 0;
+    width: auto !important;
+    max-width: 100%;
+  }
+}
+@media (min-width: 1200px) {
+  .grid__col-lg-auto {
+    -webkit-flex: 1 0 0;
+    flex: 1 0 0;
+    width: auto !important;
+    max-width: 100%;
   }
 }
 .grid--bleed [class*="grid__col-"] {

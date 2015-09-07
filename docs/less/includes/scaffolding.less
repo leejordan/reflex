@@ -90,10 +90,17 @@ hr {
 // Tables
 .table-responsive {
     width: 100%;
-    overflow-x: scroll;
-    -ms-overflow-style: -ms-autohiding-scrollbar;
-    -webkit-overflow-scrolling: touch;
-    border-right: 1px solid #cbcbcb;
+    min-height: .01%;
+}
+
+@media screen and (max-width: @reflex-sm) {
+    .table-responsive {
+        overflow-y: hidden;
+        overflow-x: auto;
+        -ms-overflow-style: -ms-autohiding-scrollbar;
+        -webkit-overflow-scrolling: touch;
+        border-right: 1px solid #cbcbcb;
+    }
 }
 
 table {
