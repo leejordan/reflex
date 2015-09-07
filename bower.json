@@ -1,0 +1,26 @@
+{
+  "name": "reflex",
+  "version": "1.0.3",
+  "homepage": "https://github.com/leejordan/reflex/docs/",
+  "authors": [
+    "Lee Jordan <ldjordan@gmail.com>"
+  ],
+  "description": "responsive flexbox grid with inline-block legacy support",
+  "main": "css/reflex.css",
+  "keywords": [
+    "reflex",
+    "flexbox",
+    "responsive",
+    "inline-block",
+    "fallback",
+    "grid"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

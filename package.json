@@ -1,6 +1,6 @@
 {
   "name": "reflex-grid",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "responsive flexbox grid with inline-block legacy support",
   "directories": {
     "doc": "docs"
@@ -13,7 +13,9 @@
     "reflex",
     "flexbox",
     "responsive",
-    "css-grid"
+    "inline-block",
+    "fallback",
+    "grid"
   ],
   "author": "@leejordan",
   "license": "MIT",
