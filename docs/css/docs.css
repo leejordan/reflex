@@ -1219,7 +1219,7 @@ a:focus .example-btn {
   flex: 1 1 auto;
 }
 _:-ms-fullscreen,
-:root .reflex-grid__col-cell {
+:root .grid__cell {
   width: 100%;
 }
 .grid__col-12 {
