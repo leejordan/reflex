@@ -90,6 +90,10 @@ _:-ms-fullscreen, :root .grid__cell {
     .make-reflex-grid(grid__col-lg-);
 }
 
+@media (min-width: @reflex-xlg) {
+    .make-reflex-grid(grid__col-xlg-);
+}
+
 
 // --------------------------------------------------
 // reflex grid__col-auto
@@ -119,6 +123,12 @@ _:-ms-fullscreen, :root .grid__cell {
 
 @media (min-width: @reflex-lg) {
     .@{reflex-prefix}grid__col-lg-auto {
+        .setupAutoCols();
+    }
+}
+
+@media (min-width: @reflex-xlg) {
+    .@{reflex-prefix}grid__col-xlg-auto {
         .setupAutoCols();
     }
 }
