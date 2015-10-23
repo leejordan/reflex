@@ -114,28 +114,34 @@ a {
 }
 
 .example-focus {
-    outline-offset: -1em;
-
-    &:hover {
-        outline: 1px solid darken(@theme, 10%);
-    }
-
     &:focus {
-        outline: 4px solid darken(@theme, 10%);
+        box-shadow: 0 0 0 2px @link-hover-colour;
     }
 }
 
 .example-img-grid {
+    display: block;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    // height is for inline-block fallback only
-    height: 140px;
+    padding-top: 100%;
+    .flex-grow(1);
 }
 
-.example-img-grid-double {
-    // height is for inline-block fallback only
-    height: 280px;
+.example-img-grid-half {
+    padding-top: 50%;
+    padding-top: calc(~"50% - 1em");
+}
+
+.example-img-grid-footer {
+    position: absolute;
+    bottom: 1em;
+    left: 1em;
+    right: 1em;
+    margin: 0;
+    padding: 0.5em 1em;
+    background-color: @theme;
+    color: #fff;
 }
 
 .example-col-flat-1 {

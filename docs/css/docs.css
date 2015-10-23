@@ -692,23 +692,31 @@ a:focus .example-btn {
   background-color: #006683;
   text-decoration: underline;
 }
-.example-focus {
-  outline-offset: -1em;
-}
-.example-focus:hover {
-  outline: 1px solid #006683;
-}
 .example-focus:focus {
-  outline: 4px solid #006683;
+  box-shadow: 0 0 0 2px #006683;
 }
 .example-img-grid {
+  display: block;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  height: 140px;
+  padding-top: 100%;
+  -webkit-flex-grow: 1;
+  flex-grow: 1;
 }
-.example-img-grid-double {
-  height: 280px;
+.example-img-grid-half {
+  padding-top: 50%;
+  padding-top: calc(50% - 1em);
+}
+.example-img-grid-footer {
+  position: absolute;
+  bottom: 1em;
+  left: 1em;
+  right: 1em;
+  margin: 0;
+  padding: 0.5em 1em;
+  background-color: #008db6;
+  color: #fff;
 }
 .example-col-flat-1 {
   background-color: #e9e9e9;
