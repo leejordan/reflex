@@ -1213,6 +1213,10 @@ a:focus .example-btn {
   flex-direction: column;
   text-align: left;
   text-align: start;
+  -moz-text-align-last: left;
+  -moz-text-align-last: start;
+  text-align-last: left;
+  text-align-last: start;
   letter-spacing: normal;
   word-spacing: normal;
   white-space: normal;
@@ -1689,6 +1693,10 @@ _:-ms-fullscreen,
 .grid--justify-end .grid__cell {
   text-align: left;
   text-align: start;
+  -moz-text-align-last: left;
+  -moz-text-align-last: start;
+  text-align-last: left;
+  text-align-last: start;
 }
 .grid--justify-center {
   text-align: center;
@@ -1698,6 +1706,10 @@ _:-ms-fullscreen,
 .grid--justify-center .grid__cell {
   text-align: left;
   text-align: start;
+  -moz-text-align-last: left;
+  -moz-text-align-last: start;
+  text-align-last: left;
+  text-align-last: start;
 }
 .grid--justify-space-between {
   text-align: justify;
@@ -1709,6 +1721,10 @@ _:-ms-fullscreen,
 .grid--justify-space-between .grid__cell {
   text-align: left;
   text-align: start;
+  -moz-text-align-last: left;
+  -moz-text-align-last: start;
+  text-align-last: left;
+  text-align-last: start;
 }
 .grid--justify-space-around {
   text-align: justify;
@@ -1720,6 +1736,10 @@ _:-ms-fullscreen,
 .grid--justify-space-around .grid__cell {
   text-align: left;
   text-align: start;
+  -moz-text-align-last: left;
+  -moz-text-align-last: start;
+  text-align-last: left;
+  text-align-last: start;
 }
 .grid__col--bleed {
   padding: 0;
