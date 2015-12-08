@@ -113,6 +113,12 @@
     zoom: 1;
 }
 
+.flex(@grow: 0, @shrink: 1, @basis: auto) when (@basis = 0px) {
+    -webkit-flex: @grow @shrink @basis;
+    flex: @grow @shrink @basis;
+    -ms-flex: @grow @shrink auto;
+}
+
 .flex(@grow: 0, @shrink: 1, @basis: auto) {
     -webkit-flex: @grow @shrink @basis;
     flex: @grow @shrink @basis;
