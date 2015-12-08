@@ -1655,11 +1655,13 @@ _:-ms-fullscreen,
 .grid--align-start {
   -webkit-align-items: flex-start;
   align-items: flex-start;
+  -ms-flex-align: start;
   -ms-flex-align: flex-start;
 }
 .grid--align-end {
   -webkit-align-items: flex-end;
   align-items: flex-end;
+  -ms-flex-align: end;
   -ms-flex-align: flex-end;
 }
 .grid--align-end [class*="grid__col-"] {
@@ -1684,11 +1686,13 @@ _:-ms-fullscreen,
 .grid--align-content-start {
   -webkit-align-content: flex-start;
   align-content: flex-start;
+  -ms-flex-align: start;
   -ms-flex-align: flex-start;
 }
 .grid--align-content-end {
   -webkit-align-content: flex-end;
   align-content: flex-end;
+  -ms-flex-align: end;
   -ms-flex-align: flex-end;
 }
 .grid--align-content-end [class*="grid__col-"] {
@@ -1717,11 +1721,13 @@ _:-ms-fullscreen,
 .grid--align-self-start {
   -webkit-align-self: flex-start;
   align-self: flex-start;
+  -ms-flex-align: start;
   -ms-flex-align: flex-start;
 }
 .grid--align-self-end {
   -webkit-align-self: flex-end;
   align-self: flex-end;
+  -ms-flex-align: end;
   -ms-flex-align: flex-end;
   vertical-align: bottom;
 }

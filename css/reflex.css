@@ -459,6 +459,7 @@ _:-ms-fullscreen,
   }
 }
 .grid__col-auto {
+  -ms-flex: 1 0 auto;
   -webkit-flex: 1 0 0px;
   flex: 1 0 0px;
   -ms-flex: 1 0 0px;
@@ -467,6 +468,7 @@ _:-ms-fullscreen,
 }
 @media (min-width: 480px) {
   .grid__col-xs-auto {
+    -ms-flex: 1 0 auto;
     -webkit-flex: 1 0 0px;
     flex: 1 0 0px;
     -ms-flex: 1 0 0px;
@@ -476,6 +478,7 @@ _:-ms-fullscreen,
 }
 @media (min-width: 768px) {
   .grid__col-sm-auto {
+    -ms-flex: 1 0 auto;
     -webkit-flex: 1 0 0px;
     flex: 1 0 0px;
     -ms-flex: 1 0 0px;
@@ -485,6 +488,7 @@ _:-ms-fullscreen,
 }
 @media (min-width: 992px) {
   .grid__col-md-auto {
+    -ms-flex: 1 0 auto;
     -webkit-flex: 1 0 0px;
     flex: 1 0 0px;
     -ms-flex: 1 0 0px;
@@ -494,6 +498,7 @@ _:-ms-fullscreen,
 }
 @media (min-width: 1200px) {
   .grid__col-lg-auto {
+    -ms-flex: 1 0 auto;
     -webkit-flex: 1 0 0px;
     flex: 1 0 0px;
     -ms-flex: 1 0 0px;
@@ -503,6 +508,7 @@ _:-ms-fullscreen,
 }
 @media (min-width: 1600px) {
   .grid__col-xlg-auto {
+    -ms-flex: 1 0 auto;
     -webkit-flex: 1 0 0px;
     flex: 1 0 0px;
     -ms-flex: 1 0 0px;
@@ -551,11 +557,13 @@ _:-ms-fullscreen,
 .grid--align-start {
   -webkit-align-items: flex-start;
   align-items: flex-start;
+  -ms-flex-align: start;
   -ms-flex-align: flex-start;
 }
 .grid--align-end {
   -webkit-align-items: flex-end;
   align-items: flex-end;
+  -ms-flex-align: end;
   -ms-flex-align: flex-end;
 }
 .grid--align-end [class*="grid__col-"] {
@@ -580,11 +588,13 @@ _:-ms-fullscreen,
 .grid--align-content-start {
   -webkit-align-content: flex-start;
   align-content: flex-start;
+  -ms-flex-align: start;
   -ms-flex-align: flex-start;
 }
 .grid--align-content-end {
   -webkit-align-content: flex-end;
   align-content: flex-end;
+  -ms-flex-align: end;
   -ms-flex-align: flex-end;
 }
 .grid--align-content-end [class*="grid__col-"] {
@@ -613,11 +623,13 @@ _:-ms-fullscreen,
 .grid--align-self-start {
   -webkit-align-self: flex-start;
   align-self: flex-start;
+  -ms-flex-align: start;
   -ms-flex-align: flex-start;
 }
 .grid--align-self-end {
   -webkit-align-self: flex-end;
   align-self: flex-end;
+  -ms-flex-align: end;
   -ms-flex-align: flex-end;
   vertical-align: bottom;
 }
