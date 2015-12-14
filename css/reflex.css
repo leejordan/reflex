@@ -118,7 +118,7 @@
   zoom: 1;
   -webkit-flex-direction: column;
   flex-direction: column;
-  text-align: auto;
+  text-align: unset;
   -moz-text-align-last: auto;
   text-align-last: auto;
   letter-spacing: normal;
@@ -595,7 +595,7 @@ _:-ms-fullscreen,
   justify-content: flex-end;
 }
 .grid--justify-end .grid__cell {
-  text-align: auto;
+  text-align: unset;
   -moz-text-align-last: auto;
   text-align-last: auto;
 }
@@ -605,7 +605,7 @@ _:-ms-fullscreen,
   justify-content: center;
 }
 .grid--justify-center .grid__cell {
-  text-align: auto;
+  text-align: unset;
   -moz-text-align-last: auto;
   text-align-last: auto;
 }
@@ -617,7 +617,7 @@ _:-ms-fullscreen,
   justify-content: space-between;
 }
 .grid--justify-space-between .grid__cell {
-  text-align: auto;
+  text-align: unset;
   -moz-text-align-last: auto;
   text-align-last: auto;
 }
@@ -629,7 +629,7 @@ _:-ms-fullscreen,
   justify-content: space-around;
 }
 .grid--justify-space-around .grid__cell {
-  text-align: auto;
+  text-align: unset;
   -moz-text-align-last: auto;
   text-align-last: auto;
 }
