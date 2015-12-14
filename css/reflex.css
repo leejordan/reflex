@@ -118,9 +118,9 @@
   zoom: 1;
   -webkit-flex-direction: column;
   flex-direction: column;
-  text-align: initial;
-  -moz-text-align-last: initial;
-  text-align-last: initial;
+  text-align: auto;
+  -moz-text-align-last: auto;
+  text-align-last: auto;
   letter-spacing: normal;
   word-spacing: normal;
   white-space: normal;
@@ -595,9 +595,9 @@ _:-ms-fullscreen,
   justify-content: flex-end;
 }
 .grid--justify-end .grid__cell {
-  text-align: initial;
-  -moz-text-align-last: initial;
-  text-align-last: initial;
+  text-align: auto;
+  -moz-text-align-last: auto;
+  text-align-last: auto;
 }
 .grid--justify-center {
   text-align: center;
@@ -605,9 +605,9 @@ _:-ms-fullscreen,
   justify-content: center;
 }
 .grid--justify-center .grid__cell {
-  text-align: initial;
-  -moz-text-align-last: initial;
-  text-align-last: initial;
+  text-align: auto;
+  -moz-text-align-last: auto;
+  text-align-last: auto;
 }
 .grid--justify-space-between {
   text-align: justify;
@@ -617,9 +617,9 @@ _:-ms-fullscreen,
   justify-content: space-between;
 }
 .grid--justify-space-between .grid__cell {
-  text-align: initial;
-  -moz-text-align-last: initial;
-  text-align-last: initial;
+  text-align: auto;
+  -moz-text-align-last: auto;
+  text-align-last: auto;
 }
 .grid--justify-space-around {
   text-align: justify;
@@ -629,9 +629,9 @@ _:-ms-fullscreen,
   justify-content: space-around;
 }
 .grid--justify-space-around .grid__cell {
-  text-align: initial;
-  -moz-text-align-last: initial;
-  text-align-last: initial;
+  text-align: auto;
+  -moz-text-align-last: auto;
+  text-align-last: auto;
 }
 .grid__col--bleed {
   padding: 0;
