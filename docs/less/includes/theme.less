@@ -472,6 +472,30 @@ a {
     display: none;
 }
 
+@-webkit-keyframes resize {
+    0%, 32%, 100% {
+      width: 100%;
+    }
+    33%, 65% {
+      width: 850px;
+    }
+    66%, 99% {
+      width: 400px;
+    }
+}
+
+@keyframes resize {
+    0%, 32%, 100% {
+      width: 100%;
+    }
+    33%, 65% {
+      width: 850px;
+    }
+    66%, 99% {
+      width: 400px;
+    }
+}
+
 @media (min-width: 992px) {
     .respond-demo-wrap {
         box-sizing: border-box;
@@ -499,29 +523,5 @@ a {
         height: 560px;
         width: 100%;
         max-width: 1680px;
-    }
-
-    @-webkit-keyframes resize {
-        0%, 32%, 100% {
-          width: 100%;
-        }
-        33%, 65% {
-          width: 848px;
-        }
-        66%, 99% {
-          width: 400px;
-        }
-    }
-
-    @keyframes resize {
-        0%, 32%, 100% {
-          width: 100%;
-        }
-        33%, 65% {
-          width: 850px;
-        }
-        66%, 99% {
-          width: 400px;
-        }
     }
 }
