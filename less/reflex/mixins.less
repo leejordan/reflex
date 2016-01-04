@@ -75,6 +75,7 @@
 // --------------------------------------------------
 
 .order(@order: 0) {
+    -ms-flex-order: @order;
     -webkit-order: @order;
     order: @order;
 }
@@ -97,83 +98,146 @@
 // reflex modifier mixins
 // --------------------------------------------------
 
+// display
 .display-flex-only() {
+    display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
 }
 
 .display-flex() {
     display: inline-block;
+    display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
     *display: inline;
     zoom: 1;
 }
 
+// flex
+.flex(@grow: 0, @shrink: 1, @basis: auto) when (@basis = 0px) {
+    -ms-flex: @grow @shrink auto; //ie10 needs auto
+    -webkit-flex: @grow @shrink @basis;
+    flex: @grow @shrink @basis;
+}
+
 .flex(@grow: 0, @shrink: 1, @basis: auto) {
+    -ms-flex: @grow @shrink @basis;
     -webkit-flex: @grow @shrink @basis;
     flex: @grow @shrink @basis;
 }
 
 .flex-grow(@grow:1) {
+    -ms-flex-positive: @grow;
     -webkit-flex-grow: @grow;
     flex-grow: @grow;
 }
 
 .flex-shrink(@shrink:1) {
+    -ms-flex-negative: @shrink;
     -webkit-flex-shrink: @shrink;
     flex-shrink: @shrink;
 }
 
 .flex-basis(@basis:auto) {
+    -ms-flex-preferred-size: @basis;
     -webkit-flex-basis: @basis;
     flex-basis: @basis;
 }
 
 .flex-flow(@direction: row, @wrap: nowrap) {
+    -ms-flex-wrap: @wrap;
+    -ms-flex-direction: @direction;
     -webkit-flex-flow: @direction @wrap;
     flex-flow: @direction @wrap;
 }
 
 .flex-wrap(@wrap: wrap) {
+    -ms-flex-wrap: @wrap;
     -webkit-flex-wrap: @wrap;
     flex-wrap: @wrap;
 }
 
 .flex-direction(@direction: row) {
+    -ms-flex-direction: @direction;
     -webkit-flex-direction: @direction;
     flex-direction: @direction;
 }
 
+// align
 .align-items(@align: stretch) {
+    .ms-align-items(@align);
     -webkit-align-items: @align;
     align-items: @align;
 }
 
 .align-self(@align: stretch) {
+    .ms-align-self(@align);
     -webkit-align-self: @align;
     align-self: @align;
 }
 
 .align-content(@align: stretch) {
+    .ms-align-content(@align);
     -webkit-align-content: @align;
     align-content: @align;
 }
 
+// ie10 syntax for align
+.ms-align-items(@align) when (@align = flex-start) {
+    -ms-flex-align: start;
+}
+
+.ms-align-items(@align) when (@align = flex-end) {
+    -ms-flex-align: end;
+}
+
+.ms-align-items(@align) {
+    -ms-flex-align: @align;
+}
+
+.ms-align-self(@align) when (@align = flex-start) {
+    -ms-flex-item-align: start;
+}
+
+.ms-align-self(@align) when (@align = flex-end) {
+    -ms-flex-item-align: end;
+}
+
+.ms-align-self(@align) {
+    -ms-flex-item-align: @align;
+}
+
+.ms-align-content(@align) when (@align = flex-start) {
+    -ms-flex-line-pack: start;
+}
+
+.ms-align-content(@align) when (@align = flex-end) {
+    -ms-flex-line-pack: end;
+}
+
+.ms-align-content(@align) {
+    -ms-flex-line-pack: @align;
+}
+
+//justify-content
 .justify-content-start() {
     text-align: left;
+    -ms-flex-pack: start;
     -webkit-justify-content: flex-start;
     justify-content: flex-start;
 }
 
 .justify-content-end() {
     text-align: right;
+    -ms-flex-pack: end;
     -webkit-justify-content: flex-end;
     justify-content: flex-end;
 }
 
 .justify-content-center() {
     text-align: center;
+    -ms-flex-pack: center;
     -webkit-justify-content: center;
     justify-content: center;
 }
@@ -182,6 +246,7 @@
     text-align: justify;
     -moz-text-align-last: justify;
     text-align-last: justify;
+    -ms-flex-pack: justify;
     -webkit-justify-content: space-between;
     justify-content: space-between;
 }
@@ -190,6 +255,7 @@
     text-align: justify;
     -moz-text-align-last: justify;
     text-align-last: justify;
+    -ms-flex-pack: justify;
     -webkit-justify-content: space-around;
     justify-content: space-around;
 }
