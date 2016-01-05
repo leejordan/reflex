@@ -40,13 +40,14 @@
             <div class="grid__col-sm-4">
                 <h2 id="what-is-reflex">What is reflex? <a href="#what-is-reflex">&#35;</a></h2>
                 <p>Reflex gives you the ability to easily take advantage of flexbox for laying out a grid while having a reliable inline-block fallback for older browsers.</p>
-                <p>At the time of writing, <a href="http://caniuse.com/#search=flex" target="_blank">global flexbox support is at 82.74%</a> (excluding browsers with outdated or partial support) so I propose that it's time to start taking advantage of flexbox and accept that the inline-block fallback won't support everything.</p>
+                <p>At the time of writing, <a href="http://caniuse.com/#search=flex" target="_blank">global flexbox support is at 95.31%</a> (excluding browsers with outdated or partial support) so I propose that it's time to start taking advantage of flexbox and accept that the inline-block fallback won't support everything.</p>
+                <p>Where flexbox isn't supported, your basic grid structure will remain intact and most of the layout classes still work. Try this page out in a non-flexbox browser to see for yourself!</p>
             </div>
             <div class="grid__col-sm-4">
                 <h2 id="reflex-benefits">Why use reflex? <a href="#reflex-benefits">&#35;</a></h2>
 
                 <ul>
-                    <li>It's lightweight - 8.5KB in it's minified form and <strong>1.6KB gzipped</strong></li>
+                    <li>It's lightweight - 12KB in it's minified form and <strong>1.7KB gzipped</strong></li>
                     <li>Where flexbox is supported, <strong>grid cells are all the same height by default</strong></li>
                     <li>Reflex grid cells <strong>never push each other out of the way</strong> (as with floated grids)</li>
                     <li>Supports semantic elements e.g. you can use <code>ul</code> as a grid</li>
@@ -750,6 +751,12 @@
                             <div class="grid__col-3 example-col">
                                 <p>First appear years night there the in them rule.</p>
                             </div>
+                            <div class="grid__col-4 example-col">
+                                <p>First appear years night there the in them rule.</p>
+                            </div>
+                            <div class="grid__col-4 example-col">
+                                <p>Be can't winged good for also saying first. Shall, fourth Greater cattle.</p>
+                            </div>
                         </div>
                     </div>
                     <div class="grid__col-12">
@@ -765,6 +772,12 @@
                             </div>
                             <div class="grid__col-3 example-col">
                                 <p>First appear years night there the in them rule.</p>
+                            </div>
+                            <div class="grid__col-4 example-col">
+                                <p>First appear years night there the in them rule.</p>
+                            </div>
+                            <div class="grid__col-4 example-col">
+                                <p>Be can't winged good for also saying first. Shall, fourth Greater cattle.</p>
                             </div>
                         </div>
                     </div>
@@ -922,13 +935,13 @@
                     <div class="grid__col-sm-6">
                         <h3>Column content by default</h3>
                         <pre>&lt;div class="grid"&gt;
-            &lt;div class="grid__col-6"&gt;
-                &lt;content&gt;
-            &lt;/div&gt;
-            &lt;div class="grid__col-6"&gt;
-                &lt;content&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;</pre>
+    &lt;div class="grid__col-6"&gt;
+        &lt;content&gt;
+    &lt;/div&gt;
+    &lt;div class="grid__col-6"&gt;
+        &lt;content&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</pre>
                         <br>
                         <p class="pull-right example-content">
                             float: right
@@ -947,17 +960,17 @@
                     <div class="grid__col-sm-6">
                         <h3>Column content using .grid__cell</h3>
                         <pre>&lt;div class="grid"&gt;
-            &lt;div class="grid__col-6"&gt;
-                &lt;div class="grid__cell"&gt;
-                    &lt;content&gt;
-                &lt;/div&gt;
-            &lt;/div&gt;
-            &lt;div class="grid__col-6"&gt;
-                &lt;div class="grid__cell"&gt;
-                    &lt;content&gt;
-                &lt;/div&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;</pre>
+    &lt;div class="grid__col-6"&gt;
+        &lt;div class="grid__cell"&gt;
+            &lt;content&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="grid__col-6"&gt;
+        &lt;div class="grid__cell"&gt;
+            &lt;content&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</pre>
                         <br>
                         <div class="grid__cell">
                             <p class="pull-right example-content">

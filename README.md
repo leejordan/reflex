@@ -9,11 +9,13 @@ a lightweight responsive flexbox grid with cross browser support, an inline-bloc
 *   [demo](http://leejordan.github.io/reflex/docs/demo.html)
 *   [npm](https://www.npmjs.com/package/reflex-grid)
 
-Reflex gives you the ability to easily take advantage of flexbox for laying out a grid while having a reliable fallback for older browsers that do not support flexbox. [Browser support for flexbox](http://caniuse.com/#search=flex) is in a pretty good state right now and is growing all the time. At the time of writing, full global flexbox support is at 82.74% (excluding browsers with outdated or partial support) so I propose that it's time to start taking advantage of flexbox and accept that the inline-block fallback won't support everything.
+Reflex gives you the ability to easily take advantage of flexbox for laying out a grid while having a reliable fallback for older browsers that do not support flexbox. [Browser support for flexbox](http://caniuse.com/#search=flex) is in a pretty good state right now and is growing all the time. At the time of writing, global flexbox support is at 95.31% so I propose that it's time to start taking advantage of flexbox and accept that the inline-block fallback won't support everything.
+
+Where flexbox isn't supported, your basic grid structure will remain intact and most of the layout classes still work. Try the [docs](http://leejordan.github.io/reflex/docs) or [demo](http://leejordan.github.io/reflex/docs/demo.html) pages out in a non-flexbox browser to see for yourself!
 
 The benefits are:
 
-*   It's lightweight - 9KB in it's minified form and **1.6KB** gzipped
+*   It's lightweight - 12KB in it's minified form and **1.7KB** gzipped
 *   Where flexbox is supported, grid cells are all the same height by default
 *   Reflex grid cells never push each other out of the way (as with floated grids)
 *   Supports semantic elements e.g. you can use ul as a grid
