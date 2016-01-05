@@ -3,7 +3,7 @@
 ![Release](https://img.shields.io/github/release/leejordan/reflex.svg)
 ![npm downloads](https://img.shields.io/npm/dm/reflex-grid.svg)
 
-a lightweight responsive flexbox grid with cross browser support, an inline-block fallback and no polyfills
+A lightweight responsive flexbox grid with cross browser support, an inline-block fallback and no polyfills
 
 *   [docs](http://leejordan.github.io/reflex/docs)
 *   [demo](http://leejordan.github.io/reflex/docs/demo.html)
