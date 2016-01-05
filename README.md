@@ -1,6 +1,6 @@
 # Reflex
 
-![Release](https://img.shields.io/github/release/leejordan/reflex.svg)
+![Release](https://img.shields.io/npm/v/reflex-grid.svg)
 ![npm downloads](https://img.shields.io/npm/dm/reflex-grid.svg)
 
 A lightweight responsive flexbox grid with cross browser support, an inline-block fallback and no polyfills
