@@ -1098,7 +1098,7 @@ a:focus .example-btn {
 }
 /*
  *
- * Reflex v1.0.3
+ * Reflex v1.0.7
  *
  * Reflex is a flexbox grid which provides a way to take advantage of emerging
  * flexbox support while providing a fall back to inline-block on older browsers
@@ -1236,10 +1236,13 @@ a:focus .example-btn {
   flex-direction: column;
   text-align: left;
   text-align: start;
+  text-align: initial;
   -moz-text-align-last: left;
   -moz-text-align-last: start;
+  -moz-text-align-last: initial;
   text-align-last: left;
   text-align-last: start;
+  text-align-last: initial;
   letter-spacing: normal;
   word-spacing: normal;
   white-space: normal;
@@ -1751,6 +1754,8 @@ _:-ms-fullscreen,
 }
 .grid--justify-end {
   text-align: right;
+  -moz-text-align-last: right;
+  text-align-last: right;
   -ms-flex-pack: end;
   -webkit-justify-content: flex-end;
   justify-content: flex-end;
@@ -1758,13 +1763,18 @@ _:-ms-fullscreen,
 .grid--justify-end .grid__cell {
   text-align: left;
   text-align: start;
+  text-align: initial;
   -moz-text-align-last: left;
   -moz-text-align-last: start;
+  -moz-text-align-last: initial;
   text-align-last: left;
   text-align-last: start;
+  text-align-last: initial;
 }
 .grid--justify-center {
   text-align: center;
+  -moz-text-align-last: center;
+  text-align-last: center;
   -ms-flex-pack: center;
   -webkit-justify-content: center;
   justify-content: center;
@@ -1772,10 +1782,13 @@ _:-ms-fullscreen,
 .grid--justify-center .grid__cell {
   text-align: left;
   text-align: start;
+  text-align: initial;
   -moz-text-align-last: left;
   -moz-text-align-last: start;
+  -moz-text-align-last: initial;
   text-align-last: left;
   text-align-last: start;
+  text-align-last: initial;
 }
 .grid--justify-space-between {
   text-align: justify;
@@ -1788,10 +1801,13 @@ _:-ms-fullscreen,
 .grid--justify-space-between .grid__cell {
   text-align: left;
   text-align: start;
+  text-align: initial;
   -moz-text-align-last: left;
   -moz-text-align-last: start;
+  -moz-text-align-last: initial;
   text-align-last: left;
   text-align-last: start;
+  text-align-last: initial;
 }
 .grid--justify-space-around {
   text-align: justify;
@@ -1804,10 +1820,13 @@ _:-ms-fullscreen,
 .grid--justify-space-around .grid__cell {
   text-align: left;
   text-align: start;
+  text-align: initial;
   -moz-text-align-last: left;
   -moz-text-align-last: start;
+  -moz-text-align-last: initial;
   text-align-last: left;
   text-align-last: start;
+  text-align-last: initial;
 }
 .grid__col--bleed {
   padding: 0;

@@ -62,12 +62,29 @@
 }
 
 .resetTextAlign() {
+    //
+    // We want to reset any text-align properties set by the grid
+    // (required for the inline-block fallback)
+    // but we don't want to override any text-align properties
+    // set on the individual grid__col-x element
+    // or on any of it's child elements
+    //
+    // The "initial" property is not widely supported so a default of "left" and "start" is provided
+    // http://caniuse.com/#search=initial
+    //
+    // 1) set to left by default (works everywhere)
+    // 2) set to start (respects right to left text)
+    // 3) set to initial
+    //
     text-align: left;
     text-align: start;
+    text-align: initial;
     -moz-text-align-last: left;
     -moz-text-align-last: start;
+    -moz-text-align-last: initial;
     text-align-last: left;
     text-align-last: start;
+    text-align-last: initial;
 }
 
 // --------------------------------------------------
@@ -98,7 +115,10 @@
 // reflex modifier mixins
 // --------------------------------------------------
 
+//
 // display
+// ---
+
 .display-flex-only() {
     display: -ms-flexbox;
     display: -webkit-flex;
@@ -114,7 +134,10 @@
     zoom: 1;
 }
 
+//
 // flex
+// ---
+
 .flex(@grow: 0, @shrink: 1, @basis: auto) when (@basis = 0px) {
     -ms-flex: @grow @shrink auto; //ie10 needs auto
     -webkit-flex: @grow @shrink @basis;
@@ -164,7 +187,10 @@
     flex-direction: @direction;
 }
 
+//
 // align
+// ---
+
 .align-items(@align: stretch) {
     .ms-align-items(@align);
     -webkit-align-items: @align;
@@ -183,7 +209,10 @@
     align-content: @align;
 }
 
+//
 // ie10 syntax for align
+// ---
+
 .ms-align-items(@align) when (@align = flex-start) {
     -ms-flex-align: start;
 }
@@ -220,7 +249,14 @@
     -ms-flex-line-pack: @align;
 }
 
-//justify-content
+//
+// justify-content
+//
+// Uses "text-align" for the fallback inline-block grid
+// "text-align" is globally supported and works on all rows except the last
+// "text-align-last", where supported, handles the last line (and, happily, grids with only one row)
+// ---
+
 .justify-content-start() {
     text-align: left;
     -ms-flex-pack: start;
@@ -230,6 +266,8 @@
 
 .justify-content-end() {
     text-align: right;
+    -moz-text-align-last: right;
+    text-align-last: right;
     -ms-flex-pack: end;
     -webkit-justify-content: flex-end;
     justify-content: flex-end;
@@ -237,6 +275,8 @@
 
 .justify-content-center() {
     text-align: center;
+    -moz-text-align-last: center;
+    text-align-last: center;
     -ms-flex-pack: center;
     -webkit-justify-content: center;
     justify-content: center;
