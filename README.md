@@ -13,7 +13,7 @@ Reflex gives you the ability to easily take advantage of flexbox for laying out 
 
 Where flexbox isn't supported, your basic grid structure will remain intact and most of the layout classes still work. Try the [docs](http://leejordan.github.io/reflex/docs) or [demo](http://leejordan.github.io/reflex/docs/demo.html) pages out in a non-flexbox browser to see for yourself!
 
-The benefits are:
+## The benefits are:
 
 *   It's lightweight - 12KB in it's minified form and **1.7KB** gzipped
 *   Where flexbox is supported, grid cells are all the same height by default
@@ -25,9 +25,23 @@ The benefits are:
 *   Built using BEM syntax
 *   Easily customizable and extendable
 
-Intended use:
+## Intended use:
 
 *   Creating complex nested grids which take advantage of flexbox layout properties
 *   Generating a reliable grid with dynamic content e.g. a list of products
 *   An addition or replacement to your current css framework
 *   A set of vendor-prefixed helper classes and LESS mixins to get your flexbox solution off the ground faster
+
+## Usage
+
+### Compiled CSS
+You can use the compiled css directly by downloading either the [minified](https://raw.githubusercontent.com/leejordan/reflex/master/css/reflex.min.css) or [non-minified](https://raw.githubusercontent.com/leejordan/reflex/master/css/reflex.css) version.
+
+### Via github
+You could clone this repo via [github](https://github.com/leejordan/reflex) which would allow you to modify the variables such as the number of columns or the breakpoints.
+
+### Via npm
+`npm install reflex-grid`
+
+
+
