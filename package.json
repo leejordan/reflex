@@ -24,7 +24,7 @@
   },
   "homepage": "http://leejordan.github.io/reflex/docs/",
   "scripts": {
-    "build": "lessc less/reflex.less css/reflex.css && lessc --clean-css=\"--s1 --advanced --compatibility=ie8\" less/reflex.less > css/reflex.min.css",
+    "build": "lessc less/reflex.less css/reflex.css && lessc less/reflex.less scss/reflex.scss && lessc --clean-css=\"--s1 --advanced --compatibility=ie8\" less/reflex.less > css/reflex.min.css",
     "build:docs": "lessc docs/less/docs.less > docs/css/docs.css",
     "watch": "watch 'npm run build' less -d -u",
     "watch:docs": "watch 'npm run build:docs' docs/less -d -u"
