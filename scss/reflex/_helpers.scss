@@ -7,7 +7,7 @@
 // grid full bleed (no internal padding)
 // --------------------------------------------------
 .#{$reflex-prefix}grid--bleed {
-    [class*="@{reflex-prefix}grid__col-"] {
+    [class*="#{$reflex-prefix}grid__col-"] {
         padding: 0;
     }
 }
