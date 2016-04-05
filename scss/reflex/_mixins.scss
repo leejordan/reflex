@@ -17,7 +17,7 @@
             *width: percentage(($index / $reflex-columns)) - 0.1;
 
             //for ie6 support you can uncomment this line but it will increase css filesize dramatically
-            //.setupCols();
+            //@include setupCols();
         }
     }
 }
