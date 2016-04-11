@@ -645,7 +645,6 @@ h1:first-of-type {
 .example-grid-height-lg {
   background-color: #003e50;
   box-shadow: inset 0px 0px 0px 1px #fff;
-  height: 250px;
 }
 .example-col {
   background-color: #83e3ff;
@@ -1186,6 +1185,7 @@ a:focus .example-btn {
   padding: 1em;
 }
 .grid__cell {
+  position: relative;
   display: block;
   -ms-flex: 1 1 auto;
   -webkit-flex: 1 1 auto;

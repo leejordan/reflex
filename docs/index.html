@@ -21,7 +21,7 @@
         <div class="grid">
             <div class="grid__col-xs-8">
                 <h1>Reflex grid</h1>
-                <p>a lightweight responsive flexbox grid with cross browser support, an inline-block fallback and no polyfills</p>
+                <p>A lightweight responsive flexbox grid with cross browser support, an inline-block fallback and no polyfills</p>
             </div>
             <nav role="navigation" class="grid__col-xs-4">
                 <a href="https://github.com/leejordan/reflex" target="_blank" class="btn btn-code">github</a>
@@ -40,7 +40,7 @@
             <div class="grid__col-sm-4">
                 <h2 id="what-is-reflex">What is reflex? <a href="#what-is-reflex">&#35;</a></h2>
                 <p>Reflex gives you the ability to easily take advantage of flexbox for laying out a grid while having a reliable inline-block fallback for older browsers.</p>
-                <p>At the time of writing, <a href="http://caniuse.com/#search=flex" target="_blank">global flexbox support is at 95.31%</a> (excluding browsers with outdated or partial support) so I propose that it's time to start taking advantage of flexbox and accept that the inline-block fallback won't support everything.</p>
+                <p>At the time of writing, <a href="http://caniuse.com/#search=flex" target="_blank">global flexbox support is at 94.1%</a> (excluding browsers with outdated or partial support) so I propose that it's time to start taking advantage of flexbox and accept that the inline-block fallback won't support everything.</p>
                 <p>Where flexbox isn't supported, your basic grid structure will remain intact and most of the layout classes still work. Try this page out in a non-flexbox browser to see for yourself!</p>
             </div>
             <div class="grid__col-sm-4">
@@ -53,7 +53,7 @@
                     <li>Supports semantic elements e.g. you can use <code>ul</code> as a grid</li>
                     <li>Supports nested grids</li>
                     <li>Good cross browser support</li>
-                    <li>Built with <a href="http://lesscss.org/" target="_blank">LESS</a></li>
+                    <li>Built in both <a href="http://sass-lang.com/" target="_blank">Sass/SCSS</a> and <a href="http://lesscss.org/" target="_blank">LESS</a></li>
                     <li>Built using <a href="http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/" target="_blank">BEM syntax</a>
                     <li>Easily customizable and extendable</li>
                 </ul>
@@ -65,7 +65,8 @@
                     <li>Creating complex nested grids which take advantage of flexbox layout properties</li>
                     <li>Generating a reliable grid with dynamic content e.g. a list of products</li>
                     <li>An addition or replacement to your current css framework</li>
-                    <li>A set of vendor-prefixed helper classes and LESS mixins to get your flexbox solution off the ground faster</li>
+                    <li>A set of vendor-prefixed Sass or LESS mixins ready to be incorporated into an existing framework</li>
+                    <li>A set of vendor-prefixed helper classes to get your flexbox solution off the ground faster</li>
                 </ul>
             </div>
         </section>
@@ -163,7 +164,7 @@
             <div class="grid__col-sm-7">
                 <p class="alert">If you want to use the grid with breakpoints in ie8 and below you will need to use <a href="https://github.com/scottjehl/Respond" target="_blank">respond.js</a> which enables media query support in those browsers via JavaScript and <a href="https://github.com/afarkas/html5shiv" target="_blank">html5Shiv</a> if you wish to use html5 elements such as <code>section</code></p>
 
-                <p class="alert">It is possible for this framework to support ie6. You can make a tiny change to enable support but it greatly increases the filesize of the css. Look in <a href="https://github.com/leejordan/reflex/blob/master/less/reflex/mixins.less">mixins.less</a> for the commented line.</p>
+                <p class="alert">It is possible for this framework to support ie6. You can make a tiny change to enable support but it greatly increases the filesize of the css. Look in <a href="https://github.com/leejordan/reflex/blob/master/scss/reflex/_mixins.scss#L20">_mixins.scss (Sass)</a> or <a href="https://github.com/leejordan/reflex/blob/master/less/reflex/mixins.less#L19">mixins.less (LESS)</a> for the commented line.</p>
             </div>
         </section>
 

@@ -88,6 +88,7 @@
   padding: 1em;
 }
 .grid__cell {
+  position: relative;
   display: block;
   -ms-flex: 1 1 auto;
   -webkit-flex: 1 1 auto;

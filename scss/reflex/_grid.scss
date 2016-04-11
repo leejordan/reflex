@@ -59,6 +59,7 @@
 // --------------------------------------------------
 
 .#{$reflex-prefix}grid__cell {
+    position: relative;
     display: block;
     @include flex(1, 1, auto);
 }

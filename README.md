@@ -21,7 +21,7 @@ Where flexbox isn't supported, your basic grid structure will remain intact and 
 *   Supports semantic elements e.g. you can use ul as a grid
 *   Supports nested grids
 *   Good cross browser support
-*   Built with less
+*   Built in both Sass/SCSS and LESS
 *   Built using BEM syntax
 *   Easily customizable and extendable
 
@@ -30,7 +30,8 @@ Where flexbox isn't supported, your basic grid structure will remain intact and 
 *   Creating complex nested grids which take advantage of flexbox layout properties
 *   Generating a reliable grid with dynamic content e.g. a list of products
 *   An addition or replacement to your current css framework
-*   A set of vendor-prefixed helper classes and LESS mixins to get your flexbox solution off the ground faster
+*   A set of vendor-prefixed Sass or LESS mixins ready to be incorporated into an existing framework
+*   A set of vendor-prefixed helper classes to get your flexbox solution off the ground faster
 
 ## Usage
 
