@@ -152,7 +152,8 @@
 .#{$reflex-prefix}grid--justify-end {
     @include justify-content-end();
 
-    .#{$reflex-prefix}grid__cell {
+    .#{$reflex-prefix}grid__cell,
+    [class*="#{$reflex-prefix}grid__col-"] {
         @include resetTextAlign();
     }
 }
@@ -160,7 +161,8 @@
 .#{$reflex-prefix}grid--justify-center {
     @include justify-content-center();
 
-    .#{$reflex-prefix}grid__cell {
+    .#{$reflex-prefix}grid__cell,
+    [class*="#{$reflex-prefix}grid__col-"] {
         @include resetTextAlign();
     }
 }
@@ -168,7 +170,8 @@
 .#{$reflex-prefix}grid--justify-space-between {
     @include justify-content-space-between();
 
-    .#{$reflex-prefix}grid__cell {
+    .#{$reflex-prefix}grid__cell,
+    [class*="#{$reflex-prefix}grid__col-"] {
         @include resetTextAlign();
     }
 }
@@ -176,7 +179,8 @@
 .#{$reflex-prefix}grid--justify-space-around {
     @include justify-content-space-around();
 
-    .#{$reflex-prefix}grid__cell {
+    .#{$reflex-prefix}grid__cell,
+    [class*="#{$reflex-prefix}grid__col-"] {
         @include resetTextAlign();
     }
 }
