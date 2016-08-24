@@ -2,19 +2,6 @@
 // reflex grid
 // --------------------------------------------------
 
-// Reset the box-sizing so our grid works properly
-* {
-    @include box-sizing(border-box);
-}
-*:before,
-*:after {
-    @include box-sizing(border-box);
-}
-
-// --------------------------------------------------
-// reflex grid
-// --------------------------------------------------
-
 .#{$reflex-prefix}grid {
     @include display-flex();
     @include flex-wrap();
@@ -40,6 +27,15 @@
     // handle nested grids
     & .#{$reflex-prefix}grid {
         @include flex(1, 1, auto);
+    }
+
+    // Reset the box-sizing so our grid works properly
+    * {
+        @include box-sizing(border-box);
+    }
+    *:before,
+    *:after {
+        @include box-sizing(border-box);
     }
 
     // handle when lists are used as a grid

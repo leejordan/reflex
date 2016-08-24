@@ -1095,7 +1095,7 @@ a:focus .example-btn {
     max-width: 1680px;
   }
 }
-/*! Reflex v1.0.9 - https://github.com/leejordan/reflex */
+/*! Reflex v1.1.0 - https://github.com/leejordan/reflex */
 /*
  *
  * Reflex is a flexbox grid which provides a way to take advantage of emerging
@@ -1108,17 +1108,6 @@ a:focus .example-btn {
  * Structure and calculations are inspired by twitter bootstrap
  *
  */
-* {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-*:before,
-*:after {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
 .grid {
   display: inline-block;
   display: -ms-flexbox;
@@ -1156,6 +1145,17 @@ a:focus .example-btn {
   -ms-flex: 1 1 auto;
   -webkit-flex: 1 1 auto;
   flex: 1 1 auto;
+}
+.grid * {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.grid *:before,
+.grid *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 [class*="grid__col-"] {
   display: inline-block;
