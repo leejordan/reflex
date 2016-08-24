@@ -34,7 +34,6 @@
 @mixin setupCols() {
     @include display-flex();
     @include flex-direction(column);
-    @include resetTextAlign();
     @include resetWhitespace();
     position: relative;
     width: 100%;
