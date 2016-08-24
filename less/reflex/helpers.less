@@ -151,7 +151,8 @@
 .@{reflex-prefix}grid--justify-end {
     .justify-content-end();
 
-    .@{reflex-prefix}grid__cell {
+    .@{reflex-prefix}grid__cell,
+    [class*="@{reflex-prefix}grid__col-"] {
         .resetTextAlign();
     }
 }
@@ -159,7 +160,8 @@
 .@{reflex-prefix}grid--justify-center {
     .justify-content-center();
 
-    .@{reflex-prefix}grid__cell {
+    .@{reflex-prefix}grid__cell,
+    [class*="@{reflex-prefix}grid__col-"] {
         .resetTextAlign();
     }
 }
@@ -167,7 +169,8 @@
 .@{reflex-prefix}grid--justify-space-between {
     .justify-content-space-between();
 
-    .@{reflex-prefix}grid__cell {
+    .@{reflex-prefix}grid__cell,
+    [class*="@{reflex-prefix}grid__col-"] {
         .resetTextAlign();
     }
 }
@@ -175,7 +178,8 @@
 .@{reflex-prefix}grid--justify-space-around {
     .justify-content-space-around();
 
-    .@{reflex-prefix}grid__cell {
+    .@{reflex-prefix}grid__cell,
+    [class*="@{reflex-prefix}grid__col-"] {
         .resetTextAlign();
     }
 }

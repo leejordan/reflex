@@ -70,15 +70,6 @@
   -ms-flex-direction: column;
   -webkit-flex-direction: column;
   flex-direction: column;
-  text-align: left;
-  text-align: start;
-  text-align: initial;
-  -moz-text-align-last: left;
-  -moz-text-align-last: start;
-  -moz-text-align-last: initial;
-  text-align-last: left;
-  text-align-last: start;
-  text-align-last: initial;
   letter-spacing: normal;
   word-spacing: normal;
   white-space: normal;
@@ -662,7 +653,8 @@ _:-ms-fullscreen,
   -webkit-justify-content: flex-end;
   justify-content: flex-end;
 }
-.grid--justify-end .grid__cell {
+.grid--justify-end .grid__cell,
+.grid--justify-end [class*="grid__col-"] {
   text-align: left;
   text-align: start;
   text-align: initial;
@@ -681,7 +673,8 @@ _:-ms-fullscreen,
   -webkit-justify-content: center;
   justify-content: center;
 }
-.grid--justify-center .grid__cell {
+.grid--justify-center .grid__cell,
+.grid--justify-center [class*="grid__col-"] {
   text-align: left;
   text-align: start;
   text-align: initial;
@@ -700,7 +693,8 @@ _:-ms-fullscreen,
   -webkit-justify-content: space-between;
   justify-content: space-between;
 }
-.grid--justify-space-between .grid__cell {
+.grid--justify-space-between .grid__cell,
+.grid--justify-space-between [class*="grid__col-"] {
   text-align: left;
   text-align: start;
   text-align: initial;
@@ -719,7 +713,8 @@ _:-ms-fullscreen,
   -webkit-justify-content: space-around;
   justify-content: space-around;
 }
-.grid--justify-space-around .grid__cell {
+.grid--justify-space-around .grid__cell,
+.grid--justify-space-around [class*="grid__col-"] {
   text-align: left;
   text-align: start;
   text-align: initial;
