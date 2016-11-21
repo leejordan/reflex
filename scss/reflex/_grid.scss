@@ -11,17 +11,17 @@
     width: 100%;
     max-width: $reflex-max-width;
 
-    @include setupWhitespace();
+    @include whitespace(false);
 
     &:before,
     &:after {
-        @include resetWhitespace();
+        @include whitespace();
         max-width: 100%;
     }
 
     *:before,
     *:after {
-        @include resetWhitespace();
+        @include whitespace();
     }
 
     // handle nested grids

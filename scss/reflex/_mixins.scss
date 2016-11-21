@@ -52,16 +52,16 @@
 // inline-block specific mixins
 // --------------------------------------------------
 
-@mixin setupWhitespace() {
-    letter-spacing: -0.31em !important;
-    *letter-spacing: normal !important;
-    word-spacing: -0.43em !important;
-}
-
-@mixin resetWhitespace() {
-    letter-spacing: normal;
-    word-spacing: normal;
-    white-space: normal;
+@mixin whitespace($reset: true) {
+    @if $reset {
+        letter-spacing: normal;
+        word-spacing: normal;
+        white-space: normal;
+    } @else {
+        letter-spacing: -0.31em !important;
+        *letter-spacing: normal !important;
+        word-spacing: -0.43em !important;
+    }
 }
 
 @mixin resetTextAlign() {
