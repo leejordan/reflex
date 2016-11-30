@@ -76,7 +76,7 @@
   position: relative;
   width: 100%;
   vertical-align: top;
-  padding: 1em;
+  padding: 0 1em;
 }
 .grid__cell {
   position: relative;

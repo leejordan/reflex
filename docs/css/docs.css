@@ -1174,7 +1174,7 @@ a:focus .example-btn {
   position: relative;
   width: 100%;
   vertical-align: top;
-  padding: 1em;
+  padding: 1em 1em;
 }
 .grid__cell {
   position: relative;
