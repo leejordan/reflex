@@ -1826,6 +1826,12 @@ _:-ms-fullscreen,
 .grid__col--bleed {
   padding: 0;
 }
+.grid__col--bleed-x {
+  padding: 1em 0;
+}
+.grid__col--bleed-y {
+  padding: 0 1em;
+}
 .grid__cell--padding-sm {
   padding: 0.5em;
 }

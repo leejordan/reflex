@@ -193,6 +193,18 @@
     padding: 0;
 }
 
+.#{$reflex-prefix}grid__col--bleed {
+    padding: 0;
+}
+
+.#{$reflex-prefix}grid__col--bleed-x {
+    padding: $reflex-cell-spacing 0;
+}
+
+.#{$reflex-prefix}grid__col--bleed-y {
+    padding: 0 $reflex-cell-spacing;
+}
+
 // --------------------------------------------------
 // grid__cell modifiers
 // --------------------------------------------------

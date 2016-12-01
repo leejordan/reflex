@@ -1063,7 +1063,7 @@
             </div>
             <div class="grid__col-sm-4">
                 <p>
-                    By default, <code>grid__col-x</code> elements have padding to space the grid out. It's possible to override this by applying the modifer <code>grid--bleed</code> to your <code>grid</code> element.
+                    By default, <code>grid__col-x</code> elements have padding to space the grid out. It's possible to override this in all <code>grid__col-x</code> child elements in a grid by applying the modifer <code>grid--bleed</code> to your <code>grid</code> element.
                 </p>
             </div>
             <div class="grid__col-sm-8">
@@ -1094,6 +1094,48 @@
                     </li>
                     <li class="grid__col-6 grid__col--bleed">
                         <p><code>grid__col--bleed</code> applied</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="grid">
+            <div class="grid__col-12">
+                <h3 id="grid-col-bleed-x">.grid__col--bleed-x <a href="#grid-col-bleed-x">&#35;</a></h3>
+            </div>
+            <div class="grid__col-sm-4">
+                <p>
+                    You can override the left and right padding on individual <code>grid__col-x</code> elements by using <code>grid__col--bleed-x</code>.
+                </p>
+            </div>
+            <div class="grid__col-sm-8">
+                <ul class="grid example-section">
+                    <li class="grid__col-6">
+                        <p>Default</p>
+                    </li>
+                    <li class="grid__col-6 grid__col--bleed-x">
+                        <p><code>grid__col--bleed-x</code> applied</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="grid">
+            <div class="grid__col-12">
+                <h3 id="grid-col-bleed-y">.grid__col--bleed-y <a href="#grid-col-bleed-y">&#35;</a></h3>
+            </div>
+            <div class="grid__col-sm-4">
+                <p>
+                    You can override the top and bottom padding on individual <code>grid__col-y</code> elements by using <code>grid__col--bleed-y</code>.
+                </p>
+            </div>
+            <div class="grid__col-sm-8">
+                <ul class="grid example-section">
+                    <li class="grid__col-6">
+                        <p>Default</p>
+                    </li>
+                    <li class="grid__col-6 grid__col--bleed-y">
+                        <p><code>grid__col--bleed-y</code> applied</p>
                     </li>
                 </ul>
             </div>

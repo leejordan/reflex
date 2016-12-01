@@ -76,7 +76,7 @@
   position: relative;
   width: 100%;
   vertical-align: top;
-  padding: 0 1em;
+  padding: 1em 1em;
 }
 .grid__cell {
   position: relative;
@@ -727,6 +727,12 @@ _:-ms-fullscreen,
 }
 .grid__col--bleed {
   padding: 0;
+}
+.grid__col--bleed-x {
+  padding: 0 1em;
+}
+.grid__col--bleed-y {
+  padding: 1em 0;
 }
 .grid__cell--padding-sm {
   padding: 0.5em;
