@@ -100,12 +100,12 @@
     .loop-grid--order-helpers(@reflex-columns);
 }
 
-.loop-grid--order-helpers(@index) when (@index >= 0) {
-    .@{reflex-prefix}grid--order-@{index} {
+.loop-grid--order-helpers(@index, @breakpoint: ~'') when (@index >= 0) {
+    .@{reflex-prefix}grid--order-@{index}@{breakpoint} {
         .order(@index);
     }
     // next iteration
-    .loop-grid--order-helpers((@index - 1));
+    .loop-grid--order-helpers((@index - 1), @breakpoint);
 }
 
 // --------------------------------------------------

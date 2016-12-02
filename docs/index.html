@@ -47,7 +47,7 @@
                 <h2 id="reflex-benefits">Why use reflex? <a href="#reflex-benefits">&#35;</a></h2>
 
                 <ul>
-                    <li>It's lightweight - 12KB in it's minified form and <strong>1.7KB gzipped</strong></li>
+                    <li>It's lightweight - 12KB in it's minified form and <strong>1.8KB gzipped</strong></li>
                     <li>Where flexbox is supported, <strong>grid cells are all the same height by default</strong></li>
                     <li>Reflex grid cells <strong>never push each other out of the way</strong> (as with floated grids)</li>
                     <li>Supports semantic elements e.g. you can use <code>ul</code> as a grid</li>
@@ -915,6 +915,35 @@
                             </div>
                             <div class="grid__col-4 grid--order-1 example-col">
                                 <p>I am <strong>third</strong> in the markup but ordered first</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <div class="grid__col-12">
+                <h3 id="ordering">Responsive ordering <a href="#ordering">&#35;</a></h3>
+            </div>
+            <div class="grid__col-xs-6">
+                <p>There are responsive ordering classes that correspond to both the number of columns and the <a href="#breakpoints">breakpoints</a> so you can choose to change the order of <code>grid__col-x</code> elements only above certain viewport sizes.</p>
+                <p>For example: <code>.grid--order-2-md</code></p>
+            </div>
+            <div class="grid__col-xs-6">
+                <section class="grid example-section">
+                    <div class="grid__col-12">
+                        <h3 id="order">.grid--order-<em>&lt;n&gt;</em>-<em>&lt;breakpoint&gt;</em> <a href="#order">&#35;</a></h3>
+                        <p>When applied to <code>grid__col-x</code> sets <code>order: n</code> when viewport size is above the selected breakpoint.</p>
+                    </div>
+                    <div class="grid__col-12">
+                        <div class="grid">
+                            <div class="grid__col-4 grid--order-2-md example-col">
+                                <p>I am <strong>first</strong> in the markup but ordered second when viewport size is above 992px</p>
+                            </div>
+                            <div class="grid__col-4 grid--order-3-md example-col">
+                                <p>I am <strong>second</strong> in the markup but ordered third when viewport size is above 992px</p>
+                            </div>
+                            <div class="grid__col-4 grid--order-1-md example-col">
+                                <p>I am <strong>third</strong> in the markup but ordered first when viewport size is above 992px</p>
                             </div>
                         </div>
                     </div>

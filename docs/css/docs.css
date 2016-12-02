@@ -1608,6 +1608,341 @@ _:-ms-fullscreen,
   -webkit-order: 0;
   order: 0;
 }
+@media only screen and (min-width: 480px) {
+  .grid--order-12-xs {
+    -ms-flex-order: 12;
+    -webkit-order: 12;
+    order: 12;
+  }
+  .grid--order-11-xs {
+    -ms-flex-order: 11;
+    -webkit-order: 11;
+    order: 11;
+  }
+  .grid--order-10-xs {
+    -ms-flex-order: 10;
+    -webkit-order: 10;
+    order: 10;
+  }
+  .grid--order-9-xs {
+    -ms-flex-order: 9;
+    -webkit-order: 9;
+    order: 9;
+  }
+  .grid--order-8-xs {
+    -ms-flex-order: 8;
+    -webkit-order: 8;
+    order: 8;
+  }
+  .grid--order-7-xs {
+    -ms-flex-order: 7;
+    -webkit-order: 7;
+    order: 7;
+  }
+  .grid--order-6-xs {
+    -ms-flex-order: 6;
+    -webkit-order: 6;
+    order: 6;
+  }
+  .grid--order-5-xs {
+    -ms-flex-order: 5;
+    -webkit-order: 5;
+    order: 5;
+  }
+  .grid--order-4-xs {
+    -ms-flex-order: 4;
+    -webkit-order: 4;
+    order: 4;
+  }
+  .grid--order-3-xs {
+    -ms-flex-order: 3;
+    -webkit-order: 3;
+    order: 3;
+  }
+  .grid--order-2-xs {
+    -ms-flex-order: 2;
+    -webkit-order: 2;
+    order: 2;
+  }
+  .grid--order-1-xs {
+    -ms-flex-order: 1;
+    -webkit-order: 1;
+    order: 1;
+  }
+  .grid--order-0-xs {
+    -ms-flex-order: 0;
+    -webkit-order: 0;
+    order: 0;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .grid--order-12-sm {
+    -ms-flex-order: 12;
+    -webkit-order: 12;
+    order: 12;
+  }
+  .grid--order-11-sm {
+    -ms-flex-order: 11;
+    -webkit-order: 11;
+    order: 11;
+  }
+  .grid--order-10-sm {
+    -ms-flex-order: 10;
+    -webkit-order: 10;
+    order: 10;
+  }
+  .grid--order-9-sm {
+    -ms-flex-order: 9;
+    -webkit-order: 9;
+    order: 9;
+  }
+  .grid--order-8-sm {
+    -ms-flex-order: 8;
+    -webkit-order: 8;
+    order: 8;
+  }
+  .grid--order-7-sm {
+    -ms-flex-order: 7;
+    -webkit-order: 7;
+    order: 7;
+  }
+  .grid--order-6-sm {
+    -ms-flex-order: 6;
+    -webkit-order: 6;
+    order: 6;
+  }
+  .grid--order-5-sm {
+    -ms-flex-order: 5;
+    -webkit-order: 5;
+    order: 5;
+  }
+  .grid--order-4-sm {
+    -ms-flex-order: 4;
+    -webkit-order: 4;
+    order: 4;
+  }
+  .grid--order-3-sm {
+    -ms-flex-order: 3;
+    -webkit-order: 3;
+    order: 3;
+  }
+  .grid--order-2-sm {
+    -ms-flex-order: 2;
+    -webkit-order: 2;
+    order: 2;
+  }
+  .grid--order-1-sm {
+    -ms-flex-order: 1;
+    -webkit-order: 1;
+    order: 1;
+  }
+  .grid--order-0-sm {
+    -ms-flex-order: 0;
+    -webkit-order: 0;
+    order: 0;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .grid--order-12-md {
+    -ms-flex-order: 12;
+    -webkit-order: 12;
+    order: 12;
+  }
+  .grid--order-11-md {
+    -ms-flex-order: 11;
+    -webkit-order: 11;
+    order: 11;
+  }
+  .grid--order-10-md {
+    -ms-flex-order: 10;
+    -webkit-order: 10;
+    order: 10;
+  }
+  .grid--order-9-md {
+    -ms-flex-order: 9;
+    -webkit-order: 9;
+    order: 9;
+  }
+  .grid--order-8-md {
+    -ms-flex-order: 8;
+    -webkit-order: 8;
+    order: 8;
+  }
+  .grid--order-7-md {
+    -ms-flex-order: 7;
+    -webkit-order: 7;
+    order: 7;
+  }
+  .grid--order-6-md {
+    -ms-flex-order: 6;
+    -webkit-order: 6;
+    order: 6;
+  }
+  .grid--order-5-md {
+    -ms-flex-order: 5;
+    -webkit-order: 5;
+    order: 5;
+  }
+  .grid--order-4-md {
+    -ms-flex-order: 4;
+    -webkit-order: 4;
+    order: 4;
+  }
+  .grid--order-3-md {
+    -ms-flex-order: 3;
+    -webkit-order: 3;
+    order: 3;
+  }
+  .grid--order-2-md {
+    -ms-flex-order: 2;
+    -webkit-order: 2;
+    order: 2;
+  }
+  .grid--order-1-md {
+    -ms-flex-order: 1;
+    -webkit-order: 1;
+    order: 1;
+  }
+  .grid--order-0-md {
+    -ms-flex-order: 0;
+    -webkit-order: 0;
+    order: 0;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .grid--order-12-lg {
+    -ms-flex-order: 12;
+    -webkit-order: 12;
+    order: 12;
+  }
+  .grid--order-11-lg {
+    -ms-flex-order: 11;
+    -webkit-order: 11;
+    order: 11;
+  }
+  .grid--order-10-lg {
+    -ms-flex-order: 10;
+    -webkit-order: 10;
+    order: 10;
+  }
+  .grid--order-9-lg {
+    -ms-flex-order: 9;
+    -webkit-order: 9;
+    order: 9;
+  }
+  .grid--order-8-lg {
+    -ms-flex-order: 8;
+    -webkit-order: 8;
+    order: 8;
+  }
+  .grid--order-7-lg {
+    -ms-flex-order: 7;
+    -webkit-order: 7;
+    order: 7;
+  }
+  .grid--order-6-lg {
+    -ms-flex-order: 6;
+    -webkit-order: 6;
+    order: 6;
+  }
+  .grid--order-5-lg {
+    -ms-flex-order: 5;
+    -webkit-order: 5;
+    order: 5;
+  }
+  .grid--order-4-lg {
+    -ms-flex-order: 4;
+    -webkit-order: 4;
+    order: 4;
+  }
+  .grid--order-3-lg {
+    -ms-flex-order: 3;
+    -webkit-order: 3;
+    order: 3;
+  }
+  .grid--order-2-lg {
+    -ms-flex-order: 2;
+    -webkit-order: 2;
+    order: 2;
+  }
+  .grid--order-1-lg {
+    -ms-flex-order: 1;
+    -webkit-order: 1;
+    order: 1;
+  }
+  .grid--order-0-lg {
+    -ms-flex-order: 0;
+    -webkit-order: 0;
+    order: 0;
+  }
+}
+@media only screen and (min-width: 1600px) {
+  .grid--order-12-xlg {
+    -ms-flex-order: 12;
+    -webkit-order: 12;
+    order: 12;
+  }
+  .grid--order-11-xlg {
+    -ms-flex-order: 11;
+    -webkit-order: 11;
+    order: 11;
+  }
+  .grid--order-10-xlg {
+    -ms-flex-order: 10;
+    -webkit-order: 10;
+    order: 10;
+  }
+  .grid--order-9-xlg {
+    -ms-flex-order: 9;
+    -webkit-order: 9;
+    order: 9;
+  }
+  .grid--order-8-xlg {
+    -ms-flex-order: 8;
+    -webkit-order: 8;
+    order: 8;
+  }
+  .grid--order-7-xlg {
+    -ms-flex-order: 7;
+    -webkit-order: 7;
+    order: 7;
+  }
+  .grid--order-6-xlg {
+    -ms-flex-order: 6;
+    -webkit-order: 6;
+    order: 6;
+  }
+  .grid--order-5-xlg {
+    -ms-flex-order: 5;
+    -webkit-order: 5;
+    order: 5;
+  }
+  .grid--order-4-xlg {
+    -ms-flex-order: 4;
+    -webkit-order: 4;
+    order: 4;
+  }
+  .grid--order-3-xlg {
+    -ms-flex-order: 3;
+    -webkit-order: 3;
+    order: 3;
+  }
+  .grid--order-2-xlg {
+    -ms-flex-order: 2;
+    -webkit-order: 2;
+    order: 2;
+  }
+  .grid--order-1-xlg {
+    -ms-flex-order: 1;
+    -webkit-order: 1;
+    order: 1;
+  }
+  .grid--order-0-xlg {
+    -ms-flex-order: 0;
+    -webkit-order: 0;
+    order: 0;
+  }
+}
 .grid--bleed [class*="grid__col-"] {
   padding: 0;
 }

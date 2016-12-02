@@ -15,7 +15,7 @@ Where flexbox isn't supported, your basic grid structure will remain intact and 
 
 ## The benefits are:
 
-*   It's lightweight - 12KB in it's minified form and **1.7KB** gzipped
+*   It's lightweight - 12KB in it's minified form and **1.8KB** gzipped
 *   Where flexbox is supported, grid cells are all the same height by default
 *   Reflex grid cells never push each other out of the way (as with floated grids)
 *   Supports semantic elements e.g. you can use ul as a grid

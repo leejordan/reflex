@@ -29,12 +29,14 @@
   "scripts": {
     "build": "lessc less/reflex.less css/reflex.css && lessc --clean-css=\"--s1 --advanced --compatibility=ie8\" less/reflex.less > css/reflex.min.css",
     "build:docs": "lessc docs/less/docs.less > docs/css/docs.css",
+    "build:sass": "node-sass --include-path scss scss/reflex.scss css/reflex-sass.css",
     "watch": "watch 'npm run build' less -d -u",
     "watch:docs": "watch 'npm run build:docs' docs/less -d -u"
   },
   "devDependencies": {
     "less": "^2.5.3",
     "less-plugin-clean-css": "^1.5.1",
+    "node-sass": "^3.13.0",
     "watch": "^0.17.1"
   }
 }

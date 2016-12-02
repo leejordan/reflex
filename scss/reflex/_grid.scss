@@ -135,3 +135,23 @@ _:-ms-fullscreen, :root .grid__cell {
 // --------------------------------------------------
 
 @include make-grid--order-helpers();
+
+@media only screen and (min-width: $reflex-xs) {
+    @include loop-grid--order-helpers($reflex-columns, '-xs');
+}
+
+@media only screen and (min-width: $reflex-sm) {
+    @include loop-grid--order-helpers($reflex-columns, '-sm');
+}
+
+@media only screen and (min-width: $reflex-md) {
+    @include loop-grid--order-helpers($reflex-columns, '-md');
+}
+
+@media only screen and (min-width: $reflex-lg) {
+    @include loop-grid--order-helpers($reflex-columns, '-lg');
+}
+
+@media only screen and (min-width: $reflex-xlg) {
+    @include loop-grid--order-helpers($reflex-columns, '-xlg');
+}
