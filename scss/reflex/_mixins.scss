@@ -104,13 +104,13 @@
     @include loop-grid--order-helpers($reflex-columns);
 }
 
-@mixin loop-grid--order-helpers($index) {
+@mixin loop-grid--order-helpers($index, $breakpoint: null) {
     @if $index >= 0 {
         .#{$reflex-prefix}grid--order-#{$index} {
             @include order($index);
         }
         // next iteration
-        @include loop-grid--order-helpers(($index - 1));
+        @include loop-grid--order-helpers(($index - 1), $breakpoint);
     }
 }
 
