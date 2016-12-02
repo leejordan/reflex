@@ -1096,7 +1096,7 @@ a:focus .example-btn {
     max-width: 1680px;
   }
 }
-/*! Reflex v1.1.1 - https://github.com/leejordan/reflex */
+/*! Reflex v1.2.0 - https://github.com/leejordan/reflex */
 /*
  *
  * Reflex is a flexbox grid which provides a way to take advantage of emerging
@@ -1831,6 +1831,12 @@ _:-ms-fullscreen,
 }
 .grid__col--bleed-y {
   padding: 0 1em;
+}
+.grid__col--bg {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  padding-bottom: 50%;
 }
 .grid__cell--padding-sm {
   padding: 0.5em;

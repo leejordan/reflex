@@ -193,16 +193,19 @@
     padding: 0;
 }
 
-.#{$reflex-prefix}grid__col--bleed {
-    padding: 0;
-}
-
 .#{$reflex-prefix}grid__col--bleed-x {
     padding: $reflex-cell-spacing 0;
 }
 
 .#{$reflex-prefix}grid__col--bleed-y {
     padding: 0 $reflex-cell-spacing;
+}
+
+.#{$reflex-prefix}grid__col--bg {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    padding-bottom: 50%;
 }
 
 // --------------------------------------------------
