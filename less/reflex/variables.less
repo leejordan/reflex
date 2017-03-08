@@ -10,6 +10,12 @@
 // By default this is an empty string
 @reflex-prefix: ~'';
 
+// Legacy support
+// -------------------------
+// Reflex adds a lot of css propertie to support older browsers that don't support flexbox layout.
+// If you prefer to use this as a purely flexbox grid without legacy support then set this to false
+@legacy-support: true;
+
 // Grid
 // -------------------------
 @reflex-columns: 12; // number of columns

@@ -44,8 +44,11 @@
 // defaults for auto cols
 @mixin setupAutoCols() {
     @include flex(1, 0, 0px); // a unit on last value is required by IE10-11
-    width: auto !important;
-    max-width: 100%;
+
+    @if $legacy-support == true {
+        width: auto !important;
+        max-width: 100%;
+    }
 }
 
 // --------------------------------------------------
@@ -53,15 +56,19 @@
 // --------------------------------------------------
 
 @mixin setupWhitespace() {
-    letter-spacing: -0.31em !important;
-    *letter-spacing: normal !important;
-    word-spacing: -0.43em !important;
+    @if $legacy-support == true {
+        letter-spacing: -0.31em !important;
+        *letter-spacing: normal !important;
+        word-spacing: -0.43em !important;
+    }
 }
 
 @mixin resetWhitespace() {
-    letter-spacing: normal;
-    word-spacing: normal;
-    white-space: normal;
+    @if $legacy-support == true {
+        letter-spacing: normal;
+        word-spacing: normal;
+        white-space: normal;
+    }
 }
 
 @mixin resetTextAlign() {
@@ -129,12 +136,16 @@
 }
 
 @mixin display-flex() {
-    display: inline-block;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    *display: inline;
-    zoom: 1;
+    @if $legacy-support == true {
+        display: inline-block;
+    }
+
+    @include display-flex-only();
+
+    @if $legacy-support == true {
+        *display: inline;
+        zoom: 1;
+    }
 }
 
 //
@@ -144,13 +155,10 @@
 @mixin flex($grow: 0, $shrink: 1, $basis: auto) {
     @if $basis == 0px {
         -ms-flex: $grow $shrink auto; //ie10 needs auto
-        -webkit-flex: $grow $shrink $basis;
-        flex: $grow $shrink $basis;
+    } @else {
+        -ms-flex: $grow $shrink $basis;
     }
-}
 
-@mixin flex($grow: 0, $shrink: 1, $basis: auto) {
-    -ms-flex: $grow $shrink $basis;
     -webkit-flex: $grow $shrink $basis;
     flex: $grow $shrink $basis;
 }
@@ -219,51 +227,33 @@
 // ---
 
 @mixin ms-align-items($align) {
-    @if $align == flex-start {
+    @if $align == 'flex-start' {
         -ms-flex-align: start;
-    }
-}
-
-@mixin ms-align-items($align) {
-    @if $align == flex-end {
+    } @else if $align == 'flex-end' {
         -ms-flex-align: end;
+    } @else {
+        -ms-flex-align: $align;
     }
 }
 
-@mixin ms-align-items($align) {
-    -ms-flex-align: $align;
-}
-
 @mixin ms-align-self($align) {
-    @if $align == flex-start {
+    @if $align == 'flex-start' {
         -ms-flex-item-align: start;
-    }
-}
-
-@mixin ms-align-self($align) {
-    @if $align == flex-end {
+    } @else if $align == 'flex-end' {
         -ms-flex-item-align: end;
+    } @else {
+        -ms-flex-item-align: $align;
     }
 }
 
-@mixin ms-align-self($align) {
-    -ms-flex-item-align: $align;
-}
-
 @mixin ms-align-content($align) {
-    @if $align == flex-start {
+    @if $align == 'flex-start' {
         -ms-flex-line-pack: start;
-    }
-}
-
-@mixin ms-align-content($align) {
-    @if $align == flex-end {
+    } @else if $align == 'flex-end' {
         -ms-flex-line-pack: end;
+    } @else {
+        -ms-flex-line-pack: $align;
     }
-}
-
-@mixin ms-align-content($align) {
-    -ms-flex-line-pack: $align;
 }
 
 //
@@ -275,43 +265,53 @@
 // ---
 
 @mixin justify-content-start() {
-    text-align: left;
+    @if $legacy-support == true {
+        text-align: left;
+    }
     -ms-flex-pack: start;
     -webkit-justify-content: flex-start;
     justify-content: flex-start;
 }
 
 @mixin justify-content-end() {
-    text-align: right;
-    -moz-text-align-last: right;
-    text-align-last: right;
+    @if $legacy-support == true {
+        text-align: right;
+        -moz-text-align-last: right;
+        text-align-last: right;
+    }
     -ms-flex-pack: end;
     -webkit-justify-content: flex-end;
     justify-content: flex-end;
 }
 
 @mixin justify-content-center() {
-    text-align: center;
-    -moz-text-align-last: center;
-    text-align-last: center;
+    @if $legacy-support == true {
+        text-align: center;
+        -moz-text-align-last: center;
+        text-align-last: center;
+    }
     -ms-flex-pack: center;
     -webkit-justify-content: center;
     justify-content: center;
 }
 
 @mixin justify-content-space-between() {
-    text-align: justify;
-    -moz-text-align-last: justify;
-    text-align-last: justify;
+    @if $legacy-support == true {
+        text-align: justify;
+        -moz-text-align-last: justify;
+        text-align-last: justify;
+    }
     -ms-flex-pack: justify;
     -webkit-justify-content: space-between;
     justify-content: space-between;
 }
 
 @mixin justify-content-space-around() {
-    text-align: justify;
-    -moz-text-align-last: justify;
-    text-align-last: justify;
+    @if $legacy-support == true {
+        text-align: justify;
+        -moz-text-align-last: justify;
+        text-align-last: justify;
+    }
     -ms-flex-pack: justify;
     -webkit-justify-content: space-around;
     justify-content: space-around;

@@ -61,8 +61,10 @@
 }
 
 // ie11 hack
-_:-ms-fullscreen, :root .grid__cell {
-    width: 100%;
+:-ms-fullscreen, :root {
+    .grid__cell {
+        width: 100%;
+    }
 }
 
 // --------------------------------------------------

@@ -4,6 +4,8 @@
  * Reflex is a flexbox grid which provides a way to take advantage of emerging
  * flexbox support while providing a fall back to inline-block on older browsers
  *
+ * To disable legacy support and build a flexbox only grid, set the variable legacy-support to false
+ *
  * Built by Lee Jordan G.C.S.E.
  * email: ldjordan@gmail.com
  * github: https://github.com/leejordan
@@ -85,7 +87,7 @@
   -webkit-flex: 1 1 auto;
   flex: 1 1 auto;
 }
-_:-ms-fullscreen,
+:-ms-fullscreen .grid__cell,
 :root .grid__cell {
   width: 100%;
 }
@@ -389,7 +391,6 @@ _:-ms-fullscreen,
 }
 .grid__col-auto {
   -ms-flex: 1 0 auto;
-  -ms-flex: 1 0 0px;
   -webkit-flex: 1 0 0px;
   flex: 1 0 0px;
   width: auto !important;
@@ -398,7 +399,6 @@ _:-ms-fullscreen,
 @media (min-width: 480px) {
   .grid__col-xs-auto {
     -ms-flex: 1 0 auto;
-    -ms-flex: 1 0 0px;
     -webkit-flex: 1 0 0px;
     flex: 1 0 0px;
     width: auto !important;
@@ -408,7 +408,6 @@ _:-ms-fullscreen,
 @media (min-width: 768px) {
   .grid__col-sm-auto {
     -ms-flex: 1 0 auto;
-    -ms-flex: 1 0 0px;
     -webkit-flex: 1 0 0px;
     flex: 1 0 0px;
     width: auto !important;
@@ -418,7 +417,6 @@ _:-ms-fullscreen,
 @media (min-width: 992px) {
   .grid__col-md-auto {
     -ms-flex: 1 0 auto;
-    -ms-flex: 1 0 0px;
     -webkit-flex: 1 0 0px;
     flex: 1 0 0px;
     width: auto !important;
@@ -428,7 +426,6 @@ _:-ms-fullscreen,
 @media (min-width: 1200px) {
   .grid__col-lg-auto {
     -ms-flex: 1 0 auto;
-    -ms-flex: 1 0 0px;
     -webkit-flex: 1 0 0px;
     flex: 1 0 0px;
     width: auto !important;
@@ -438,7 +435,6 @@ _:-ms-fullscreen,
 @media (min-width: 1600px) {
   .grid__col-xlg-auto {
     -ms-flex: 1 0 auto;
-    -ms-flex: 1 0 0px;
     -webkit-flex: 1 0 0px;
     flex: 1 0 0px;
     width: auto !important;
@@ -885,13 +881,11 @@ _:-ms-fullscreen,
 }
 .grid--align-start {
   -ms-flex-align: start;
-  -ms-flex-align: flex-start;
   -webkit-align-items: flex-start;
   align-items: flex-start;
 }
 .grid--align-end {
   -ms-flex-align: end;
-  -ms-flex-align: flex-end;
   -webkit-align-items: flex-end;
   align-items: flex-end;
 }
@@ -916,13 +910,11 @@ _:-ms-fullscreen,
 }
 .grid--align-content-start {
   -ms-flex-line-pack: start;
-  -ms-flex-line-pack: flex-start;
   -webkit-align-content: flex-start;
   align-content: flex-start;
 }
 .grid--align-content-end {
   -ms-flex-line-pack: end;
-  -ms-flex-line-pack: flex-end;
   -webkit-align-content: flex-end;
   align-content: flex-end;
 }
@@ -951,13 +943,11 @@ _:-ms-fullscreen,
 }
 .grid--align-self-start {
   -ms-flex-item-align: start;
-  -ms-flex-item-align: flex-start;
   -webkit-align-self: flex-start;
   align-self: flex-start;
 }
 .grid--align-self-end {
   -ms-flex-item-align: end;
-  -ms-flex-item-align: flex-end;
   -webkit-align-self: flex-end;
   align-self: flex-end;
   vertical-align: bottom;
