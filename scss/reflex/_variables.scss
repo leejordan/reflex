@@ -15,7 +15,13 @@ $reflex-prefix: null !default;
 // -------------------------
 // Reflex adds a lot of css propertie to support older browsers that don't support flexbox layout.
 // If you prefer to use this as a purely flexbox grid without legacy support then set this to false
-$legacy-support: true;
+$legacy-support: true !default;
+
+// Responsive visibility helpers
+// -------------------------
+// Reflex has some generic visibility classes to hide elements at different breakpoints.
+// If you want to disable these then set this to false
+$visibility-helpers: true !default;
 
 // Grid
 // -------------------------
@@ -29,6 +35,12 @@ $reflex-sm: 768px !default;
 $reflex-md: 992px !default;
 $reflex-lg: 1200px !default;
 $reflex-xlg: 1600px !default;
+
+$reflex-xxs-max:    ($reflex-xs - 1);
+$reflex-xs-max:     ($reflex-sm - 1);
+$reflex-sm-max:     ($reflex-md - 1);
+$reflex-md-max:     ($reflex-lg - 1);
+$reflex-lg-max:     ($reflex-xlg - 1);
 
 // Spacing
 // -------------------------

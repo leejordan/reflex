@@ -254,20 +254,20 @@
 // "text-align-last", where supported, handles the last line (and, happily, grids with only one row)
 // ---
 
-.justify-content-start() when (@legacy-support=true) {
+.justify-content-start() when (@legacy-support = true) {
     text-align: left;
     -ms-flex-pack: start;
     -webkit-justify-content: flex-start;
     justify-content: flex-start;
 }
 
-.justify-content-start() when (@legacy-support=false) {
+.justify-content-start() when (@legacy-support = false) {
     -ms-flex-pack: start;
     -webkit-justify-content: flex-start;
     justify-content: flex-start;
 }
 
-.justify-content-end() when (@legacy-support=true) {
+.justify-content-end() when (@legacy-support = true) {
     text-align: right;
     -moz-text-align-last: right;
     text-align-last: right;
@@ -276,13 +276,13 @@
     justify-content: flex-end;
 }
 
-.justify-content-end() when (@legacy-support=false) {
+.justify-content-end() when (@legacy-support = false) {
     -ms-flex-pack: end;
     -webkit-justify-content: flex-end;
     justify-content: flex-end;
 }
 
-.justify-content-center() when (@legacy-support=true) {
+.justify-content-center() when (@legacy-support = true) {
     text-align: center;
     -moz-text-align-last: center;
     text-align-last: center;
@@ -291,13 +291,13 @@
     justify-content: center;
 }
 
-.justify-content-center() when (@legacy-support=false) {
+.justify-content-center() when (@legacy-support = false) {
     -ms-flex-pack: center;
     -webkit-justify-content: center;
     justify-content: center;
 }
 
-.justify-content-space-between() when (@legacy-support=true) {
+.justify-content-space-between() when (@legacy-support = true) {
     text-align: justify;
     -moz-text-align-last: justify;
     text-align-last: justify;
@@ -306,13 +306,13 @@
     justify-content: space-between;
 }
 
-.justify-content-space-between() when (@legacy-support=false) {
+.justify-content-space-between() when (@legacy-support = false) {
     -ms-flex-pack: justify;
     -webkit-justify-content: space-between;
     justify-content: space-between;
 }
 
-.justify-content-space-around() when (@legacy-support=true) {
+.justify-content-space-around() when (@legacy-support = true) {
     text-align: justify;
     -moz-text-align-last: justify;
     text-align-last: justify;
@@ -321,7 +321,7 @@
     justify-content: space-around;
 }
 
-.justify-content-space-around() when (@legacy-support=false) {
+.justify-content-space-around() when (@legacy-support = false) {
     -ms-flex-pack: justify;
     -webkit-justify-content: space-around;
     justify-content: space-around;
@@ -335,4 +335,32 @@
     -webkit-box-sizing: @boxmodel;
     -moz-box-sizing: @boxmodel;
     box-sizing: @boxmodel;
+}
+
+.responsive-visibility-helpers() when (@visibility-helpers = true) {
+    .hidden-xxs {
+        @media (max-width: @reflex-xxs-max) {
+            display: none !important;
+        }
+    }
+    .hidden-xs {
+        @media (min-width: @reflex-xs) and (max-width: @reflex-xs-max) {
+            display: none !important;
+        }
+    }
+    .hidden-sm {
+        @media (min-width: @reflex-sm) and (max-width: @reflex-sm-max) {
+            display: none !important;
+        }
+    }
+    .hidden-md {
+        @media (min-width: @reflex-md) and (max-width: @reflex-md-max) {
+            display: none !important;
+        }
+    }
+    .hidden-lg {
+        @media (min-width: @reflex-lg) {
+            display: none !important;
+        }
+    }
 }

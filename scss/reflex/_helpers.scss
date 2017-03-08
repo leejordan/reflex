@@ -240,3 +240,9 @@
     width: 100%;
     margin-top: auto;
 }
+
+// --------------------------------------------------
+// Responsive visibility modifiers
+// --------------------------------------------------
+
+@include responsive-visibility-helpers();

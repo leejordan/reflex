@@ -16,6 +16,12 @@
 // If you prefer to use this as a purely flexbox grid without legacy support then set this to false
 @legacy-support: true;
 
+// Responsive visibility helpers
+// -------------------------
+// Reflex has some generic visibility classes to hide elements at different breakpoints.
+// If you want to disable these then set this to false
+@visibility-helpers: true;
+
 // Grid
 // -------------------------
 @reflex-columns: 12; // number of columns
@@ -28,6 +34,12 @@
 @reflex-md: 992px;
 @reflex-lg: 1200px;
 @reflex-xlg: 1600px;
+
+@reflex-xxs-max:    (@reflex-xs - 1);
+@reflex-xs-max:     (@reflex-sm - 1);
+@reflex-sm-max:     (@reflex-md - 1);
+@reflex-md-max:     (@reflex-lg - 1);
+@reflex-lg-max:     (@reflex-xlg - 1);
 
 // Spacing
 // -------------------------

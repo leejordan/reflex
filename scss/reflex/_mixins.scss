@@ -326,3 +326,33 @@
     -moz-box-sizing: $boxmodel;
     box-sizing: $boxmodel;
 }
+
+@mixin responsive-visibility-helpers() {
+    @if $visibility-helpers == true {
+        .hidden-xxs {
+            @media (max-width: $reflex-xxs-max) {
+                display: none !important;
+            }
+        }
+        .hidden-xs {
+            @media (min-width: $reflex-xs) and (max-width: $reflex-xs-max) {
+                display: none !important;
+            }
+        }
+        .hidden-sm {
+            @media (min-width: $reflex-sm) and (max-width: $reflex-sm-max) {
+                display: none !important;
+            }
+        }
+        .hidden-md {
+            @media (min-width: $reflex-md) and (max-width: $reflex-md-max) {
+                display: none !important;
+            }
+        }
+        .hidden-lg {
+            @media (min-width: $reflex-lg) {
+                display: none !important;
+            }
+        }
+    }
+}
