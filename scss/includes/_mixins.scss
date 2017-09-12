@@ -14,10 +14,10 @@
     @if $type == width and $index > 0 {
         .#{$reflex-prefix}#{$class}#{$index} {
             width: percentage(($index / $reflex-columns));
-            *width: percentage(($index / $reflex-columns)) - 0.1;
+            *width: percentage(($index / $reflex-columns)) - .1;
 
             //for ie6 support you can uncomment this line but it will increase css filesize dramatically
-            //@include setupCols();
+            //@include setup-cols();
         }
     }
 }
@@ -31,10 +31,10 @@
 }
 
 // defaults for all cols
-@mixin setupCols() {
+@mixin setup-cols() {
     @include display-flex();
     @include flex-direction(column);
-    @include resetWhitespace();
+    @include reset-whitespace();
     position: relative;
     width: 100%;
     vertical-align: top;
@@ -42,7 +42,7 @@
 }
 
 // defaults for auto cols
-@mixin setupAutoCols() {
+@mixin setup-auto-cols() {
     @include flex(1, 0, 0px); // a unit on last value is required by IE10-11
 
     @if $legacy-support == true {
@@ -55,15 +55,15 @@
 // inline-block specific mixins
 // --------------------------------------------------
 
-@mixin setupWhitespace() {
+@mixin setup-whitespace() {
     @if $legacy-support == true {
-        letter-spacing: -0.31em !important;
+        letter-spacing: -.31em !important;
         *letter-spacing: normal !important;
-        word-spacing: -0.43em !important;
+        word-spacing: -.43em !important;
     }
 }
 
-@mixin resetWhitespace() {
+@mixin reset-whitespace() {
     @if $legacy-support == true {
         letter-spacing: normal;
         word-spacing: normal;
@@ -71,7 +71,7 @@
     }
 }
 
-@mixin resetTextAlign() {
+@mixin reset-text-align() {
     //
     // We want to reset any text-align properties set by the grid
     // (required for the inline-block fallback)
@@ -153,7 +153,7 @@
 // ---
 
 @mixin flex($grow: 0, $shrink: 1, $basis: auto) {
-    @if $basis == 0px {
+    @if $basis == 0 {
         -ms-flex: $grow $shrink auto; //ie10 needs auto
     } @else {
         -ms-flex: $grow $shrink $basis;
@@ -329,27 +329,31 @@
 
 @mixin responsive-visibility-helpers() {
     @if $visibility-helpers == true {
-        .hidden-xxs {
+        .#{$reflex-prefix}hidden-xxs {
             @media (max-width: $reflex-xxs-max) {
                 display: none !important;
             }
         }
-        .hidden-xs {
+
+        .#{$reflex-prefix}hidden-xs {
             @media (min-width: $reflex-xs) and (max-width: $reflex-xs-max) {
                 display: none !important;
             }
         }
-        .hidden-sm {
+
+        .#{$reflex-prefix}hidden-sm {
             @media (min-width: $reflex-sm) and (max-width: $reflex-sm-max) {
                 display: none !important;
             }
         }
-        .hidden-md {
+
+        .#{$reflex-prefix}hidden-md {
             @media (min-width: $reflex-md) and (max-width: $reflex-md-max) {
                 display: none !important;
             }
         }
-        .hidden-lg {
+
+        .#{$reflex-prefix}hidden-lg {
             @media (min-width: $reflex-lg) {
                 display: none !important;
             }

@@ -11,31 +11,27 @@
     width: 100%;
     max-width: $reflex-max-width;
 
-    @include setupWhitespace();
+    @include setup-whitespace();
 
-    &:before,
-    &:after {
-        @include resetWhitespace();
+    * {
+        @include box-sizing(border-box);
+    }
+
+    &::before,
+    &::after {
+        @include reset-whitespace();
         max-width: 100%;
     }
 
-    *:before,
-    *:after {
-        @include resetWhitespace();
+    *::before,
+    *::after {
+        @include box-sizing(border-box);
+        @include reset-whitespace();
     }
 
     // handle nested grids
     & .#{$reflex-prefix}grid {
         @include flex(1, 1, auto);
-    }
-
-    // Reset the box-sizing so our grid works properly
-    * {
-        @include box-sizing(border-box);
-    }
-    *:before,
-    *:after {
-        @include box-sizing(border-box);
     }
 
     // handle when lists are used as a grid
@@ -47,7 +43,7 @@
 // --------------------------------------------------
 
 [class*="#{$reflex-prefix}grid__col-"] {
-    @include setupCols();
+    @include setup-cols();
 }
 
 // --------------------------------------------------
@@ -99,36 +95,36 @@
 // --------------------------------------------------
 
 .#{$reflex-prefix}grid__col-auto {
-    @include setupAutoCols();
+    @include setup-auto-cols();
 }
 
 @media (min-width: $reflex-xs) {
     .#{$reflex-prefix}grid__col-xs-auto {
-        @include setupAutoCols();
+        @include setup-auto-cols();
     }
 }
 
 @media (min-width: $reflex-sm) {
     .#{$reflex-prefix}grid__col-sm-auto {
-        @include setupAutoCols();
+        @include setup-auto-cols();
     }
 }
 
 @media (min-width: $reflex-md) {
     .#{$reflex-prefix}grid__col-md-auto {
-        @include setupAutoCols();
+        @include setup-auto-cols();
     }
 }
 
 @media (min-width: $reflex-lg) {
     .#{$reflex-prefix}grid__col-lg-auto {
-        @include setupAutoCols();
+        @include setup-auto-cols();
     }
 }
 
 @media (min-width: $reflex-xlg) {
     .#{$reflex-prefix}grid__col-xlg-auto {
-        @include setupAutoCols();
+        @include setup-auto-cols();
     }
 }
 

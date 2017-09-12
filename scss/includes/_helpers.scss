@@ -154,7 +154,7 @@
 
     .#{$reflex-prefix}grid__cell,
     [class*="#{$reflex-prefix}grid__col-"] {
-        @include resetTextAlign();
+        @include reset-text-align();
     }
 }
 
@@ -163,7 +163,7 @@
 
     .#{$reflex-prefix}grid__cell,
     [class*="#{$reflex-prefix}grid__col-"] {
-        @include resetTextAlign();
+        @include reset-text-align();
     }
 }
 
@@ -172,7 +172,7 @@
 
     .#{$reflex-prefix}grid__cell,
     [class*="#{$reflex-prefix}grid__col-"] {
-        @include resetTextAlign();
+        @include reset-text-align();
     }
 }
 
@@ -181,7 +181,7 @@
 
     .#{$reflex-prefix}grid__cell,
     [class*="#{$reflex-prefix}grid__col-"] {
-        @include resetTextAlign();
+        @include reset-text-align();
     }
 }
 
