@@ -27,7 +27,9 @@
   },
   "homepage": "http://leejordan.github.io/reflex/docs/",
   "scripts": {
-    "build": "node-sass-chokidar --precision 8 --output-style expanded scss/reflex.scss css/reflex.css",
+    "build": "npm run build:min && npm run build:max",
+    "build:min": "node-sass-chokidar --precision 8 --output-style compressed scss/reflex.scss css/reflex.min.css",
+    "build:max": "node-sass-chokidar --precision 8 --output-style expanded scss/reflex.scss css/reflex.css",
     "watch": "node-sass-chokidar --watch --recursive --precision 8 --output-style expanded scss/reflex.scss css/reflex.css",
     "build:docs": "node-sass-chokidar --precision 8 --output-style expanded docs/scss/docs.scss docs/css/docs.css",
     "watch:docs": "node-sass-chokidar --watch --recursive --precision 8 --output-style expanded docs/scss/docs.scss docs/css/docs.css",

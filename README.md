@@ -5,44 +5,49 @@
 
 A lightweight responsive flexbox grid with cross browser support, an inline-block fallback and no polyfills
 
-*   [docs](http://leejordan.github.io/reflex/docs)
-*   [demo](http://leejordan.github.io/reflex/docs/demo.html)
-*   [npm](https://www.npmjs.com/package/reflex-grid)
+- [Full documentation](http://leejordan.github.io/reflex/docs)
+- [Examples](http://leejordan.github.io/reflex/docs/demo.html)
+- [npm](https://www.npmjs.com/package/reflex-grid)
 
-Reflex gives you the ability to easily take advantage of flexbox for laying out a grid while having a reliable fallback for older browsers that do not support flexbox. [Browser support for flexbox](http://caniuse.com/#search=flex) is in a pretty good state right now and is growing all the time. At the time of writing, global flexbox support is at 95.31% so I propose that it's time to start taking advantage of flexbox and accept that the inline-block fallback won't support everything.
+Reflex gives you the ability to take advantage of flexbox for laying out a grid while having a reliable inline-block fallback for older browsers.
 
-Where flexbox isn't supported, your basic grid structure will remain intact and most of the layout classes still work. Try the [docs](http://leejordan.github.io/reflex/docs) or [demo](http://leejordan.github.io/reflex/docs/demo.html) pages out in a non-flexbox browser to see for yourself!
+At the time of writing, [browser support for flexbox](http://caniuse.com/#search=flex) is at 96.63% so I propose that it's time to start taking advantage of flexbox and accept that the inline-block fallback won't support everything.
 
-## The benefits are:
+Where flexbox isn't supported, your basic grid structure will remain intact and most of the layout classes still work. Try this page out in a browser that does not support flexbox (such as Internet Explorer 9) to see for yourself!
 
-*   It's lightweight - 12KB in it's minified form and **1.8KB** gzipped
-*   Where flexbox is supported, grid cells are all the same height by default
-*   Reflex grid cells never push each other out of the way (as with floated grids)
-*   Supports semantic elements e.g. you can use ul as a grid
-*   Supports nested grids
-*   Good cross browser support
-*   Built in both Sass/SCSS and LESS
-*   Built using BEM syntax
-*   Easily customizable and extendable
+## Why use reflex?
 
-## Intended use:
+- It's lightweight - 16KB in it's minified form and 2KB gzipped
+- Where flexbox is supported, columns are all the same height by default
+- Reflex grid cells never push each other out of the way (as with floated grids)
+- Supports semantic elements e.g. you can use ul as a grid
+- Supports nested grids
+- Good cross browser support
+- Built with Sass/SCSS
+- Easily customizable and extendable
 
-*   Creating complex nested grids which take advantage of flexbox layout properties
-*   Generating a reliable grid with dynamic content e.g. a list of products
-*   An addition or replacement to your current css framework
-*   A set of vendor-prefixed Sass or LESS mixins ready to be incorporated into an existing framework
-*   A set of vendor-prefixed helper classes to get your flexbox solution off the ground faster
+## Intended use
+
+- Creating complex nested flexbox grids which take advantage of flexbox layout properties
+- Using a flexbox layout inside a CSS grid page layout
+- Generating a flexbox grid with dynamic content of varying height e.g. a list of products
+- An addition or replacement for your current css layout framework
+- A set of vendor-prefixed mixins and helper classes to get your flexbox solution off the ground faster
 
 ## Usage
 
-### Compiled CSS
+### Use as CSS
+
 You can use the compiled css directly by downloading either the [minified](https://raw.githubusercontent.com/leejordan/reflex/master/css/reflex.min.css) or [non-minified](https://raw.githubusercontent.com/leejordan/reflex/master/css/reflex.css) version.
 
-### Via github
-You could clone this repo via [github](https://github.com/leejordan/reflex) which would allow you to modify the variables such as the number of columns or the breakpoints.
+### Clone via github
 
-### Via npm
-`npm install reflex-grid`
+You could clone this repo which would allow you to modify the variables and build your own version of this grid. You can modify things like the number of columns or the breakpoints.
+
+### Use with npm
+
+If you're familiar with npm you can use `npm install reflex-grid` to have a look around, or add it as a dependency to your node project.
+
 
 
 

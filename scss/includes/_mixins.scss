@@ -14,10 +14,7 @@
     @if $type == width and $index > 0 {
         .#{$reflex-prefix}#{$class}#{$index} {
             width: percentage(($index / $reflex-columns));
-            *width: percentage(($index / $reflex-columns)) - .1;
-
-            //for ie6 support you can uncomment this line but it will increase css filesize dramatically
-            //@include setup-cols();
+            *width: percentage(($index / $reflex-columns)) - .1; // ie7 css hack
         }
     }
 }
@@ -30,24 +27,12 @@
     }
 }
 
-// defaults for all cols
-@mixin setup-cols() {
-    @include display-flex();
-    @include flex-direction(column);
-    @include reset-whitespace();
-    position: relative;
-    width: 100%;
-    vertical-align: top;
-    padding: $reflex-grid-spacing;
-}
-
 // defaults for auto cols
 @mixin setup-auto-cols() {
     @include flex(1, 0, 0px); // a unit on last value is required by IE10-11
 
     @if $legacy-support == true {
         width: auto !important;
-        max-width: 100%;
     }
 }
 
@@ -76,25 +61,18 @@
     // We want to reset any text-align properties set by the grid
     // (required for the inline-block fallback)
     // but we don't want to override any text-align properties
-    // set on the individual grid__col-x element
+    // set on the individual col-x element
     // or on any of it's child elements
-    //
-    // The "initial" property is not widely supported so a default of "left" and "start" is provided
-    // http://caniuse.com/#search=initial
     //
     // 1) set to left by default (works everywhere)
     // 2) set to start (respects right to left text)
-    // 3) set to initial
     //
     text-align: left;
     text-align: start;
-    text-align: initial;
     -moz-text-align-last: left;
     -moz-text-align-last: start;
-    -moz-text-align-last: initial;
     text-align-last: left;
     text-align-last: start;
-    text-align-last: initial;
 }
 
 // --------------------------------------------------
@@ -107,17 +85,17 @@
     order: $order;
 }
 
-@mixin make-grid--order-helpers() {
-    @include loop-grid--order-helpers($reflex-columns);
+@mixin make-order-helpers() {
+    @include loop-order-helpers($reflex-columns);
 }
 
-@mixin loop-grid--order-helpers($index, $breakpoint: null) {
+@mixin loop-order-helpers($index, $breakpoint: null) {
     @if $index >= 0 {
-        .#{$reflex-prefix}grid--order-#{$index}#{$breakpoint} {
+        .#{$reflex-prefix}order-#{$index}#{$breakpoint} {
             @include order($index);
         }
         // next iteration
-        @include loop-grid--order-helpers(($index - 1), $breakpoint);
+        @include loop-order-helpers(($index - 1), $breakpoint);
     }
 }
 
@@ -129,23 +107,10 @@
 // display
 // ---
 
-@mixin display-flex-only() {
+@mixin display-flex() {
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
-}
-
-@mixin display-flex() {
-    @if $legacy-support == true {
-        display: inline-block;
-    }
-
-    @include display-flex-only();
-
-    @if $legacy-support == true {
-        *display: inline;
-        zoom: 1;
-    }
 }
 
 //

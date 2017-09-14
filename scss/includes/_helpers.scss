@@ -4,27 +4,25 @@
 // --------------------------------------------------
 
 // --------------------------------------------------
-// grid full bleed (no internal padding)
-// --------------------------------------------------
-.#{$reflex-prefix}grid--bleed {
-    [class*="#{$reflex-prefix}grid__col-"] {
-        padding: 0;
-    }
-}
-
-// --------------------------------------------------
 // flex-wrap
 // --------------------------------------------------
 
-.#{$reflex-prefix}grid--wrap {
+.#{$reflex-prefix}wrap {
     @include flex-wrap(wrap);
 }
 
-.#{$reflex-prefix}grid--no-wrap {
+.#{$reflex-prefix}no-wrap {
     @include flex-wrap(nowrap);
+
+    // This is mostly needed to stop the grid contents overflowing in the
+    // ie10 implementation of flexbox but it can't hurt in other browsers
+    // as it is the desired behaviour of non wrapping flex items
+    [class^="#{$reflex-prefix}col-"] {
+        @include flex-shrink(1);
+    }
 }
 
-.#{$reflex-prefix}grid--wrap-reverse {
+.#{$reflex-prefix}wrap-reverse {
     @include flex-wrap(wrap-reverse);
 }
 
@@ -32,111 +30,108 @@
 // flex-direction
 // --------------------------------------------------
 
-.#{$reflex-prefix}grid--direction-row {
+.#{$reflex-prefix}direction-row {
     @include flex-direction(row);
 }
 
-.#{$reflex-prefix}grid--direction-row-reverse {
+.#{$reflex-prefix}direction-row-reverse {
     @include flex-direction(row-reverse);
 }
 
-.#{$reflex-prefix}grid--direction-column {
+.#{$reflex-prefix}direction-column {
     @include flex-direction(column);
 }
 
-.#{$reflex-prefix}grid--direction-column-reverse {
+.#{$reflex-prefix}direction-column-reverse {
     @include flex-direction(column-reverse);
 }
 
 // --------------------------------------------------
-// align-grid__col-cells (cross axis)
+// align items (cross axis)
 // --------------------------------------------------
 
-.#{$reflex-prefix}grid--align-start {
+.#{$reflex-prefix}align-start {
     @include align-items(flex-start);
 }
 
-.#{$reflex-prefix}grid--align-end {
+.#{$reflex-prefix}align-end {
     @include align-items(flex-end);
 
-    // fallback to legacy vertical-align
-    [class*="#{$reflex-prefix}grid__col-"] {
-        vertical-align: bottom;
+    @if $legacy-support == true {
+        // fallback to legacy vertical-align
+        [class^="#{$reflex-prefix}col-"] {
+            vertical-align: bottom;
+        }
     }
 }
 
-.#{$reflex-prefix}grid--align-center {
+.#{$reflex-prefix}align-center {
     @include align-items(center);
 
-    // fallback to legacy vertical-align
-    [class*="#{$reflex-prefix}grid__col-"] {
-        vertical-align: middle;
+    @if $legacy-support == true {
+        // fallback to legacy vertical-align
+        [class^="#{$reflex-prefix}col-"] {
+            vertical-align: middle;
+        }
     }
 }
 
-.#{$reflex-prefix}grid--align-baseline {
+.#{$reflex-prefix}align-baseline {
     @include align-items(baseline);
-
-    // fallback to legacy vertical-align
-    [class*="#{$reflex-prefix}grid__col-"] {
-        vertical-align: baseline;
-    }
 }
 
 // --------------------------------------------------
-// align-content (cross axis)
+// align content (cross axis)
 // --------------------------------------------------
 
-.#{$reflex-prefix}grid--align-content-start {
+.#{$reflex-prefix}align-content-start {
     @include align-content(flex-start);
 }
 
-.#{$reflex-prefix}grid--align-content-end {
+.#{$reflex-prefix}align-content-end {
     @include align-content(flex-end);
 
     // fallback to legacy vertical-align
-    [class*="#{$reflex-prefix}grid__col-"] {
+    [class^="#{$reflex-prefix}col-"] {
         vertical-align: bottom;
     }
 }
 
-.#{$reflex-prefix}grid--align-content-center {
+.#{$reflex-prefix}align-content-center {
     @include align-content(center);
 }
 
-.#{$reflex-prefix}grid--align-content-space-between {
+.#{$reflex-prefix}align-content-space-between {
     @include align-content(space-between);
 }
 
-.#{$reflex-prefix}grid--align-content-space-around {
+.#{$reflex-prefix}align-content-space-around {
     @include align-content(space-around);
 }
-
-
 
 // --------------------------------------------------
 // align-self
 // --------------------------------------------------
 
-.#{$reflex-prefix}grid--align-self-stretch {
+.#{$reflex-prefix}align-self-stretch {
     @include align-self(stretch);
 }
 
-.#{$reflex-prefix}grid--align-self-start {
+.#{$reflex-prefix}align-self-start {
     @include align-self(flex-start);
 }
 
-.#{$reflex-prefix}grid--align-self-end {
+.#{$reflex-prefix}align-self-end {
     @include align-self(flex-end);
     vertical-align: bottom;
 }
 
-.#{$reflex-prefix}grid--align-self-center {
+.#{$reflex-prefix}align-self-center {
     @include align-self(center);
     vertical-align: middle;
 }
 
-.#{$reflex-prefix}grid--align-self-baseline {
+.#{$reflex-prefix}align-self-baseline {
     @include align-self(baseline);
     vertical-align: baseline;
 }
@@ -145,98 +140,100 @@
 // justify-content (main axis)
 // --------------------------------------------------
 
-.#{$reflex-prefix}grid--justify-start {
+.#{$reflex-prefix}justify-start {
     @include justify-content-start();
 }
 
-.#{$reflex-prefix}grid--justify-end {
+.#{$reflex-prefix}justify-end {
     @include justify-content-end();
 
-    .#{$reflex-prefix}grid__cell,
-    [class*="#{$reflex-prefix}grid__col-"] {
-        @include reset-text-align();
+    @if $legacy-support == true {
+        [class^="#{$reflex-prefix}col-"] {
+            @include reset-text-align();
+        }
     }
 }
 
-.#{$reflex-prefix}grid--justify-center {
+.#{$reflex-prefix}justify-center {
     @include justify-content-center();
 
-    .#{$reflex-prefix}grid__cell,
-    [class*="#{$reflex-prefix}grid__col-"] {
-        @include reset-text-align();
+    @if $legacy-support == true {
+        [class^="#{$reflex-prefix}col-"] {
+            @include reset-text-align();
+        }
     }
 }
 
-.#{$reflex-prefix}grid--justify-space-between {
+.#{$reflex-prefix}justify-space-between {
     @include justify-content-space-between();
 
-    .#{$reflex-prefix}grid__cell,
-    [class*="#{$reflex-prefix}grid__col-"] {
-        @include reset-text-align();
+    @if $legacy-support == true {
+        [class^="#{$reflex-prefix}col-"] {
+            @include reset-text-align();
+        }
     }
 }
 
-.#{$reflex-prefix}grid--justify-space-around {
+.#{$reflex-prefix}justify-space-around {
     @include justify-content-space-around();
 
-    .#{$reflex-prefix}grid__cell,
-    [class*="#{$reflex-prefix}grid__col-"] {
-        @include reset-text-align();
+    @if $legacy-support == true {
+        [class^="#{$reflex-prefix}col-"] {
+            @include reset-text-align();
+        }
     }
 }
 
 // --------------------------------------------------
-// grid__col modifiers
+// cosmetic grid modifiers
 // --------------------------------------------------
 
-.#{$reflex-prefix}grid__col--bleed {
-    padding: 0;
-}
-
-.#{$reflex-prefix}grid__col--bleed-x {
-    padding: $reflex-cell-spacing 0;
-}
-
-.#{$reflex-prefix}grid__col--bleed-y {
-    padding: 0 $reflex-cell-spacing;
-}
-
-.#{$reflex-prefix}grid__col--bg {
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    padding-bottom: 50%;
+// Removes internal padding from all columns in a grid
+.#{$reflex-prefix}grid-bleed {
+    [class*="#{$reflex-prefix}grid__col-"] {
+        padding: 0;
+    }
 }
 
 // --------------------------------------------------
-// grid__cell modifiers
+// col modifiers
 // --------------------------------------------------
 
-.#{$reflex-prefix}grid__cell--padding-sm {
-    padding: $reflex-cell-spacing-sm;
+// Removes internal padding from all columns in a grid
+.#{$reflex-prefix}col-bleed {
+    [class*="#{$reflex-prefix}grid__col-"] {
+        padding: 0;
+    }
 }
 
-.#{$reflex-prefix}grid__cell--padding-md {
-    padding: $reflex-cell-spacing-md;
+// Makes a column element into a flexbox column
+.#{$reflex-prefix}col-grid {
+    @include display-flex();
+    @include flex-direction(column);
 }
 
-.#{$reflex-prefix}grid__cell--padding-lg {
-    padding: $reflex-cell-spacing-lg;
-}
+// Sets up useful css properties for when using a background image on a column
+// .#{$reflex-prefix}col-bg {
+//     background-repeat: no-repeat;
+//     background-position: center center;
+//     background-size: cover;
+//     padding-bottom: 50%;
+// }
 
-.#{$reflex-prefix}grid__cell-img {
+// --------------------------------------------------
+// col contents
+// --------------------------------------------------
+
+.#{$reflex-prefix}flex-img {
     display: block;
-    @include display-flex-only();
     @include flex(0, 0, auto);
-    margin-left: 0;
-    margin-right: 0;
+    margin: 0 0 $reflex-grid-spacing 0;
     max-width: 100%;
     width: 100%;
     height: auto;
 }
 
-.#{$reflex-prefix}grid__cell-footer {
-    @include display-flex();
+.#{$reflex-prefix}flex-footer {
     width: 100%;
     margin-top: auto;
 }
