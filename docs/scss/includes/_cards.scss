@@ -1,0 +1,120 @@
+// ie specific hacks to make the cards work
+@mixin ie-hacks {
+    *padding: $reflex-grid-spacing 0; //ie7 css hack
+
+    > * {
+        *margin-left: $reflex-grid-spacing; // ie7 css hack
+        *margin-right: $reflex-grid-spacing; // ie7 css hack
+        max-width: 100%; // ie11 hack top stop flex items overflowing container
+    }
+}
+
+.card-header-img {
+    overflow: hidden;
+    padding-bottom: $reflex-grid-spacing;
+    background-color: $card-bg;
+    border-top: $card-border;
+    border-left: $card-border;
+    border-right: $card-border;
+    border-top-left-radius: $card-border-radius;
+    border-top-right-radius: $card-border-radius;
+}
+
+.card-header {
+    overflow: hidden;
+    padding: $reflex-grid-spacing;
+    background-color: $card-bg;
+    border-top: $card-border;
+    border-left: $card-border;
+    border-right: $card-border;
+    border-top-left-radius: $card-border-radius;
+    border-top-right-radius: $card-border-radius;
+
+    @include ie-hacks;
+}
+
+.card-body {
+    @include flex(1, 1, auto);
+    overflow: hidden;
+    padding: 0 $reflex-grid-spacing;
+    border-left: $card-border;
+    border-right: $card-border;
+    background-color: $card-bg;
+
+    &:first-child {
+        padding-top: $reflex-grid-spacing;
+        border-top: $card-border;
+        border-top-left-radius: $card-border-radius;
+        border-top-right-radius: $card-border-radius;
+    }
+
+    @include ie-hacks;
+}
+
+.card-footer {
+    overflow: hidden;
+    @include display-flex();
+    @include align-items(center);
+    @include justify-content-space-between();
+    margin-top: auto;
+    padding: $reflex-grid-spacing;
+    background-color: $card-bg;
+    border-bottom: $card-border;
+    border-left: $card-border;
+    border-right: $card-border;
+    border-bottom-left-radius: $card-border-radius;
+    border-bottom-right-radius: $card-border-radius;
+
+    @include ie-hacks;
+}
+
+.card-footer-link {
+    margin-top: auto;
+    padding: $reflex-grid-spacing;
+    background-color: $card-bg;
+    border-bottom: $card-border;
+    border-left: $card-border;
+    border-right: $card-border;
+    border-bottom-left-radius: $card-border-radius;
+    border-bottom-right-radius: $card-border-radius;
+    background-color: $colour-col-padding;
+    text-align: center;
+}
+
+.card-center {
+    overflow: hidden;
+    @include display-flex();
+    @include flex-direction(column);
+    @include align-items(center);
+    @include justify-content-center();
+    @include flex(1, 1, auto);
+    text-align: center;
+    padding: $reflex-grid-spacing;
+    background-color: $card-bg;
+    border: $card-border;
+    border-radius: $card-border-radius;
+
+    @include ie-hacks;
+}
+
+.card-link {
+    color: $colour-text;
+    text-decoration: none;
+    transition: box-shadow, border-color .2s;
+
+    &:hover,
+    &:focus {
+        border-color: darken($colour-link, 15%);
+    }
+
+    &:focus {
+        outline: none;
+        box-shadow: 0 0 0 2px darken($colour-link, 15%);
+    }
+}
+
+.card-img-circle {
+    max-width: 50%;
+    border-radius: 50%;
+    margin-bottom: $reflex-grid-spacing;
+}

@@ -95,7 +95,7 @@
 
         // ie7 does not support box-sizing: border-box so we need to pad the
         // columns by adding margins to all child elements
-        *padding: 0;
+        *padding: 0 0 $reflex-grid-spacing 0;
 
         > * {
             *margin-left: ($reflex-grid-spacing); // ie7 css hack

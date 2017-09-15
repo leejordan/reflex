@@ -18,7 +18,7 @@
 
 <body>
     <header role="banner" class="container">
-        <h1>Reflex grid</h1>
+        <h1><img class="logo" width="50" height="50" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAADbElEQVRoQ+2ZjZENQRDH/5cBGRCBywARIAIuAkSACBABIuAiQAZEgAyIgPpVbTP6zex0z+5tbb16U3X1vman+zf9NdN3piMZZ0fCoRPI3ix5ssgGFrkm6bGkFxFZe7UIEB8lnUt6K+miB7NHEIO4KemVpGcRmL2BlBB3JitglTc9mKUgNyQhEPNHxn1JnyT9rEyuQXyQhIxHPZitQZ5LuifproPxELclvXawPIubEfy8/28sBbHF2Glc4EBAQ5kvBYyH4DcsgRXMcqxN8P+YPODAomuBIAgXQIG5ASjQjN+SHkh6L4nAxkX5jTWAsdGFYOJaICaUXWS0YgYQU5hYuSXp1/QdygPC6/ci0GctYYLXBsEqDFPEW8dAgMGl2P0nEwifS9cMWSIL0lPQK4yC7Dh1oBwlSPm9Xz8FkXGtnst4EBQjIH1QtkDK59MQGRAThA/jNmUweojyM1ZBeV4ZPZAhiBEQFLH0OAfgf0NBnuuBAEwNIYu14qwqdzTYcTWERoXhYpateLXjh1eKgGddUrMvmrMbtxWIKdGzCPOGYEZBTDGK2dOEZQDhjtGLMWDMHUOWWQpCDaD41Q6BNVeYc6uW64RicimICaf6snOZYTueeaY5dy0QdtpSbFQxSwA9NwuttxYIwqwGXA9J/jeJdPs5+czB9DVBDCa7w1iylY7DfFEQKjon1cxgl6PuRpZ6WLlMheVFQSy3A/M1kKVwMw6MvYuWKcrZjPl2VwkD2MQoSLZQYQk7Z2WUyvYA/q6dAcnAGAjHeVJzNAFsBgIMwr5NmaYVpKVFRupFtAewyCLssN2xWxnKuxbAds6KuFq0BzAE4rsdKId1OKb40YoR1uAvemoOX+iiMeIh7PbXUqoFYvfzaHYKX7EjILUOIAdFzG+D9y+n9g6QvawVVjDih8zpgXgI6sg7t7gdTZhrjTdrPrTqSNhl1gCpdQDZadyi1gG05hq3O8ZloCBmewBNrpZFPAQCcacySGuNgvIEUO3ROk1GewAHQC0Q3zD2d/S5bofB4F7RI0q2BxAGYSIW4CDHf4vKFmikZQMM6bnXCzaFrhSkBhOBiMbnqvN6WauEwU2oA83W/qqaJReLgJQwHOFxmWizIanO+PQoCBKwCHeG3UFECuL4Fm38ZMYiG6uWE3cCye3X1c8+Gov8AbBZ7DOEwsJrAAAAAElFTkSuQmCC"> Reflex grid</h1>
         <p>A lightweight responsive flexbox grid with cross browser support, an inline-block fallback and no polyfills.</p>
 
         <nav>
@@ -65,6 +65,7 @@
                 <p>With the exception of IE6 which is not supported, Reflex falls back to an <code>inline-block</code> grid for browsers that do not support flexbox. We use some reliable css hacks to help the <code>inline-block</code> grid work on older browsers. It's important to note that some of the features of flexbox do not have an equivalent in <code>inline-block</code> so not all of the layout modifier classes will work in the fallback, but most importantly <em>your grid will remain intact.</em></p>
                 <p class="alert">If you want to use the grid with breakpoints in ie8 and below you will need to use <a href="https://github.com/scottjehl/Respond" target="_blank">respond.js</a> which enables media query support in those browsers via JavaScript</p>
                 <p class="alert">If you wish to use html5 elements such as <code>section</code> you will need to use <a href="https://github.com/afarkas/html5shiv" target="_blank">html5Shiv</a></p>
+                <p class="alert">IE10 and IE11 have a flexbox rendering bug which means that unless the height of the parent element is set with an explicit value, flex items will only stretch to be as large as their largest sibling. The grid will still work in these browsers, but it won't entirely fill the height of it's container unless a <code>height</code> is explicitly set on the grid. This is unlikely to be a problem but is recorded here for sake of completeness. There's <a href="https://philipwalton.com/articles/normalizing-cross-browser-flexbox-bugs/">further reading</a> to be had on the subject if you're interested in solving this issue in these browsers.</p>
             </section>
 
             <section class="container">
@@ -257,6 +258,7 @@
                 <h2 id="containers">Containers <a href="#containers">&#35;</a></h2>
                 <p>A Reflex grid will fill the full width of it's parent element which means you can drop it into any containing element you may already have in place.</p>
                 <p>However, Reflex grid has a responsive <code>.container</code> class available which uses a combination of margins and padding to maintain layout between elements both inside and outside of the grid. By default this uses the same breakpoints as the <a href="#breakpoints">numbered columns</a>. However, It is possible to modify the max width and breakpoints of the <code>.container</code> class by modifying the included variables.scss file and building a new css file.</p>
+
                 <h3 id="responsive-container">Responsive container <a href="#responsive-container">&#35;</a></h3>
 
 <pre>&lt;div class="container"&gt;
@@ -310,6 +312,20 @@
                     <div class="col-6">
                         <p>Another element inside the grid</p>
                     </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <h3 id="no-container">No container <a href="#no-container">&#35;</a></h3>
+                <p>Without a container, the grid fills it's containing element (in this case the <code>body</code> element).</p>
+            </div>
+
+            <div class="grid">
+                <div class="col-6">
+                    <p>An element inside the grid</p>
+                </div>
+                <div class="col-6">
+                    <p>Another element inside the grid</p>
                 </div>
             </div>
 
@@ -873,7 +889,7 @@
                 <p>Removes internal padding from a single <code>col-x</code> column element.</p>
                 <div class="grid">
                     <div class="col-6 col-bleed">
-                        <p>.col-bleed applied</p>
+                        <p>.col-bleed</p>
                     </div>
                     <div class="col-6">
                         <p>Default column</p>
@@ -884,7 +900,7 @@
                 <p>Removes internal horizontal padding from a single <code>col-x</code> column element.</p>
                 <div class="grid">
                     <div class="col-6 col-bleed-x">
-                        <p>.col-bleed-x applied</p>
+                        <p>.col-bleed-x</p>
                     </div>
                     <div class="col-6">
                         <p>Default column</p>
@@ -895,7 +911,7 @@
                 <p>Removes internal vertical padding from a single <code>col-x</code> column element.</p>
                 <div class="grid">
                     <div class="col-6 col-bleed-y">
-                        <p>.col-bleed-y applied</p>
+                        <p>.col-bleed-y</p>
                     </div>
                     <div class="col-6">
                         <p>Default column</p>
@@ -946,12 +962,6 @@
             &lt;p&gt;.flex-footer&lt;/p&gt;
         &lt;/div&gt;
     &lt;/div&gt;
-    &lt;div class="col-6 col-grid"&gt;
-        &lt;content&gt;
-        &lt;div class="flex-footer"&gt;
-            &lt;p&gt;.flex-footer&lt;/p&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
 &lt;/div&gt;</pre>
 
                 <div class="grid">
@@ -977,9 +987,6 @@
     &lt;div class="col-6 col-grid"&gt;
         &lt;img class="flex-img" src="images/1.jpg"&gt;
     &lt;/div&gt;
-    &lt;div class="col-6"&gt;
-        &lt;img class="flex-img" src="images/2.jpg"&gt;
-    &lt;/div&gt;
 &lt;/div&gt;</pre>
 
                 <div class="grid">
@@ -993,8 +1000,49 @@
             </section>
 
             <section class="container">
-                <h2 id="other-helpers">Other useful modifiers <a href="#other-helpers">&#35;</a></h2>
-                <h3 id="flex-img">.flex-img <a href="#flex-img">&#35;</a></h2>
+                <h2 id="cards">Cards <a href="#cards">&#35;</a></h2>
+                <p>A common use case for Reflex grid is to create product cards of the same height. The CSS for this is not part of Reflex grid and you would need to add your own card classes on top of reflex but I have included a few examples below and many more on the <a href="examples.html">examples page</a> to help you get started.
+
+                <div class="grid grid-plain">
+                    <div class="col-xs-6 col-md-3 col-grid">
+                        <div class="card-header">
+                            <h3>Amazing</h3>
+                            <img class="flex-img" src="images/1.jpg">
+                        </div>
+                        <div class="card-body">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc et sagittis dui. Maecenas rhoncus justo aliquam urna finibus tincidunt et ut mauris.</p>
+                        </div>
+                        <div class="card-footer">
+                            <span>$12.99</span>
+                            <a href="examples.html">add to basket</a>
+                        </div>
+                    </div>
+                    <div class="col-xs-6 col-md-3 col-grid">
+                        <img class="card-header-img flex-img" src="images/2.jpg">
+                        <div class="card-body">
+                            <h3>Crazy good</h3>
+                            <p>Nunc dignissim in ante sed dapibus. Aenean sit amet aliquet dolor, at auctor erat. Aliquam ornare faucibus leo, vel euismod nisi porta non. Donec at arcu eget enim bibendum facilisis. Etiam urna elit, blandit ut libero placerat, iaculis aliquam erat.</p>
+                        </div>
+                        <div class="card-footer">
+                            <span>$4.99</span>
+                            <a href="examples.html">add to basket</a>
+                        </div>
+                    </div>
+                    <div class="col-xs-6 col-md-3 col-grid">
+                        <div class="card-body">
+                            <h3>Lovely stuff</h3>
+                            <p>Aenean sit amet aliquet dolor, at auctor erat. Aliquam ornare faucibus leo, vel euismod nisi porta non. Donec at arcu eget enim bibendum facilisis.</p>
+                        </div>
+                        <a href="examples.html" class="card-footer-link">read more</a>
+                    </div>
+                    <div class="col-xs-6 col-md-3 col-grid">
+                        <a href="#0" class="card-link card-center">
+                            <img class="card-img-circle flex-img" src="images/round.jpg">
+                            <h3>Top destination</h3>
+                            <p>Aenean sit amet aliquet dolor, at auctor erat. Aliquam ornare faucibus leo, vel euismod nisi porta non. Donec at arcu eget enim bibendum facilisis.</p>
+                        </a>
+                    </div>
+                </div>
             </section>
 
             <section class="container">

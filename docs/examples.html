@@ -1,0 +1,236 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <title>Reflex grid - a lightweight responsive flexbox grid with cross browser support, an inline-block fallback and no polyfills.</title>
+    <meta name="description" content="reflex is a responsive flexbox grid with inline-block legacy support and no polyfills">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <link rel="stylesheet" href="css/docs.css">
+
+    <script src="js/respond.min.js"></script>
+    <script src="js/html5shiv.js"></script>
+</head>
+
+<body>
+    <header role="banner" class="container">
+        <h1><img class="logo" width="50" height="50" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAADbElEQVRoQ+2ZjZENQRDH/5cBGRCBywARIAIuAkSACBABIuAiQAZEgAyIgPpVbTP6zex0z+5tbb16U3X1vman+zf9NdN3piMZZ0fCoRPI3ix5ssgGFrkm6bGkFxFZe7UIEB8lnUt6K+miB7NHEIO4KemVpGcRmL2BlBB3JitglTc9mKUgNyQhEPNHxn1JnyT9rEyuQXyQhIxHPZitQZ5LuifproPxELclvXawPIubEfy8/28sBbHF2Glc4EBAQ5kvBYyH4DcsgRXMcqxN8P+YPODAomuBIAgXQIG5ASjQjN+SHkh6L4nAxkX5jTWAsdGFYOJaICaUXWS0YgYQU5hYuSXp1/QdygPC6/ci0GctYYLXBsEqDFPEW8dAgMGl2P0nEwifS9cMWSIL0lPQK4yC7Dh1oBwlSPm9Xz8FkXGtnst4EBQjIH1QtkDK59MQGRAThA/jNmUweojyM1ZBeV4ZPZAhiBEQFLH0OAfgf0NBnuuBAEwNIYu14qwqdzTYcTWERoXhYpateLXjh1eKgGddUrMvmrMbtxWIKdGzCPOGYEZBTDGK2dOEZQDhjtGLMWDMHUOWWQpCDaD41Q6BNVeYc6uW64RicimICaf6snOZYTueeaY5dy0QdtpSbFQxSwA9NwuttxYIwqwGXA9J/jeJdPs5+czB9DVBDCa7w1iylY7DfFEQKjon1cxgl6PuRpZ6WLlMheVFQSy3A/M1kKVwMw6MvYuWKcrZjPl2VwkD2MQoSLZQYQk7Z2WUyvYA/q6dAcnAGAjHeVJzNAFsBgIMwr5NmaYVpKVFRupFtAewyCLssN2xWxnKuxbAds6KuFq0BzAE4rsdKId1OKb40YoR1uAvemoOX+iiMeIh7PbXUqoFYvfzaHYKX7EjILUOIAdFzG+D9y+n9g6QvawVVjDih8zpgXgI6sg7t7gdTZhrjTdrPrTqSNhl1gCpdQDZadyi1gG05hq3O8ZloCBmewBNrpZFPAQCcacySGuNgvIEUO3ROk1GewAHQC0Q3zD2d/S5bofB4F7RI0q2BxAGYSIW4CDHf4vKFmikZQMM6bnXCzaFrhSkBhOBiMbnqvN6WauEwU2oA83W/qqaJReLgJQwHOFxmWizIanO+PQoCBKwCHeG3UFECuL4Fm38ZMYiG6uWE3cCye3X1c8+Gov8AbBZ7DOEwsJrAAAAAElFTkSuQmCC"> Reflex grid</h1>
+        <p>Some examples of layout built with Reflex grid, a lightweight responsive flexbox grid with cross browser support, an inline-block fallback and no polyfills.</p>
+
+        <nav>
+            <p>
+                Interested? Check out the code on <a href="https://github.com/leejordan/reflex" target="_blank">github</a>, grab the <a href="https://raw.githubusercontent.com/leejordan/reflex/master/css/reflex.css">css</a> directly, or look at the <a href="index.html">documentation</a> to learn more.
+            </p>
+        </nav>
+    </header>
+
+    <main role="main" class="examples">
+        <section class="example-3-column">
+            <h2 id="classic-3">Classic 3 column layout with nested grids <a href="#classic-3">&#35;</a></h2>
+            <div class="grid">
+                <nav class="col-xs-2 col-bleed col-feature">
+                    <img class="flex-img logo" src="images/placeholder.png">
+                    <ul class="nav">
+                        <li>
+                            <a href="#0" class="active">home</a>
+                        </li>
+                        <li>
+                            <a href="#0">account</a>
+                        </li>
+                        <li>
+                            <a href="#0">about</a>
+                        </li>
+                        <li>
+                            <a href="#0">faq</a>
+                        </li>
+                        <li>
+                            <a href="#0">search</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="col-xs-10 col-md-7 col-bleed col-body">
+                    <ul class="grid">
+                        <li class="col-12 col-grid">
+                            <h1>Amazing destination</h1>
+                            <img src="images/4.jpg" class="flex-img">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec est eget dui volutpat imperdiet. In hac habitasse platea dictumst. Duis eget eros risus. Maecenas vel pretium urna, sit amet efficitur urna.</p>
+                            <div class="flex-footer">
+                                <a href="#0">read more</a>
+                            </div>
+                        </li>
+                        <li class="col-12 col-sm-6 col-grid">
+                            <h2>Brilliant views</h2>
+                            <img src="images/1.jpg" class="flex-img">
+                            <p>Aliquam ornare faucibus leo, vel euismod nisi porta non. Donec at arcu eget enim bibendum facilisis. Etiam urna elit, blandit ut libero placerat, iaculis aliquam erat.</p>
+                            <div class="flex-footer">
+                                <a href="#0">read more</a>
+                            </div>
+                        </li>
+                        <li class="col-12 col-sm-6 col-grid">
+                            <h2>Stellar beaches</h2>
+                            <img src="images/2.jpg" class="flex-img">
+                            <p>Nunc venenatis pulvinar tempor. In ligula tortor, laoreet non elementum et, consectetur placerat augue. Curabitur lobortis, dui a ullamcorper vulputate, purus est hendrerit leo.</p>
+                            <div class="flex-footer">
+                                <a href="#0">read more</a>
+                            </div>
+                        </li>
+                        <li class="col-12 col-sm-6 col-grid">
+                            <h2>Special offer</h2>
+                            <img src="images/3.jpg" class="flex-img">
+                            <p>Vestibulum tincidunt et lorem eu congue. Sed molestie finibus nisi non dictum. Aliquam hendrerit dolor id eleifend dignissim. Proin sed magna consectetur, pellentesque mi vel, blandit nisi. Praesent quis efficitur sapien, id tempor mi. Nulla molestie euismod arcu, at ullamcorper mi vehicula id.</p>
+                            <div class="flex-footer">
+                                <a href="#0">read more</a>
+                            </div>
+                        </li>
+                        <li class="col-12 col-sm-6 col-grid">
+                            <h2>Romantic getaway</h2>
+                            <img src="images/5.jpg" class="flex-img">
+                            <p>Cras nec dui in erat auctor molestie nec non odio. Nam rhoncus ipsum tincidunt.</p>
+                            <div class="flex-footer">
+                                <a href="#0">read more</a>
+                            </div>
+                        </li>
+                    </ul>
+                    <footer class="col-12">
+                        <p>copyright 2017</p>
+                    </footer>
+                </div>
+                <div class="col-md-3 col-feature">
+                    <p>Nunc venenatis pulvinar tempor. In ligula tortor, laoreet non elementum et, consectetur placerat augue. Curabitur lobortis, dui a ullamcorper vulputate, purus est hendrerit leo.</p>
+                    <ul>
+                        <li>
+                            <a href="#0">venenatis</a>
+                        </li>
+                        <li>
+                            <a href="#0">pulvinar tempor</a>
+                        </li>
+                        <li>
+                            <a href="#0">ligula tortor</a>
+                        </li>
+                        <li>
+                            <a href="#0">consectetur</a>
+                        </li>
+                        <li>
+                            <a href="#0">augue</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="container">
+            <h2 id="product-grid-shop">Product grid for a shop <a href="#product-grid-shop">&#35;</a></h2>
+            <div class="grid">
+                <div class="col-sm-12 col-md-6 col-grid">
+                    <img class="card-header-img flex-img" src="images/1.jpg">
+                    <div class="card-body">
+                        <h3>Amazing</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc et sagittis dui. Maecenas rhoncus justo aliquam urna finibus tincidunt et ut mauris.</p>
+                    </div>
+                    <div class="card-footer">
+                        <span>$12.99</span>
+                        <a href="examples.html">add to basket</a>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3 col-grid">
+                    <img class="card-header-img flex-img" src="images/2.jpg">
+                    <div class="card-body">
+                        <h3>Crazy good</h3>
+                        <p>Nunc dignissim in ante sed dapibus. Aenean sit amet aliquet dolor, at auctor erat. Aliquam ornare faucibus leo, vel euismod nisi porta non. Donec at arcu eget enim bibendum facilisis. Etiam urna elit, blandit ut libero placerat, iaculis aliquam erat.</p>
+                    </div>
+                    <div class="card-footer">
+                        <span>$4.99</span>
+                        <a href="examples.html">add to basket</a>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3 col-grid">
+                    <img class="card-header-img flex-img" src="images/3.jpg">
+                    <div class="card-body">
+                        <h3>Lovely stuff</h3>
+                        <p>Aenean sit amet aliquet dolor, at auctor erat. Aliquam ornare faucibus leo, vel euismod nisi porta non. Donec at arcu eget enim bibendum facilisis.</p>
+                    </div>
+                    <div class="card-footer">
+                        <span>$16.99</span>
+                        <a href="examples.html">add to basket</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container">
+            <h2 id="grid-blog">Article grid for a blog <a href="#grid-blog">&#35;</a></h2>
+            <ol class="grid">
+                <li class="col-12 col-grid">
+                    <div class="card-body">
+                        <h3>Amazing</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc et sagittis dui. Maecenas rhoncus justo aliquam urna finibus tincidunt et ut mauris.</p>
+                        <p>Nunc dignissim in ante sed dapibus. Aenean sit amet aliquet dolor, at auctor erat. Aliquam ornare faucibus leo, vel euismod nisi porta non. Donec at arcu eget enim bibendum facilisis. Etiam urna elit, blandit ut libero placerat, iaculis aliquam erat.</p>
+                    </div>
+                    <a href="examples.html" class="card-footer-link">read more</a>
+                </li>
+                <li class="col-xs-6 col-grid">
+                    <div class="card-body">
+                        <h3>Crazy good</h3>
+                        <p>Nunc dignissim in ante sed dapibus. Aenean sit amet aliquet dolor, at auctor erat. Aliquam ornare faucibus leo, vel euismod nisi porta non. Donec at arcu eget enim bibendum facilisis. Etiam urna elit, blandit ut libero placerat, iaculis aliquam erat.</p>
+                    </div>
+                    <a href="examples.html" class="card-footer-link">read more</a>
+                </li>
+                <li class="col-xs-6 col-grid">
+                    <div class="card-body">
+                        <h3>Lovely stuff</h3>
+                        <p>Aenean sit amet aliquet dolor, at auctor erat. Aliquam ornare faucibus leo, vel euismod nisi porta non. Donec at arcu eget enim bibendum facilisis.</p>
+                    </div>
+                    <a href="examples.html" class="card-footer-link">read more</a>
+                </li>
+            </ol>
+        </section>
+
+        <section class="container example-travel">
+            <h2 id="grid-travel">Destination grid for a travel site <a href="#grid-travel">&#35;</a></h2>
+            <ol class="grid">
+                <li class="col-xs-6 col-md-3 col-grid">
+                    <a href="#0" class="card-center card-link">
+                        <img class="card-img-circle flex-img" src="images/round.jpg">
+                        <h3>Top destination</h3>
+                        <p>Aenean sit amet aliquet dolor, at auctor erat. Aliquam ornare faucibus leo, vel euismod nisi porta non. Donec at arcu eget enim bibendum facilisis.</p>
+                    </a>
+                </li>
+                <li class="col-xs-6 col-md-3 col-grid">
+                    <a href="#0" class="card-center card-link">
+                        <img class="card-img-circle flex-img" src="images/round.jpg">
+                        <h3>Summer getaway</h3>
+                        <p>Nunc dignissim in ante sed dapibus. Aenean sit amet aliquet dolor, at auctor erat. Aliquam ornare faucibus leo, vel euismod nisi porta non. Donec at arcu eget enim bibendum facilisis. Etiam urna elit, blandit ut libero placerat, iaculis aliqu</p>
+                    </a>
+                </li>
+                <li class="col-xs-6 col-md-3 col-grid">
+                    <a href="#0" class="card-center card-link">
+                        <img class="card-img-circle flex-img" src="images/round.jpg">
+                        <h3>Festivals</h3>
+                        <p>Aliquam ornare faucibus leo, vel euismod nisi porta non. Donec at arcu eget enim bibendum facilisis. Etiam urna elit, blandit ut libero placerat, iaculis aliqu.</p>
+                    </a>
+                </li>
+                <li class="col-xs-6 col-md-3 col-grid">
+                    <a href="#0" class="card-center card-link">
+                        <img class="card-img-circle flex-img" src="images/round.jpg">
+                        <h3>Special offer</h3>
+                        <p>Aliquam ornare faucibus leo, vel euismod nisi porta non. Donec at arcu eget enim bibendum facilisis.</p>
+                    </a>
+                </li>
+            </ol>
+        </section>
+    </main>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+    <script>
+      WebFont.load({
+        google: {
+          families: ['Lora', 'Josefin Sans']
+        }
+      });
+    </script>
+</body>
+</html>

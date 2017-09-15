@@ -142,14 +142,26 @@
 
 .#{$reflex-prefix}justify-start {
     @include justify-content-start();
+
+    @if $legacy-support == true {
+        &.grid {
+            text-align: left;
+        }
+    }
 }
 
 .#{$reflex-prefix}justify-end {
     @include justify-content-end();
 
     @if $legacy-support == true {
-        [class^="#{$reflex-prefix}col-"] {
-            @include reset-text-align();
+        &.grid {
+            text-align: right;
+            -moz-text-align-last: right;
+            text-align-last: right;
+
+            [class^="#{$reflex-prefix}col-"] {
+                @include reset-text-align();
+            }
         }
     }
 }
@@ -158,8 +170,14 @@
     @include justify-content-center();
 
     @if $legacy-support == true {
-        [class^="#{$reflex-prefix}col-"] {
-            @include reset-text-align();
+        &.grid {
+            text-align: center;
+            -moz-text-align-last: center;
+            text-align-last: center;
+
+            [class^="#{$reflex-prefix}col-"] {
+                @include reset-text-align();
+            }
         }
     }
 }
@@ -168,8 +186,14 @@
     @include justify-content-space-between();
 
     @if $legacy-support == true {
-        [class^="#{$reflex-prefix}col-"] {
-            @include reset-text-align();
+        &.grid {
+            text-align: justify;
+            -moz-text-align-last: justify;
+            text-align-last: justify;
+
+            [class^="#{$reflex-prefix}col-"] {
+                @include reset-text-align();
+            }
         }
     }
 }
@@ -178,8 +202,14 @@
     @include justify-content-space-around();
 
     @if $legacy-support == true {
-        [class^="#{$reflex-prefix}col-"] {
-            @include reset-text-align();
+        &.grid {
+            text-align: justify;
+            -moz-text-align-last: justify;
+            text-align-last: justify;
+
+            [class^="#{$reflex-prefix}col-"] {
+                @include reset-text-align();
+            }
         }
     }
 }
@@ -192,6 +222,13 @@
 .#{$reflex-prefix}grid-bleed {
     [class*="#{$reflex-prefix}col-"] {
         padding: 0;
+
+        @if $legacy-support == true {
+            > * {
+                *margin-left: 0; // ie7 css hack
+                *margin-right: 0; // ie7 css hack
+            }
+        }
     }
 }
 
@@ -208,16 +245,36 @@
 // Removes internal padding from all columns in a grid
 .#{$reflex-prefix}col-bleed {
     padding: 0;
+
+    @if $legacy-support == true {
+        > * {
+            *margin-left: 0; // ie7 css hack
+            *margin-right: 0; // ie7 css hack
+        }
+    }
 }
 
 // Removes horizontal padding from all columns in a grid
 .#{$reflex-prefix}col-bleed-x {
     padding: $reflex-grid-spacing 0;
+
+    @if $legacy-support == true {
+        > * {
+            *margin-left: 0; // ie7 css hack
+            *margin-right: 0; // ie7 css hack
+        }
+    }
 }
 
 // Removes vertical padding from all columns in a grid
 .#{$reflex-prefix}col-bleed-y {
     padding: 0 $reflex-grid-spacing;
+
+    @if $legacy-support == true {
+        // ie7 does not support box-sizing: border-box so we need to pad the
+        // columns by adding margins to all child elements
+        *padding: 0;
+    }
 }
 
 // --------------------------------------------------
@@ -228,8 +285,9 @@
     display: block;
     @include flex(0, 0, auto);
     max-width: 100%;
-    width: 100%;
     height: auto;
+    width: 100%;
+    *width: auto; // ie7 css hack
 }
 
 .#{$reflex-prefix}flex-footer {

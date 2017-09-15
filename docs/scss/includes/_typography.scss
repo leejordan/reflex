@@ -25,17 +25,17 @@ h6 {
 
 h1 {
     font-size: ($font-size-base + 10);
-    font-size: 1.8rem;
+    font-size: 2rem;
 }
 
 h2 {
     font-size: ($font-size-base + 8);
-    font-size: 1.4rem;
+    font-size: 1.6rem;
 }
 
 h3 {
     font-size: ($font-size-base + 6);
-    font-size: 1.3rem;
+    font-size: 1.4rem;
 }
 
 h4 {
@@ -54,7 +54,6 @@ h6 {
 
 p {
     margin: 0 0 2em;
-    text-align: left;
 }
 
 small {
@@ -139,4 +138,14 @@ code {
 a {
     color: $colour-link;
     font-weight: $font-weight-base;
+
+    &:hover,
+    &:focus {
+        color: darken($colour-link, 15%);
+    }
+
+    &:focus {
+        outline: 3px solid $colour-link;
+        outline: 5px auto -webkit-focus-ring-color;
+    }
 }
