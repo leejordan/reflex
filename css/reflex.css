@@ -1,48 +1,55 @@
 .container,
 .container-full {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
   width: 100%;
   margin-right: auto;
   margin-left: auto;
-  padding-right: 15px;
-  padding-left: 15px;
+  padding-right: 30px;
+  padding-left: 30px;
 }
 
-@media (min-width: 480px) {
+.container .grid,
+.container-full .grid {
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+@media (min-width: 576px) {
   .container {
-    width: 480px;
+    max-width: 576px;
   }
 }
 
 @media (min-width: 768px) {
   .container {
-    width: 768px;
+    max-width: 768px;
   }
 }
 
 @media (min-width: 992px) {
   .container {
-    width: 992px;
+    max-width: 992px;
   }
 }
 
 @media (min-width: 1200px) {
   .container {
-    width: 1200px;
+    max-width: 1200px;
   }
 }
 
 @media (min-width: 1600px) {
   .container {
-    width: 1600px;
+    max-width: 1600px;
   }
 }
 
-.container .grid {
-  margin-right: -15px;
-  margin-left: -15px;
-}
-
 .grid {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
   display: block;
   display: -ms-flexbox;
   display: -webkit-flex;
@@ -91,15 +98,6 @@
   letter-spacing: normal;
   word-spacing: normal;
   white-space: normal;
-  text-align: left;
-  text-align: start;
-  text-align: initial;
-  -moz-text-align-last: left;
-  -moz-text-align-last: start;
-  -moz-text-align-last: initial;
-  text-align-last: left;
-  text-align-last: start;
-  text-align-last: initial;
   position: relative;
   width: 100%;
   vertical-align: top;
@@ -175,7 +173,7 @@
   *width: 8.23333333%;
 }
 
-@media (min-width: 480px) {
+@media (min-width: 576px) {
   .col-xs-12 {
     width: 100%;
     *width: 99.9%;
@@ -437,7 +435,7 @@
   width: auto !important;
 }
 
-@media (min-width: 480px) {
+@media (min-width: 576px) {
   .col-xs-auto {
     -ms-flex: 1 0 auto;
     -webkit-flex: 1 0 0px;
@@ -560,7 +558,7 @@
   order: 0;
 }
 
-@media only screen and (min-width: 480px) {
+@media only screen and (min-width: 576px) {
   .order-12-xs {
     -ms-flex-order: 12;
     -webkit-order: 12;
@@ -900,10 +898,6 @@
   }
 }
 
-.bleed [class^="col-"] {
-  padding: 0;
-}
-
 .wrap {
   -ms-flex-wrap: wrap;
   -webkit-flex-wrap: wrap;
@@ -982,10 +976,6 @@
   -ms-flex-align: baseline;
   -webkit-align-items: baseline;
   align-items: baseline;
-}
-
-.align-baseline [class^="col-"] {
-  vertical-align: baseline;
 }
 
 .align-content-start {
@@ -1074,13 +1064,10 @@
 .justify-end [class^="col-"] {
   text-align: left;
   text-align: start;
-  text-align: initial;
   -moz-text-align-last: left;
   -moz-text-align-last: start;
-  -moz-text-align-last: initial;
   text-align-last: left;
   text-align-last: start;
-  text-align-last: initial;
 }
 
 .justify-center {
@@ -1095,13 +1082,10 @@
 .justify-center [class^="col-"] {
   text-align: left;
   text-align: start;
-  text-align: initial;
   -moz-text-align-last: left;
   -moz-text-align-last: start;
-  -moz-text-align-last: initial;
   text-align-last: left;
   text-align-last: start;
-  text-align-last: initial;
 }
 
 .justify-space-between {
@@ -1116,13 +1100,10 @@
 .justify-space-between [class^="col-"] {
   text-align: left;
   text-align: start;
-  text-align: initial;
   -moz-text-align-last: left;
   -moz-text-align-last: start;
-  -moz-text-align-last: initial;
   text-align-last: left;
   text-align-last: start;
-  text-align-last: initial;
 }
 
 .justify-space-around {
@@ -1137,13 +1118,14 @@
 .justify-space-around [class^="col-"] {
   text-align: left;
   text-align: start;
-  text-align: initial;
   -moz-text-align-last: left;
   -moz-text-align-last: start;
-  -moz-text-align-last: initial;
   text-align-last: left;
   text-align-last: start;
-  text-align-last: initial;
+}
+
+.grid-bleed [class*="col-"] {
+  padding: 0;
 }
 
 .col-grid {
@@ -1155,24 +1137,45 @@
   flex-direction: column;
 }
 
-.col--bleed {
+.col-bleed {
   padding: 0;
 }
 
-.col--bg {
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  padding-bottom: 50%;
+.col-bleed-x {
+  padding: 15px 0;
 }
 
-@media (max-width: 479px) {
+.col-bleed-y {
+  padding: 0 15px;
+}
+
+.flex-img {
+  display: block;
+  -ms-flex: 0 0 auto;
+  -webkit-flex: 0 0 auto;
+  flex: 0 0 auto;
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+}
+
+.flex-footer {
+  width: 100%;
+  margin-top: auto;
+  margin-bottom: 0;
+}
+
+.flex-footer > :last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 575px) {
   .hidden-xxs {
     display: none !important;
   }
 }
 
-@media (min-width: 480px) and (max-width: 767px) {
+@media (min-width: 576px) and (max-width: 767px) {
   .hidden-xs {
     display: none !important;
   }

@@ -6,8 +6,8 @@
   width: 100%;
   margin-right: auto;
   margin-left: auto;
-  padding-right: 15px;
-  padding-left: 15px;
+  padding-right: 30px;
+  padding-left: 30px;
 }
 
 .container .grid,
@@ -1124,11 +1124,7 @@
   text-align-last: start;
 }
 
-.grid-bleed [class*="grid__col-"] {
-  padding: 0;
-}
-
-.col-bleed [class*="grid__col-"] {
+.grid-bleed [class*="col-"] {
   padding: 0;
 }
 
@@ -1141,12 +1137,23 @@
   flex-direction: column;
 }
 
+.col-bleed {
+  padding: 0;
+}
+
+.col-bleed-x {
+  padding: 15px 0;
+}
+
+.col-bleed-y {
+  padding: 0 15px;
+}
+
 .flex-img {
   display: block;
   -ms-flex: 0 0 auto;
   -webkit-flex: 0 0 auto;
   flex: 0 0 auto;
-  margin: 0 0 15px 0;
   max-width: 100%;
   width: 100%;
   height: auto;
@@ -1155,6 +1162,11 @@
 .flex-footer {
   width: 100%;
   margin-top: auto;
+  margin-bottom: 0;
+}
+
+.flex-footer > :last-child {
+  margin-bottom: 0;
 }
 
 @media (max-width: 575px) {
@@ -1557,9 +1569,18 @@ em {
 blockquote {
   position: relative;
   margin: 0 0 2em;
-  padding-left: 2.5em;
+  padding: 0 2em;
   font-weight: 300;
+  font-style: italic;
   color: #636c72;
+}
+
+blockquote footer {
+  margin-top: 1em;
+}
+
+blockquote footer:before {
+  content: '- ';
 }
 
 ol,
@@ -1616,15 +1637,34 @@ a {
   font-weight: 400;
 }
 
-.documentation [class^="col-"] {
+.documentation .grid {
+  min-height: 250px;
+}
+
+.documentation .grid:not(.plain) {
+  margin-bottom: 2em;
+  background-color: #003e50;
+}
+
+.documentation .grid:not(.plain) [class^="col-"] {
   background-color: #83e3ff;
   box-shadow: inset 0 0 0 15px #9ce9ff;
 }
 
-.documentation .grid {
-  min-height: 250px;
-  margin-bottom: 2em;
-  background-color: #003e50;
+.documentation .grid-bleed [class^="col-"] {
+  box-shadow: none !important;
+}
+
+.documentation .col-bleed {
+  box-shadow: none !important;
+}
+
+.documentation .col-bleed-x {
+  box-shadow: inset 0 15px 0 0 #9ce9ff, inset 0 -15px 0 0 #9ce9ff !important;
+}
+
+.documentation .col-bleed-y {
+  box-shadow: inset 15px 0 0 0 #9ce9ff, inset -15px 0 0 0 #9ce9ff !important;
 }
 
 .alert {

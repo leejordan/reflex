@@ -73,9 +73,18 @@ em {
 blockquote {
     position: relative;
     margin: 0 0 2em;
-    padding-left: 2.5em;
+    padding: 0 2em;
     font-weight: $font-weight-light;
+    font-style: italic;
     color: $colour-text-muted;
+
+    footer {
+        margin-top: 1em;
+
+        &:before {
+            content: '- ';
+        }
+    }
 }
 
 ol,

@@ -1,13 +1,34 @@
 .documentation {
-    [class^="#{$reflex-prefix}col-"] {
-        background-color: $colour-col;
-        box-shadow: inset 0 0 0 $reflex-grid-spacing $colour-col-padding;
-    }
-
     .grid {
         min-height: $grid-min-height;
+    }
+
+    .grid:not(.plain) {
         margin-bottom: 2em;
         background-color: $colour-grid-bg;
+
+        [class^="#{$reflex-prefix}col-"] {
+            background-color: $colour-col;
+            box-shadow: inset 0 0 0 $reflex-grid-spacing $colour-col-padding;
+        }
+    }
+
+    .grid-bleed {
+        [class^="#{$reflex-prefix}col-"] {
+            box-shadow: none !important;
+        }
+    }
+
+    .col-bleed {
+        box-shadow: none !important;
+    }
+
+    .col-bleed-x {
+        box-shadow: inset 0 $reflex-grid-spacing 0 0 $colour-col-padding, inset 0 -#{$reflex-grid-spacing} 0 0 $colour-col-padding !important;
+    }
+
+    .col-bleed-y {
+        box-shadow: inset $reflex-grid-spacing 0 0 0 $colour-col-padding, inset -#{$reflex-grid-spacing} 0 0 0 $colour-col-padding !important;
     }
 }
 

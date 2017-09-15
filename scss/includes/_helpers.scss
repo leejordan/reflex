@@ -190,7 +190,7 @@
 
 // Removes internal padding from all columns in a grid
 .#{$reflex-prefix}grid-bleed {
-    [class*="#{$reflex-prefix}grid__col-"] {
+    [class*="#{$reflex-prefix}col-"] {
         padding: 0;
     }
 }
@@ -199,35 +199,34 @@
 // col modifiers
 // --------------------------------------------------
 
-// Removes internal padding from all columns in a grid
-.#{$reflex-prefix}col-bleed {
-    [class*="#{$reflex-prefix}grid__col-"] {
-        padding: 0;
-    }
-}
-
 // Makes a column element into a flexbox column
 .#{$reflex-prefix}col-grid {
     @include display-flex();
     @include flex-direction(column);
 }
 
-// Sets up useful css properties for when using a background image on a column
-// .#{$reflex-prefix}col-bg {
-//     background-repeat: no-repeat;
-//     background-position: center center;
-//     background-size: cover;
-//     padding-bottom: 50%;
-// }
+// Removes internal padding from all columns in a grid
+.#{$reflex-prefix}col-bleed {
+    padding: 0;
+}
+
+// Removes horizontal padding from all columns in a grid
+.#{$reflex-prefix}col-bleed-x {
+    padding: $reflex-grid-spacing 0;
+}
+
+// Removes vertical padding from all columns in a grid
+.#{$reflex-prefix}col-bleed-y {
+    padding: 0 $reflex-grid-spacing;
+}
 
 // --------------------------------------------------
-// col contents
+// col-grid contents
 // --------------------------------------------------
 
 .#{$reflex-prefix}flex-img {
     display: block;
     @include flex(0, 0, auto);
-    margin: 0 0 $reflex-grid-spacing 0;
     max-width: 100%;
     width: 100%;
     height: auto;
@@ -236,6 +235,11 @@
 .#{$reflex-prefix}flex-footer {
     width: 100%;
     margin-top: auto;
+    margin-bottom: 0;
+
+    > :last-child {
+        margin-bottom: 0;
+    }
 }
 
 // --------------------------------------------------
