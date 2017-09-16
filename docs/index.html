@@ -62,9 +62,10 @@
             <section class="container">
                 <h2 id="browser-support">Browser support <a href="#browser-support">&#35;</a></h2>
                 <p>All browser specific implementations of flexbox are supported via vendor prefixes, including the slightly problematic <a href="https://msdn.microsoft.com/en-us/library/hh673531(v=vs.85).aspx">IE10 implementation</a> of an early draft of the flexbox specification.</p>
-                <p>With the exception of IE6 which is not supported, Reflex falls back to an <code>inline-block</code> grid for browsers that do not support flexbox. We use some reliable css hacks to help the <code>inline-block</code> grid work on older browsers. It's important to note that some of the features of flexbox do not have an equivalent in <code>inline-block</code> so not all of the layout modifier classes will work in the fallback, but most importantly <em>your grid will remain intact.</em></p>
-                <p class="alert">If you want to use the grid with breakpoints in ie8 and below you will need to use <a href="https://github.com/scottjehl/Respond" target="_blank">respond.js</a> which enables media query support in those browsers via JavaScript</p>
-                <p class="alert">If you wish to use html5 elements such as <code>section</code> you will need to use <a href="https://github.com/afarkas/html5shiv" target="_blank">html5Shiv</a></p>
+                <p>Internet Explorer 6 and 7 are explicitly not supported because there are so many issues and quirks that it renders the exercise futile. However, the basic grid still works in those browsers.</p>
+                <p>For all other browsers, Reflex falls back to an <code>inline-block</code> grid for browsers that do not support flexbox. We use some reliable css hacks to help the <code>inline-block</code> grid work on older browsers. It's important to note that some of the features of flexbox do not have an equivalent in <code>inline-block</code> so not all of the layout modifier classes will work in the fallback, but most importantly <em>your grid will remain intact.</em></p>
+                <p class="alert">If you want to use the grid with breakpoints in ie8 you will need to use <a href="https://github.com/scottjehl/Respond" target="_blank">respond.js</a> which enables media query support in those browsers via JavaScript</p>
+                <p class="alert">If you wish to use html5 elements such as <code>section</code> in older browsers such as ie8 and 9, you will need to use <a href="https://github.com/afarkas/html5shiv" target="_blank">html5Shiv</a></p>
                 <p class="alert">IE10 and IE11 have a flexbox rendering bug which means that unless the height of the parent element is set with an explicit value, flex items will only stretch to be as large as their largest sibling. The grid will still work in these browsers, but it won't entirely fill the height of it's container unless a <code>height</code> is explicitly set on the grid. This is unlikely to be a problem but is recorded here for sake of completeness. There's <a href="https://philipwalton.com/articles/normalizing-cross-browser-flexbox-bugs/">further reading</a> to be had on the subject if you're interested in solving this issue in these browsers.</p>
             </section>
 
@@ -328,6 +329,55 @@
                     <p>Another element inside the grid</p>
                 </div>
             </div>
+
+            <section class="container">
+                <h2 id="nested-grids">Nested grids <a href="#nested-grids">&#35;</a></h2>
+                <p>It's possible to nest grids inside each other. Start a new <code>.grid</code> inside a <code>.col-x</code> element and everything lines up correctly. There are some more advanced examples of layouts on the <a href="examples.html">examples page</a>.</p>
+
+<pre>&lt;div class="grid"&gt;
+    &lt;div class="col-sm-6"&gt;
+        &lt;content&gt;
+    &lt;/div&gt;
+    &lt;div class="col-sm-6"&gt;
+        &lt;div class="grid"&gt;
+            &lt;div class="col-6"&gt;
+                &lt;content&gt;
+            &lt;/div&gt;
+            &lt;div class="col-6"&gt;
+                &lt;content&gt;
+            &lt;/div&gt;
+            &lt;div class="col-6"&gt;
+                &lt;content&gt;
+            &lt;/div&gt;
+            &lt;div class="col-6"&gt;
+                &lt;content&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</pre>
+
+                <div class="grid">
+                    <div class="col-sm-6">
+                        <p>col-sm-6</p>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="grid">
+                            <div class="col-6">
+                                <p>col-6</p>
+                            </div>
+                            <div class="col-6">
+                                <p>col-6</p>
+                            </div>
+                            <div class="col-6">
+                                <p>col-6</p>
+                            </div>
+                            <div class="col-6">
+                                <p>col-6</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
             <section class="container">
                 <h2 id="grid-wrap">Grid wrapping <a href="#grid-wrap">&#35;</a></h2>
@@ -982,6 +1032,7 @@
 
                 <h3 id="flex-img">.flex-img <a href="#flex-img">&#35;</a></h2>
                 <p>Responsive images are nothing new and most frameworks include classes to create them. For example, bootstrap uses <a href="https://getbootstrap.com/docs/4.0/content/images/#responsive-images">this solution</a>. However, there are some additional complexities in some browsers when using images as a flex item. Therefore, when using an image in a column with the <code>.col-grid</code> class, you should use the class <code>.flex-img</code> which solves these problems.</p>
+                <p class="alert">It's unlikely you'll have to support ie7 but please be aware that responsive images are very problematic in this browser and images will sometimes overflow their containing element. The grid will remain intact though.</p>
 
 <pre>&lt;div class="grid"&gt;
     &lt;div class="col-6 col-grid"&gt;
@@ -1014,18 +1065,18 @@
                         </div>
                         <div class="card-footer">
                             <span>$12.99</span>
-                            <a href="examples.html">add to basket</a>
+                            <a href="#0">add to basket</a>
                         </div>
                     </div>
                     <div class="col-xs-6 col-md-3 col-grid">
                         <img class="card-header-img flex-img" src="images/2.jpg">
                         <div class="card-body">
                             <h3>Crazy good</h3>
-                            <p>Nunc dignissim in ante sed dapibus. Aenean sit amet aliquet dolor, at auctor erat. Aliquam ornare faucibus leo, vel euismod nisi porta non. Donec at arcu eget enim bibendum facilisis. Etiam urna elit, blandit ut libero placerat, iaculis aliquam erat.</p>
+                            <p>Nunc dignissim in ante sed dapibus. Aenean sit amet aliquet dolor, at auctor erat. Aliquam ornare faucibus leo, vel euismod nisi porta non.</p>
                         </div>
                         <div class="card-footer">
                             <span>$4.99</span>
-                            <a href="examples.html">add to basket</a>
+                            <a href="#0">add to basket</a>
                         </div>
                     </div>
                     <div class="col-xs-6 col-md-3 col-grid">
@@ -1033,11 +1084,11 @@
                             <h3>Lovely stuff</h3>
                             <p>Aenean sit amet aliquet dolor, at auctor erat. Aliquam ornare faucibus leo, vel euismod nisi porta non. Donec at arcu eget enim bibendum facilisis.</p>
                         </div>
-                        <a href="examples.html" class="card-footer-link">read more</a>
+                        <a href="#0" class="card-footer-link">read more</a>
                     </div>
                     <div class="col-xs-6 col-md-3 col-grid">
                         <a href="#0" class="card-link card-center">
-                            <img class="card-img-circle flex-img" src="images/round.jpg">
+                            <img class="card-img-circle flex-img" src="images/square-5.jpg">
                             <h3>Top destination</h3>
                             <p>Aenean sit amet aliquet dolor, at auctor erat. Aliquam ornare faucibus leo, vel euismod nisi porta non. Donec at arcu eget enim bibendum facilisis.</p>
                         </a>

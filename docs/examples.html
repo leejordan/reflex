@@ -30,7 +30,9 @@
 
     <main role="main" class="examples">
         <section class="example-3-column">
-            <h2 id="classic-3">Classic 3 column layout with nested grids <a href="#classic-3">&#35;</a></h2>
+            <div class="container">
+                <h2 id="classic-3">Classic 3 column layout with nested grids <a href="#classic-3">&#35;</a></h2>
+            </div>
             <div class="grid">
                 <nav class="col-xs-2 col-bleed col-feature">
                     <img class="flex-img logo" src="images/placeholder.png">
@@ -122,8 +124,51 @@
             </div>
         </section>
 
-        <section class="container">
-            <h2 id="product-grid-shop">Product grid for a shop <a href="#product-grid-shop">&#35;</a></h2>
+        <section class="container example-shop">
+            <h2 id="product-grid-shop">Grid for a shop <a href="#product-grid-shop">&#35;</a></h2>
+            <div class="grid">
+                <div class="col-sm-6 col-md-3 col-grid">
+                    <img class="flex-img" src="images/1.jpg">
+                    <h3>Amazing</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc et sagittis dui. Maecenas rhoncus justo aliquam urna finibus tincidunt et ut mauris.</p>
+                    <div class="flex-footer">
+                        <span>$12.99</span>
+                        <a href="#0">add to basket</a>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3 col-grid">
+                    <img class="flex-img" src="images/2.jpg">
+                    <h3>Crazy good</h3>
+                    <p>Nunc dignissim in ante sed dapibus. Aenean sit amet aliquet dolor, at auctor erat. Aliquam ornare faucibus leo, vel euismod nisi porta non. Donec at arcu eget enim bibendum facilisis. Etiam urna elit, blandit ut libero placerat, iaculis aliquam erat.</p>
+                    <div class="flex-footer">
+                        <span>$4.99</span>
+                        <a href="#0">add to basket</a>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3 col-grid">
+                    <img class="flex-img" src="images/3.jpg">
+                    <h3>Lovely stuff</h3>
+                    <p>Aenean sit amet aliquet dolor, at auctor erat. Aliquam ornare faucibus leo, vel euismod nisi porta non. Donec at arcu eget enim bibendum facilisis.</p>
+                    <div class="flex-footer">
+                        <span>$15.99</span>
+                        <a href="#0">add to basket</a>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3 col-grid">
+                    <img class="flex-img" src="images/4.jpg">
+                    <h3>Tremendous</h3>
+                    <p>Aliquam ornare faucibus leo, vel euismod nisi porta non. Donec at arcu eget enim bibendum facilisis.</p>
+                    <div class="flex-footer">
+                        <span>$1.99</span>
+                        <a href="#0">add to basket</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="container example-shop-cards">
+            <h2 id="product-grid-shop-cards">Grid with cards for a shop <a href="#product-grid-shop-cards">&#35;</a></h2>
             <div class="grid">
                 <div class="col-sm-12 col-md-6 col-grid">
                     <img class="card-header-img flex-img" src="images/1.jpg">
@@ -133,7 +178,7 @@
                     </div>
                     <div class="card-footer">
                         <span>$12.99</span>
-                        <a href="examples.html">add to basket</a>
+                        <a href="#0">add to basket</a>
                     </div>
                 </div>
                 <div class="col-sm-6 col-md-3 col-grid">
@@ -144,7 +189,7 @@
                     </div>
                     <div class="card-footer">
                         <span>$4.99</span>
-                        <a href="examples.html">add to basket</a>
+                        <a href="#0">add to basket</a>
                     </div>
                 </div>
                 <div class="col-sm-6 col-md-3 col-grid">
@@ -155,72 +200,178 @@
                     </div>
                     <div class="card-footer">
                         <span>$16.99</span>
-                        <a href="examples.html">add to basket</a>
+                        <a href="#0">add to basket</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="container">
-            <h2 id="grid-blog">Article grid for a blog <a href="#grid-blog">&#35;</a></h2>
+        <section class="container example-blog">
+            <h2 id="grid-blog">Grid with cards for a blog <a href="#grid-blog">&#35;</a></h2>
             <ol class="grid">
                 <li class="col-12 col-grid">
                     <div class="card-body">
+                        <img class="img-shape" src="images/square-1.jpg">
                         <h3>Amazing</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc et sagittis dui. Maecenas rhoncus justo aliquam urna finibus tincidunt et ut mauris.</p>
                         <p>Nunc dignissim in ante sed dapibus. Aenean sit amet aliquet dolor, at auctor erat. Aliquam ornare faucibus leo, vel euismod nisi porta non. Donec at arcu eget enim bibendum facilisis. Etiam urna elit, blandit ut libero placerat, iaculis aliquam erat.</p>
                     </div>
-                    <a href="examples.html" class="card-footer-link">read more</a>
+                    <a href="#0" class="card-footer-link">read more</a>
                 </li>
                 <li class="col-xs-6 col-grid">
                     <div class="card-body">
+                        <img class="img-shape img-shape-sm" src="images/square-2.jpg">
                         <h3>Crazy good</h3>
                         <p>Nunc dignissim in ante sed dapibus. Aenean sit amet aliquet dolor, at auctor erat. Aliquam ornare faucibus leo, vel euismod nisi porta non. Donec at arcu eget enim bibendum facilisis. Etiam urna elit, blandit ut libero placerat, iaculis aliquam erat.</p>
                     </div>
-                    <a href="examples.html" class="card-footer-link">read more</a>
+                    <a href="#0" class="card-footer-link">read more</a>
                 </li>
                 <li class="col-xs-6 col-grid">
                     <div class="card-body">
+                        <img class="img-shape img-shape-sm" src="images/square-4.jpg">
                         <h3>Lovely stuff</h3>
                         <p>Aenean sit amet aliquet dolor, at auctor erat. Aliquam ornare faucibus leo, vel euismod nisi porta non. Donec at arcu eget enim bibendum facilisis.</p>
                     </div>
-                    <a href="examples.html" class="card-footer-link">read more</a>
+                    <a href="#0" class="card-footer-link">read more</a>
                 </li>
             </ol>
         </section>
 
-        <section class="container example-travel">
-            <h2 id="grid-travel">Destination grid for a travel site <a href="#grid-travel">&#35;</a></h2>
+        <section class="container example-clickable">
+            <h2 id="click-cards">Clickable cards <a href="#click-cards">&#35;</a></h2>
             <ol class="grid">
                 <li class="col-xs-6 col-md-3 col-grid">
                     <a href="#0" class="card-center card-link">
-                        <img class="card-img-circle flex-img" src="images/round.jpg">
+                        <img class="card-img-circle" src="images/square-1.jpg">
                         <h3>Top destination</h3>
                         <p>Aenean sit amet aliquet dolor, at auctor erat. Aliquam ornare faucibus leo, vel euismod nisi porta non. Donec at arcu eget enim bibendum facilisis.</p>
                     </a>
                 </li>
                 <li class="col-xs-6 col-md-3 col-grid">
                     <a href="#0" class="card-center card-link">
-                        <img class="card-img-circle flex-img" src="images/round.jpg">
+                        <img class="card-img-circle" src="images/square-2.jpg">
                         <h3>Summer getaway</h3>
                         <p>Nunc dignissim in ante sed dapibus. Aenean sit amet aliquet dolor, at auctor erat. Aliquam ornare faucibus leo, vel euismod nisi porta non. Donec at arcu eget enim bibendum facilisis. Etiam urna elit, blandit ut libero placerat, iaculis aliqu</p>
                     </a>
                 </li>
                 <li class="col-xs-6 col-md-3 col-grid">
                     <a href="#0" class="card-center card-link">
-                        <img class="card-img-circle flex-img" src="images/round.jpg">
+                        <img class="card-img-circle" src="images/square-3.jpg">
                         <h3>Festivals</h3>
                         <p>Aliquam ornare faucibus leo, vel euismod nisi porta non. Donec at arcu eget enim bibendum facilisis. Etiam urna elit, blandit ut libero placerat, iaculis aliqu.</p>
                     </a>
                 </li>
                 <li class="col-xs-6 col-md-3 col-grid">
                     <a href="#0" class="card-center card-link">
-                        <img class="card-img-circle flex-img" src="images/round.jpg">
+                        <img class="card-img-circle" src="images/square-5.jpg">
                         <h3>Special offer</h3>
                         <p>Aliquam ornare faucibus leo, vel euismod nisi porta non. Donec at arcu eget enim bibendum facilisis.</p>
                     </a>
                 </li>
             </ol>
+        </section>
+
+        <section class="container example-nested">
+            <h2 id="grid-nested">Nested grid <a href="#grid-nested">&#35;</a></h2>
+            <div class="grid">
+                <div class="col-sm-6 col-grid">
+                    <img class="flex-img" src="images/1.jpg">
+                    <h3>Amazing</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc et sagittis dui. Maecenas rhoncus justo aliquam urna finibus tincidunt et ut mauris.</p>
+                    <p>Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem at dolor. Maecenas mattis. Sed convallis tristique sem. Proin ut ligula vel nunc egestas porttitor. Morbi lectus risus, iaculis vel, suscipit quis, luctus non, massa. Fusce ac turpis quis ligula lacinia aliquet. Mauris ipsum. Nulla metus metus, ullamcorper vel, tincidunt sed, euismod in, nibh.</p>
+                    <p>Quisque volutpat condimentum velit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nam nec ante. Sed lacinia, urna non tincidunt mattis, tortor neque adipiscing diam, a cursus ipsum ante quis turpis. Nulla facilisi. Ut fringilla. Suspendisse potenti. Nunc feugiat mi a tellus consequat imperdiet. Vestibulum sapien. Proin quam. Etiam ultrices. Suspendisse in justo eu magna luctus suscipit.</p>
+                    <div class="flex-footer">
+                        <a href="#0">read more</a>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-grid">
+                    <div class="grid">
+                        <div class="col-6 col-grid">
+                            <img class="flex-img" src="images/2.jpg">
+                            <h3>Festivals</h3>
+                            <p>Aliquam ornare faucibus leo, vel euismod nisi porta non. Donec at arcu eget enim bibendum facilisis. Etiam urna elit, blandit ut libero placerat, iaculis aliqu.</p>
+                            <div class="flex-footer">
+                                <a href="#0">read more</a>
+                            </div>
+                        </div>
+                        <div class="col-6 col-grid">
+                            <img class="flex-img" src="images/3.jpg">
+                            <h3>Special offer</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc et sagittis dui. Maecenas rhoncus justo aliquam urna finibus tincidunt et ut mauris.</p>
+                            <div class="flex-footer">
+                                <a href="#0">read more</a>
+                            </div>
+                        </div>
+                        <div class="col-6 col-grid">
+                            <img class="flex-img" src="images/4.jpg">
+                            <h3>Lovely stuff</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc et sagittis dui. Maecenas rhoncus justo aliquam urna finibus tincidunt et ut mauris.</p>
+                            <div class="flex-footer">
+                                <a href="#0">read more</a>
+                            </div>
+                        </div>
+                        <div class="col-6 col-grid">
+                            <img class="flex-img" src="images/5.jpg">
+                            <h3>Amazing</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc et sagittis dui. Maecenas rhoncus justo aliquam urna finibus tincidunt et ut mauris.</p>
+                            <div class="flex-footer">
+                                <a href="#0">read more</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container example-nested-cards">
+            <h2 id="grid-nested-cards">Nested grid with cards<a href="#grid-nested-cards">&#35;</a></h2>
+            <div class="grid">
+                <div class="col-md-6 col-grid">
+                    <div class="card-body">
+                        <img class="flex-img" src="images/5.jpg">
+                        <h3>Amazing</h3>
+                        <p>Quisque volutpat condimentum velit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nam nec ante. Sed lacinia, urna non tincidunt mattis, tortor neque adipiscing diam, a cursus ipsum ante quis turpis. Nulla facilisi. Ut fringilla. Suspendisse potenti. Nunc feugiat mi a tellus consequat imperdiet. Vestibulum sapien. Proin quam. Etiam ultrices. Suspendisse in justo eu magna luctus suscipit. </p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc et sagittis dui. Maecenas rhoncus justo aliquam urna finibus tincidunt et ut mauris.</p>
+                    </div>
+                    <a href="#0" class="card-footer-link">read more</a>
+                </div>
+                <div class="col-md-6 col-grid">
+                    <div class="grid">
+                        <div class="col-xs-6 col-xlg-12 col-grid">
+                            <div class="card-body">
+                                <img class="flex-img" src="images/1.jpg">
+                                <h3>Amazing</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc et sagittis dui. Maecenas rhoncus justo aliquam urna finibus tincidunt et ut mauris.</p>
+                            </div>
+                            <a href="#0" class="card-footer-link">read more</a>
+                        </div>
+                        <div class="col-xs-6 col-xlg-4 col-grid">
+                            <div class="card-body">
+                                <img class="flex-img" src="images/2.jpg">
+                                <h3>Amazing</h3>
+                                <p>Donec at arcu eget enim bibendum facilisis. Etiam urna elit, blandit ut libero placerat, iaculis aliquam erat.</p>
+                            </div>
+                            <a href="#0" class="card-footer-link">read more</a>
+                        </div>
+                        <div class="col-xs-6 col-xlg-4 col-grid">
+                            <div class="card-body">
+                                <img class="flex-img" src="images/3.jpg">
+                                <h3>Amazing</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc et sagittis dui. Maecenas rhoncus justo aliquam urna finibus tincidunt et ut mauris.</p>
+                            </div>
+                            <a href="#0" class="card-footer-link">read more</a>
+                        </div>
+                        <div class="col-xs-6 col-xlg-4 col-grid">
+                            <div class="card-body">
+                                <img class="flex-img" src="images/4.jpg">
+                                <h3>Amazing</h3>
+                                <p>Nunc dignissim in ante sed dapibus. Aenean sit amet aliquet dolor, at auctor erat. Aliquam ornare faucibus leo, vel euismod nisi porta non.</p>
+                            </div>
+                            <a href="#0" class="card-footer-link">read more</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
 

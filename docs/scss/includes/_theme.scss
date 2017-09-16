@@ -10,12 +10,17 @@
 
     .grid {
         min-height: $grid-min-height;
-        margin-bottom: 2em;
+        margin-bottom: 4em; // increase bottom argin for presentation purposes
         background-color: $colour-grid-bg;
 
         [class^="#{$reflex-prefix}col-"] {
             background-color: $colour-col;
             box-shadow: inset 0 0 0 $reflex-grid-spacing $colour-col-padding;
+        }
+
+        // when a grid is a child of a grid, return bottom margin to original value
+        .grid {
+            margin-bottom: -$reflex-grid-spacing;
         }
     }
 
@@ -51,56 +56,13 @@
     }
 }
 
-.example-3-column {
-    .logo {
-        padding: 1em .5em 0;
-    }
+.examples {
+    .grid {
+        margin-bottom: 4em;
 
-    .col-feature {
-        background-color: $colour-col;
-    }
-
-    .col-body {
-        background-color: $colour-white;
-    }
-
-    .flex-img {
-        margin-bottom: 2em;
-    }
-
-    .flex-footer {
-        padding-bottom: $reflex-grid-spacing;
-        border-bottom: $card-border;
-    }
-
-    .nav {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        text-align: center;
-
-        li {
-            margin-bottom: .5em;
-
-            a {
-                display: block;
-                padding: .5em 1em;
-                background-color: $colour-col-padding;
-                text-decoration: none;
-
-                &.active {
-                    background-color: $colour-white;
-
-                    &:hover {
-                        background-color: $colour-white;
-                    }
-                }
-
-                &:hover {
-                    background-color: lighten($colour-col-padding, 10%);
-                }
-            }
+        // when a grid is a child of a grid, return bottom margin to original value
+        .grid {
+            margin-bottom: -$reflex-grid-spacing;
         }
     }
 }
-

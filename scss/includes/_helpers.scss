@@ -222,13 +222,6 @@
 .#{$reflex-prefix}grid-bleed {
     [class*="#{$reflex-prefix}col-"] {
         padding: 0;
-
-        @if $legacy-support == true {
-            > * {
-                *margin-left: 0; // ie7 css hack
-                *margin-right: 0; // ie7 css hack
-            }
-        }
     }
 }
 
@@ -245,36 +238,16 @@
 // Removes internal padding from all columns in a grid
 .#{$reflex-prefix}col-bleed {
     padding: 0;
-
-    @if $legacy-support == true {
-        > * {
-            *margin-left: 0; // ie7 css hack
-            *margin-right: 0; // ie7 css hack
-        }
-    }
 }
 
 // Removes horizontal padding from all columns in a grid
 .#{$reflex-prefix}col-bleed-x {
     padding: $reflex-grid-spacing 0;
-
-    @if $legacy-support == true {
-        > * {
-            *margin-left: 0; // ie7 css hack
-            *margin-right: 0; // ie7 css hack
-        }
-    }
 }
 
 // Removes vertical padding from all columns in a grid
 .#{$reflex-prefix}col-bleed-y {
     padding: 0 $reflex-grid-spacing;
-
-    @if $legacy-support == true {
-        // ie7 does not support box-sizing: border-box so we need to pad the
-        // columns by adding margins to all child elements
-        *padding: 0;
-    }
 }
 
 // --------------------------------------------------
@@ -287,7 +260,7 @@
     max-width: 100%;
     height: auto;
     width: 100%;
-    *width: auto; // ie7 css hack
+    *width: auto;
 }
 
 .#{$reflex-prefix}flex-footer {
