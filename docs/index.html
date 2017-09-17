@@ -66,7 +66,7 @@
                 <p>For all other browsers, Reflex falls back to an <code>inline-block</code> grid for browsers that do not support flexbox. We use some reliable css hacks to help the <code>inline-block</code> grid work on older browsers. It's important to note that some of the features of flexbox do not have an equivalent in <code>inline-block</code> so not all of the layout modifier classes will work in the fallback, but most importantly <em>your grid will remain intact.</em></p>
                 <p class="alert">If you want to use the grid with breakpoints in ie8 you will need to use <a href="https://github.com/scottjehl/Respond" target="_blank">respond.js</a> which enables media query support in those browsers via JavaScript</p>
                 <p class="alert">If you wish to use html5 elements such as <code>section</code> in older browsers such as ie8 and 9, you will need to use <a href="https://github.com/afarkas/html5shiv" target="_blank">html5Shiv</a></p>
-                <p class="alert">IE10 and IE11 have a flexbox rendering bug which means that unless the height of the parent element is set with an explicit value, flex items will only stretch to be as large as their largest sibling. The grid will still work in these browsers, but it won't entirely fill the height of it's container unless a <code>height</code> is explicitly set on the grid. This is unlikely to be a problem but is recorded here for sake of completeness. There's <a href="https://philipwalton.com/articles/normalizing-cross-browser-flexbox-bugs/">further reading</a> to be had on the subject if you're interested in solving this issue in these browsers.</p>
+                <p class="alert">ie10 and ie11 have a flexbox rendering bug which means that unless the height of the grid is set with an unit value, flex items will only stretch to be as large as their largest sibling. The grid will still work in these browsers, but it won't entirely fill the height of it's container unless a <code>height</code> in units is specified for the grid.<br><br>Please note that <code>min-height</code> and percentage heights will not work. The height must be set with <code>px</code> <code>em</code> or <code>vh</code>. There's <a href="https://philipwalton.com/articles/normalizing-cross-browser-flexbox-bugs/">further reading</a> to be had on the bug itself if you wish to understand it further. You can use a <a href="https://philipnewcomer.net/2014/04/target-internet-explorer-10-11-css/">CSS hack for ie10 and ie11</a> to set a unit height and solve these issues in your grid implementation.</p>
             </section>
 
             <section class="container">
@@ -90,7 +90,7 @@
                 </p>
                 <p>In a nutshell, any direct child elements of a flexbox container are treated as flex items and can be layed out with flexbox css properties on either axis.</p>
                 <p>By default any <code>grid</code> element is set to <code>flex-direction: row</code> and the main axis therefore follows the horizontal direction.</p>
-                <p>You can optionally set any <code>col-x</code> element to operate as a flex container using the class <code>col-grid</code> which sets <code>flex-direction: column</code> and the main axis therefore follows the vertical direction.</p>
+                <p>You can optionally set any <code>col-x</code> element to operate as a flex container using the class <code>col-grid</code> which sets <code>flex-direction: column</code> and the main axis therefore follows the vertical direction. There's more information on this in the <a href="#flex-columns">Using flexbox in columns</a> section.</p>
             </section>
 
             <section class="container">
@@ -126,7 +126,7 @@
                 <h4>column child</h4>
                 <p>examples: <code>col-10</code> <code>col-sm-6</code> <code>col-auto</code></p>
                 <p>
-                    This is a child element of <code>.grid</code> and behaves as a flex item. A <code>.col</code> itself can also be a flexbox container by using the modifier class <code>.col-grid</code>.
+                    This is a child element of <code>.grid</code> and behaves as a flex item.
                 </p>
 
                 <h4>grid modifier</h4>
@@ -521,7 +521,7 @@
                         <p>First appear years night there the in them rule that bring fly gathered there is place good.</p>
                     </div>
                     <div class="col-4 align-self-stretch">
-                        <p>stretch</p>
+                        <p>.align-self-stretch</p>
                     </div>
                     <div class="col-4">
                         <p>First appear years night there the in them rule that bring fly gathered there is place good Created rule image night firmament.</p>
@@ -536,7 +536,7 @@
                         <p>First appear years night there the in them rule that bring fly gathered there is place good.</p>
                     </div>
                     <div class="col-4 align-self-start">
-                        <p>start</p>
+                        <p>.align-self-start</p>
                     </div>
                     <div class="col-4">
                         <p>First appear years night there the in them rule that bring fly gathered there is place good Created rule image night firmament.</p>
@@ -551,7 +551,7 @@
                         <p>First appear years night there the in them rule that bring fly gathered there is place good.</p>
                     </div>
                     <div class="col-4 align-self-end">
-                        <p>end</p>
+                        <p>align-self-end</p>
                     </div>
                     <div class="col-4">
                         <p>First appear years night there the in them rule that bring fly gathered there is place good Created rule image night firmament.</p>
@@ -566,7 +566,7 @@
                         <p>First appear years night there the in them rule that bring fly gathered there is place good.</p>
                     </div>
                     <div class="col-4 align-self-center">
-                        <p>center</p>
+                        <p>align-self-center</p>
                     </div>
                     <div class="col-4">
                         <p>First appear years night there the in them rule that bring fly gathered there is place good Created rule image night firmament.</p>
@@ -603,7 +603,7 @@
                 </div>
 
                 <h4 id="align-content-start">.align-content-start <a href="#align-content-start">&#35;</a></h4>
-                <p>When applied to <code>grid</code> or <code>col-x</code> sets <code>align-content: flex-start</code></p>
+                <p>When applied to <code>grid</code> sets <code>align-content: flex-start</code></p>
                 <div class="grid align-content-start">
                     <div class="col-4">
                         <p>First appear</p>
@@ -626,7 +626,7 @@
                 </div>
 
                 <h4 id="align-content-end">.align-content-end <a href="#align-content-end">&#35;</a></h4>
-                <p>When applied to <code>grid</code> or <code>col-x</code> sets <code>align-content: flex-end</code></p>
+                <p>When applied to <code>grid</code> sets <code>align-content: flex-end</code></p>
                 <div class="grid align-content-end">
                     <div class="col-4">
                         <p>First appear</p>
@@ -649,7 +649,7 @@
                 </div>
 
                 <h4 id="align-content-center">.align-content-center <a href="#align-content-center">&#35;</a></h4>
-                <p>When applied to <code>grid</code> or <code>col-x</code> sets <code>align-content: center</code></p>
+                <p>When applied to <code>grid</code> sets <code>align-content: center</code></p>
                 <div class="grid align-content-center">
                     <div class="col-4">
                         <p>First appear</p>
@@ -672,7 +672,7 @@
                 </div>
 
                 <h4 id="align-content-space-between">.align-content-space-between <a href="#align-content-space-between">&#35;</a></h4>
-                <p>When applied to <code>grid</code> or <code>col-x</code> sets <code>align-content: space-between</code></p>
+                <p>When applied to <code>grid</code> sets <code>align-content: space-between</code></p>
                 <div class="grid align-content-space-between">
                     <div class="col-4">
                         <p>First appear</p>
@@ -695,7 +695,7 @@
                 </div>
 
                 <h4 id="align-content-space-around">.align-content-space-around <a href="#align-content-space-around">&#35;</a></h4>
-                <p>When applied to <code>grid</code> or <code>col-x</code> sets <code>align-content: space-around</code></p>
+                <p>When applied to <code>grid</code> sets <code>align-content: space-around</code></p>
                 <div class="grid align-content-space-around">
                     <div class="col-4">
                         <p>First appear</p>
@@ -735,7 +735,7 @@
                 </div>
 
                 <h4 id="justify-end">.justify-end <a href="#justify-end">&#35;</a></h4>
-                <p>When applied to <code>grid</code> or <code>col-x</code> sets <code>justify-content: flex-end</code></p>
+                <p>When applied to <code>grid</code> sets <code>justify-content: flex-end</code></p>
 
                 <div class="grid justify-end">
                     <div class="col-4">
@@ -747,7 +747,7 @@
                 </div>
 
                 <h4 id="justify-center">.justify-center <a href="#justify-center">&#35;</a></h4>
-                <p>When applied to <code>grid</code> or <code>col-x</code> sets <code>justify-content: center</code></p>
+                <p>When applied to <code>grid</code> sets <code>justify-content: center</code></p>
 
                 <div class="grid justify-center">
                     <div class="col-4">
@@ -759,7 +759,7 @@
                 </div>
 
                 <h4 id="justify-space-between">.justify-space-between <a href="#justify-space-between">&#35;</a></h4>
-                <p>When applied to <code>grid</code> or <code>col-x</code> sets <code>justify-content: space-between</code></p>
+                <p>When applied to <code>grid</code> sets <code>justify-content: space-between</code></p>
 
                 <div class="grid justify-space-between">
                     <div class="col-3">
@@ -780,7 +780,7 @@
                 </div>
 
                 <h4 id="justify-space-around">.justify-space-around <a href="#justify-space-around">&#35;</a></h4>
-                <p>When applied to <code>grid</code> or <code>col-x</code> sets <code>justify-content: space-around</code></p>
+                <p>When applied to <code>grid</code> sets <code>justify-content: space-around</code></p>
 
                 <div class="grid justify-space-around">
                     <div class="col-3">
@@ -827,7 +827,7 @@
                 </div>
 
                 <h4 id="direction-row-reverse">.direction-row-reverse <a href="#direction-row-reverse">&#35;</a></h4>
-                <p>When applied to <code>grid</code> or <code>col-x</code> sets <code>flex-direction: row-reverse</code></p>
+                <p>When applied to <code>grid</code> sets <code>flex-direction: row-reverse</code></p>
 
                 <div class="grid direction-row-reverse">
                     <div class="col-4">
@@ -848,7 +848,7 @@
                 </div>
 
                 <h4 id="direction-column">.direction-column <a href="#direction-column">&#35;</a></h4>
-                <p>When applied to <code>grid</code> or <code>col-x</code> sets <code>flex-direction: column</code></p>
+                <p>When applied to <code>grid</code> sets <code>flex-direction: column</code></p>
 
                 <div class="grid direction-column">
                     <div class="col-9">
@@ -863,7 +863,7 @@
                 </div>
 
                 <h4 id="direction-column-reverse">.direction-column-reverse <a href="#direction-column-reverse">&#35;</a></h4>
-                <p>When applied to <code>grid</code> or <code>col-x</code> sets <code>flex-direction: column-reverse</code></p>
+                <p>When applied to <code>grid</code> sets <code>flex-direction: column-reverse</code></p>
 
                 <div class="grid direction-column-reverse">
                     <div class="col-9">
@@ -971,7 +971,7 @@
 
             <section class="container">
                 <h2 id="visibility-helpers">Visibility helpers <a href="#visibility-helpers">&#35;</a></h2>
-                <p>You can use some generic visibility helpers that can be applied to any element, not just grid elements. resize the viewport to see them in action. The breakpoints can be changed if you're building the css via less or sass/SCSS.</p>
+                <p>You can use some generic visibility helpers that can be applied to any element, not just grid elements. resize the viewport to see them in action. The breakpoints can be changed if you're building the css yourself by building the SCSS files.</p>
 
                 <div class="grid">
                     <div class="col-auto hidden-xxs">
@@ -994,7 +994,7 @@
 
             <section class="container">
                 <h2 id="flex-columns">Using flexbox in columns <a href="#flex-columns">&#35;</a></h2>
-                <p>By default, a <code>.col-x</code> element behaves like a good old fashioned block element but it is possible to modify it to a flexbox element which <code>flex-direction: column;</code> by adding the <code>.col-grid</code> class to any <code>col-x</code> element. This will allow you to take advantage of flexbox layout and (for example) create a footer that is always at the bottom of the column.</p>
+                <p>By default, a <code>.col-x</code> element behaves like a good old fashioned block element but it is possible to modify it to perform as a flexbox element with <code>flex-direction: column</code> by adding the <code>.col-grid</code> class to any <code>col-x</code> element. This will allow you to take advantage of flexbox layout and (for example) create a footer that is always at the bottom of the column.</p>
                 <p class="alert">When using flexbox for column layout, be aware that flex items cannot be floated and their margins do not collapse. Here's the relevant information from the flexbox spec:</p>
                 <blockquote>
                     A flex container establishes a new flex formatting context for its contents. This is the same as establishing a block formatting context, except that flex layout is used instead of block layout. For example, floats do not intrude into the flex container, and the flex container’s margins do not collapse with the margins of its contents.

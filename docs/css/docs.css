@@ -996,13 +996,13 @@
 }
 
 .align-content-space-between {
-  -ms-flex-line-pack: space-between;
+  -ms-flex-line-pack: justify;
   -webkit-align-content: space-between;
   align-content: space-between;
 }
 
 .align-content-space-around {
-  -ms-flex-line-pack: space-around;
+  -ms-flex-line-pack: distribute;
   -webkit-align-content: space-around;
   align-content: space-around;
 }
@@ -1114,7 +1114,7 @@
 }
 
 .justify-space-around {
-  -ms-flex-pack: justify;
+  -ms-flex-pack: distribute;
   -webkit-justify-content: space-around;
   justify-content: space-around;
 }
@@ -1459,7 +1459,7 @@ svg:not(:root) {
 
 html {
   font-size: 16px;
-  font-family: "Lora", serif;
+  font-family: "Lora", Georgia, serif;
   -ms-text-size-adjust: 100%;
   -ms-overflow-style: scrollbar;
   -webkit-text-size-adjust: 100%;
@@ -1468,7 +1468,7 @@ html {
 body {
   margin: 0;
   padding: 2em 0 8em;
-  font-family: "Lora", serif;
+  font-family: "Lora", Georgia, serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 1.4;
@@ -1668,6 +1668,12 @@ a:focus {
   background-color: #003e50;
 }
 
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .documentation .grid {
+    height: 600px;
+  }
+}
+
 .documentation .grid [class^="col-"] {
   background-color: #83e3ff;
   box-shadow: inset 0 0 0 15px #9ce9ff;
@@ -1798,7 +1804,6 @@ a:focus {
 }
 
 .card-link {
-  display: block;
   color: #333;
   text-decoration: none;
   transition: box-shadow .4s, border-color .2s;
@@ -1918,4 +1923,126 @@ a:focus {
 .example-nested .flex-img,
 .example-nested-cards .flex-img {
   margin-bottom: 1em;
+}
+
+.example-tiles a.col-center {
+  display: block;
+  overflow: hidden;
+  min-height: 250px;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -ms-flex-direction: column;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -ms-flex: 1 1 auto;
+  -webkit-flex: 1 1 auto;
+  flex: 1 1 auto;
+  padding: 30px;
+  text-align: center;
+  text-decoration: none;
+  color: #333;
+  background-color: #f9f9f9;
+}
+
+.example-tiles a.col-center h3,
+.example-tiles a.col-center p {
+  margin: 0;
+  transform: translateY(16px);
+  transition: transform .2s ease-out .15s;
+}
+
+.example-tiles a.col-center .button {
+  opacity: 0;
+  padding: .5em 1em;
+  color: #fff;
+  background-color: #003e50;
+  border: 1px solid #333;
+  border-radius: 5px;
+  transform: translateY(16px);
+  transition: transform .2s ease-out .1s, opacity .3s ease-out .1s;
+}
+
+.example-tiles a.col-center:hover, .example-tiles a.col-center:focus {
+  outline: none;
+}
+
+.example-tiles a.col-center:hover h3,
+.example-tiles a.col-center:hover p, .example-tiles a.col-center:focus h3,
+.example-tiles a.col-center:focus p {
+  transform: translateY(-8px);
+}
+
+.example-tiles a.col-center:hover .button, .example-tiles a.col-center:focus .button {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.example-tiles [class^="col-"]:nth-child(1) {
+  background-color: #9ce9ff;
+}
+
+.example-tiles [class^="col-"]:nth-child(2) {
+  background-color: #83e3ff;
+}
+
+.example-tiles [class^="col-"]:nth-child(3) {
+  background-color: #69deff;
+}
+
+.example-tiles [class^="col-"]:nth-child(4) {
+  background-color: #50d8ff;
+}
+
+.example-tiles [class^="col-"]:nth-child(5) {
+  background-color: #36d2ff;
+}
+
+.example-image-display .grid {
+  height: 100vh;
+  background-color: #83e3ff;
+  background-image: url(../images/large.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+.example-image-display .control {
+  font-family: monospace, monospace;
+  font-weight: bold;
+}
+
+.example-image-display .info {
+  color: #fff;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0, rgba(0, 0, 0, 0.15) 50%, transparent);
+}
+
+.example-image-display .aside {
+  float: right;
+}
+
+.example-image-display .button {
+  display: inline-block;
+  margin: 0 7.5px 7.5px 0;
+  padding: .5em 1em;
+  text-decoration: none;
+  color: #333;
+  background-color: rgba(255, 255, 255, 0.85);
+  border-radius: 5px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+  transition: background-color .2s ease-out, box-shadow .2s ease-out;
+}
+
+.example-image-display .button:hover, .example-image-display .button:focus {
+  background-color: #fff;
+}
+
+.example-image-display .button:focus {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08), 0 0 0 2px #003e50;
 }

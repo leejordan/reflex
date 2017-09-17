@@ -10,6 +10,14 @@
 
     .grid {
         min-height: $grid-min-height;
+
+        // css hack to target ie10 and ie11 to set an explicit height for the grid
+        // The bug described: https://philipwalton.com/articles/normalizing-cross-browser-flexbox-bugs/
+        // The CSS hack used: https://philipnewcomer.net/2014/04/target-internet-explorer-10-11-css/
+        @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+            height: 600px;
+        }
+
         margin-bottom: 4em; // increase bottom argin for presentation purposes
         background-color: $colour-grid-bg;
 

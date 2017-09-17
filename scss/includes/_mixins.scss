@@ -216,6 +216,10 @@
         -ms-flex-line-pack: start;
     } @else if $align == 'flex-end' {
         -ms-flex-line-pack: end;
+    } @else if $align == 'space-between' {
+        -ms-flex-line-pack: justify;
+    } @else if $align == 'space-around' {
+        -ms-flex-line-pack: distribute;
     } @else {
         -ms-flex-line-pack: $align;
     }
@@ -254,7 +258,7 @@
 }
 
 @mixin justify-content-space-around() {
-    -ms-flex-pack: justify;
+    -ms-flex-pack: distribute;
     -webkit-justify-content: space-around;
     justify-content: space-around;
 }

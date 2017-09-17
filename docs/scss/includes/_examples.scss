@@ -1,0 +1,204 @@
+.example-3-column {
+    .logo {
+        padding: 1em .5em 0;
+    }
+
+    .col-feature {
+        background-color: $colour-col;
+    }
+
+    .col-body {
+        background-color: $colour-white;
+    }
+
+    .flex-img {
+        margin-bottom: 2em;
+    }
+
+    .flex-footer {
+        padding-bottom: $reflex-grid-spacing;
+        border-bottom: $card-border;
+    }
+
+    .nav {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+
+        li {
+            margin-bottom: .5em;
+
+            a {
+                display: block;
+                padding: .5em 1em;
+                background-color: $colour-col-padding;
+                text-decoration: none;
+
+                &.active {
+                    background-color: $colour-white;
+
+                    &:hover {
+                        background-color: $colour-white;
+                    }
+                }
+
+                &:hover {
+                    background-color: lighten($colour-col-padding, 10%);
+                }
+            }
+        }
+    }
+}
+
+.example-shop {
+    .flex-img {
+        margin-bottom: 1em;
+    }
+
+    .flex-footer {
+        a {
+            float: right;
+        }
+    }
+}
+
+.example-blog {
+    .img-shape {
+        border-radius: 50%;
+        margin-left: $reflex-grid-spacing;
+        float: right;
+        -webkit-shape-outside: circle();
+        shape-outside: circle();
+    }
+
+    .img-shape-sm {
+        max-width: 40%;
+    }
+}
+
+.example-nested,
+.example-nested-cards {
+    .flex-img {
+        margin-bottom: 1em;
+    }
+}
+
+.example-tiles {
+    a.col-center {
+        display: block;
+        overflow: hidden;
+        min-height: 250px;
+        @include display-flex();
+        @include flex-direction(column);
+        @include align-items(center);
+        @include justify-content-center();
+        @include flex(1, 1, auto);
+        padding: ($reflex-grid-spacing * 2);
+        text-align: center;
+        text-decoration: none;
+        color: $colour-text;
+        background-color: $card-bg;
+
+        h3,
+        p {
+            margin: 0;
+            transform: translateY(16px);
+            transition: transform .2s ease-out .15s;
+        }
+
+        .button {
+            opacity: 0;
+            padding: .5em 1em;
+            color: $colour-white;
+            background-color: $colour-grid-bg;
+            border: 1px solid $colour-text;
+            border-radius: $card-border-radius;
+            transform: translateY(16px);
+            transition: transform .2s ease-out .1s, opacity .3s ease-out .1s;
+        }
+
+        &:hover,
+        &:focus {
+            outline: none;
+
+            h3,
+            p {
+                transform: translateY(-8px);
+            }
+
+            .button {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    }
+
+    [class^="#{$reflex-prefix}col-"] {
+        &:nth-child(1) {
+            background-color: $colour-col-padding;
+        }
+
+        &:nth-child(2) {
+            background-color: darken($colour-col-padding, 5%);
+        }
+
+        &:nth-child(3) {
+            background-color: darken($colour-col-padding, 10%);
+        }
+
+        &:nth-child(4) {
+            background-color: darken($colour-col-padding, 15%);
+        }
+
+        &:nth-child(5) {
+            background-color: darken($colour-col-padding, 20%);
+        }
+    }
+}
+.example-image-display {
+    .grid {
+        height: 100vh;
+        background-color: $colour-col;
+        background-image: url(../images/large.jpg);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+    }
+
+    .control {
+        font-family: monospace, monospace;
+        font-weight: bold;
+    }
+
+    .info {
+        color: $colour-white;
+        background: linear-gradient(0deg,rgba(0,0,0,.5) 0,rgba(0,0,0,.15) 50%,transparent);
+    }
+
+    .aside {
+        float: right;
+    }
+
+    .button {
+        display: inline-block;
+        margin: 0 ($reflex-grid-spacing / 2) ($reflex-grid-spacing / 2) 0;
+        padding: .5em 1em;
+        text-decoration: none;
+        color: $colour-text;
+        background-color: rgba($colour-white, .85);
+        border-radius: $card-border-radius;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, .08);
+        transition: background-color .2s ease-out, box-shadow .2s ease-out;
+
+        &:hover,
+        &:focus {
+            background-color: $colour-white;
+        }
+
+        &:focus {
+            box-shadow: 0 1px 2px rgba(0, 0, 0, .08), 0 0 0 2px $colour-grid-bg;
+        }
+    }
+}
+
