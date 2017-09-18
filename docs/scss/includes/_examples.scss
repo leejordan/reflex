@@ -86,7 +86,6 @@
 
 .example-tiles {
     a.col-center {
-        display: block;
         overflow: hidden;
         min-height: 250px;
         @include display-flex();
@@ -108,6 +107,7 @@
         }
 
         .button {
+            display: inline-block;
             opacity: 0;
             padding: .5em 1em;
             color: $colour-white;
@@ -156,8 +156,10 @@
         }
     }
 }
+
 .example-image-display {
     .grid {
+        min-height: 600px;
         height: 100vh;
         background-color: $colour-col;
         background-image: url(../images/large.jpg);
@@ -176,28 +178,33 @@
         background: linear-gradient(0deg,rgba(0,0,0,.5) 0,rgba(0,0,0,.15) 50%,transparent);
     }
 
-    .aside {
-        float: right;
-    }
-
     .button {
         display: inline-block;
         margin: 0 ($reflex-grid-spacing / 2) ($reflex-grid-spacing / 2) 0;
         padding: .5em 1em;
         text-decoration: none;
         color: $colour-text;
-        background-color: rgba($colour-white, .85);
+        background-color: $colour-white;
         border-radius: $card-border-radius;
+        opacity: .8;
         box-shadow: 0 1px 2px rgba(0, 0, 0, .08);
-        transition: background-color .2s ease-out, box-shadow .2s ease-out;
+        transition: opacity .2s ease-out, box-shadow .2s ease-out;
 
         &:hover,
         &:focus {
-            background-color: $colour-white;
+            opacity: 1;
         }
 
         &:focus {
             box-shadow: 0 1px 2px rgba(0, 0, 0, .08), 0 0 0 2px $colour-grid-bg;
+        }
+    }
+
+    .aside {
+        float: right;
+
+        .button {
+            margin: 0 0 ($reflex-grid-spacing / 2) ($reflex-grid-spacing / 2);
         }
     }
 }

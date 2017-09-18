@@ -2,12 +2,12 @@
     vertical-align: bottom;
 }
 
-.documentation {
-    .alert {
-        padding: 1em;
-        background-color: $colour-alert;
-    }
+.alert {
+    padding: 1em;
+    background-color: $colour-alert;
+}
 
+.documentation {
     .grid {
         min-height: $grid-min-height;
 

@@ -53,18 +53,9 @@
     position: relative;
     @include setup-whitespace();
 
-    * {
-        @include box-sizing(border-box);
-    }
-
-    *::before,
-    *::after {
-        @include box-sizing(border-box);
-        @include reset-whitespace();
-    }
-
     &::before,
     &::after {
+        @include box-sizing(border-box);
         @include reset-whitespace();
     }
 
@@ -77,11 +68,18 @@
 // --------------------------------------------------
 
 [class^="#{$reflex-prefix}col-"] {
+    @include box-sizing(border-box);
     @include reset-whitespace();
     position: relative;
     width: 100%;
     vertical-align: top;
     padding: $reflex-grid-spacing;
+
+    &::before,
+    &::after {
+        @include box-sizing(border-box);
+        @include reset-whitespace();
+    }
 
     // handle grids nested in columns
     .#{$reflex-prefix}grid {

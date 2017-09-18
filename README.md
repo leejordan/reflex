@@ -48,6 +48,15 @@ You could clone this repo which would allow you to modify the variables and buil
 
 If you're familiar with npm you can use `npm install reflex-grid` to have a look around, or add it as a dependency to your node project.
 
+## Version 2 information
+
+This is version 2 of reflex grid and is not compatible with version 1. Many things have changed in version 2 which will need addressing if you want to update.
+
+- All class names have dropped the `grid__` and `grid--` prefixes but are otherwise unchanged
+- Columns are no longer flexbox by default. They can be converted to flexbox containers with the `col-grid` class
+- There is far better support for older browsers, particularly the ie10 implementation of flexbox
+- Added container classes
+- Added better support for "cards" as well as some example code
 
 
 

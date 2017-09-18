@@ -9,17 +9,6 @@
     border-top-right-radius: $card-border-radius;
 }
 
-.card-header {
-    overflow: hidden;
-    padding: $reflex-grid-spacing;
-    background-color: $card-bg;
-    border-top: $card-border;
-    border-left: $card-border;
-    border-right: $card-border;
-    border-top-left-radius: $card-border-radius;
-    border-top-right-radius: $card-border-radius;
-}
-
 .card-body {
     @include flex(1, 1, auto);
     overflow: hidden;
