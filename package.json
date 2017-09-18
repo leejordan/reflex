@@ -1,6 +1,6 @@
 {
   "name": "reflex-grid",
-  "version": "1.5.0",
+  "version": "2.0.0",
   "description": "responsive flexbox grid with inline-block legacy support",
   "main": "css/reflex.css",
   "directories": {
@@ -27,16 +27,16 @@
   },
   "homepage": "http://leejordan.github.io/reflex/docs/",
   "scripts": {
-    "build": "lessc less/reflex.less css/reflex.css && lessc --clean-css=\"--s1 --advanced --compatibility=ie8\" less/reflex.less > css/reflex.min.css",
-    "build:docs": "lessc docs/less/docs.less > docs/css/docs.css",
-    "build:sass": "node-sass --precision 8 --output-style expanded --include-path scss scss/reflex.scss css/reflex-sass.css",
-    "watch": "watch 'npm run build' less -d -u",
-    "watch:docs": "watch 'npm run build:docs' docs/less -d -u"
+    "build": "npm run build:min && npm run build:max",
+    "build:min": "node-sass-chokidar --precision 8 --output-style compressed scss/reflex.scss css/reflex.min.css",
+    "build:max": "node-sass-chokidar --precision 8 --output-style expanded scss/reflex.scss css/reflex.css",
+    "watch": "node-sass-chokidar --watch --recursive --precision 8 --output-style expanded scss/reflex.scss css/reflex.css",
+    "build:docs": "node-sass-chokidar --precision 8 --output-style expanded docs/scss/docs.scss docs/css/docs.css",
+    "watch:docs": "node-sass-chokidar --watch --recursive --precision 8 --output-style expanded docs/scss/docs.scss docs/css/docs.css",
+    "start": "./node_modules/.bin/http-server ./docs -a localhost -c10"
   },
   "devDependencies": {
-    "less": "^2.5.3",
-    "less-plugin-clean-css": "^1.5.1",
-    "node-sass": "^3.13.0",
-    "watch": "^0.17.1"
+    "node-sass-chokidar": "^0.0.3",
+    "http-server": "^0.10.0"
   }
 }

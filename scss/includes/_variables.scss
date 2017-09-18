@@ -4,8 +4,8 @@
 
 // Prefix
 // -------------------------
-// You can optionally reflex-prefix reflex classes to avoid clashing with other css frameworks
-// e.g. setting $reflex-prefix as "reflex-" here would cause grid__col-sm-6 to become reflex-grid__col-sm-6
+// You can optionally namespace reflex classes to avoid clashing with other css frameworks
+// e.g. setting $reflex-prefix as "reflex-" here would cause col-sm-6 to become reflex-col-sm-6
 // Example: $reflex-prefix: reflex-;
 // By default this is an empty string
 $reflex-prefix: null !default;
@@ -26,11 +26,10 @@ $visibility-helpers: true !default;
 // Grid
 // -------------------------
 $reflex-columns: 12 !default; // number of columns
-$reflex-max-width: 100% !default; // max-width of grid
 
 // Breakpoints
 // -------------------------
-$reflex-xs: 480px !default;
+$reflex-xs: 576px !default;
 $reflex-sm: 768px !default;
 $reflex-md: 992px !default;
 $reflex-lg: 1200px !default;
@@ -44,9 +43,4 @@ $reflex-lg-max:     ($reflex-xlg - 1);
 
 // Spacing
 // -------------------------
-$reflex-grid-spacing:       1em 1em !default;
-$reflex-cell-spacing:       1em !default;
-
-$reflex-cell-spacing-sm:    ($reflex-cell-spacing / 2);
-$reflex-cell-spacing-md:    $reflex-cell-spacing;
-$reflex-cell-spacing-lg:    ($reflex-cell-spacing * 2);
+$reflex-grid-spacing:       15px !default;

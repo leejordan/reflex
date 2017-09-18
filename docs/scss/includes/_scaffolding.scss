@@ -1,0 +1,30 @@
+html {
+    font-size: $font-size-base;
+    font-family: $font-family-base;
+    -ms-text-size-adjust: 100%;
+    -ms-overflow-style: scrollbar;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 2em 0 8em;
+    font-family: $font-family-base;
+    font-size: $font-size-base;
+    font-weight: $font-weight-base;
+    line-height: $line-height-base;
+    color: $colour-text;
+    text-align: left;
+    background-color: $colour-body;
+    -webkit-overflow-scrolling: touch;
+}
+
+header {
+    margin-bottom: 5em;
+}
+
+section {
+    margin-top: 5em;
+    padding-top: 2.5em;
+    border-top: 3px solid $colour-col;
+}

@@ -1,0 +1,76 @@
+.logo {
+    vertical-align: bottom;
+}
+
+.alert {
+    padding: 1em;
+    background-color: $colour-alert;
+}
+
+.documentation {
+    .grid {
+        min-height: $grid-min-height;
+
+        // css hack to target ie10 and ie11 to set an explicit height for the grid
+        // The bug described: https://philipwalton.com/articles/normalizing-cross-browser-flexbox-bugs/
+        // The CSS hack used: https://philipnewcomer.net/2014/04/target-internet-explorer-10-11-css/
+        @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+            height: 600px;
+        }
+
+        margin-bottom: 4em; // increase bottom argin for presentation purposes
+        background-color: $colour-grid-bg;
+
+        [class^="#{$reflex-prefix}col-"] {
+            background-color: $colour-col;
+            box-shadow: inset 0 0 0 $reflex-grid-spacing $colour-col-padding;
+        }
+
+        // when a grid is a child of a grid, return bottom margin to original value
+        .grid {
+            margin-bottom: -$reflex-grid-spacing;
+        }
+    }
+
+    .grid-plain {
+        background-color: transparent;
+
+        [class^="#{$reflex-prefix}col-"] {
+            background-color: transparent;
+            box-shadow: none;
+        }
+    }
+
+    .grid-bleed {
+        [class^="#{$reflex-prefix}col-"] {
+            box-shadow: none !important;
+        }
+    }
+
+    .flex-footer {
+        background-color: $colour-col-footer;
+    }
+
+    .col-bleed {
+        box-shadow: none !important;
+    }
+
+    .col-bleed-x {
+        box-shadow: inset 0 $reflex-grid-spacing 0 0 $colour-col-padding, inset 0 -#{$reflex-grid-spacing} 0 0 $colour-col-padding !important;
+    }
+
+    .col-bleed-y {
+        box-shadow: inset $reflex-grid-spacing 0 0 0 $colour-col-padding, inset -#{$reflex-grid-spacing} 0 0 0 $colour-col-padding !important;
+    }
+}
+
+.examples {
+    .grid {
+        margin-bottom: 4em;
+
+        // when a grid is a child of a grid, return bottom margin to original value
+        .grid {
+            margin-bottom: -$reflex-grid-spacing;
+        }
+    }
+}

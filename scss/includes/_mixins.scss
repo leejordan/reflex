@@ -14,10 +14,7 @@
     @if $type == width and $index > 0 {
         .#{$reflex-prefix}#{$class}#{$index} {
             width: percentage(($index / $reflex-columns));
-            *width: percentage(($index / $reflex-columns)) - 0.1;
-
-            //for ie6 support you can uncomment this line but it will increase css filesize dramatically
-            //@include setupCols();
+            *width: percentage(($index / $reflex-columns)) - .1; // ie7 css hack
         }
     }
 }
@@ -30,24 +27,12 @@
     }
 }
 
-// defaults for all cols
-@mixin setupCols() {
-    @include display-flex();
-    @include flex-direction(column);
-    @include resetWhitespace();
-    position: relative;
-    width: 100%;
-    vertical-align: top;
-    padding: $reflex-grid-spacing;
-}
-
 // defaults for auto cols
-@mixin setupAutoCols() {
+@mixin setup-auto-cols() {
     @include flex(1, 0, 0px); // a unit on last value is required by IE10-11
 
     @if $legacy-support == true {
         width: auto !important;
-        max-width: 100%;
     }
 }
 
@@ -55,15 +40,15 @@
 // inline-block specific mixins
 // --------------------------------------------------
 
-@mixin setupWhitespace() {
+@mixin setup-whitespace() {
     @if $legacy-support == true {
-        letter-spacing: -0.31em !important;
+        letter-spacing: -.31em !important;
         *letter-spacing: normal !important;
-        word-spacing: -0.43em !important;
+        word-spacing: -.43em !important;
     }
 }
 
-@mixin resetWhitespace() {
+@mixin reset-whitespace() {
     @if $legacy-support == true {
         letter-spacing: normal;
         word-spacing: normal;
@@ -71,30 +56,23 @@
     }
 }
 
-@mixin resetTextAlign() {
+@mixin reset-text-align() {
     //
     // We want to reset any text-align properties set by the grid
     // (required for the inline-block fallback)
     // but we don't want to override any text-align properties
-    // set on the individual grid__col-x element
+    // set on the individual col-x element
     // or on any of it's child elements
-    //
-    // The "initial" property is not widely supported so a default of "left" and "start" is provided
-    // http://caniuse.com/#search=initial
     //
     // 1) set to left by default (works everywhere)
     // 2) set to start (respects right to left text)
-    // 3) set to initial
     //
     text-align: left;
     text-align: start;
-    text-align: initial;
     -moz-text-align-last: left;
     -moz-text-align-last: start;
-    -moz-text-align-last: initial;
     text-align-last: left;
     text-align-last: start;
-    text-align-last: initial;
 }
 
 // --------------------------------------------------
@@ -107,17 +85,17 @@
     order: $order;
 }
 
-@mixin make-grid--order-helpers() {
-    @include loop-grid--order-helpers($reflex-columns);
+@mixin make-order-helpers() {
+    @include loop-order-helpers($reflex-columns);
 }
 
-@mixin loop-grid--order-helpers($index, $breakpoint: null) {
+@mixin loop-order-helpers($index, $breakpoint: null) {
     @if $index >= 0 {
-        .#{$reflex-prefix}grid--order-#{$index}#{$breakpoint} {
+        .#{$reflex-prefix}order-#{$index}#{$breakpoint} {
             @include order($index);
         }
         // next iteration
-        @include loop-grid--order-helpers(($index - 1), $breakpoint);
+        @include loop-order-helpers(($index - 1), $breakpoint);
     }
 }
 
@@ -129,23 +107,10 @@
 // display
 // ---
 
-@mixin display-flex-only() {
+@mixin display-flex() {
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
-}
-
-@mixin display-flex() {
-    @if $legacy-support == true {
-        display: inline-block;
-    }
-
-    @include display-flex-only();
-
-    @if $legacy-support == true {
-        *display: inline;
-        zoom: 1;
-    }
 }
 
 //
@@ -153,7 +118,7 @@
 // ---
 
 @mixin flex($grow: 0, $shrink: 1, $basis: auto) {
-    @if $basis == 0px {
+    @if $basis == 0 {
         -ms-flex: $grow $shrink auto; //ie10 needs auto
     } @else {
         -ms-flex: $grow $shrink $basis;
@@ -251,6 +216,10 @@
         -ms-flex-line-pack: start;
     } @else if $align == 'flex-end' {
         -ms-flex-line-pack: end;
+    } @else if $align == 'space-between' {
+        -ms-flex-line-pack: justify;
+    } @else if $align == 'space-around' {
+        -ms-flex-line-pack: distribute;
     } @else {
         -ms-flex-line-pack: $align;
     }
@@ -265,54 +234,31 @@
 // ---
 
 @mixin justify-content-start() {
-    @if $legacy-support == true {
-        text-align: left;
-    }
     -ms-flex-pack: start;
     -webkit-justify-content: flex-start;
     justify-content: flex-start;
 }
 
 @mixin justify-content-end() {
-    @if $legacy-support == true {
-        text-align: right;
-        -moz-text-align-last: right;
-        text-align-last: right;
-    }
     -ms-flex-pack: end;
     -webkit-justify-content: flex-end;
     justify-content: flex-end;
 }
 
 @mixin justify-content-center() {
-    @if $legacy-support == true {
-        text-align: center;
-        -moz-text-align-last: center;
-        text-align-last: center;
-    }
     -ms-flex-pack: center;
     -webkit-justify-content: center;
     justify-content: center;
 }
 
 @mixin justify-content-space-between() {
-    @if $legacy-support == true {
-        text-align: justify;
-        -moz-text-align-last: justify;
-        text-align-last: justify;
-    }
     -ms-flex-pack: justify;
     -webkit-justify-content: space-between;
     justify-content: space-between;
 }
 
 @mixin justify-content-space-around() {
-    @if $legacy-support == true {
-        text-align: justify;
-        -moz-text-align-last: justify;
-        text-align-last: justify;
-    }
-    -ms-flex-pack: justify;
+    -ms-flex-pack: distribute;
     -webkit-justify-content: space-around;
     justify-content: space-around;
 }
@@ -329,27 +275,31 @@
 
 @mixin responsive-visibility-helpers() {
     @if $visibility-helpers == true {
-        .hidden-xxs {
+        .#{$reflex-prefix}hidden-xxs {
             @media (max-width: $reflex-xxs-max) {
                 display: none !important;
             }
         }
-        .hidden-xs {
+
+        .#{$reflex-prefix}hidden-xs {
             @media (min-width: $reflex-xs) and (max-width: $reflex-xs-max) {
                 display: none !important;
             }
         }
-        .hidden-sm {
+
+        .#{$reflex-prefix}hidden-sm {
             @media (min-width: $reflex-sm) and (max-width: $reflex-sm-max) {
                 display: none !important;
             }
         }
-        .hidden-md {
+
+        .#{$reflex-prefix}hidden-md {
             @media (min-width: $reflex-md) and (max-width: $reflex-md-max) {
                 display: none !important;
             }
         }
-        .hidden-lg {
+
+        .#{$reflex-prefix}hidden-lg {
             @media (min-width: $reflex-lg) {
                 display: none !important;
             }

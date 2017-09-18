@@ -1,0 +1,103 @@
+.card-header-img {
+    overflow: hidden;
+    padding-bottom: $reflex-grid-spacing;
+    background-color: $card-bg;
+    border-top: $card-border;
+    border-left: $card-border;
+    border-right: $card-border;
+    border-top-left-radius: $card-border-radius;
+    border-top-right-radius: $card-border-radius;
+}
+
+.card-body {
+    @include flex(1, 1, auto);
+    overflow: hidden;
+    padding: 0 $reflex-grid-spacing;
+    border-left: $card-border;
+    border-right: $card-border;
+    background-color: $card-bg;
+
+    &:first-child {
+        padding-top: $reflex-grid-spacing;
+        border-top: $card-border;
+        border-top-left-radius: $card-border-radius;
+        border-top-right-radius: $card-border-radius;
+    }
+}
+
+.card-footer {
+    overflow: hidden;
+    @include display-flex();
+    @include align-items(center);
+    @include justify-content-space-between();
+    margin-top: auto;
+    padding: $reflex-grid-spacing;
+    background-color: $card-bg;
+    border-bottom: $card-border;
+    border-left: $card-border;
+    border-right: $card-border;
+    border-bottom-left-radius: $card-border-radius;
+    border-bottom-right-radius: $card-border-radius;
+}
+
+.card-center {
+    display: block;
+    overflow: hidden;
+    @include display-flex();
+    @include flex-direction(column);
+    @include justify-content-center();
+    @include flex(1, 1, auto);
+    text-align: center;
+    padding: $reflex-grid-spacing;
+    background-color: $card-bg;
+    border: $card-border;
+    border-radius: $card-border-radius;
+}
+
+.card-link {
+    color: $colour-text;
+    text-decoration: none;
+    transition: box-shadow .4s, border-color .2s;
+    box-shadow: 0 0 0 2px transparent;
+
+    &:hover,
+    &:focus {
+        color: $colour-text;
+        border-color: darken($colour-col-padding, 40%);
+        outline: none;
+    }
+
+    &:focus {
+        box-shadow: 0 0 0 2px darken($colour-col-padding, 40%);
+    }
+}
+
+.card-footer-link {
+    display: block;
+    overflow: hidden;
+    margin-top: auto;
+    padding: $reflex-grid-spacing;
+    border-bottom: $card-border;
+    border-left: $card-border;
+    border-right: $card-border;
+    border-bottom-left-radius: $card-border-radius;
+    border-bottom-right-radius: $card-border-radius;
+    background-color: $colour-col-padding;
+    text-align: center;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+        text-decoration: underline;
+        color: $colour-text;
+        border-color: darken($colour-col-padding, 20%);
+        background-color: darken($colour-col-padding, 20%);
+        outline: none;
+    }
+}
+
+.card-img-circle {
+    max-width: 60%;
+    border-radius: 50%;
+    margin: $reflex-grid-spacing auto;
+}

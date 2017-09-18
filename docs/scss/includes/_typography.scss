@@ -1,0 +1,151 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0 0 1em;
+    font-family: $font-family-heading;
+    font-weight: $font-weight-strong;
+    line-height: $line-height-base;
+    color: $colour-text;
+
+    a {
+        font-weight: $font-weight-light;
+        text-decoration: none;
+        color: $colour-text-muted;
+
+        &:hover,
+        &:focus {
+            color: $colour-link;
+            text-decoration: underline;
+        }
+    }
+}
+
+h1 {
+    font-size: ($font-size-base + 10);
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: ($font-size-base + 8);
+    font-size: 1.6rem;
+}
+
+h3 {
+    font-size: ($font-size-base + 6);
+    font-size: 1.4rem;
+}
+
+h4 {
+    font-size: ($font-size-base + 4);
+    font-size: 1.2rem;
+}
+
+h5 {
+    font-size: ($font-size-base + 2);
+    font-size: 1.1rem;
+}
+
+h6 {
+    font-size: 1rem;
+}
+
+p {
+    margin: 0 0 2em;
+}
+
+small {
+    font-size: .85em;
+}
+
+b,
+strong {
+    font-weight: $font-weight-strong;
+}
+
+em {
+    font-style: italic;
+}
+
+blockquote {
+    position: relative;
+    margin: 0 0 2em;
+    padding: 0 2em;
+    font-weight: $font-weight-light;
+    font-style: italic;
+    color: $colour-text-muted;
+
+    footer {
+        margin-top: 1em;
+
+        &:before {
+            content: '- ';
+        }
+    }
+}
+
+ol,
+ul {
+    margin: 0 0 2em;
+    padding: 0 0 0 1.5em;
+}
+
+dl {
+    margin: 0 0 2em;
+
+    dt {
+        margin: 0 0 .25em;
+        font-weight: $font-weight-strong;
+    }
+
+    dd {
+        margin: 0 0 1em .5em;
+        color: $colour-text-muted;
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+}
+
+hr {
+    height: 0;
+    margin: 0 0 2em;
+    border: 0;
+    border-top: 1px solid $colour-text;
+}
+
+pre {
+    margin: 0 0 2em;
+    padding: .5em;
+    background-color: $colour-code;
+    overflow-x: scroll;
+
+    code {
+        padding: 0;
+    }
+}
+
+code {
+    margin: 0 .2em;
+    padding: 0 .5em;
+    background-color: $colour-code;
+    white-space: nowrap;
+}
+
+a {
+    color: $colour-link;
+    font-weight: $font-weight-base;
+
+    &:hover,
+    &:focus {
+        color: darken($colour-link, 15%);
+    }
+
+    &:focus {
+        outline: 3px solid $colour-link;
+        outline: 5px auto -webkit-focus-ring-color;
+    }
+}
