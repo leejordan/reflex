@@ -34,8 +34,18 @@
             <section class="container">
                 <h2 id="what-is-reflex">Introduction <a href="#what-is-reflex">&#35;</a></h2>
                 <p>Reflex gives you the ability to take advantage of flexbox for laying out a grid while having a reliable inline-block fallback for older browsers.</p>
-                <p>At the time of writing, <a href="http://caniuse.com/#search=flex" target="_blank">browser flexbox support is at 96.63%</a> so I propose that it's time to start taking advantage of flexbox and accept that the inline-block fallback won't support everything.</p>
-                <p>Where flexbox isn't supported, your basic grid structure will remain intact and most of the layout classes still work. Try this page out in a browser that does not support flexbox (such as Internet Explorer 9) to see for yourself! The reason this works is because of the way browsers handle CSS properties that they do not understand. It's possible to include both your fallback and your ideal CSS properties in the same classes and let browsers use the ones that they do understand. I've <a href="http://lendmeyourear.net/layering-css-so-we-can-use-flexbox-now.html">written at length on this subject</a> if you're interested in learning more.</p>
+
+                <div class="grid">
+                    <div class="col-6">
+                        <p>Look at me!</p>
+                    </div>
+                    <div class="col-6">
+                        <p>I am a Reflex grid!</p>
+                    </div>
+                </div>
+
+                <p>At the time of writing, <a href="http://caniuse.com/#search=flex" target="_blank">browser flexbox support is at 96.63%</a> so it's definitely time to forge ahead with flexbox, especially with a reliable inline-block fallback. Where flexbox isn't supported, your basic grid structure will remain intact and most of the layout classes still work. Try this page out in a browser that does not support flexbox (such as Internet Explorer 9) to see for yourself!
+                <p>The reason this works is because of the way browsers handle CSS properties that they do not understand. It's possible to include both your fallback and your ideal CSS properties in the same classes and let browsers use the ones that they do understand. I've <a href="http://lendmeyourear.net/layering-css-so-we-can-use-flexbox-now.html">written at length on this subject</a> if you're interested in learning more.</p>
 
                 <p class="alert">This is version 2 of Reflex grid which is not compatible with version 1. The last release under version 1 was <a href="https://github.com/leejordan/reflex/tree/1.5.0">1.5.0</a> and I have maintained the <a href="v1">docs for version 1</a> in case you still need them.</p>
 
@@ -63,9 +73,7 @@
 
             <section class="container">
                 <h2 id="browser-support">Browser support <a href="#browser-support">&#35;</a></h2>
-                <p>All browser specific implementations of flexbox are supported via vendor prefixes, including the slightly problematic <a href="https://msdn.microsoft.com/en-us/library/hh673531(v=vs.85).aspx">IE10 implementation</a> of an early draft of the flexbox specification.</p>
-                <p>Internet Explorer 6 and 7 are explicitly not supported because there are so many issues and quirks that it renders the exercise futile. However, the basic grid still works in those browsers.</p>
-                <p>For all other browsers, Reflex falls back to an <code>inline-block</code> grid for browsers that do not support flexbox. We use some reliable css hacks to help the <code>inline-block</code> grid work on older browsers. It's important to note that some of the features of flexbox do not have an equivalent in <code>inline-block</code> so not all of the layout modifier classes will work in the fallback, but most importantly <em>your grid will remain intact.</em></p>
+                <p>All browser specific implementations of flexbox are supported via vendor prefixes, including the slightly problematic <a href="https://msdn.microsoft.com/en-us/library/hh673531(v=vs.85).aspx">IE10 implementation</a> of an early draft of the flexbox specification. Internet Explorer 6 and 7 are explicitly not supported because there are so many issues and quirks that it renders the exercise futile. However, the basic grid still works in those browsers.</p>
 
                 <h3 id="ie8-breakpoints">Breakpoints in ie8 <a href="#ie8-breakpoints">&#35;</a></h3>
                 <p>If you want to use the grid with breakpoints in ie8 you will need to use <a href="https://github.com/scottjehl/Respond" target="_blank">respond.js</a> which enables media query support in those browsers via JavaScript. There's very little downside to adding this because it's very lightweight and performs well.</p>
@@ -76,6 +84,14 @@
                 <h3 id="ie10-11-height">ie10 and ie11 grid heights <a href="#ie10-11-height">&#35;</a></h3>
                 <p>ie10 and ie11 have a flexbox rendering bug which means that unless the height of the grid is set with an unit value, flex items will only stretch to be as large as their largest sibling. The grid will still work in these browsers, but it won't entirely fill the height of it's container unless a <code>height</code> in units is specified for the grid.</p>
                 <p>Please note that <code>min-height</code> and percentage heights will not work. The height must be set with <code>px</code> <code>em</code> or <code>vh</code>. There's <a href="https://philipwalton.com/articles/normalizing-cross-browser-flexbox-bugs/">further reading</a> to be had on the bug itself if you wish to understand it further. You can use a <a href="https://philipnewcomer.net/2014/04/target-internet-explorer-10-11-css/">CSS hack for ie10 and ie11</a> to set a unit height and solve these issues in your grid implementation.</p>
+
+<pre>.grid {
+    min-height: 300px;
+
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        height: 600px;
+    }
+}</pre>
 
                 <h3 id="border-box">box-sizing: border-box <a href="#border-box">&#35;</a></h3>
                 <p>I highly recommend using a wildcard CSS query to set all elements to <code>box-sizing: border-box</code>. Reflex grid applies this to all grid elements so it is sized appropriately but you might want to also add these properties to your CSS framework to ensure consistent behaviour across all elements inside and outside of the grid:</p>
@@ -1069,7 +1085,8 @@
 
             <section class="container">
                 <h2 id="cards">Cards <a href="#cards">&#35;</a></h2>
-                <p>A common use case for Reflex grid is to create product cards of the same height. The CSS for this is not part of Reflex grid and you would need to add your own card classes on top of reflex but I have included a few examples below and many more on the <a href="examples.html">examples page</a> to help you get started.
+                <p>A common use case for Reflex grid is to create product cards of the same height. The CSS for this is not part of Reflex grid and you would need to add your own card classes on top of reflex but I have included a few examples below and many more on the <a href="examples.html">examples page</a> to help you get started.</p>
+                <p>If you want to use these card styles as a starting point for your own implementation you can incorporate the <a href="https://github.com/leejordan/reflex/blob/master/docs/scss/includes/_cards.scss">SCSS I wrote for these cards</a> into your CSS build.</p>
 
                 <div class="grid grid-plain">
                     <div class="col-xs-6 col-md-3 col-grid">

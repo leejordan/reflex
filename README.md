@@ -6,7 +6,7 @@
 A lightweight responsive flexbox grid with cross browser support, an inline-block fallback and no polyfills
 
 - [Full documentation](http://leejordan.github.io/reflex/docs)
-- [Examples](http://leejordan.github.io/reflex/docs/demo.html)
+- [Examples](http://leejordan.github.io/reflex/docs/examples.html)
 - [npm](https://www.npmjs.com/package/reflex-grid)
 
 Reflex gives you the ability to take advantage of flexbox for laying out a grid while having a reliable inline-block fallback for older browsers.
