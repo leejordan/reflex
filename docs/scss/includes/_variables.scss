@@ -10,6 +10,8 @@ $colour-col: #83e3ff;
 $colour-col-padding: #9ce9ff;
 $colour-col-footer: #a0cedc;
 $colour-white: #fff;
+$colour-black: #000;
+$colour-state-success: #dff0d8;
 
 $font-family-base: "Lora", Georgia, serif;
 $font-family-heading: "Josefin Sans", sans-serif;
@@ -24,3 +26,10 @@ $grid-min-height: 250px;
 $card-bg: #f9f9f9;
 $card-border: 1px solid $colour-border;
 $card-border-radius: 5px;
+$card-shadow:  0 0 5px $colour-text;
+
+$shadow-form-inset: inset 0 1px 1px rgba($colour-black, .075);
+$shadow-form-inset-focus: inset 0 1px 1px transparent;
+$shadow-form-focus: 0 0 0 2px $colour-grid-bg;
+
+

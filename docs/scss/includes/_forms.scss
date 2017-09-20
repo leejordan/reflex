@@ -1,0 +1,141 @@
+label,
+legend {
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: ($font-size-base * .31);
+    font-family: $font-family-heading;
+    font-size: ($font-size-base + 2);
+    font-size: 1.2rem;
+    color: $colour-text;
+
+    p {
+        font-family: $font-family-base;
+        font-size: $font-size-base;
+        font-size: 1rem;
+        margin-bottom: 1em;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+select,
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"] {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 2.5em;
+    margin-bottom: $reflex-grid-spacing;
+    padding: ($reflex-grid-spacing / 2) $reflex-grid-spacing;
+    line-height: $line-height-base;
+    color: $colour-text;
+    background-color: $colour-white;
+    background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+    border: $card-border;
+    border-radius: $card-border-radius;
+    box-shadow: $shadow-form-inset;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+
+    &:hover,
+    &:focus {
+        color: $colour-text;
+        border-color: $colour-grid-bg;
+    }
+
+    &:focus {
+        outline: none;
+        background-color: $colour-white;
+        box-shadow: $shadow-form-inset-focus, $shadow-form-focus;
+    }
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+textarea {
+    resize: vertical; // Only allow vertical resizing of texareas
+    min-height: 10em;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    float: left;
+    margin-top: .75em;
+    margin-left: 1em;
+
+    &:focus {
+        outline: 3px solid $colour-text;
+        outline: 5px auto -webkit-focus-ring-color;
+    }
+
+    + label {
+        display: block;
+        margin-bottom: ($font-size-base * .31); // same size as default white space between inline elements
+        padding: .5em 1em .5em 2.5em;
+        border-radius: $card-border-radius;
+
+        &:hover {
+            background-color: rgba($colour-text, .1);
+        }
+    }
+
+    &:checked {
+        + label {
+            background-color: $colour-state-success;
+        }
+    }
+}
+
+button,
+.button,
+[type="button"] {
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    overflow: hidden;
+    margin-bottom: ($font-size-base * .31); // same size as default white space between inline-block elements
+    padding: ($font-size-base / 2) ($font-size-base * 2);
+    font-family: $font-family-base;
+    font-size: $font-size-base;
+    font-weight: $font-weight-base;
+    line-height: $line-height-base;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+    background-image: none;
+    border: 1px solid $colour-col;
+    border-radius: $card-border-radius;
+    background-color: $colour-col;
+    color: $colour-text;
+    transition: border-color .1s ease-out, background-color .1s ease-out, box-shadow .2s ease-out;
+
+    &:hover,
+    &:focus {
+        background-color: darken($colour-col, 10%);
+        border-color: $colour-grid-bg;
+        color: $colour-text;
+    }
+
+    &:focus {
+        outline: none;
+        box-shadow: $shadow-form-focus;
+    }
+}
+
+

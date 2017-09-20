@@ -32,7 +32,7 @@
     @include flex(1, 0, 0px); // a unit on last value is required by IE10-11
 
     @if $legacy-support == true {
-        width: auto !important;
+        width: auto;
     }
 }
 
@@ -42,9 +42,9 @@
 
 @mixin setup-whitespace() {
     @if $legacy-support == true {
-        letter-spacing: -.31em !important;
-        *letter-spacing: normal !important;
-        word-spacing: -.43em !important;
+        letter-spacing: -.31em;
+        *letter-spacing: normal;
+        word-spacing: -.43em;
     }
 }
 
@@ -277,31 +277,31 @@
     @if $visibility-helpers == true {
         .#{$reflex-prefix}hidden-xxs {
             @media (max-width: $reflex-xxs-max) {
-                display: none !important;
+                display: none;
             }
         }
 
         .#{$reflex-prefix}hidden-xs {
             @media (min-width: $reflex-xs) and (max-width: $reflex-xs-max) {
-                display: none !important;
+                display: none;
             }
         }
 
         .#{$reflex-prefix}hidden-sm {
             @media (min-width: $reflex-sm) and (max-width: $reflex-sm-max) {
-                display: none !important;
+                display: none;
             }
         }
 
         .#{$reflex-prefix}hidden-md {
             @media (min-width: $reflex-md) and (max-width: $reflex-md-max) {
-                display: none !important;
+                display: none;
             }
         }
 
         .#{$reflex-prefix}hidden-lg {
             @media (min-width: $reflex-lg) {
-                display: none !important;
+                display: none;
             }
         }
     }

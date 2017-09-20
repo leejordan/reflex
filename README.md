@@ -13,7 +13,7 @@ Reflex gives you the ability to take advantage of flexbox for laying out a grid 
 
 At the time of writing, [browser support for flexbox](http://caniuse.com/#search=flex) is at 96.63% so I propose that it's time to start taking advantage of flexbox and accept that the inline-block fallback won't support everything.
 
-Where flexbox isn't supported, your basic grid structure will remain intact and most of the layout classes still work. Try this page out in a browser that does not support flexbox (such as Internet Explorer 9) to see for yourself!
+Where flexbox isn't supported, your basic grid structure will remain intact and most of the layout classes still work. Try the [examples](http://leejordan.github.io/reflex/docs/examples.html) page out in a browser that does not support flexbox (such as Internet Explorer 9) to see for yourself!
 
 ## Why use reflex?
 
@@ -57,6 +57,7 @@ This is version 2 of reflex grid and is not compatible with version 1. Many thin
 - There is far better support for older browsers, particularly the ie10 implementation of flexbox
 - Added container classes
 - Added better support for "cards" as well as some example code
+- Is now only built with SCSS. Older versions had both LESS and SCSS implementations but this was too much to support.
 
 
 

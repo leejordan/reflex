@@ -228,7 +228,7 @@
                         <p>col-4</p>
                     </div>
                     <div class="col-4">
-                        <p>col-5</p>
+                        <p>col-4</p>
                     </div>
                     <div class="col-xs-4">
                         <p>col-xs-4</p>
@@ -1029,6 +1029,7 @@
             <section class="container">
                 <h2 id="flex-columns">Using flexbox in columns <a href="#flex-columns">&#35;</a></h2>
                 <p>By default, a <code>.col-x</code> element behaves like a good old fashioned block element but it is possible to modify it to perform as a flexbox element with <code>flex-direction: column</code> by adding the <code>.col-grid</code> class to any <code>col-x</code> element. This will allow you to take advantage of flexbox layout and (for example) create a footer that is always at the bottom of the column.</p>
+                <p>When a column has the <code>.col-grid</code> class applied to it, any of the grid modifiers such as <code>.justify-space-between</code> will work on it but be aware that the orientation is in the column direction and therefore the main axis is vertical.</p>
                 <p class="alert">When using flexbox for column layout, be aware that flex items cannot be floated and their margins do not collapse. Here's the relevant information from the flexbox spec:</p>
                 <blockquote>
                     A flex container establishes a new flex formatting context for its contents. This is the same as establishing a block formatting context, except that flex layout is used instead of block layout. For example, floats do not intrude into the flex container, and the flex container’s margins do not collapse with the margins of its contents.

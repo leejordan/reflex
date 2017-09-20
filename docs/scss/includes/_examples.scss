@@ -157,6 +157,19 @@
     }
 }
 
+.example-form {
+    .button {
+        width: 100%;
+        font-size: ($font-size-base + 2);
+        font-size: 1.2rem;
+
+        @media only screen and (min-width: $reflex-md) {
+            width: auto;
+            float: right;
+        }
+    }
+}
+
 .example-image-display {
     .grid {
         min-height: 600px;

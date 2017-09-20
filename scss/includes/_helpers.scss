@@ -233,6 +233,10 @@
 .#{$reflex-prefix}col-grid {
     @include display-flex();
     @include flex-direction(column);
+
+    &.#{$reflex-prefix}direction-row {
+        @include flex-direction(row);
+    }
 }
 
 // Removes internal padding from all columns in a grid
