@@ -50,7 +50,7 @@ If you're familiar with npm you can use `npm install reflex-grid` to have a look
 
 ## Version 2 information
 
-This is version 2 of reflex grid and is not compatible with version 1. Many things have changed in version 2 which will need addressing if you want to update.
+This is version 2 of reflex grid and is not compatible with version 1. Many things have changed in version 2 which will need addressing if you want to update. I wrote a [blog post about version 2](http://lendmeyourear.net/reflex-grid-version-2.html) changes if you're interested in learning more
 
 - All class names have dropped the `grid__` and `grid--` prefixes but are otherwise unchanged
 - Columns are no longer flexbox by default. They can be converted to flexbox containers with the `col-grid` class
