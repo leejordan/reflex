@@ -5,15 +5,15 @@
 
 A lightweight responsive flexbox grid with cross browser support, an inline-block fallback and no polyfills
 
-- [Full documentation](http://leejordan.github.io/reflex/docs)
-- [Examples](http://leejordan.github.io/reflex/docs/examples.html)
+- [Full documentation](http://reflexgrid.com)
+- [Examples](http://reflexgrid.com/docs/examples.html)
 - [npm](https://www.npmjs.com/package/reflex-grid)
 
 Reflex gives you the ability to take advantage of flexbox for laying out a grid while having a reliable inline-block fallback for older browsers.
 
 At the time of writing, [browser support for flexbox](http://caniuse.com/#search=flex) is at 96.63% so I propose that it's time to start taking advantage of flexbox and accept that the inline-block fallback won't support everything.
 
-Where flexbox isn't supported, your basic grid structure will remain intact and most of the layout classes still work. Try the [examples](http://leejordan.github.io/reflex/docs/examples.html) page out in a browser that does not support flexbox (such as Internet Explorer 9) to see for yourself!
+Where flexbox isn't supported, your basic grid structure will remain intact and most of the layout classes still work. Try the [examples](http://reflexgrid.com/docs/examples.html) page out in a browser that does not support flexbox (such as Internet Explorer 9) to see for yourself!
 
 ## Why use reflex?
 

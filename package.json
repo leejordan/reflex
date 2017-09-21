@@ -25,7 +25,7 @@
   "bugs": {
     "url": "https://github.com/leejordan/reflex/issues"
   },
-  "homepage": "http://leejordan.github.io/reflex/docs/",
+  "homepage": "reflexgrid.com",
   "scripts": {
     "build": "npm run build:min && npm run build:max",
     "build:min": "node-sass-chokidar --precision 8 --output-style compressed scss/reflex.scss css/reflex.min.css",
