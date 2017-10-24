@@ -1,6 +1,6 @@
 {
   "name": "reflex-grid",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "responsive flexbox grid with inline-block legacy support",
   "main": "css/reflex.css",
   "directories": {
