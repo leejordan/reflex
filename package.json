@@ -17,7 +17,6 @@
     "inline-block",
     "fallback",
     "grid",
-    "LESS",
     "SCSS"
   ],
   "author": "@leejordan",
