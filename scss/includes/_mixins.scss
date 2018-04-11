@@ -14,7 +14,9 @@
     @if $type == width and $index > 0 {
         .#{$reflex-prefix}#{$class}#{$index} {
             width: percentage(($index / $reflex-columns));
-            *width: percentage(($index / $reflex-columns)) - .1; // ie7 css hack
+            @if $legacy-support == true {
+                *width: percentage(($index / $reflex-columns)) - .1; // ie7 css hack
+            }
         }
     }
 }
