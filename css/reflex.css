@@ -1209,8 +1209,14 @@
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1200px) and (max-width: 1599px) {
   .hidden-lg {
+    display: none;
+  }
+}
+
+@media (min-width: 1600px) {
+  .hidden-lxg {
     display: none;
   }
 }

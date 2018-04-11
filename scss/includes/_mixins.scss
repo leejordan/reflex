@@ -300,7 +300,13 @@
         }
 
         .#{$reflex-prefix}hidden-lg {
-            @media (min-width: $reflex-lg) {
+            @media (min-width: $reflex-lg) and (max-width: $reflex-lg-max) {
+                display: none;
+            }
+        }
+
+        .#{$reflex-prefix}hidden-lxg {
+            @media (min-width: $reflex-xlg) {
                 display: none;
             }
         }
