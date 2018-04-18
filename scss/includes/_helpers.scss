@@ -264,7 +264,9 @@
     max-width: 100%;
     height: auto;
     width: 100%;
-    *width: auto;
+    @if $legacy-support == true {
+        *width: auto;
+    }
 }
 
 .#{$reflex-prefix}flex-footer {
