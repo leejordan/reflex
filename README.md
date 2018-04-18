@@ -17,7 +17,7 @@ Where flexbox isn't supported, your basic grid structure will remain intact and 
 
 ## Why use reflex?
 
-- It's lightweight - 16KB in it's minified form and 2KB gzipped
+- It's lightweight - 20KB in it's minified form and 2.5KB gzipped
 - Where flexbox is supported, columns are all the same height by default
 - Reflex grid cells never push each other out of the way (as with floated grids)
 - Supports semantic elements e.g. you can use ul as a grid

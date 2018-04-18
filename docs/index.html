@@ -51,7 +51,7 @@
 
                 <h3 id="reflex-benefits">Why use reflex? <a href="#reflex-benefits">&#35;</a></h3>
                 <ul>
-                    <li>It's lightweight - 16KB in it's minified form and <strong>2KB gzipped</strong></li>
+                    <li>It's lightweight - 20KB in it's minified form and <strong>2.5KB gzipped</strong></li>
                     <li>Where flexbox is supported, <strong>columns are all the same height by default</strong></li>
                     <li>Reflex grid cells <strong>never push each other out of the way</strong> (as with floated grids)</li>
                     <li>Supports semantic elements e.g. you can use <code>ul</code> as a grid</li>
@@ -938,7 +938,7 @@
                 <p>There are responsive ordering classes that correspond to both the number of columns and the <a href="#breakpoints">breakpoints</a> so you can choose to change the order of <code>col-x</code> elements only above certain viewport sizes.</p>
                 <p>For example: <code>.order-2-md</code></p>
 
-                <h3 id="order">.order-<em>&lt;n&gt;</em>-<em>&lt;breakpoint&gt;</em> <a href="#order">&#35;</a></h3>
+                <h3 id="order-responsive">.order-<em>&lt;n&gt;</em>-<em>&lt;breakpoint&gt;</em> <a href="#order-responsive">&#35;</a></h3>
                 <p>When applied to <code>col-x</code> sets <code>order: n</code> when viewport size is above the selected breakpoint.</p>
 
                 <div class="grid">
@@ -950,6 +950,27 @@
                     </div>
                     <div class="col-4 order-1-md">
                         <p>I am <strong>third</strong> in the markup but ordered first when viewport size is above 992px</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="container">
+                <h2 id="offet-columns">Responsive offsets <a href="#offet-columns">&#35;</a></h2>
+                <p>There are responsive offset classes that correspond to the available <a href="#breakpoints">breakpoints</a> so you can choose to offset your <code>col-x</code> elements at certain viewport sizes.</p>
+                <p>For example: <code>.offset-2-md</code></p>
+
+                <h3 id="offset">.offset-<em>&lt;n&gt;</em>-<em>&lt;breakpoint&gt;</em> <a href="#offset">&#35;</a></h3>
+                <p>When applied to <code>col-x</code> applies an offset when viewport size is above the selected breakpoint.</p>
+
+                <div class="grid">
+                    <div class="col-6 offset-3">
+                        <p>Offset by 3 columns at all times</p>
+                    </div>
+                    <div class="col-6 offset-2-md">
+                        <p>Offset by 2 columns when viewport size is above 768px</p>
+                    </div>
+                    <div class="col-6 offset-1-lg">
+                        <p>Offset by 1 column when viewport size is above 1200px</p>
                     </div>
                 </div>
             </section>
@@ -1022,6 +1043,9 @@
                     </div>
                     <div class="col-auto hidden-lg">
                         <p>.hidden-lg</p>
+                    </div>
+                    <div class="col-auto hidden-xlg">
+                        <p>.hidden-xlg</p>
                     </div>
                 </div>
             </section>
