@@ -93,7 +93,7 @@
 
 @mixin loop-order-helpers($index, $breakpoint: null) {
     @if $index >= 0 {
-        .#{$reflex-prefix}order-#{$index}#{$breakpoint} {
+        .#{$reflex-prefix}order#{$breakpoint}-#{$index} {
             @include order($index);
         }
         // next iteration
@@ -122,13 +122,13 @@
 
 @mixin loop-offset-helpers($index, $breakpoint: null) {
     @if $index > 0 and $breakpoint == null {
-        .#{$reflex-prefix}offset-#{$index}#{$breakpoint} {
+        .#{$reflex-prefix}offset#{$breakpoint}-#{$index} {
             @include offset($index);
         }
         // next iteration
         @include loop-offset-helpers(($index - 1), $breakpoint);
     } @else if $index >= 0 and $breakpoint != null {
-        .#{$reflex-prefix}offset-#{$index}#{$breakpoint} {
+        .#{$reflex-prefix}offset#{$breakpoint}-#{$index} {
             @include offset($index);
         }
         // next iteration
