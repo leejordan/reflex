@@ -67,7 +67,7 @@
 // reflex col defaults
 // --------------------------------------------------
 
-[class^="#{$reflex-prefix}col-"] {
+[class*="#{$reflex-prefix}col-"] {
     @include box-sizing(border-box);
     @include reset-whitespace();
     position: relative;
