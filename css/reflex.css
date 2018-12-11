@@ -1,3 +1,18 @@
+:root {
+  --reflex-columns: 12;
+  --reflex-grid-spacing: 15px;
+  --reflex-xs: 576px;
+  --reflex-sm: 768px;
+  --reflex-md: 992px;
+  --reflex-lg: 1200px;
+  --reflex-xlg: 1600px;
+  --reflex-xxs-max: 575px;
+  --reflex-xs-max: 767px;
+  --reflex-sm-max: 991px;
+  --reflex-md-max: 1199px;
+  --reflex-lg-max: 1599px;
+}
+
 .container,
 .container-full {
   -webkit-box-sizing: border-box;
@@ -75,7 +90,7 @@
   white-space: normal;
 }
 
-[class^="col-"] {
+[class*="col-"] {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -91,7 +106,7 @@
   zoom: 1;
 }
 
-[class^="col-"]::before, [class^="col-"]::after {
+[class*="col-"]::before, [class*="col-"]::after {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -100,7 +115,7 @@
   white-space: normal;
 }
 
-[class^="col-"] .grid {
+[class*="col-"] .grid {
   -ms-flex: 1 1 auto;
   -webkit-flex: 1 1 auto;
   flex: 1 1 auto;
@@ -1214,7 +1229,7 @@
   flex-wrap: nowrap;
 }
 
-.no-wrap [class^="col-"] {
+.no-wrap [class*="col-"] {
   -ms-flex-negative: 1;
   -webkit-flex-shrink: 1;
   flex-shrink: 1;
@@ -1262,7 +1277,7 @@
   align-items: flex-end;
 }
 
-.align-end [class^="col-"] {
+.align-end [class*="col-"] {
   vertical-align: bottom;
 }
 
@@ -1272,7 +1287,7 @@
   align-items: center;
 }
 
-.align-center [class^="col-"] {
+.align-center [class*="col-"] {
   vertical-align: middle;
 }
 
@@ -1294,7 +1309,7 @@
   align-content: flex-end;
 }
 
-.align-content-end [class^="col-"] {
+.align-content-end [class*="col-"] {
   vertical-align: bottom;
 }
 
@@ -1371,7 +1386,7 @@
   text-align-last: right;
 }
 
-.justify-end.grid [class^="col-"] {
+.justify-end.grid [class*="col-"] {
   text-align: left;
   text-align: start;
   -moz-text-align-last: left;
@@ -1392,7 +1407,7 @@
   text-align-last: center;
 }
 
-.justify-center.grid [class^="col-"] {
+.justify-center.grid [class*="col-"] {
   text-align: left;
   text-align: start;
   -moz-text-align-last: left;
@@ -1413,7 +1428,7 @@
   text-align-last: justify;
 }
 
-.justify-space-between.grid [class^="col-"] {
+.justify-space-between.grid [class*="col-"] {
   text-align: left;
   text-align: start;
   -moz-text-align-last: left;
@@ -1434,7 +1449,7 @@
   text-align-last: justify;
 }
 
-.justify-space-around.grid [class^="col-"] {
+.justify-space-around.grid [class*="col-"] {
   text-align: left;
   text-align: start;
   -moz-text-align-last: left;
