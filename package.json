@@ -35,7 +35,7 @@
     "start": "./node_modules/.bin/http-server ./docs -a localhost -c10"
   },
   "devDependencies": {
-    "node-sass-chokidar": "^0.0.3",
-    "http-server": "^0.10.0"
+    "http-server": "^0.12.3",
+    "node-sass-chokidar": "^1.5.0"
   }
 }

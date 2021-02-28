@@ -1,0 +1,60 @@
+.table {
+	width: 100%;
+	max-width: 100%;
+	margin-bottom: 1rem;
+}
+
+.table-responsive {
+	display: block;
+	width: 100%;
+	overflow-x: auto;
+	-ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
+// Responsive Utilities Table
+
+.table.responsive-utilities {
+	border: 0;
+	margin-bottom: 3em;
+
+	>tbody>tr>td,
+	>tbody>tr>th,
+	>tfoot>tr>td,
+	>tfoot>tr>th,
+	>thead>tr>td,
+	>thead>tr>th {
+		padding: .75rem;
+		vertical-align: top;
+	}
+
+	>tbody tr>td {
+		width: 160px;
+	}
+
+	th, td {
+		text-align: center;
+	}
+
+	th small {
+		display: block;
+		font-weight: 400;
+		color: #999;
+	}
+
+	code {
+		padding: .2rem .4rem;
+		font-size: 90%;
+		color: #bd4147;
+		background-color: #f7f7f9;
+		border-radius: .25rem;
+	}
+
+	.is-hidden {
+		color: #ccc;
+		background-color: #f9f9f9 !important;
+	}
+
+	.is-visible {
+		background-color: $colour-col !important;
+	}
+}

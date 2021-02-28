@@ -41,6 +41,15 @@ $reflex-sm-max: ($reflex-md - 1);
 $reflex-md-max: ($reflex-lg - 1);
 $reflex-lg-max: ($reflex-xlg - 1);
 
+$reflex-breakpoints: (
+  xxs: 0px,
+  xs: $reflex-xs,
+  sm: $reflex-sm,
+  md: $reflex-md,
+  lg: $reflex-lg,
+  xlg: $reflex-xlg
+);
+
 // Spacing
 // -------------------------
 $reflex-grid-spacing: 15px !default;
