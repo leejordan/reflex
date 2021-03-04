@@ -1026,8 +1026,179 @@
 
             <section class="container">
                 <h2 id="visibility-helpers">Visibility helpers <a href="#visibility-helpers">&#35;</a></h2>
-                <p>You can use some generic visibility helpers that can be applied to any element, not just grid elements. resize the viewport to see them in action. The breakpoints can be changed if you're building the css yourself by building the SCSS files.</p>
+                <p>You can use some generic visibility helpers that can be applied to any element, not just grid elements.</p>
+                <ul>
+                    <li><code>.hidden-*-up</code> classes hide the element when the viewport is at the given breakpoint or wider.</li>
+                    <li><code>.hidden-*-down</code> classes hide the element when the viewport is at the given breakpoint or smaller.</li>
+                    <li><code>.hidden-*</code> classes hide the element when the viewport is at the given breakpoint.</li>
+                </ul>
+                <p>It is possible to change these breakpoints by modifying the included variables.scss file and building a new css file.</p>
+                <p>For example:
+                    <br><code>.hidden-sm-down</code> to hide size <code>sm</code> and smaller
+                    <br><code>.hidden-sm-up</code> to hide size <code>sm</code> and bigger
+                    <br><code>.hidden-sm</code> to hide size <code>sm</code> only
+                </p>
+                <table class="table table-responsive responsive-utilities">
+                    <thead>
+                      <tr>
+                        <th></th>
+                        <th>
+                            Extra Extra small
+                            <small>0px - &lt;576px</small>
+                        </th>
+                        <th>
+                          Extra small
+                          <small>≥576px - &lt;768px</small>
+                        </th>
+                        <th>
+                          Small
+                          <small>≥768px - &lt;992px</small>
+                        </th>
+                        <th>
+                          Medium
+                          <small>≥992px - &lt;1200px</small>
+                        </th>
+                        <th>
+                          Large
+                          <small>≥1200px - &lt;1600px</small>
+                        </th>
+                        <th>
+                          Extra large
+                          <small>≥1600px</small>
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row"><code>.hidden-xxs</code></th>
+                            <td class="is-hidden">Hidden</td>
+                            <td class="is-visible">Visible</td>
+                            <td class="is-visible">Visible</td>
+                            <td class="is-visible">Visible</td>
+                            <td class="is-visible">Visible</td>
+                            <td class="is-visible">Visible</td>
+                        </tr>
+                        <tr>
+                            <th scope="row"><code>.hidden-xs</code></th>
+                            <td class="is-visible">Visible</td>
+                            <td class="is-hidden">Hidden</td>
+                            <td class="is-visible">Visible</td>
+                            <td class="is-visible">Visible</td>
+                            <td class="is-visible">Visible</td>
+                            <td class="is-visible">Visible</td>
+                        </tr>
+                          <tr>
+                            <th scope="row"><code>.hidden-sm</code></th>
+                            <td class="is-visible">Visible</td>
+                            <td class="is-visible">Visible</td>
+                            <td class="is-hidden">Hidden</td>
+                            <td class="is-visible">Visible</td>
+                            <td class="is-visible">Visible</td>
+                            <td class="is-visible">Visible</td>
+                          </tr>
+                          <tr>
+                            <th scope="row"><code>.hidden-md</code></th>
+                            <td class="is-visible">Visible</td>
+                            <td class="is-visible">Visible</td>
+                            <td class="is-visible">Visible</td>
+                            <td class="is-hidden">Hidden</td>
+                            <td class="is-visible">Visible</td>
+                            <td class="is-visible">Visible</td>
+                          </tr>
+                          <tr>
+                            <th scope="row"><code>.hidden-lg</code></th>
+                            <td class="is-visible">Visible</td>
+                            <td class="is-visible">Visible</td>
+                            <td class="is-visible">Visible</td>
+                            <td class="is-visible">Visible</td>
+                            <td class="is-hidden">Hidden</td>
+                            <td class="is-visible">Visible</td>
+                        </tr>
+                          <tr>
+                            <th scope="row"><code>.hidden-xlg</code></th>
+                            <td class="is-visible">Visible</td>
+                            <td class="is-visible">Visible</td>
+                            <td class="is-visible">Visible</td>
+                            <td class="is-visible">Visible</td>
+                            <td class="is-visible">Visible</td>
+                            <td class="is-hidden">Hidden</td>
+                          </tr>
 
+                      <tr>
+                        <th scope="row"><code>.hidden-xs-down</code></th>
+                        <td class="is-hidden">Hidden</td>
+                        <td class="is-hidden">Hidden</td>
+                        <td class="is-visible">Visible</td>
+                        <td class="is-visible">Visible</td>
+                        <td class="is-visible">Visible</td>
+                        <td class="is-visible">Visible</td>
+                      </tr>
+                      <tr>
+                        <th scope="row"><code>.hidden-sm-down</code></th>
+                        <td class="is-hidden">Hidden</td>
+                        <td class="is-hidden">Hidden</td>
+                        <td class="is-hidden">Hidden</td>
+                        <td class="is-visible">Visible</td>
+                        <td class="is-visible">Visible</td>
+                        <td class="is-visible">Visible</td>
+                      </tr>
+                      <tr>
+                        <th scope="row"><code>.hidden-md-down</code></th>
+                        <td class="is-hidden">Hidden</td>
+                        <td class="is-hidden">Hidden</td>
+                        <td class="is-hidden">Hidden</td>
+                        <td class="is-hidden">Hidden</td>
+                        <td class="is-visible">Visible</td>
+                        <td class="is-visible">Visible</td>
+                      </tr>
+                      <tr>
+                        <th scope="row"><code>.hidden-lg-down</code></th>
+                        <td class="is-hidden">Hidden</td>
+                        <td class="is-hidden">Hidden</td>
+                        <td class="is-hidden">Hidden</td>
+                        <td class="is-hidden">Hidden</td>
+                        <td class="is-hidden">Hidden</td>
+                        <td class="is-visible">Visible</td>
+                      </tr>
+                      <tr>
+                        <th scope="row"><code>.hidden-xs-up</code></th>
+                        <td class="is-visible">Visible</td>
+                        <td class="is-hidden">Hidden</td>
+                        <td class="is-hidden">Hidden</td>
+                        <td class="is-hidden">Hidden</td>
+                        <td class="is-hidden">Hidden</td>
+                        <td class="is-hidden">Hidden</td>
+                      </tr>
+                      <tr>
+                        <th scope="row"><code>.hidden-sm-up</code></th>
+                        <td class="is-visible">Visible</td>
+                        <td class="is-visible">Visible</td>
+                        <td class="is-hidden">Hidden</td>
+                        <td class="is-hidden">Hidden</td>
+                        <td class="is-hidden">Hidden</td>
+                        <td class="is-hidden">Hidden</td>
+                      </tr>
+                      <tr>
+                        <th scope="row"><code>.hidden-md-up</code></th>
+                        <td class="is-visible">Visible</td>
+                        <td class="is-visible">Visible</td>
+                        <td class="is-visible">Visible</td>
+                        <td class="is-hidden">Hidden</td>
+                        <td class="is-hidden">Hidden</td>
+                        <td class="is-hidden">Hidden</td>
+                      </tr>
+                      <tr>
+                        <th scope="row"><code>.hidden-lg-up</code></th>
+                        <td class="is-visible">Visible</td>
+                        <td class="is-visible">Visible</td>
+                        <td class="is-visible">Visible</td>
+                        <td class="is-visible">Visible</td>
+                        <td class="is-hidden">Hidden</td>
+                        <td class="is-hidden">Hidden</td>
+                      </tr>
+                    </tbody>
+                </table>
+                <p>Resize the viewport to see them in action.</p>
                 <div class="grid">
                     <div class="col-auto hidden-xxs">
                         <p>.hidden-xxs</p>

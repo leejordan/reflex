@@ -1516,8 +1516,32 @@
   }
 }
 
+@media (min-width: 576px) {
+  .hidden-xs-up {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .hidden-xs-down {
+    display: none;
+  }
+}
+
 @media (min-width: 576px) and (max-width: 767px) {
   .hidden-xs {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .hidden-sm-up {
+    display: none;
+  }
+}
+
+@media (max-width: 991px) {
+  .hidden-sm-down {
     display: none;
   }
 }
@@ -1528,8 +1552,32 @@
   }
 }
 
+@media (min-width: 992px) {
+  .hidden-md-up {
+    display: none;
+  }
+}
+
+@media (max-width: 1199px) {
+  .hidden-md-down {
+    display: none;
+  }
+}
+
 @media (min-width: 992px) and (max-width: 1199px) {
   .hidden-md {
+    display: none;
+  }
+}
+
+@media (min-width: 1200px) {
+  .hidden-lg-up {
+    display: none;
+  }
+}
+
+@media (max-width: 1599px) {
+  .hidden-lg-down {
     display: none;
   }
 }
@@ -2197,6 +2245,65 @@ button:focus,
 [type="button"]:focus {
   outline: none;
   box-shadow: 0 0 0 2px #003e50;
+}
+
+.table {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 1rem;
+}
+
+.table-responsive {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
+.table.responsive-utilities {
+  border: 0;
+  margin-bottom: 3em;
+}
+
+.table.responsive-utilities > tbody > tr > td,
+.table.responsive-utilities > tbody > tr > th,
+.table.responsive-utilities > tfoot > tr > td,
+.table.responsive-utilities > tfoot > tr > th,
+.table.responsive-utilities > thead > tr > td,
+.table.responsive-utilities > thead > tr > th {
+  padding: .75rem;
+  vertical-align: top;
+}
+
+.table.responsive-utilities > tbody tr > td {
+  width: 160px;
+}
+
+.table.responsive-utilities th, .table.responsive-utilities td {
+  text-align: center;
+}
+
+.table.responsive-utilities th small {
+  display: block;
+  font-weight: 400;
+  color: #999;
+}
+
+.table.responsive-utilities code {
+  padding: .2rem .4rem;
+  font-size: 90%;
+  color: #bd4147;
+  background-color: #f7f7f9;
+  border-radius: .25rem;
+}
+
+.table.responsive-utilities .is-hidden {
+  color: #ccc;
+  background-color: #f9f9f9 !important;
+}
+
+.table.responsive-utilities .is-visible {
+  background-color: #83e3ff !important;
 }
 
 .logo {

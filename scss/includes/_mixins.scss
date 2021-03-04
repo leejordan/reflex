@@ -301,6 +301,122 @@
 }
 
 // --------------------------------------------------
+// Responsible Visibility
+// --------------------------------------------------
+
+@mixin responsive-visibility-helpers() {
+    @if $visibility-helpers == true {
+        // We need to handle xxs and xlg breakpoints differently
+        $map-reflex-breakpoints: map-remove($reflex-breakpoints, xxs, xlg);
+
+        .#{$reflex-prefix}hidden-xxs {
+            @include media-breakpoint-only('xxs') {
+                display: none;
+            }
+        }
+
+        @each $bp in map-keys($map-reflex-breakpoints) {
+            .#{$reflex-prefix}hidden-#{$bp}-up {
+                @include media-breakpoint-up($bp) {
+                    display: none;
+                }
+            }
+        
+
+            .#{$reflex-prefix}hidden-#{$bp}-down {
+                @include media-breakpoint-down($bp) {
+                    display: none;
+                }
+            }
+
+            .#{$reflex-prefix}hidden-#{$bp} {
+                @include media-breakpoint-only($bp) {
+                    display: none;
+                }
+            }
+        }
+
+        .#{$reflex-prefix}hidden-xlg {
+            @include media-breakpoint-only('xlg') {
+                display: none;
+            }
+        }
+    }
+}
+
+// Breakpoint viewport sizes and media queries.
+//
+// Breakpoints are defined as a map of (name: minimum width), order from small to large:
+// (xs: 576px, sm: 768px, md: 992px)
+// The map defined in the `$reflex-breakpoints` global variable is used as the `$breakpoints` argument by default.
+// Name of the next breakpoint, or null for the last breakpoint.
+// >> breakpoint-next(sm) -> md
+// >> breakpoint-next(sm, $breakpoints: (xs: 576px, sm: 768px, md: 992px)) -> md
+// >> breakpoint-next(sm, $breakpoint-names: (xs sm md)) -> md
+@function breakpoint-next($name, $breakpoints: $reflex-breakpoints, $breakpoint-names: map-keys($breakpoints)) {
+    $n: index($breakpoint-names, $name);
+    @return if($n < length($breakpoint-names), nth($breakpoint-names, $n + 1), null);
+}
+
+// Minimum breakpoint width. Null for the smallest (first) breakpoint.
+// >> breakpoint-min(sm, (xs: 576px, sm: 768px, md: 992px)) -> 768px
+@function breakpoint-min($name, $breakpoints: $reflex-breakpoints) {
+    $min: map-get($breakpoints, $name);
+    @return if($min !=0, $min, null);
+}
+
+// Maximum breakpoint width. Null for the largest (last) breakpoint.
+// The maximum value is calculated as the minimum of the next one less 0.1.
+// >> breakpoint-max(sm, (xs: 576px, sm: 768px, md: 992px)) -> 991px
+@function breakpoint-max($name, $breakpoints: $reflex-breakpoints) {
+    $next: breakpoint-next($name, $breakpoints);
+    @return if($next, breakpoint-min($next, $breakpoints) - 1, null);
+}
+
+// Media of at least the minimum breakpoint width. No query for the smallest breakpoint.
+// Makes the @content apply to the given breakpoint and wider.
+@mixin media-breakpoint-up($name, $breakpoints: $reflex-breakpoints) {
+    $min: breakpoint-min($name, $breakpoints);
+
+    @if $min {
+        @media (min-width: $min) {
+            @content;
+        }
+    }
+
+    @else {
+        @content;
+    }
+}
+
+// Media of at most the maximum breakpoint width. No query for the largest breakpoint.
+// Makes the @content apply to the given breakpoint and narrower.
+@mixin media-breakpoint-down($name, $breakpoints: $reflex-breakpoints) {
+    $max: breakpoint-max($name, $breakpoints);
+
+    @if $max {
+        @media (max-width: $max) {
+            @content;
+        }
+    }
+
+    @else {
+        @content;
+    }
+}
+
+// Media between the breakpoint's minimum and maximum widths.
+// No minimum for the smallest breakpoint, and no maximum for the largest one.
+// Makes the @content apply only to the given breakpoint, not viewports any wider or narrower.
+@mixin media-breakpoint-only($name, $breakpoints: $reflex-breakpoints) {
+    @include media-breakpoint-up($name, $breakpoints) {
+        @include media-breakpoint-down($name, $breakpoints) {
+            @content;
+        }
+    }
+}
+
+// --------------------------------------------------
 // other mixins
 // --------------------------------------------------
 
@@ -308,44 +424,4 @@
     -webkit-box-sizing: $boxmodel;
     -moz-box-sizing: $boxmodel;
     box-sizing: $boxmodel;
-}
-
-@mixin responsive-visibility-helpers() {
-    @if $visibility-helpers == true {
-        .#{$reflex-prefix}hidden-xxs {
-            @media (max-width: $reflex-xxs-max) {
-                display: none;
-            }
-        }
-
-        .#{$reflex-prefix}hidden-xs {
-            @media (min-width: $reflex-xs) and (max-width: $reflex-xs-max) {
-                display: none;
-            }
-        }
-
-        .#{$reflex-prefix}hidden-sm {
-            @media (min-width: $reflex-sm) and (max-width: $reflex-sm-max) {
-                display: none;
-            }
-        }
-
-        .#{$reflex-prefix}hidden-md {
-            @media (min-width: $reflex-md) and (max-width: $reflex-md-max) {
-                display: none;
-            }
-        }
-
-        .#{$reflex-prefix}hidden-lg {
-            @media (min-width: $reflex-lg) and (max-width: $reflex-lg-max) {
-                display: none;
-            }
-        }
-
-        .#{$reflex-prefix}hidden-xlg {
-            @media (min-width: $reflex-xlg) {
-                display: none;
-            }
-        }
-    }
 }
