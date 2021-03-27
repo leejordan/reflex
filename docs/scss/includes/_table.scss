@@ -1,14 +1,14 @@
 .table {
-	width: 100%;
-	max-width: 100%;
-	margin-bottom: 1rem;
+	border-collapse: collapse;
 }
 
 .table-responsive {
-	display: block;
 	width: 100%;
+	max-width: 100%;
 	overflow-x: auto;
-	-ms-overflow-style: -ms-autohiding-scrollbar;
+	@media (max-width: $reflex-sm) {
+		display: block;
+	}
 }
 
 // Responsive Utilities Table
@@ -27,8 +27,8 @@
 		vertical-align: top;
 	}
 
-	>tbody tr>td {
-		width: 160px;
+	>tbody>tr>th {
+		text-align: left;
 	}
 
 	th, td {
@@ -41,20 +41,12 @@
 		color: #999;
 	}
 
-	code {
-		padding: .2rem .4rem;
-		font-size: 90%;
-		color: #bd4147;
-		background-color: #f7f7f9;
-		border-radius: .25rem;
-	}
-
 	.is-hidden {
 		color: #ccc;
-		background-color: #f9f9f9 !important;
+		background-color: #f9f9f9;
 	}
 
 	.is-visible {
-		background-color: $colour-col !important;
+		background-color: $colour-col;
 	}
 }

@@ -2248,16 +2248,19 @@ button:focus,
 }
 
 .table {
-  width: 100%;
-  max-width: 100%;
-  margin-bottom: 1rem;
+  border-collapse: collapse;
 }
 
 .table-responsive {
-  display: block;
   width: 100%;
+  max-width: 100%;
   overflow-x: auto;
-  -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
+@media (max-width: 768px) {
+  .table-responsive {
+    display: block;
+  }
 }
 
 .table.responsive-utilities {
@@ -2275,8 +2278,8 @@ button:focus,
   vertical-align: top;
 }
 
-.table.responsive-utilities > tbody tr > td {
-  width: 160px;
+.table.responsive-utilities > tbody > tr > th {
+  text-align: left;
 }
 
 .table.responsive-utilities th, .table.responsive-utilities td {
@@ -2289,21 +2292,13 @@ button:focus,
   color: #999;
 }
 
-.table.responsive-utilities code {
-  padding: .2rem .4rem;
-  font-size: 90%;
-  color: #bd4147;
-  background-color: #f7f7f9;
-  border-radius: .25rem;
-}
-
 .table.responsive-utilities .is-hidden {
   color: #ccc;
-  background-color: #f9f9f9 !important;
+  background-color: #f9f9f9;
 }
 
 .table.responsive-utilities .is-visible {
-  background-color: #83e3ff !important;
+  background-color: #83e3ff;
 }
 
 .logo {
