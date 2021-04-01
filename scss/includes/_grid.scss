@@ -164,23 +164,23 @@
 
 @include make-order-helpers();
 
-@media only screen and (min-width: $reflex-xs) {
+@media (min-width: $reflex-xs) {
     @include loop-order-helpers($reflex-columns, '-xs');
 }
 
-@media only screen and (min-width: $reflex-sm) {
+@media (min-width: $reflex-sm) {
     @include loop-order-helpers($reflex-columns, '-sm');
 }
 
-@media only screen and (min-width: $reflex-md) {
+@media (min-width: $reflex-md) {
     @include loop-order-helpers($reflex-columns, '-md');
 }
 
-@media only screen and (min-width: $reflex-lg) {
+@media (min-width: $reflex-lg) {
     @include loop-order-helpers($reflex-columns, '-lg');
 }
 
-@media only screen and (min-width: $reflex-xlg) {
+@media (min-width: $reflex-xlg) {
     @include loop-order-helpers($reflex-columns, '-xlg');
 }
 
@@ -190,22 +190,22 @@
 
 @include make-offset-helpers();
 
-@media only screen and (min-width: $reflex-xs) {
+@media (min-width: $reflex-xs) {
     @include loop-offset-helpers($reflex-columns - 1, '-xs');
 }
 
-@media only screen and (min-width: $reflex-sm) {
+@media (min-width: $reflex-sm) {
     @include loop-offset-helpers($reflex-columns - 1, '-sm');
 }
 
-@media only screen and (min-width: $reflex-md) {
+@media (min-width: $reflex-md) {
     @include loop-offset-helpers($reflex-columns - 1, '-md');
 }
 
-@media only screen and (min-width: $reflex-lg) {
+@media (min-width: $reflex-lg) {
     @include loop-offset-helpers($reflex-columns - 1, '-lg');
 }
 
-@media only screen and (min-width: $reflex-xlg) {
+@media (min-width: $reflex-xlg) {
     @include loop-offset-helpers($reflex-columns - 1, '-xlg');
 }
