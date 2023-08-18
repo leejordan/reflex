@@ -5,6 +5,7 @@
 // --------------------------------------------------
 // reflex grid generation mixins
 // --------------------------------------------------
+@use "sass:math";
 
 @mixin make-reflex-grid($class) {
     @include loop-reflex-columns($reflex-columns, $class, width);
@@ -13,9 +14,9 @@
 @mixin calc-reflex-columns($index, $class, $type) {
     @if $type == width and $index > 0 {
         .#{$reflex-prefix}#{$class}#{$index} {
-            width: percentage(calc($index / $reflex-columns));
+            width: percentage(math.div($index, $reflex-columns));
             @if $legacy-support == true {
-                *width: percentage(calc($index / $reflex-columns)) - .1; // ie7 css hack
+                *width: percentage(math.div($index, $reflex-columns)) - .1; // ie7 css hack
             }
         }
     }
@@ -105,14 +106,14 @@
 // offset class generation mixins
 // --------------------------------------------------
 @mixin offset($index: 0) {
-    $offset: calc($index / $reflex-columns);
+    $offset: math.div($index, $reflex-columns);
     // convert to percentage only if not zero
     @if $offset != 0 {
         $offset: percentage($offset);
     }
     margin-left: $offset;
     @if $legacy-support == true {
-        *margin-left: percentage(calc($index / $reflex-columns)) - .1; // ie7 css hack
+        *margin-left: percentage(math.div($index, $reflex-columns)) - .1; // ie7 css hack
     }
 }
 
