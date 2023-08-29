@@ -1,3 +1,5 @@
+@use "sass:math";
+
 .example-3-column {
     .logo {
         padding: 1em .5em 0;
@@ -193,7 +195,7 @@
 
     .button {
         display: inline-block;
-        margin: 0 ($reflex-grid-spacing / 2) ($reflex-grid-spacing / 2) 0;
+        margin: 0 math.div($reflex-grid-spacing, 2) math.div($reflex-grid-spacing, 2) 0;
         padding: .5em 1em;
         text-decoration: none;
         color: $colour-text;
@@ -217,7 +219,7 @@
         float: right;
 
         .button {
-            margin: 0 0 ($reflex-grid-spacing / 2) ($reflex-grid-spacing / 2);
+            margin: 0 0 math.div($reflex-grid-spacing, 2) math.div($reflex-grid-spacing, 2);
         }
     }
 }

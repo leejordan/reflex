@@ -1,3 +1,5 @@
+@use "sass:math";
+
 label,
 legend {
     display: inline-block;
@@ -41,7 +43,7 @@ input[type="color"] {
     width: 100%;
     height: 2.5em;
     margin-bottom: $reflex-grid-spacing;
-    padding: ($reflex-grid-spacing / 2) $reflex-grid-spacing;
+    padding: math.div($reflex-grid-spacing, 2) $reflex-grid-spacing;
     line-height: $line-height-base;
     color: $colour-text;
     background-color: $colour-white;
@@ -110,7 +112,7 @@ button,
     vertical-align: middle;
     overflow: hidden;
     margin-bottom: ($font-size-base * .31); // same size as default white space between inline-block elements
-    padding: ($font-size-base / 2) ($font-size-base * 2);
+    padding: math.div($font-size-base, 2) ($font-size-base * 2);
     font-family: $font-family-base;
     font-size: $font-size-base;
     font-weight: $font-weight-base;
